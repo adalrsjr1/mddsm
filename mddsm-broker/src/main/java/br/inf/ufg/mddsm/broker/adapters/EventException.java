@@ -4,7 +4,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class EventException extends RuntimeException {
-    private Event event;
+	private static final long serialVersionUID = 1L;
+	private Event event;
 
     public EventException(Event event) {
         this.event = event;
