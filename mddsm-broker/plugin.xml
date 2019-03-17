@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated base -->
+      <package
+            uri="http://www.inf.ufg.br/mestrado/sb/base"
+            class="base.BasePackage"
+            genModel="src/main/resources/metamodel/base.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated base -->
+      <package
+            uri="http://www.inf.ufg.br/mestrado/sb/base/context"
+            class="base.context.ContextPackage"
+            genModel="src/main/resources/metamodel/base.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated base -->
+      <package
+            uri="http://www.inf.ufg.br/mestrado/sb/base/metadata"
+            class="base.metadata.MetadataPackage"
+            genModel="src/main/resources/metamodel/base.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated base -->
+      <package
+            uri="http://www.inf.ufg.br/mestrado/sb/base/autonomic"
+            class="base.autonomic.AutonomicPackage"
+            genModel="src/main/resources/metamodel/base.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated base -->
+      <package
+            uri="http://www.inf.ufg.br/mestrado/sb/base/policy"
+            class="base.policy.PolicyPackage"
+            genModel="src/main/resources/metamodel/base.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated base -->
+      <package
+            uri="http://www.inf.ufg.br/mestrado/sb/base/common"
+            class="base.common.CommonPackage"
+            genModel="src/main/resources/metamodel/base.genmodel"/>
+   </extension>
+
+</plugin>
