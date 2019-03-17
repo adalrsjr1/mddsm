@@ -10,7 +10,7 @@
       <!-- @generated base -->
       <package
             uri="http://www.inf.ufg.br/mestrado/sb/base"
-            class="base.BasePackage"
+            class="base.impl.BasePackageImpl"
             genModel="src/main/resources/metamodel/base.genmodel"/>
    </extension>
 
@@ -18,7 +18,7 @@
       <!-- @generated base -->
       <package
             uri="http://www.inf.ufg.br/mestrado/sb/base/context"
-            class="base.context.ContextPackage"
+            class="base.context.impl.ContextPackageImpl"
             genModel="src/main/resources/metamodel/base.genmodel"/>
    </extension>
 
@@ -26,7 +26,7 @@
       <!-- @generated base -->
       <package
             uri="http://www.inf.ufg.br/mestrado/sb/base/metadata"
-            class="base.metadata.MetadataPackage"
+            class="base.metadata.impl.MetadataPackageImpl"
             genModel="src/main/resources/metamodel/base.genmodel"/>
    </extension>
 
@@ -34,7 +34,7 @@
       <!-- @generated base -->
       <package
             uri="http://www.inf.ufg.br/mestrado/sb/base/autonomic"
-            class="base.autonomic.AutonomicPackage"
+            class="base.autonomic.impl.AutonomicPackageImpl"
             genModel="src/main/resources/metamodel/base.genmodel"/>
    </extension>
 
@@ -42,7 +42,7 @@
       <!-- @generated base -->
       <package
             uri="http://www.inf.ufg.br/mestrado/sb/base/policy"
-            class="base.policy.PolicyPackage"
+            class="base.policy.impl.PolicyPackageImpl"
             genModel="src/main/resources/metamodel/base.genmodel"/>
    </extension>
 
@@ -50,8 +50,7 @@
       <!-- @generated base -->
       <package
             uri="http://www.inf.ufg.br/mestrado/sb/base/common"
-            class="base.common.CommonPackage"
+            class="base.common.impl.CommonPackageImpl"
             genModel="src/main/resources/metamodel/base.genmodel"/>
    </extension>
-
 </plugin>
