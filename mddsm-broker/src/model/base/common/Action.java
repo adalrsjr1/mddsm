@@ -2,7 +2,7 @@
  */
 package base.common;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -65,6 +65,6 @@ public interface Action extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Parameter> getParameters();
+	List<Parameter> getParameters();
 
 } // Action

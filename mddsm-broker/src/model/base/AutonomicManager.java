@@ -6,7 +6,7 @@ import base.autonomic.ChangePlan;
 import base.autonomic.ChangeRequest;
 import base.autonomic.Symptom;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -43,7 +43,7 @@ public interface AutonomicManager extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Symptom> getIdentifies();
+	List<Symptom> getIdentifies();
 
 	/**
 	 * Returns the value of the '<em><b>Requests</b></em>' containment reference list.
@@ -59,7 +59,7 @@ public interface AutonomicManager extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ChangeRequest> getRequests();
+	List<ChangeRequest> getRequests();
 
 	/**
 	 * Returns the value of the '<em><b>Plans</b></em>' containment reference list.
@@ -75,6 +75,6 @@ public interface AutonomicManager extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ChangePlan> getPlans();
+	List<ChangePlan> getPlans();
 
 } // AutonomicManager

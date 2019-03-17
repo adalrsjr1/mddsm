@@ -4,7 +4,7 @@ package base.context;
 
 import base.common.Bindable;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public interface State extends Bindable {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<State> getChildren();
+	List<State> getChildren();
 
 	/**
 	 * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
@@ -82,7 +82,7 @@ public interface State extends Bindable {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Property> getProperties();
+	List<Property> getProperties();
 
 	/**
 	 * Returns the value of the '<em><b>Key</b></em>' reference.

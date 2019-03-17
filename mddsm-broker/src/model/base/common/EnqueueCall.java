@@ -2,7 +2,7 @@
  */
 package base.common;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,6 +62,6 @@ public interface EnqueueCall extends Action {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ParameterBinding> getBindings();
+	List<ParameterBinding> getBindings();
 
 } // EnqueueCall

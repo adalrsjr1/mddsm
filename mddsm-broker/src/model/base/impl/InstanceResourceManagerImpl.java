@@ -9,6 +9,7 @@ import base.InstanceResourceManager;
 import base.common.Interface;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -118,8 +119,12 @@ public class InstanceResourceManagerImpl extends EObjectImpl implements Instance
 		Interface oldIface = iface;
 		iface = newIface;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE, oldIface, newIface);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE, oldIface, newIface);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -134,14 +139,17 @@ public class InstanceResourceManagerImpl extends EObjectImpl implements Instance
 		if (newIface != iface) {
 			NotificationChain msgs = null;
 			if (iface != null)
-				msgs = ((InternalEObject)iface).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE, null, msgs);
+				msgs = ((InternalEObject) iface).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE, null, msgs);
 			if (newIface != null)
-				msgs = ((InternalEObject)newIface).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE, null, msgs);
+				msgs = ((InternalEObject) newIface).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE, null, msgs);
 			msgs = basicSetIface(newIface, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE, newIface, newIface));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE,
+					newIface, newIface));
 	}
 
 	/**
@@ -150,9 +158,10 @@ public class InstanceResourceManagerImpl extends EObjectImpl implements Instance
 	 * @generated
 	 */
 	@Override
-	public EList<Instance> getInstances() {
+	public List<Instance> getInstances() {
 		if (instances == null) {
-			instances = new EObjectContainmentEList<Instance>(Instance.class, this, BasePackage.INSTANCE_RESOURCE_MANAGER__INSTANCES);
+			instances = new EObjectContainmentEList<Instance>(Instance.class, this,
+					BasePackage.INSTANCE_RESOURCE_MANAGER__INSTANCES);
 		}
 		return instances;
 	}
@@ -177,7 +186,8 @@ public class InstanceResourceManagerImpl extends EObjectImpl implements Instance
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.INSTANCE_RESOURCE_MANAGER__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.INSTANCE_RESOURCE_MANAGER__NAME, oldName,
+					name));
 	}
 
 	/**
@@ -188,10 +198,10 @@ public class InstanceResourceManagerImpl extends EObjectImpl implements Instance
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE:
-				return basicSetIface(null, msgs);
-			case BasePackage.INSTANCE_RESOURCE_MANAGER__INSTANCES:
-				return ((InternalEList<?>)getInstances()).basicRemove(otherEnd, msgs);
+		case BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE:
+			return basicSetIface(null, msgs);
+		case BasePackage.INSTANCE_RESOURCE_MANAGER__INSTANCES:
+			return ((InternalEList<?>) getInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -204,12 +214,12 @@ public class InstanceResourceManagerImpl extends EObjectImpl implements Instance
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE:
-				return getIface();
-			case BasePackage.INSTANCE_RESOURCE_MANAGER__INSTANCES:
-				return getInstances();
-			case BasePackage.INSTANCE_RESOURCE_MANAGER__NAME:
-				return getName();
+		case BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE:
+			return getIface();
+		case BasePackage.INSTANCE_RESOURCE_MANAGER__INSTANCES:
+			return getInstances();
+		case BasePackage.INSTANCE_RESOURCE_MANAGER__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -223,16 +233,16 @@ public class InstanceResourceManagerImpl extends EObjectImpl implements Instance
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE:
-				setIface((Interface)newValue);
-				return;
-			case BasePackage.INSTANCE_RESOURCE_MANAGER__INSTANCES:
-				getInstances().clear();
-				getInstances().addAll((Collection<? extends Instance>)newValue);
-				return;
-			case BasePackage.INSTANCE_RESOURCE_MANAGER__NAME:
-				setName((String)newValue);
-				return;
+		case BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE:
+			setIface((Interface) newValue);
+			return;
+		case BasePackage.INSTANCE_RESOURCE_MANAGER__INSTANCES:
+			getInstances().clear();
+			getInstances().addAll((Collection<? extends Instance>) newValue);
+			return;
+		case BasePackage.INSTANCE_RESOURCE_MANAGER__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -245,15 +255,15 @@ public class InstanceResourceManagerImpl extends EObjectImpl implements Instance
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE:
-				setIface((Interface)null);
-				return;
-			case BasePackage.INSTANCE_RESOURCE_MANAGER__INSTANCES:
-				getInstances().clear();
-				return;
-			case BasePackage.INSTANCE_RESOURCE_MANAGER__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		case BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE:
+			setIface((Interface) null);
+			return;
+		case BasePackage.INSTANCE_RESOURCE_MANAGER__INSTANCES:
+			getInstances().clear();
+			return;
+		case BasePackage.INSTANCE_RESOURCE_MANAGER__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -266,12 +276,12 @@ public class InstanceResourceManagerImpl extends EObjectImpl implements Instance
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE:
-				return iface != null;
-			case BasePackage.INSTANCE_RESOURCE_MANAGER__INSTANCES:
-				return instances != null && !instances.isEmpty();
-			case BasePackage.INSTANCE_RESOURCE_MANAGER__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case BasePackage.INSTANCE_RESOURCE_MANAGER__IFACE:
+			return iface != null;
+		case BasePackage.INSTANCE_RESOURCE_MANAGER__INSTANCES:
+			return instances != null && !instances.isEmpty();
+		case BasePackage.INSTANCE_RESOURCE_MANAGER__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -283,7 +293,8 @@ public class InstanceResourceManagerImpl extends EObjectImpl implements Instance
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (Name: ");

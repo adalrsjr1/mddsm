@@ -10,6 +10,7 @@ import base.autonomic.ChangeRequest;
 import base.autonomic.Symptom;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -94,9 +95,10 @@ public class AutonomicManagerImpl extends EObjectImpl implements AutonomicManage
 	 * @generated
 	 */
 	@Override
-	public EList<Symptom> getIdentifies() {
+	public List<Symptom> getIdentifies() {
 		if (identifies == null) {
-			identifies = new EObjectContainmentEList<Symptom>(Symptom.class, this, BasePackage.AUTONOMIC_MANAGER__IDENTIFIES);
+			identifies = new EObjectContainmentEList<Symptom>(Symptom.class, this,
+					BasePackage.AUTONOMIC_MANAGER__IDENTIFIES);
 		}
 		return identifies;
 	}
@@ -107,9 +109,10 @@ public class AutonomicManagerImpl extends EObjectImpl implements AutonomicManage
 	 * @generated
 	 */
 	@Override
-	public EList<ChangeRequest> getRequests() {
+	public List<ChangeRequest> getRequests() {
 		if (requests == null) {
-			requests = new EObjectContainmentEList<ChangeRequest>(ChangeRequest.class, this, BasePackage.AUTONOMIC_MANAGER__REQUESTS);
+			requests = new EObjectContainmentEList<ChangeRequest>(ChangeRequest.class, this,
+					BasePackage.AUTONOMIC_MANAGER__REQUESTS);
 		}
 		return requests;
 	}
@@ -120,9 +123,10 @@ public class AutonomicManagerImpl extends EObjectImpl implements AutonomicManage
 	 * @generated
 	 */
 	@Override
-	public EList<ChangePlan> getPlans() {
+	public List<ChangePlan> getPlans() {
 		if (plans == null) {
-			plans = new EObjectContainmentEList<ChangePlan>(ChangePlan.class, this, BasePackage.AUTONOMIC_MANAGER__PLANS);
+			plans = new EObjectContainmentEList<ChangePlan>(ChangePlan.class, this,
+					BasePackage.AUTONOMIC_MANAGER__PLANS);
 		}
 		return plans;
 	}
@@ -135,12 +139,12 @@ public class AutonomicManagerImpl extends EObjectImpl implements AutonomicManage
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasePackage.AUTONOMIC_MANAGER__IDENTIFIES:
-				return ((InternalEList<?>)getIdentifies()).basicRemove(otherEnd, msgs);
-			case BasePackage.AUTONOMIC_MANAGER__REQUESTS:
-				return ((InternalEList<?>)getRequests()).basicRemove(otherEnd, msgs);
-			case BasePackage.AUTONOMIC_MANAGER__PLANS:
-				return ((InternalEList<?>)getPlans()).basicRemove(otherEnd, msgs);
+		case BasePackage.AUTONOMIC_MANAGER__IDENTIFIES:
+			return ((InternalEList<?>) getIdentifies()).basicRemove(otherEnd, msgs);
+		case BasePackage.AUTONOMIC_MANAGER__REQUESTS:
+			return ((InternalEList<?>) getRequests()).basicRemove(otherEnd, msgs);
+		case BasePackage.AUTONOMIC_MANAGER__PLANS:
+			return ((InternalEList<?>) getPlans()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -153,12 +157,12 @@ public class AutonomicManagerImpl extends EObjectImpl implements AutonomicManage
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasePackage.AUTONOMIC_MANAGER__IDENTIFIES:
-				return getIdentifies();
-			case BasePackage.AUTONOMIC_MANAGER__REQUESTS:
-				return getRequests();
-			case BasePackage.AUTONOMIC_MANAGER__PLANS:
-				return getPlans();
+		case BasePackage.AUTONOMIC_MANAGER__IDENTIFIES:
+			return getIdentifies();
+		case BasePackage.AUTONOMIC_MANAGER__REQUESTS:
+			return getRequests();
+		case BasePackage.AUTONOMIC_MANAGER__PLANS:
+			return getPlans();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -172,18 +176,18 @@ public class AutonomicManagerImpl extends EObjectImpl implements AutonomicManage
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasePackage.AUTONOMIC_MANAGER__IDENTIFIES:
-				getIdentifies().clear();
-				getIdentifies().addAll((Collection<? extends Symptom>)newValue);
-				return;
-			case BasePackage.AUTONOMIC_MANAGER__REQUESTS:
-				getRequests().clear();
-				getRequests().addAll((Collection<? extends ChangeRequest>)newValue);
-				return;
-			case BasePackage.AUTONOMIC_MANAGER__PLANS:
-				getPlans().clear();
-				getPlans().addAll((Collection<? extends ChangePlan>)newValue);
-				return;
+		case BasePackage.AUTONOMIC_MANAGER__IDENTIFIES:
+			getIdentifies().clear();
+			getIdentifies().addAll((Collection<? extends Symptom>) newValue);
+			return;
+		case BasePackage.AUTONOMIC_MANAGER__REQUESTS:
+			getRequests().clear();
+			getRequests().addAll((Collection<? extends ChangeRequest>) newValue);
+			return;
+		case BasePackage.AUTONOMIC_MANAGER__PLANS:
+			getPlans().clear();
+			getPlans().addAll((Collection<? extends ChangePlan>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -196,15 +200,15 @@ public class AutonomicManagerImpl extends EObjectImpl implements AutonomicManage
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasePackage.AUTONOMIC_MANAGER__IDENTIFIES:
-				getIdentifies().clear();
-				return;
-			case BasePackage.AUTONOMIC_MANAGER__REQUESTS:
-				getRequests().clear();
-				return;
-			case BasePackage.AUTONOMIC_MANAGER__PLANS:
-				getPlans().clear();
-				return;
+		case BasePackage.AUTONOMIC_MANAGER__IDENTIFIES:
+			getIdentifies().clear();
+			return;
+		case BasePackage.AUTONOMIC_MANAGER__REQUESTS:
+			getRequests().clear();
+			return;
+		case BasePackage.AUTONOMIC_MANAGER__PLANS:
+			getPlans().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -217,12 +221,12 @@ public class AutonomicManagerImpl extends EObjectImpl implements AutonomicManage
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasePackage.AUTONOMIC_MANAGER__IDENTIFIES:
-				return identifies != null && !identifies.isEmpty();
-			case BasePackage.AUTONOMIC_MANAGER__REQUESTS:
-				return requests != null && !requests.isEmpty();
-			case BasePackage.AUTONOMIC_MANAGER__PLANS:
-				return plans != null && !plans.isEmpty();
+		case BasePackage.AUTONOMIC_MANAGER__IDENTIFIES:
+			return identifies != null && !identifies.isEmpty();
+		case BasePackage.AUTONOMIC_MANAGER__REQUESTS:
+			return requests != null && !requests.isEmpty();
+		case BasePackage.AUTONOMIC_MANAGER__PLANS:
+			return plans != null && !plans.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -8,6 +8,7 @@ import base.policy.PolicyEvaluationContext;
 import base.policy.PolicyPackage;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -70,9 +71,10 @@ public class PolicyEvaluationContextImpl extends EObjectImpl implements PolicyEv
 	 * @generated
 	 */
 	@Override
-	public EList<Parameter> getParameters() {
+	public List<Parameter> getParameters() {
 		if (parameters == null) {
-			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, PolicyPackage.POLICY_EVALUATION_CONTEXT__PARAMETERS);
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this,
+					PolicyPackage.POLICY_EVALUATION_CONTEXT__PARAMETERS);
 		}
 		return parameters;
 	}
@@ -85,8 +87,8 @@ public class PolicyEvaluationContextImpl extends EObjectImpl implements PolicyEv
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_CONTEXT__PARAMETERS:
-				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+		case PolicyPackage.POLICY_EVALUATION_CONTEXT__PARAMETERS:
+			return ((InternalEList<?>) getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -99,8 +101,8 @@ public class PolicyEvaluationContextImpl extends EObjectImpl implements PolicyEv
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_CONTEXT__PARAMETERS:
-				return getParameters();
+		case PolicyPackage.POLICY_EVALUATION_CONTEXT__PARAMETERS:
+			return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -114,10 +116,10 @@ public class PolicyEvaluationContextImpl extends EObjectImpl implements PolicyEv
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_CONTEXT__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends Parameter>)newValue);
-				return;
+		case PolicyPackage.POLICY_EVALUATION_CONTEXT__PARAMETERS:
+			getParameters().clear();
+			getParameters().addAll((Collection<? extends Parameter>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -130,9 +132,9 @@ public class PolicyEvaluationContextImpl extends EObjectImpl implements PolicyEv
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_CONTEXT__PARAMETERS:
-				getParameters().clear();
-				return;
+		case PolicyPackage.POLICY_EVALUATION_CONTEXT__PARAMETERS:
+			getParameters().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -145,8 +147,8 @@ public class PolicyEvaluationContextImpl extends EObjectImpl implements PolicyEv
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_CONTEXT__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
+		case PolicyPackage.POLICY_EVALUATION_CONTEXT__PARAMETERS:
+			return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

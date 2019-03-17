@@ -7,6 +7,7 @@ import base.common.Parameter;
 import base.common.Signal;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -92,9 +93,10 @@ public abstract class SignalImpl extends EObjectImpl implements Signal {
 	 * @generated
 	 */
 	@Override
-	public EList<Parameter> getParameters() {
+	public List<Parameter> getParameters() {
 		if (parameters == null) {
-			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, CommonPackage.SIGNAL__PARAMETERS);
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this,
+					CommonPackage.SIGNAL__PARAMETERS);
 		}
 		return parameters;
 	}
@@ -130,8 +132,8 @@ public abstract class SignalImpl extends EObjectImpl implements Signal {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CommonPackage.SIGNAL__PARAMETERS:
-				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+		case CommonPackage.SIGNAL__PARAMETERS:
+			return ((InternalEList<?>) getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -144,10 +146,10 @@ public abstract class SignalImpl extends EObjectImpl implements Signal {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CommonPackage.SIGNAL__PARAMETERS:
-				return getParameters();
-			case CommonPackage.SIGNAL__NAME:
-				return getName();
+		case CommonPackage.SIGNAL__PARAMETERS:
+			return getParameters();
+		case CommonPackage.SIGNAL__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,13 +163,13 @@ public abstract class SignalImpl extends EObjectImpl implements Signal {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CommonPackage.SIGNAL__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends Parameter>)newValue);
-				return;
-			case CommonPackage.SIGNAL__NAME:
-				setName((String)newValue);
-				return;
+		case CommonPackage.SIGNAL__PARAMETERS:
+			getParameters().clear();
+			getParameters().addAll((Collection<? extends Parameter>) newValue);
+			return;
+		case CommonPackage.SIGNAL__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -180,12 +182,12 @@ public abstract class SignalImpl extends EObjectImpl implements Signal {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CommonPackage.SIGNAL__PARAMETERS:
-				getParameters().clear();
-				return;
-			case CommonPackage.SIGNAL__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		case CommonPackage.SIGNAL__PARAMETERS:
+			getParameters().clear();
+			return;
+		case CommonPackage.SIGNAL__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -198,10 +200,10 @@ public abstract class SignalImpl extends EObjectImpl implements Signal {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CommonPackage.SIGNAL__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
-			case CommonPackage.SIGNAL__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case CommonPackage.SIGNAL__PARAMETERS:
+			return parameters != null && !parameters.isEmpty();
+		case CommonPackage.SIGNAL__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -213,7 +215,8 @@ public abstract class SignalImpl extends EObjectImpl implements Signal {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

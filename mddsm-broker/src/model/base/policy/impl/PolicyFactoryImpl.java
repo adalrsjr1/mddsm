@@ -27,12 +27,12 @@ public class PolicyFactoryImpl extends EFactoryImpl implements PolicyFactory {
 	 */
 	public static PolicyFactory init() {
 		try {
-			PolicyFactory thePolicyFactory = (PolicyFactory)EPackage.Registry.INSTANCE.getEFactory(PolicyPackage.eNS_URI);
+			PolicyFactory thePolicyFactory = (PolicyFactory) EPackage.Registry.INSTANCE
+					.getEFactory(PolicyPackage.eNS_URI);
 			if (thePolicyFactory != null) {
 				return thePolicyFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new PolicyFactoryImpl();
@@ -56,15 +56,22 @@ public class PolicyFactoryImpl extends EFactoryImpl implements PolicyFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case PolicyPackage.POLICY_EVALUATION_POINT: return createPolicyEvaluationPoint();
-			case PolicyPackage.POLICY_EVALUATION_REQUEST: return createPolicyEvaluationRequest();
-			case PolicyPackage.POLICY_EVALUATION_HANDLER: return createPolicyEvaluationHandler();
-			case PolicyPackage.POLICY_EVALUATION_CONTEXT: return createPolicyEvaluationContext();
-			case PolicyPackage.POLICY_EVALUATION: return createPolicyEvaluation();
-			case PolicyPackage.POLICY: return createPolicy();
-			case PolicyPackage.POLICY_DECISION: return createPolicyDecision();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case PolicyPackage.POLICY_EVALUATION_POINT:
+			return createPolicyEvaluationPoint();
+		case PolicyPackage.POLICY_EVALUATION_REQUEST:
+			return createPolicyEvaluationRequest();
+		case PolicyPackage.POLICY_EVALUATION_HANDLER:
+			return createPolicyEvaluationHandler();
+		case PolicyPackage.POLICY_EVALUATION_CONTEXT:
+			return createPolicyEvaluationContext();
+		case PolicyPackage.POLICY_EVALUATION:
+			return createPolicyEvaluation();
+		case PolicyPackage.POLICY:
+			return createPolicy();
+		case PolicyPackage.POLICY_DECISION:
+			return createPolicyDecision();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -152,7 +159,7 @@ public class PolicyFactoryImpl extends EFactoryImpl implements PolicyFactory {
 	 */
 	@Override
 	public PolicyPackage getPolicyPackage() {
-		return (PolicyPackage)getEPackage();
+		return (PolicyPackage) getEPackage();
 	}
 
 	/**

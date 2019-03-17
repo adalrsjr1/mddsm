@@ -2,7 +2,7 @@
  */
 package base.common;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,6 +35,6 @@ public interface SequenceAction extends Action {
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<ActionExecution> getChildren();
+	List<ActionExecution> getChildren();
 
 } // SequenceAction

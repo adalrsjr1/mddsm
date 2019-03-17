@@ -127,7 +127,8 @@ public class PolicyDecisionImpl extends EObjectImpl implements PolicyDecision {
 		String oldParameter = parameter;
 		parameter = newParameter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_DECISION__PARAMETER, oldParameter, parameter));
+			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_DECISION__PARAMETER,
+					oldParameter, parameter));
 	}
 
 	/**
@@ -150,7 +151,8 @@ public class PolicyDecisionImpl extends EObjectImpl implements PolicyDecision {
 		String oldOperation = operation;
 		operation = newOperation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_DECISION__OPERATION, oldOperation, operation));
+			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_DECISION__OPERATION,
+					oldOperation, operation));
 	}
 
 	/**
@@ -173,7 +175,8 @@ public class PolicyDecisionImpl extends EObjectImpl implements PolicyDecision {
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_DECISION__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_DECISION__VALUE, oldValue,
+					value));
 	}
 
 	/**
@@ -184,12 +187,12 @@ public class PolicyDecisionImpl extends EObjectImpl implements PolicyDecision {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_DECISION__PARAMETER:
-				return getParameter();
-			case PolicyPackage.POLICY_DECISION__OPERATION:
-				return getOperation();
-			case PolicyPackage.POLICY_DECISION__VALUE:
-				return getValue();
+		case PolicyPackage.POLICY_DECISION__PARAMETER:
+			return getParameter();
+		case PolicyPackage.POLICY_DECISION__OPERATION:
+			return getOperation();
+		case PolicyPackage.POLICY_DECISION__VALUE:
+			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,15 +205,15 @@ public class PolicyDecisionImpl extends EObjectImpl implements PolicyDecision {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_DECISION__PARAMETER:
-				setParameter((String)newValue);
-				return;
-			case PolicyPackage.POLICY_DECISION__OPERATION:
-				setOperation((String)newValue);
-				return;
-			case PolicyPackage.POLICY_DECISION__VALUE:
-				setValue((String)newValue);
-				return;
+		case PolicyPackage.POLICY_DECISION__PARAMETER:
+			setParameter((String) newValue);
+			return;
+		case PolicyPackage.POLICY_DECISION__OPERATION:
+			setOperation((String) newValue);
+			return;
+		case PolicyPackage.POLICY_DECISION__VALUE:
+			setValue((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -223,15 +226,15 @@ public class PolicyDecisionImpl extends EObjectImpl implements PolicyDecision {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_DECISION__PARAMETER:
-				setParameter(PARAMETER_EDEFAULT);
-				return;
-			case PolicyPackage.POLICY_DECISION__OPERATION:
-				setOperation(OPERATION_EDEFAULT);
-				return;
-			case PolicyPackage.POLICY_DECISION__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
+		case PolicyPackage.POLICY_DECISION__PARAMETER:
+			setParameter(PARAMETER_EDEFAULT);
+			return;
+		case PolicyPackage.POLICY_DECISION__OPERATION:
+			setOperation(OPERATION_EDEFAULT);
+			return;
+		case PolicyPackage.POLICY_DECISION__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -244,12 +247,12 @@ public class PolicyDecisionImpl extends EObjectImpl implements PolicyDecision {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_DECISION__PARAMETER:
-				return PARAMETER_EDEFAULT == null ? parameter != null : !PARAMETER_EDEFAULT.equals(parameter);
-			case PolicyPackage.POLICY_DECISION__OPERATION:
-				return OPERATION_EDEFAULT == null ? operation != null : !OPERATION_EDEFAULT.equals(operation);
-			case PolicyPackage.POLICY_DECISION__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+		case PolicyPackage.POLICY_DECISION__PARAMETER:
+			return PARAMETER_EDEFAULT == null ? parameter != null : !PARAMETER_EDEFAULT.equals(parameter);
+		case PolicyPackage.POLICY_DECISION__OPERATION:
+			return OPERATION_EDEFAULT == null ? operation != null : !OPERATION_EDEFAULT.equals(operation);
+		case PolicyPackage.POLICY_DECISION__VALUE:
+			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -261,7 +264,8 @@ public class PolicyDecisionImpl extends EObjectImpl implements PolicyDecision {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (parameter: ");

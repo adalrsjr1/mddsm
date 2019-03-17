@@ -100,11 +100,12 @@ public class HandlerImpl extends EObjectImpl implements Handler {
 	@Override
 	public Signal getSignal() {
 		if (signal != null && signal.eIsProxy()) {
-			InternalEObject oldSignal = (InternalEObject)signal;
-			signal = (Signal)eResolveProxy(oldSignal);
+			InternalEObject oldSignal = (InternalEObject) signal;
+			signal = (Signal) eResolveProxy(oldSignal);
 			if (signal != oldSignal) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.HANDLER__SIGNAL, oldSignal, signal));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.HANDLER__SIGNAL, oldSignal,
+							signal));
 			}
 		}
 		return signal;
@@ -151,8 +152,12 @@ public class HandlerImpl extends EObjectImpl implements Handler {
 		ActionExecution oldAction = action;
 		action = newAction;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.HANDLER__ACTION, oldAction, newAction);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.HANDLER__ACTION,
+					oldAction, newAction);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -167,13 +172,15 @@ public class HandlerImpl extends EObjectImpl implements Handler {
 		if (newAction != action) {
 			NotificationChain msgs = null;
 			if (action != null)
-				msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.HANDLER__ACTION, null, msgs);
+				msgs = ((InternalEObject) action).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - BasePackage.HANDLER__ACTION, null, msgs);
 			if (newAction != null)
-				msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.HANDLER__ACTION, null, msgs);
+				msgs = ((InternalEObject) newAction).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - BasePackage.HANDLER__ACTION, null, msgs);
 			msgs = basicSetAction(newAction, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.HANDLER__ACTION, newAction, newAction));
 	}
 
@@ -208,8 +215,8 @@ public class HandlerImpl extends EObjectImpl implements Handler {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasePackage.HANDLER__ACTION:
-				return basicSetAction(null, msgs);
+		case BasePackage.HANDLER__ACTION:
+			return basicSetAction(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -222,13 +229,14 @@ public class HandlerImpl extends EObjectImpl implements Handler {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasePackage.HANDLER__SIGNAL:
-				if (resolve) return getSignal();
-				return basicGetSignal();
-			case BasePackage.HANDLER__ACTION:
-				return getAction();
-			case BasePackage.HANDLER__ENABLED:
-				return isEnabled();
+		case BasePackage.HANDLER__SIGNAL:
+			if (resolve)
+				return getSignal();
+			return basicGetSignal();
+		case BasePackage.HANDLER__ACTION:
+			return getAction();
+		case BasePackage.HANDLER__ENABLED:
+			return isEnabled();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -241,15 +249,15 @@ public class HandlerImpl extends EObjectImpl implements Handler {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasePackage.HANDLER__SIGNAL:
-				setSignal((Signal)newValue);
-				return;
-			case BasePackage.HANDLER__ACTION:
-				setAction((ActionExecution)newValue);
-				return;
-			case BasePackage.HANDLER__ENABLED:
-				setEnabled((Boolean)newValue);
-				return;
+		case BasePackage.HANDLER__SIGNAL:
+			setSignal((Signal) newValue);
+			return;
+		case BasePackage.HANDLER__ACTION:
+			setAction((ActionExecution) newValue);
+			return;
+		case BasePackage.HANDLER__ENABLED:
+			setEnabled((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -262,15 +270,15 @@ public class HandlerImpl extends EObjectImpl implements Handler {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasePackage.HANDLER__SIGNAL:
-				setSignal((Signal)null);
-				return;
-			case BasePackage.HANDLER__ACTION:
-				setAction((ActionExecution)null);
-				return;
-			case BasePackage.HANDLER__ENABLED:
-				setEnabled(ENABLED_EDEFAULT);
-				return;
+		case BasePackage.HANDLER__SIGNAL:
+			setSignal((Signal) null);
+			return;
+		case BasePackage.HANDLER__ACTION:
+			setAction((ActionExecution) null);
+			return;
+		case BasePackage.HANDLER__ENABLED:
+			setEnabled(ENABLED_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -283,12 +291,12 @@ public class HandlerImpl extends EObjectImpl implements Handler {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasePackage.HANDLER__SIGNAL:
-				return signal != null;
-			case BasePackage.HANDLER__ACTION:
-				return action != null;
-			case BasePackage.HANDLER__ENABLED:
-				return enabled != ENABLED_EDEFAULT;
+		case BasePackage.HANDLER__SIGNAL:
+			return signal != null;
+		case BasePackage.HANDLER__ACTION:
+			return action != null;
+		case BasePackage.HANDLER__ENABLED:
+			return enabled != ENABLED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -300,7 +308,8 @@ public class HandlerImpl extends EObjectImpl implements Handler {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (enabled: ");

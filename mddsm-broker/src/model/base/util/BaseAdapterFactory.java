@@ -56,7 +56,7 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -67,49 +67,57 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BaseSwitch<Adapter> modelSwitch =
-		new BaseSwitch<Adapter>() {
-			@Override
-			public Adapter caseManager(Manager object) {
-				return createManagerAdapter();
-			}
-			@Override
-			public Adapter caseResourceManager(ResourceManager object) {
-				return createResourceManagerAdapter();
-			}
-			@Override
-			public Adapter caseStateManager(StateManager object) {
-				return createStateManagerAdapter();
-			}
-			@Override
-			public Adapter caseAutonomicManager(AutonomicManager object) {
-				return createAutonomicManagerAdapter();
-			}
-			@Override
-			public Adapter casePolicyManager(PolicyManager object) {
-				return createPolicyManagerAdapter();
-			}
-			@Override
-			public Adapter caseHandler(Handler object) {
-				return createHandlerAdapter();
-			}
-			@Override
-			public Adapter caseInstanceResourceManager(InstanceResourceManager object) {
-				return createInstanceResourceManagerAdapter();
-			}
-			@Override
-			public Adapter caseInstance(Instance object) {
-				return createInstanceAdapter();
-			}
-			@Override
-			public Adapter caseAnnotable(Annotable object) {
-				return createAnnotableAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected BaseSwitch<Adapter> modelSwitch = new BaseSwitch<Adapter>() {
+		@Override
+		public Adapter caseManager(Manager object) {
+			return createManagerAdapter();
+		}
+
+		@Override
+		public Adapter caseResourceManager(ResourceManager object) {
+			return createResourceManagerAdapter();
+		}
+
+		@Override
+		public Adapter caseStateManager(StateManager object) {
+			return createStateManagerAdapter();
+		}
+
+		@Override
+		public Adapter caseAutonomicManager(AutonomicManager object) {
+			return createAutonomicManagerAdapter();
+		}
+
+		@Override
+		public Adapter casePolicyManager(PolicyManager object) {
+			return createPolicyManagerAdapter();
+		}
+
+		@Override
+		public Adapter caseHandler(Handler object) {
+			return createHandlerAdapter();
+		}
+
+		@Override
+		public Adapter caseInstanceResourceManager(InstanceResourceManager object) {
+			return createInstanceResourceManagerAdapter();
+		}
+
+		@Override
+		public Adapter caseInstance(Instance object) {
+			return createInstanceAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotable(Annotable object) {
+			return createAnnotableAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -121,9 +129,8 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link base.Manager <em>Manager</em>}'.

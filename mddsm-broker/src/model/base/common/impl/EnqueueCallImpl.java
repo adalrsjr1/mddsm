@@ -8,6 +8,7 @@ import base.common.EnqueueCall;
 import base.common.ParameterBinding;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -84,11 +85,12 @@ public class EnqueueCallImpl extends ActionImpl implements EnqueueCall {
 	@Override
 	public Call getCall() {
 		if (call != null && call.eIsProxy()) {
-			InternalEObject oldCall = (InternalEObject)call;
-			call = (Call)eResolveProxy(oldCall);
+			InternalEObject oldCall = (InternalEObject) call;
+			call = (Call) eResolveProxy(oldCall);
 			if (call != oldCall) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommonPackage.ENQUEUE_CALL__CALL, oldCall, call));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommonPackage.ENQUEUE_CALL__CALL, oldCall,
+							call));
 			}
 		}
 		return call;
@@ -122,9 +124,10 @@ public class EnqueueCallImpl extends ActionImpl implements EnqueueCall {
 	 * @generated
 	 */
 	@Override
-	public EList<ParameterBinding> getBindings() {
+	public List<ParameterBinding> getBindings() {
 		if (bindings == null) {
-			bindings = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this, CommonPackage.ENQUEUE_CALL__BINDINGS);
+			bindings = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this,
+					CommonPackage.ENQUEUE_CALL__BINDINGS);
 		}
 		return bindings;
 	}
@@ -137,8 +140,8 @@ public class EnqueueCallImpl extends ActionImpl implements EnqueueCall {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CommonPackage.ENQUEUE_CALL__BINDINGS:
-				return ((InternalEList<?>)getBindings()).basicRemove(otherEnd, msgs);
+		case CommonPackage.ENQUEUE_CALL__BINDINGS:
+			return ((InternalEList<?>) getBindings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -151,11 +154,12 @@ public class EnqueueCallImpl extends ActionImpl implements EnqueueCall {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CommonPackage.ENQUEUE_CALL__CALL:
-				if (resolve) return getCall();
-				return basicGetCall();
-			case CommonPackage.ENQUEUE_CALL__BINDINGS:
-				return getBindings();
+		case CommonPackage.ENQUEUE_CALL__CALL:
+			if (resolve)
+				return getCall();
+			return basicGetCall();
+		case CommonPackage.ENQUEUE_CALL__BINDINGS:
+			return getBindings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,13 +173,13 @@ public class EnqueueCallImpl extends ActionImpl implements EnqueueCall {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CommonPackage.ENQUEUE_CALL__CALL:
-				setCall((Call)newValue);
-				return;
-			case CommonPackage.ENQUEUE_CALL__BINDINGS:
-				getBindings().clear();
-				getBindings().addAll((Collection<? extends ParameterBinding>)newValue);
-				return;
+		case CommonPackage.ENQUEUE_CALL__CALL:
+			setCall((Call) newValue);
+			return;
+		case CommonPackage.ENQUEUE_CALL__BINDINGS:
+			getBindings().clear();
+			getBindings().addAll((Collection<? extends ParameterBinding>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -188,12 +192,12 @@ public class EnqueueCallImpl extends ActionImpl implements EnqueueCall {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CommonPackage.ENQUEUE_CALL__CALL:
-				setCall((Call)null);
-				return;
-			case CommonPackage.ENQUEUE_CALL__BINDINGS:
-				getBindings().clear();
-				return;
+		case CommonPackage.ENQUEUE_CALL__CALL:
+			setCall((Call) null);
+			return;
+		case CommonPackage.ENQUEUE_CALL__BINDINGS:
+			getBindings().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -206,10 +210,10 @@ public class EnqueueCallImpl extends ActionImpl implements EnqueueCall {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CommonPackage.ENQUEUE_CALL__CALL:
-				return call != null;
-			case CommonPackage.ENQUEUE_CALL__BINDINGS:
-				return bindings != null && !bindings.isEmpty();
+		case CommonPackage.ENQUEUE_CALL__CALL:
+			return call != null;
+		case CommonPackage.ENQUEUE_CALL__BINDINGS:
+			return bindings != null && !bindings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -102,6 +103,15 @@ public interface AutonomicPackage extends EPackage {
 	int SYMPTOM_FEATURE_COUNT = 3;
 
 	/**
+	 * The number of operations of the '<em>Symptom</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMPTOM_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link base.autonomic.impl.ChangeRequestImpl <em>Change Request</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,6 +147,15 @@ public interface AutonomicPackage extends EPackage {
 	 * @ordered
 	 */
 	int CHANGE_REQUEST_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Change Request</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_REQUEST_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link base.autonomic.impl.ChangePlanImpl <em>Change Plan</em>}' class.
@@ -184,6 +203,14 @@ public interface AutonomicPackage extends EPackage {
 	 */
 	int CHANGE_PLAN_FEATURE_COUNT = 3;
 
+	/**
+	 * The number of operations of the '<em>Change Plan</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_PLAN_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link base.autonomic.Symptom <em>Symptom</em>}'.
@@ -318,6 +345,7 @@ public interface AutonomicPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>

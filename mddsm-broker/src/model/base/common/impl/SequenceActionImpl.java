@@ -7,6 +7,7 @@ import base.common.CommonPackage;
 import base.common.SequenceAction;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -67,9 +68,10 @@ public class SequenceActionImpl extends ActionImpl implements SequenceAction {
 	 * @generated
 	 */
 	@Override
-	public EList<ActionExecution> getChildren() {
+	public List<ActionExecution> getChildren() {
 		if (children == null) {
-			children = new EObjectContainmentEList<ActionExecution>(ActionExecution.class, this, CommonPackage.SEQUENCE_ACTION__CHILDREN);
+			children = new EObjectContainmentEList<ActionExecution>(ActionExecution.class, this,
+					CommonPackage.SEQUENCE_ACTION__CHILDREN);
 		}
 		return children;
 	}
@@ -82,8 +84,8 @@ public class SequenceActionImpl extends ActionImpl implements SequenceAction {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CommonPackage.SEQUENCE_ACTION__CHILDREN:
-				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
+		case CommonPackage.SEQUENCE_ACTION__CHILDREN:
+			return ((InternalEList<?>) getChildren()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -96,8 +98,8 @@ public class SequenceActionImpl extends ActionImpl implements SequenceAction {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CommonPackage.SEQUENCE_ACTION__CHILDREN:
-				return getChildren();
+		case CommonPackage.SEQUENCE_ACTION__CHILDREN:
+			return getChildren();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -111,10 +113,10 @@ public class SequenceActionImpl extends ActionImpl implements SequenceAction {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CommonPackage.SEQUENCE_ACTION__CHILDREN:
-				getChildren().clear();
-				getChildren().addAll((Collection<? extends ActionExecution>)newValue);
-				return;
+		case CommonPackage.SEQUENCE_ACTION__CHILDREN:
+			getChildren().clear();
+			getChildren().addAll((Collection<? extends ActionExecution>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -127,9 +129,9 @@ public class SequenceActionImpl extends ActionImpl implements SequenceAction {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CommonPackage.SEQUENCE_ACTION__CHILDREN:
-				getChildren().clear();
-				return;
+		case CommonPackage.SEQUENCE_ACTION__CHILDREN:
+			getChildren().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -142,8 +144,8 @@ public class SequenceActionImpl extends ActionImpl implements SequenceAction {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CommonPackage.SEQUENCE_ACTION__CHILDREN:
-				return children != null && !children.isEmpty();
+		case CommonPackage.SEQUENCE_ACTION__CHILDREN:
+			return children != null && !children.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -95,8 +95,8 @@ public class MacroActionImpl extends ActionImpl implements MacroAction {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CommonPackage.MACRO_ACTION__IMPL:
-				return getImpl();
+		case CommonPackage.MACRO_ACTION__IMPL:
+			return getImpl();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -109,9 +109,9 @@ public class MacroActionImpl extends ActionImpl implements MacroAction {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CommonPackage.MACRO_ACTION__IMPL:
-				setImpl((String)newValue);
-				return;
+		case CommonPackage.MACRO_ACTION__IMPL:
+			setImpl((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -124,9 +124,9 @@ public class MacroActionImpl extends ActionImpl implements MacroAction {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CommonPackage.MACRO_ACTION__IMPL:
-				setImpl(IMPL_EDEFAULT);
-				return;
+		case CommonPackage.MACRO_ACTION__IMPL:
+			setImpl(IMPL_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -139,8 +139,8 @@ public class MacroActionImpl extends ActionImpl implements MacroAction {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CommonPackage.MACRO_ACTION__IMPL:
-				return IMPL_EDEFAULT == null ? impl != null : !IMPL_EDEFAULT.equals(impl);
+		case CommonPackage.MACRO_ACTION__IMPL:
+			return IMPL_EDEFAULT == null ? impl != null : !IMPL_EDEFAULT.equals(impl);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -152,7 +152,8 @@ public class MacroActionImpl extends ActionImpl implements MacroAction {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (impl: ");

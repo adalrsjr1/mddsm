@@ -79,11 +79,12 @@ public class PolicyEvaluationPointImpl extends EObjectImpl implements PolicyEval
 	@Override
 	public Signal getSignal() {
 		if (signal != null && signal.eIsProxy()) {
-			InternalEObject oldSignal = (InternalEObject)signal;
-			signal = (Signal)eResolveProxy(oldSignal);
+			InternalEObject oldSignal = (InternalEObject) signal;
+			signal = (Signal) eResolveProxy(oldSignal);
 			if (signal != oldSignal) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PolicyPackage.POLICY_EVALUATION_POINT__SIGNAL, oldSignal, signal));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							PolicyPackage.POLICY_EVALUATION_POINT__SIGNAL, oldSignal, signal));
 			}
 		}
 		return signal;
@@ -108,7 +109,8 @@ public class PolicyEvaluationPointImpl extends EObjectImpl implements PolicyEval
 		Signal oldSignal = signal;
 		signal = newSignal;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION_POINT__SIGNAL, oldSignal, signal));
+			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION_POINT__SIGNAL,
+					oldSignal, signal));
 	}
 
 	/**
@@ -130,8 +132,12 @@ public class PolicyEvaluationPointImpl extends EObjectImpl implements PolicyEval
 		PolicyEvaluationRequest oldRequest = request;
 		request = newRequest;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION_POINT__REQUEST, oldRequest, newRequest);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					PolicyPackage.POLICY_EVALUATION_POINT__REQUEST, oldRequest, newRequest);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -146,14 +152,17 @@ public class PolicyEvaluationPointImpl extends EObjectImpl implements PolicyEval
 		if (newRequest != request) {
 			NotificationChain msgs = null;
 			if (request != null)
-				msgs = ((InternalEObject)request).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY_EVALUATION_POINT__REQUEST, null, msgs);
+				msgs = ((InternalEObject) request).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY_EVALUATION_POINT__REQUEST, null, msgs);
 			if (newRequest != null)
-				msgs = ((InternalEObject)newRequest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY_EVALUATION_POINT__REQUEST, null, msgs);
+				msgs = ((InternalEObject) newRequest).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY_EVALUATION_POINT__REQUEST, null, msgs);
 			msgs = basicSetRequest(newRequest, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION_POINT__REQUEST, newRequest, newRequest));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION_POINT__REQUEST,
+					newRequest, newRequest));
 	}
 
 	/**
@@ -164,8 +173,8 @@ public class PolicyEvaluationPointImpl extends EObjectImpl implements PolicyEval
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_POINT__REQUEST:
-				return basicSetRequest(null, msgs);
+		case PolicyPackage.POLICY_EVALUATION_POINT__REQUEST:
+			return basicSetRequest(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -178,11 +187,12 @@ public class PolicyEvaluationPointImpl extends EObjectImpl implements PolicyEval
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_POINT__SIGNAL:
-				if (resolve) return getSignal();
-				return basicGetSignal();
-			case PolicyPackage.POLICY_EVALUATION_POINT__REQUEST:
-				return getRequest();
+		case PolicyPackage.POLICY_EVALUATION_POINT__SIGNAL:
+			if (resolve)
+				return getSignal();
+			return basicGetSignal();
+		case PolicyPackage.POLICY_EVALUATION_POINT__REQUEST:
+			return getRequest();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -195,12 +205,12 @@ public class PolicyEvaluationPointImpl extends EObjectImpl implements PolicyEval
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_POINT__SIGNAL:
-				setSignal((Signal)newValue);
-				return;
-			case PolicyPackage.POLICY_EVALUATION_POINT__REQUEST:
-				setRequest((PolicyEvaluationRequest)newValue);
-				return;
+		case PolicyPackage.POLICY_EVALUATION_POINT__SIGNAL:
+			setSignal((Signal) newValue);
+			return;
+		case PolicyPackage.POLICY_EVALUATION_POINT__REQUEST:
+			setRequest((PolicyEvaluationRequest) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -213,12 +223,12 @@ public class PolicyEvaluationPointImpl extends EObjectImpl implements PolicyEval
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_POINT__SIGNAL:
-				setSignal((Signal)null);
-				return;
-			case PolicyPackage.POLICY_EVALUATION_POINT__REQUEST:
-				setRequest((PolicyEvaluationRequest)null);
-				return;
+		case PolicyPackage.POLICY_EVALUATION_POINT__SIGNAL:
+			setSignal((Signal) null);
+			return;
+		case PolicyPackage.POLICY_EVALUATION_POINT__REQUEST:
+			setRequest((PolicyEvaluationRequest) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -231,10 +241,10 @@ public class PolicyEvaluationPointImpl extends EObjectImpl implements PolicyEval
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_POINT__SIGNAL:
-				return signal != null;
-			case PolicyPackage.POLICY_EVALUATION_POINT__REQUEST:
-				return request != null;
+		case PolicyPackage.POLICY_EVALUATION_POINT__SIGNAL:
+			return signal != null;
+		case PolicyPackage.POLICY_EVALUATION_POINT__REQUEST:
+			return request != null;
 		}
 		return super.eIsSet(featureID);
 	}

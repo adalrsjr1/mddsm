@@ -2,7 +2,7 @@
  */
 package base.common;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -39,7 +39,7 @@ public interface Interface extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Call> getProvides();
+	List<Call> getProvides();
 
 	/**
 	 * Returns the value of the '<em><b>Signals</b></em>' containment reference list.
@@ -55,7 +55,7 @@ public interface Interface extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Event> getSignals();
+	List<Event> getSignals();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

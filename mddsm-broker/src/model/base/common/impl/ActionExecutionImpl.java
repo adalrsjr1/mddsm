@@ -8,6 +8,7 @@ import base.common.CommonPackage;
 import base.common.ParameterBinding;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -84,11 +85,12 @@ public class ActionExecutionImpl extends ValueImpl implements ActionExecution {
 	@Override
 	public Action getAction() {
 		if (action != null && action.eIsProxy()) {
-			InternalEObject oldAction = (InternalEObject)action;
-			action = (Action)eResolveProxy(oldAction);
+			InternalEObject oldAction = (InternalEObject) action;
+			action = (Action) eResolveProxy(oldAction);
 			if (action != oldAction) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommonPackage.ACTION_EXECUTION__ACTION, oldAction, action));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommonPackage.ACTION_EXECUTION__ACTION,
+							oldAction, action));
 			}
 		}
 		return action;
@@ -113,7 +115,8 @@ public class ActionExecutionImpl extends ValueImpl implements ActionExecution {
 		Action oldAction = action;
 		action = newAction;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.ACTION_EXECUTION__ACTION, oldAction, action));
+			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.ACTION_EXECUTION__ACTION, oldAction,
+					action));
 	}
 
 	/**
@@ -122,9 +125,10 @@ public class ActionExecutionImpl extends ValueImpl implements ActionExecution {
 	 * @generated
 	 */
 	@Override
-	public EList<ParameterBinding> getBindings() {
+	public List<ParameterBinding> getBindings() {
 		if (bindings == null) {
-			bindings = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this, CommonPackage.ACTION_EXECUTION__BINDINGS);
+			bindings = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this,
+					CommonPackage.ACTION_EXECUTION__BINDINGS);
 		}
 		return bindings;
 	}
@@ -137,8 +141,8 @@ public class ActionExecutionImpl extends ValueImpl implements ActionExecution {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CommonPackage.ACTION_EXECUTION__BINDINGS:
-				return ((InternalEList<?>)getBindings()).basicRemove(otherEnd, msgs);
+		case CommonPackage.ACTION_EXECUTION__BINDINGS:
+			return ((InternalEList<?>) getBindings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -151,11 +155,12 @@ public class ActionExecutionImpl extends ValueImpl implements ActionExecution {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CommonPackage.ACTION_EXECUTION__ACTION:
-				if (resolve) return getAction();
-				return basicGetAction();
-			case CommonPackage.ACTION_EXECUTION__BINDINGS:
-				return getBindings();
+		case CommonPackage.ACTION_EXECUTION__ACTION:
+			if (resolve)
+				return getAction();
+			return basicGetAction();
+		case CommonPackage.ACTION_EXECUTION__BINDINGS:
+			return getBindings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,13 +174,13 @@ public class ActionExecutionImpl extends ValueImpl implements ActionExecution {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CommonPackage.ACTION_EXECUTION__ACTION:
-				setAction((Action)newValue);
-				return;
-			case CommonPackage.ACTION_EXECUTION__BINDINGS:
-				getBindings().clear();
-				getBindings().addAll((Collection<? extends ParameterBinding>)newValue);
-				return;
+		case CommonPackage.ACTION_EXECUTION__ACTION:
+			setAction((Action) newValue);
+			return;
+		case CommonPackage.ACTION_EXECUTION__BINDINGS:
+			getBindings().clear();
+			getBindings().addAll((Collection<? extends ParameterBinding>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -188,12 +193,12 @@ public class ActionExecutionImpl extends ValueImpl implements ActionExecution {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CommonPackage.ACTION_EXECUTION__ACTION:
-				setAction((Action)null);
-				return;
-			case CommonPackage.ACTION_EXECUTION__BINDINGS:
-				getBindings().clear();
-				return;
+		case CommonPackage.ACTION_EXECUTION__ACTION:
+			setAction((Action) null);
+			return;
+		case CommonPackage.ACTION_EXECUTION__BINDINGS:
+			getBindings().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -206,10 +211,10 @@ public class ActionExecutionImpl extends ValueImpl implements ActionExecution {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CommonPackage.ACTION_EXECUTION__ACTION:
-				return action != null;
-			case CommonPackage.ACTION_EXECUTION__BINDINGS:
-				return bindings != null && !bindings.isEmpty();
+		case CommonPackage.ACTION_EXECUTION__ACTION:
+			return action != null;
+		case CommonPackage.ACTION_EXECUTION__BINDINGS:
+			return bindings != null && !bindings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

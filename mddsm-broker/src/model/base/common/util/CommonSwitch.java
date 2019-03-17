@@ -66,127 +66,158 @@ public class CommonSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case CommonPackage.PARAMETER: {
-				Parameter parameter = (Parameter)theEObject;
-				T result = caseParameter(parameter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.SIGNAL: {
-				Signal signal = (Signal)theEObject;
-				T result = caseSignal(signal);
-				if (result == null) result = caseBindable(signal);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.EVENT: {
-				Event event = (Event)theEObject;
-				T result = caseEvent(event);
-				if (result == null) result = caseSignal(event);
-				if (result == null) result = caseBindable(event);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.CALL: {
-				Call call = (Call)theEObject;
-				T result = caseCall(call);
-				if (result == null) result = caseSignal(call);
-				if (result == null) result = caseBindable(call);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.INTERFACE: {
-				Interface interface_ = (Interface)theEObject;
-				T result = caseInterface(interface_);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.VALUE: {
-				Value value = (Value)theEObject;
-				T result = caseValue(value);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.SIGNAL_SOURCE: {
-				SignalSource signalSource = (SignalSource)theEObject;
-				T result = caseSignalSource(signalSource);
-				if (result == null) result = caseValue(signalSource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.PARAMETER_VALUE: {
-				ParameterValue parameterValue = (ParameterValue)theEObject;
-				T result = caseParameterValue(parameterValue);
-				if (result == null) result = caseValue(parameterValue);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.EXPRESSION_VALUE: {
-				ExpressionValue expressionValue = (ExpressionValue)theEObject;
-				T result = caseExpressionValue(expressionValue);
-				if (result == null) result = caseValue(expressionValue);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.ACTION: {
-				Action action = (Action)theEObject;
-				T result = caseAction(action);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.SEQUENCE_ACTION: {
-				SequenceAction sequenceAction = (SequenceAction)theEObject;
-				T result = caseSequenceAction(sequenceAction);
-				if (result == null) result = caseAction(sequenceAction);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.ENQUEUE_CALL: {
-				EnqueueCall enqueueCall = (EnqueueCall)theEObject;
-				T result = caseEnqueueCall(enqueueCall);
-				if (result == null) result = caseAction(enqueueCall);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.MACRO_ACTION: {
-				MacroAction macroAction = (MacroAction)theEObject;
-				T result = caseMacroAction(macroAction);
-				if (result == null) result = caseAction(macroAction);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.ACTION_EXECUTION: {
-				ActionExecution actionExecution = (ActionExecution)theEObject;
-				T result = caseActionExecution(actionExecution);
-				if (result == null) result = caseValue(actionExecution);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.PARAMETER_BINDING: {
-				ParameterBinding parameterBinding = (ParameterBinding)theEObject;
-				T result = caseParameterBinding(parameterBinding);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.CONDITION: {
-				Condition condition = (Condition)theEObject;
-				T result = caseCondition(condition);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.BINDING: {
-				Binding binding = (Binding)theEObject;
-				T result = caseBinding(binding);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommonPackage.BINDABLE: {
-				Bindable bindable = (Bindable)theEObject;
-				T result = caseBindable(bindable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case CommonPackage.PARAMETER: {
+			Parameter parameter = (Parameter) theEObject;
+			T result = caseParameter(parameter);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.SIGNAL: {
+			Signal signal = (Signal) theEObject;
+			T result = caseSignal(signal);
+			if (result == null)
+				result = caseBindable(signal);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.EVENT: {
+			Event event = (Event) theEObject;
+			T result = caseEvent(event);
+			if (result == null)
+				result = caseSignal(event);
+			if (result == null)
+				result = caseBindable(event);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.CALL: {
+			Call call = (Call) theEObject;
+			T result = caseCall(call);
+			if (result == null)
+				result = caseSignal(call);
+			if (result == null)
+				result = caseBindable(call);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.INTERFACE: {
+			Interface interface_ = (Interface) theEObject;
+			T result = caseInterface(interface_);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.VALUE: {
+			Value value = (Value) theEObject;
+			T result = caseValue(value);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.SIGNAL_SOURCE: {
+			SignalSource signalSource = (SignalSource) theEObject;
+			T result = caseSignalSource(signalSource);
+			if (result == null)
+				result = caseValue(signalSource);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.PARAMETER_VALUE: {
+			ParameterValue parameterValue = (ParameterValue) theEObject;
+			T result = caseParameterValue(parameterValue);
+			if (result == null)
+				result = caseValue(parameterValue);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.EXPRESSION_VALUE: {
+			ExpressionValue expressionValue = (ExpressionValue) theEObject;
+			T result = caseExpressionValue(expressionValue);
+			if (result == null)
+				result = caseValue(expressionValue);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.ACTION: {
+			Action action = (Action) theEObject;
+			T result = caseAction(action);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.SEQUENCE_ACTION: {
+			SequenceAction sequenceAction = (SequenceAction) theEObject;
+			T result = caseSequenceAction(sequenceAction);
+			if (result == null)
+				result = caseAction(sequenceAction);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.ENQUEUE_CALL: {
+			EnqueueCall enqueueCall = (EnqueueCall) theEObject;
+			T result = caseEnqueueCall(enqueueCall);
+			if (result == null)
+				result = caseAction(enqueueCall);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.MACRO_ACTION: {
+			MacroAction macroAction = (MacroAction) theEObject;
+			T result = caseMacroAction(macroAction);
+			if (result == null)
+				result = caseAction(macroAction);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.ACTION_EXECUTION: {
+			ActionExecution actionExecution = (ActionExecution) theEObject;
+			T result = caseActionExecution(actionExecution);
+			if (result == null)
+				result = caseValue(actionExecution);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.PARAMETER_BINDING: {
+			ParameterBinding parameterBinding = (ParameterBinding) theEObject;
+			T result = caseParameterBinding(parameterBinding);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.CONDITION: {
+			Condition condition = (Condition) theEObject;
+			T result = caseCondition(condition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.BINDING: {
+			Binding binding = (Binding) theEObject;
+			T result = caseBinding(binding);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CommonPackage.BINDABLE: {
+			Bindable bindable = (Bindable) theEObject;
+			T result = caseBindable(bindable);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

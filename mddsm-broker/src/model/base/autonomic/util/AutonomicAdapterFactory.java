@@ -54,7 +54,7 @@ public class AutonomicAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -65,25 +65,27 @@ public class AutonomicAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AutonomicSwitch<Adapter> modelSwitch =
-		new AutonomicSwitch<Adapter>() {
-			@Override
-			public Adapter caseSymptom(Symptom object) {
-				return createSymptomAdapter();
-			}
-			@Override
-			public Adapter caseChangeRequest(ChangeRequest object) {
-				return createChangeRequestAdapter();
-			}
-			@Override
-			public Adapter caseChangePlan(ChangePlan object) {
-				return createChangePlanAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected AutonomicSwitch<Adapter> modelSwitch = new AutonomicSwitch<Adapter>() {
+		@Override
+		public Adapter caseSymptom(Symptom object) {
+			return createSymptomAdapter();
+		}
+
+		@Override
+		public Adapter caseChangeRequest(ChangeRequest object) {
+			return createChangeRequestAdapter();
+		}
+
+		@Override
+		public Adapter caseChangePlan(ChangePlan object) {
+			return createChangePlanAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -95,9 +97,8 @@ public class AutonomicAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link base.autonomic.Symptom <em>Symptom</em>}'.

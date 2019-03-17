@@ -98,7 +98,8 @@ public class ChangeRequestImpl extends EObjectImpl implements ChangeRequest {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AutonomicPackage.CHANGE_REQUEST__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, AutonomicPackage.CHANGE_REQUEST__NAME, oldName,
+					name));
 	}
 
 	/**
@@ -109,11 +110,12 @@ public class ChangeRequestImpl extends EObjectImpl implements ChangeRequest {
 	@Override
 	public Symptom getBasedOn() {
 		if (basedOn != null && basedOn.eIsProxy()) {
-			InternalEObject oldBasedOn = (InternalEObject)basedOn;
-			basedOn = (Symptom)eResolveProxy(oldBasedOn);
+			InternalEObject oldBasedOn = (InternalEObject) basedOn;
+			basedOn = (Symptom) eResolveProxy(oldBasedOn);
 			if (basedOn != oldBasedOn) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AutonomicPackage.CHANGE_REQUEST__BASED_ON, oldBasedOn, basedOn));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AutonomicPackage.CHANGE_REQUEST__BASED_ON,
+							oldBasedOn, basedOn));
 			}
 		}
 		return basedOn;
@@ -138,7 +140,8 @@ public class ChangeRequestImpl extends EObjectImpl implements ChangeRequest {
 		Symptom oldBasedOn = basedOn;
 		basedOn = newBasedOn;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AutonomicPackage.CHANGE_REQUEST__BASED_ON, oldBasedOn, basedOn));
+			eNotify(new ENotificationImpl(this, Notification.SET, AutonomicPackage.CHANGE_REQUEST__BASED_ON, oldBasedOn,
+					basedOn));
 	}
 
 	/**
@@ -149,11 +152,12 @@ public class ChangeRequestImpl extends EObjectImpl implements ChangeRequest {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AutonomicPackage.CHANGE_REQUEST__NAME:
-				return getName();
-			case AutonomicPackage.CHANGE_REQUEST__BASED_ON:
-				if (resolve) return getBasedOn();
-				return basicGetBasedOn();
+		case AutonomicPackage.CHANGE_REQUEST__NAME:
+			return getName();
+		case AutonomicPackage.CHANGE_REQUEST__BASED_ON:
+			if (resolve)
+				return getBasedOn();
+			return basicGetBasedOn();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -166,12 +170,12 @@ public class ChangeRequestImpl extends EObjectImpl implements ChangeRequest {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AutonomicPackage.CHANGE_REQUEST__NAME:
-				setName((String)newValue);
-				return;
-			case AutonomicPackage.CHANGE_REQUEST__BASED_ON:
-				setBasedOn((Symptom)newValue);
-				return;
+		case AutonomicPackage.CHANGE_REQUEST__NAME:
+			setName((String) newValue);
+			return;
+		case AutonomicPackage.CHANGE_REQUEST__BASED_ON:
+			setBasedOn((Symptom) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -184,12 +188,12 @@ public class ChangeRequestImpl extends EObjectImpl implements ChangeRequest {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AutonomicPackage.CHANGE_REQUEST__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case AutonomicPackage.CHANGE_REQUEST__BASED_ON:
-				setBasedOn((Symptom)null);
-				return;
+		case AutonomicPackage.CHANGE_REQUEST__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case AutonomicPackage.CHANGE_REQUEST__BASED_ON:
+			setBasedOn((Symptom) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,10 +206,10 @@ public class ChangeRequestImpl extends EObjectImpl implements ChangeRequest {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AutonomicPackage.CHANGE_REQUEST__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case AutonomicPackage.CHANGE_REQUEST__BASED_ON:
-				return basedOn != null;
+		case AutonomicPackage.CHANGE_REQUEST__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case AutonomicPackage.CHANGE_REQUEST__BASED_ON:
+			return basedOn != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -217,7 +221,8 @@ public class ChangeRequestImpl extends EObjectImpl implements ChangeRequest {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

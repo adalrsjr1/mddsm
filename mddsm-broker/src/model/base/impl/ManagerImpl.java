@@ -16,6 +16,7 @@ import base.common.Interface;
 import base.metadata.Feature;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -201,7 +202,7 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 	 * @generated
 	 */
 	@Override
-	public EList<Feature> getFeatures() {
+	public List<Feature> getFeatures() {
 		if (features == null) {
 			features = new EObjectContainmentEList<Feature>(Feature.class, this, BasePackage.MANAGER__FEATURES);
 		}
@@ -227,8 +228,12 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 		Interface oldIface = iface;
 		iface = newIface;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.MANAGER__IFACE, oldIface, newIface);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.MANAGER__IFACE,
+					oldIface, newIface);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -243,13 +248,15 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 		if (newIface != iface) {
 			NotificationChain msgs = null;
 			if (iface != null)
-				msgs = ((InternalEObject)iface).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__IFACE, null, msgs);
+				msgs = ((InternalEObject) iface).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__IFACE, null, msgs);
 			if (newIface != null)
-				msgs = ((InternalEObject)newIface).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__IFACE, null, msgs);
+				msgs = ((InternalEObject) newIface).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__IFACE, null, msgs);
 			msgs = basicSetIface(newIface, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MANAGER__IFACE, newIface, newIface));
 	}
 
@@ -259,7 +266,7 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 	 * @generated
 	 */
 	@Override
-	public EList<Action> getActions() {
+	public List<Action> getActions() {
 		if (actions == null) {
 			actions = new EObjectContainmentEList<Action>(Action.class, this, BasePackage.MANAGER__ACTIONS);
 		}
@@ -272,7 +279,7 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 	 * @generated
 	 */
 	@Override
-	public EList<Handler> getHandlers() {
+	public List<Handler> getHandlers() {
 		if (handlers == null) {
 			handlers = new EObjectContainmentEList<Handler>(Handler.class, this, BasePackage.MANAGER__HANDLERS);
 		}
@@ -298,8 +305,12 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 		StateManager oldStateManager = stateManager;
 		stateManager = newStateManager;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.MANAGER__STATE_MANAGER, oldStateManager, newStateManager);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					BasePackage.MANAGER__STATE_MANAGER, oldStateManager, newStateManager);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -314,14 +325,17 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 		if (newStateManager != stateManager) {
 			NotificationChain msgs = null;
 			if (stateManager != null)
-				msgs = ((InternalEObject)stateManager).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__STATE_MANAGER, null, msgs);
+				msgs = ((InternalEObject) stateManager).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__STATE_MANAGER, null, msgs);
 			if (newStateManager != null)
-				msgs = ((InternalEObject)newStateManager).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__STATE_MANAGER, null, msgs);
+				msgs = ((InternalEObject) newStateManager).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__STATE_MANAGER, null, msgs);
 			msgs = basicSetStateManager(newStateManager, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MANAGER__STATE_MANAGER, newStateManager, newStateManager));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MANAGER__STATE_MANAGER, newStateManager,
+					newStateManager));
 	}
 
 	/**
@@ -343,8 +357,12 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 		ResourceManager oldResourceManager = resourceManager;
 		resourceManager = newResourceManager;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.MANAGER__RESOURCE_MANAGER, oldResourceManager, newResourceManager);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					BasePackage.MANAGER__RESOURCE_MANAGER, oldResourceManager, newResourceManager);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -359,14 +377,17 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 		if (newResourceManager != resourceManager) {
 			NotificationChain msgs = null;
 			if (resourceManager != null)
-				msgs = ((InternalEObject)resourceManager).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__RESOURCE_MANAGER, null, msgs);
+				msgs = ((InternalEObject) resourceManager).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__RESOURCE_MANAGER, null, msgs);
 			if (newResourceManager != null)
-				msgs = ((InternalEObject)newResourceManager).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__RESOURCE_MANAGER, null, msgs);
+				msgs = ((InternalEObject) newResourceManager).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__RESOURCE_MANAGER, null, msgs);
 			msgs = basicSetResourceManager(newResourceManager, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MANAGER__RESOURCE_MANAGER, newResourceManager, newResourceManager));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MANAGER__RESOURCE_MANAGER,
+					newResourceManager, newResourceManager));
 	}
 
 	/**
@@ -388,8 +409,12 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 		AutonomicManager oldAutonomicManager = autonomicManager;
 		autonomicManager = newAutonomicManager;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.MANAGER__AUTONOMIC_MANAGER, oldAutonomicManager, newAutonomicManager);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					BasePackage.MANAGER__AUTONOMIC_MANAGER, oldAutonomicManager, newAutonomicManager);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -404,14 +429,17 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 		if (newAutonomicManager != autonomicManager) {
 			NotificationChain msgs = null;
 			if (autonomicManager != null)
-				msgs = ((InternalEObject)autonomicManager).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__AUTONOMIC_MANAGER, null, msgs);
+				msgs = ((InternalEObject) autonomicManager).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__AUTONOMIC_MANAGER, null, msgs);
 			if (newAutonomicManager != null)
-				msgs = ((InternalEObject)newAutonomicManager).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__AUTONOMIC_MANAGER, null, msgs);
+				msgs = ((InternalEObject) newAutonomicManager).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__AUTONOMIC_MANAGER, null, msgs);
 			msgs = basicSetAutonomicManager(newAutonomicManager, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MANAGER__AUTONOMIC_MANAGER, newAutonomicManager, newAutonomicManager));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MANAGER__AUTONOMIC_MANAGER,
+					newAutonomicManager, newAutonomicManager));
 	}
 
 	/**
@@ -433,8 +461,12 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 		PolicyManager oldPolicyManager = policyManager;
 		policyManager = newPolicyManager;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasePackage.MANAGER__POLICY_MANAGER, oldPolicyManager, newPolicyManager);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					BasePackage.MANAGER__POLICY_MANAGER, oldPolicyManager, newPolicyManager);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -449,14 +481,17 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 		if (newPolicyManager != policyManager) {
 			NotificationChain msgs = null;
 			if (policyManager != null)
-				msgs = ((InternalEObject)policyManager).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__POLICY_MANAGER, null, msgs);
+				msgs = ((InternalEObject) policyManager).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__POLICY_MANAGER, null, msgs);
 			if (newPolicyManager != null)
-				msgs = ((InternalEObject)newPolicyManager).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__POLICY_MANAGER, null, msgs);
+				msgs = ((InternalEObject) newPolicyManager).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - BasePackage.MANAGER__POLICY_MANAGER, null, msgs);
 			msgs = basicSetPolicyManager(newPolicyManager, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MANAGER__POLICY_MANAGER, newPolicyManager, newPolicyManager));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.MANAGER__POLICY_MANAGER, newPolicyManager,
+					newPolicyManager));
 	}
 
 	/**
@@ -467,22 +502,22 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasePackage.MANAGER__FEATURES:
-				return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
-			case BasePackage.MANAGER__IFACE:
-				return basicSetIface(null, msgs);
-			case BasePackage.MANAGER__ACTIONS:
-				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
-			case BasePackage.MANAGER__HANDLERS:
-				return ((InternalEList<?>)getHandlers()).basicRemove(otherEnd, msgs);
-			case BasePackage.MANAGER__STATE_MANAGER:
-				return basicSetStateManager(null, msgs);
-			case BasePackage.MANAGER__RESOURCE_MANAGER:
-				return basicSetResourceManager(null, msgs);
-			case BasePackage.MANAGER__AUTONOMIC_MANAGER:
-				return basicSetAutonomicManager(null, msgs);
-			case BasePackage.MANAGER__POLICY_MANAGER:
-				return basicSetPolicyManager(null, msgs);
+		case BasePackage.MANAGER__FEATURES:
+			return ((InternalEList<?>) getFeatures()).basicRemove(otherEnd, msgs);
+		case BasePackage.MANAGER__IFACE:
+			return basicSetIface(null, msgs);
+		case BasePackage.MANAGER__ACTIONS:
+			return ((InternalEList<?>) getActions()).basicRemove(otherEnd, msgs);
+		case BasePackage.MANAGER__HANDLERS:
+			return ((InternalEList<?>) getHandlers()).basicRemove(otherEnd, msgs);
+		case BasePackage.MANAGER__STATE_MANAGER:
+			return basicSetStateManager(null, msgs);
+		case BasePackage.MANAGER__RESOURCE_MANAGER:
+			return basicSetResourceManager(null, msgs);
+		case BasePackage.MANAGER__AUTONOMIC_MANAGER:
+			return basicSetAutonomicManager(null, msgs);
+		case BasePackage.MANAGER__POLICY_MANAGER:
+			return basicSetPolicyManager(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -495,24 +530,24 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasePackage.MANAGER__NAME:
-				return getName();
-			case BasePackage.MANAGER__FEATURES:
-				return getFeatures();
-			case BasePackage.MANAGER__IFACE:
-				return getIface();
-			case BasePackage.MANAGER__ACTIONS:
-				return getActions();
-			case BasePackage.MANAGER__HANDLERS:
-				return getHandlers();
-			case BasePackage.MANAGER__STATE_MANAGER:
-				return getStateManager();
-			case BasePackage.MANAGER__RESOURCE_MANAGER:
-				return getResourceManager();
-			case BasePackage.MANAGER__AUTONOMIC_MANAGER:
-				return getAutonomicManager();
-			case BasePackage.MANAGER__POLICY_MANAGER:
-				return getPolicyManager();
+		case BasePackage.MANAGER__NAME:
+			return getName();
+		case BasePackage.MANAGER__FEATURES:
+			return getFeatures();
+		case BasePackage.MANAGER__IFACE:
+			return getIface();
+		case BasePackage.MANAGER__ACTIONS:
+			return getActions();
+		case BasePackage.MANAGER__HANDLERS:
+			return getHandlers();
+		case BasePackage.MANAGER__STATE_MANAGER:
+			return getStateManager();
+		case BasePackage.MANAGER__RESOURCE_MANAGER:
+			return getResourceManager();
+		case BasePackage.MANAGER__AUTONOMIC_MANAGER:
+			return getAutonomicManager();
+		case BasePackage.MANAGER__POLICY_MANAGER:
+			return getPolicyManager();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -526,36 +561,36 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasePackage.MANAGER__NAME:
-				setName((String)newValue);
-				return;
-			case BasePackage.MANAGER__FEATURES:
-				getFeatures().clear();
-				getFeatures().addAll((Collection<? extends Feature>)newValue);
-				return;
-			case BasePackage.MANAGER__IFACE:
-				setIface((Interface)newValue);
-				return;
-			case BasePackage.MANAGER__ACTIONS:
-				getActions().clear();
-				getActions().addAll((Collection<? extends Action>)newValue);
-				return;
-			case BasePackage.MANAGER__HANDLERS:
-				getHandlers().clear();
-				getHandlers().addAll((Collection<? extends Handler>)newValue);
-				return;
-			case BasePackage.MANAGER__STATE_MANAGER:
-				setStateManager((StateManager)newValue);
-				return;
-			case BasePackage.MANAGER__RESOURCE_MANAGER:
-				setResourceManager((ResourceManager)newValue);
-				return;
-			case BasePackage.MANAGER__AUTONOMIC_MANAGER:
-				setAutonomicManager((AutonomicManager)newValue);
-				return;
-			case BasePackage.MANAGER__POLICY_MANAGER:
-				setPolicyManager((PolicyManager)newValue);
-				return;
+		case BasePackage.MANAGER__NAME:
+			setName((String) newValue);
+			return;
+		case BasePackage.MANAGER__FEATURES:
+			getFeatures().clear();
+			getFeatures().addAll((Collection<? extends Feature>) newValue);
+			return;
+		case BasePackage.MANAGER__IFACE:
+			setIface((Interface) newValue);
+			return;
+		case BasePackage.MANAGER__ACTIONS:
+			getActions().clear();
+			getActions().addAll((Collection<? extends Action>) newValue);
+			return;
+		case BasePackage.MANAGER__HANDLERS:
+			getHandlers().clear();
+			getHandlers().addAll((Collection<? extends Handler>) newValue);
+			return;
+		case BasePackage.MANAGER__STATE_MANAGER:
+			setStateManager((StateManager) newValue);
+			return;
+		case BasePackage.MANAGER__RESOURCE_MANAGER:
+			setResourceManager((ResourceManager) newValue);
+			return;
+		case BasePackage.MANAGER__AUTONOMIC_MANAGER:
+			setAutonomicManager((AutonomicManager) newValue);
+			return;
+		case BasePackage.MANAGER__POLICY_MANAGER:
+			setPolicyManager((PolicyManager) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -568,33 +603,33 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasePackage.MANAGER__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case BasePackage.MANAGER__FEATURES:
-				getFeatures().clear();
-				return;
-			case BasePackage.MANAGER__IFACE:
-				setIface((Interface)null);
-				return;
-			case BasePackage.MANAGER__ACTIONS:
-				getActions().clear();
-				return;
-			case BasePackage.MANAGER__HANDLERS:
-				getHandlers().clear();
-				return;
-			case BasePackage.MANAGER__STATE_MANAGER:
-				setStateManager((StateManager)null);
-				return;
-			case BasePackage.MANAGER__RESOURCE_MANAGER:
-				setResourceManager((ResourceManager)null);
-				return;
-			case BasePackage.MANAGER__AUTONOMIC_MANAGER:
-				setAutonomicManager((AutonomicManager)null);
-				return;
-			case BasePackage.MANAGER__POLICY_MANAGER:
-				setPolicyManager((PolicyManager)null);
-				return;
+		case BasePackage.MANAGER__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case BasePackage.MANAGER__FEATURES:
+			getFeatures().clear();
+			return;
+		case BasePackage.MANAGER__IFACE:
+			setIface((Interface) null);
+			return;
+		case BasePackage.MANAGER__ACTIONS:
+			getActions().clear();
+			return;
+		case BasePackage.MANAGER__HANDLERS:
+			getHandlers().clear();
+			return;
+		case BasePackage.MANAGER__STATE_MANAGER:
+			setStateManager((StateManager) null);
+			return;
+		case BasePackage.MANAGER__RESOURCE_MANAGER:
+			setResourceManager((ResourceManager) null);
+			return;
+		case BasePackage.MANAGER__AUTONOMIC_MANAGER:
+			setAutonomicManager((AutonomicManager) null);
+			return;
+		case BasePackage.MANAGER__POLICY_MANAGER:
+			setPolicyManager((PolicyManager) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -607,24 +642,24 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasePackage.MANAGER__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case BasePackage.MANAGER__FEATURES:
-				return features != null && !features.isEmpty();
-			case BasePackage.MANAGER__IFACE:
-				return iface != null;
-			case BasePackage.MANAGER__ACTIONS:
-				return actions != null && !actions.isEmpty();
-			case BasePackage.MANAGER__HANDLERS:
-				return handlers != null && !handlers.isEmpty();
-			case BasePackage.MANAGER__STATE_MANAGER:
-				return stateManager != null;
-			case BasePackage.MANAGER__RESOURCE_MANAGER:
-				return resourceManager != null;
-			case BasePackage.MANAGER__AUTONOMIC_MANAGER:
-				return autonomicManager != null;
-			case BasePackage.MANAGER__POLICY_MANAGER:
-				return policyManager != null;
+		case BasePackage.MANAGER__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case BasePackage.MANAGER__FEATURES:
+			return features != null && !features.isEmpty();
+		case BasePackage.MANAGER__IFACE:
+			return iface != null;
+		case BasePackage.MANAGER__ACTIONS:
+			return actions != null && !actions.isEmpty();
+		case BasePackage.MANAGER__HANDLERS:
+			return handlers != null && !handlers.isEmpty();
+		case BasePackage.MANAGER__STATE_MANAGER:
+			return stateManager != null;
+		case BasePackage.MANAGER__RESOURCE_MANAGER:
+			return resourceManager != null;
+		case BasePackage.MANAGER__AUTONOMIC_MANAGER:
+			return autonomicManager != null;
+		case BasePackage.MANAGER__POLICY_MANAGER:
+			return policyManager != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -636,7 +671,8 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

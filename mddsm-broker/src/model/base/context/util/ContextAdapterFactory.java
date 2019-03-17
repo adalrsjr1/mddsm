@@ -56,7 +56,7 @@ public class ContextAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -67,25 +67,27 @@ public class ContextAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ContextSwitch<Adapter> modelSwitch =
-		new ContextSwitch<Adapter>() {
-			@Override
-			public Adapter caseState(State object) {
-				return createStateAdapter();
-			}
-			@Override
-			public Adapter caseProperty(Property object) {
-				return createPropertyAdapter();
-			}
-			@Override
-			public Adapter caseBindable(Bindable object) {
-				return createBindableAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected ContextSwitch<Adapter> modelSwitch = new ContextSwitch<Adapter>() {
+		@Override
+		public Adapter caseState(State object) {
+			return createStateAdapter();
+		}
+
+		@Override
+		public Adapter caseProperty(Property object) {
+			return createPropertyAdapter();
+		}
+
+		@Override
+		public Adapter caseBindable(Bindable object) {
+			return createBindableAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -97,9 +99,8 @@ public class ContextAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link base.context.State <em>State</em>}'.

@@ -2,7 +2,7 @@
  */
 package base.metadata;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -65,7 +65,7 @@ public interface Feature extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Attribute> getAttributes();
+	List<Attribute> getAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Sub Features</b></em>' containment reference list.
@@ -81,6 +81,6 @@ public interface Feature extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Feature> getSubFeatures();
+	List<Feature> getSubFeatures();
 
 } // Feature

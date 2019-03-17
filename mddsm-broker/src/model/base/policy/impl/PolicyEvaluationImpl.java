@@ -10,6 +10,7 @@ import base.policy.PolicyEvaluationContext;
 import base.policy.PolicyPackage;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -109,8 +110,12 @@ public class PolicyEvaluationImpl extends EObjectImpl implements PolicyEvaluatio
 		Value oldFeature = feature;
 		feature = newFeature;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION__FEATURE, oldFeature, newFeature);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					PolicyPackage.POLICY_EVALUATION__FEATURE, oldFeature, newFeature);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -125,14 +130,17 @@ public class PolicyEvaluationImpl extends EObjectImpl implements PolicyEvaluatio
 		if (newFeature != feature) {
 			NotificationChain msgs = null;
 			if (feature != null)
-				msgs = ((InternalEObject)feature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY_EVALUATION__FEATURE, null, msgs);
+				msgs = ((InternalEObject) feature).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY_EVALUATION__FEATURE, null, msgs);
 			if (newFeature != null)
-				msgs = ((InternalEObject)newFeature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY_EVALUATION__FEATURE, null, msgs);
+				msgs = ((InternalEObject) newFeature).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY_EVALUATION__FEATURE, null, msgs);
 			msgs = basicSetFeature(newFeature, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION__FEATURE, newFeature, newFeature));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION__FEATURE, newFeature,
+					newFeature));
 	}
 
 	/**
@@ -141,9 +149,10 @@ public class PolicyEvaluationImpl extends EObjectImpl implements PolicyEvaluatio
 	 * @generated
 	 */
 	@Override
-	public EList<ParameterBinding> getContextBinding() {
+	public List<ParameterBinding> getContextBinding() {
 		if (contextBinding == null) {
-			contextBinding = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this, PolicyPackage.POLICY_EVALUATION__CONTEXT_BINDING);
+			contextBinding = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this,
+					PolicyPackage.POLICY_EVALUATION__CONTEXT_BINDING);
 		}
 		return contextBinding;
 	}
@@ -167,8 +176,12 @@ public class PolicyEvaluationImpl extends EObjectImpl implements PolicyEvaluatio
 		PolicyEvaluationContext oldContext = context;
 		context = newContext;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION__CONTEXT, oldContext, newContext);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					PolicyPackage.POLICY_EVALUATION__CONTEXT, oldContext, newContext);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -183,14 +196,17 @@ public class PolicyEvaluationImpl extends EObjectImpl implements PolicyEvaluatio
 		if (newContext != context) {
 			NotificationChain msgs = null;
 			if (context != null)
-				msgs = ((InternalEObject)context).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY_EVALUATION__CONTEXT, null, msgs);
+				msgs = ((InternalEObject) context).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY_EVALUATION__CONTEXT, null, msgs);
 			if (newContext != null)
-				msgs = ((InternalEObject)newContext).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY_EVALUATION__CONTEXT, null, msgs);
+				msgs = ((InternalEObject) newContext).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY_EVALUATION__CONTEXT, null, msgs);
 			msgs = basicSetContext(newContext, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION__CONTEXT, newContext, newContext));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION__CONTEXT, newContext,
+					newContext));
 	}
 
 	/**
@@ -201,12 +217,12 @@ public class PolicyEvaluationImpl extends EObjectImpl implements PolicyEvaluatio
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION__FEATURE:
-				return basicSetFeature(null, msgs);
-			case PolicyPackage.POLICY_EVALUATION__CONTEXT_BINDING:
-				return ((InternalEList<?>)getContextBinding()).basicRemove(otherEnd, msgs);
-			case PolicyPackage.POLICY_EVALUATION__CONTEXT:
-				return basicSetContext(null, msgs);
+		case PolicyPackage.POLICY_EVALUATION__FEATURE:
+			return basicSetFeature(null, msgs);
+		case PolicyPackage.POLICY_EVALUATION__CONTEXT_BINDING:
+			return ((InternalEList<?>) getContextBinding()).basicRemove(otherEnd, msgs);
+		case PolicyPackage.POLICY_EVALUATION__CONTEXT:
+			return basicSetContext(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -219,12 +235,12 @@ public class PolicyEvaluationImpl extends EObjectImpl implements PolicyEvaluatio
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION__FEATURE:
-				return getFeature();
-			case PolicyPackage.POLICY_EVALUATION__CONTEXT_BINDING:
-				return getContextBinding();
-			case PolicyPackage.POLICY_EVALUATION__CONTEXT:
-				return getContext();
+		case PolicyPackage.POLICY_EVALUATION__FEATURE:
+			return getFeature();
+		case PolicyPackage.POLICY_EVALUATION__CONTEXT_BINDING:
+			return getContextBinding();
+		case PolicyPackage.POLICY_EVALUATION__CONTEXT:
+			return getContext();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -238,16 +254,16 @@ public class PolicyEvaluationImpl extends EObjectImpl implements PolicyEvaluatio
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION__FEATURE:
-				setFeature((Value)newValue);
-				return;
-			case PolicyPackage.POLICY_EVALUATION__CONTEXT_BINDING:
-				getContextBinding().clear();
-				getContextBinding().addAll((Collection<? extends ParameterBinding>)newValue);
-				return;
-			case PolicyPackage.POLICY_EVALUATION__CONTEXT:
-				setContext((PolicyEvaluationContext)newValue);
-				return;
+		case PolicyPackage.POLICY_EVALUATION__FEATURE:
+			setFeature((Value) newValue);
+			return;
+		case PolicyPackage.POLICY_EVALUATION__CONTEXT_BINDING:
+			getContextBinding().clear();
+			getContextBinding().addAll((Collection<? extends ParameterBinding>) newValue);
+			return;
+		case PolicyPackage.POLICY_EVALUATION__CONTEXT:
+			setContext((PolicyEvaluationContext) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -260,15 +276,15 @@ public class PolicyEvaluationImpl extends EObjectImpl implements PolicyEvaluatio
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION__FEATURE:
-				setFeature((Value)null);
-				return;
-			case PolicyPackage.POLICY_EVALUATION__CONTEXT_BINDING:
-				getContextBinding().clear();
-				return;
-			case PolicyPackage.POLICY_EVALUATION__CONTEXT:
-				setContext((PolicyEvaluationContext)null);
-				return;
+		case PolicyPackage.POLICY_EVALUATION__FEATURE:
+			setFeature((Value) null);
+			return;
+		case PolicyPackage.POLICY_EVALUATION__CONTEXT_BINDING:
+			getContextBinding().clear();
+			return;
+		case PolicyPackage.POLICY_EVALUATION__CONTEXT:
+			setContext((PolicyEvaluationContext) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -281,12 +297,12 @@ public class PolicyEvaluationImpl extends EObjectImpl implements PolicyEvaluatio
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION__FEATURE:
-				return feature != null;
-			case PolicyPackage.POLICY_EVALUATION__CONTEXT_BINDING:
-				return contextBinding != null && !contextBinding.isEmpty();
-			case PolicyPackage.POLICY_EVALUATION__CONTEXT:
-				return context != null;
+		case PolicyPackage.POLICY_EVALUATION__FEATURE:
+			return feature != null;
+		case PolicyPackage.POLICY_EVALUATION__CONTEXT_BINDING:
+			return contextBinding != null && !contextBinding.isEmpty();
+		case PolicyPackage.POLICY_EVALUATION__CONTEXT:
+			return context != null;
 		}
 		return super.eIsSet(featureID);
 	}

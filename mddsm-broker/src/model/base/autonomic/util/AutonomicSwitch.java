@@ -66,25 +66,29 @@ public class AutonomicSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case AutonomicPackage.SYMPTOM: {
-				Symptom symptom = (Symptom)theEObject;
-				T result = caseSymptom(symptom);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AutonomicPackage.CHANGE_REQUEST: {
-				ChangeRequest changeRequest = (ChangeRequest)theEObject;
-				T result = caseChangeRequest(changeRequest);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AutonomicPackage.CHANGE_PLAN: {
-				ChangePlan changePlan = (ChangePlan)theEObject;
-				T result = caseChangePlan(changePlan);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case AutonomicPackage.SYMPTOM: {
+			Symptom symptom = (Symptom) theEObject;
+			T result = caseSymptom(symptom);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case AutonomicPackage.CHANGE_REQUEST: {
+			ChangeRequest changeRequest = (ChangeRequest) theEObject;
+			T result = caseChangeRequest(changeRequest);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case AutonomicPackage.CHANGE_PLAN: {
+			ChangePlan changePlan = (ChangePlan) theEObject;
+			T result = caseChangePlan(changePlan);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

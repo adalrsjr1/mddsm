@@ -10,6 +10,7 @@ import base.policy.PolicyEvaluationHandler;
 import base.policy.PolicyEvaluationPoint;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -94,9 +95,10 @@ public class PolicyManagerImpl extends EObjectImpl implements PolicyManager {
 	 * @generated
 	 */
 	@Override
-	public EList<PolicyEvaluationPoint> getPoints() {
+	public List<PolicyEvaluationPoint> getPoints() {
 		if (points == null) {
-			points = new EObjectContainmentEList<PolicyEvaluationPoint>(PolicyEvaluationPoint.class, this, BasePackage.POLICY_MANAGER__POINTS);
+			points = new EObjectContainmentEList<PolicyEvaluationPoint>(PolicyEvaluationPoint.class, this,
+					BasePackage.POLICY_MANAGER__POINTS);
 		}
 		return points;
 	}
@@ -107,9 +109,10 @@ public class PolicyManagerImpl extends EObjectImpl implements PolicyManager {
 	 * @generated
 	 */
 	@Override
-	public EList<PolicyEvaluationHandler> getHandlers() {
+	public List<PolicyEvaluationHandler> getHandlers() {
 		if (handlers == null) {
-			handlers = new EObjectContainmentEList<PolicyEvaluationHandler>(PolicyEvaluationHandler.class, this, BasePackage.POLICY_MANAGER__HANDLERS);
+			handlers = new EObjectContainmentEList<PolicyEvaluationHandler>(PolicyEvaluationHandler.class, this,
+					BasePackage.POLICY_MANAGER__HANDLERS);
 		}
 		return handlers;
 	}
@@ -120,7 +123,7 @@ public class PolicyManagerImpl extends EObjectImpl implements PolicyManager {
 	 * @generated
 	 */
 	@Override
-	public EList<Policy> getPolicies() {
+	public List<Policy> getPolicies() {
 		if (policies == null) {
 			policies = new EObjectContainmentEList<Policy>(Policy.class, this, BasePackage.POLICY_MANAGER__POLICIES);
 		}
@@ -135,12 +138,12 @@ public class PolicyManagerImpl extends EObjectImpl implements PolicyManager {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasePackage.POLICY_MANAGER__POINTS:
-				return ((InternalEList<?>)getPoints()).basicRemove(otherEnd, msgs);
-			case BasePackage.POLICY_MANAGER__HANDLERS:
-				return ((InternalEList<?>)getHandlers()).basicRemove(otherEnd, msgs);
-			case BasePackage.POLICY_MANAGER__POLICIES:
-				return ((InternalEList<?>)getPolicies()).basicRemove(otherEnd, msgs);
+		case BasePackage.POLICY_MANAGER__POINTS:
+			return ((InternalEList<?>) getPoints()).basicRemove(otherEnd, msgs);
+		case BasePackage.POLICY_MANAGER__HANDLERS:
+			return ((InternalEList<?>) getHandlers()).basicRemove(otherEnd, msgs);
+		case BasePackage.POLICY_MANAGER__POLICIES:
+			return ((InternalEList<?>) getPolicies()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -153,12 +156,12 @@ public class PolicyManagerImpl extends EObjectImpl implements PolicyManager {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasePackage.POLICY_MANAGER__POINTS:
-				return getPoints();
-			case BasePackage.POLICY_MANAGER__HANDLERS:
-				return getHandlers();
-			case BasePackage.POLICY_MANAGER__POLICIES:
-				return getPolicies();
+		case BasePackage.POLICY_MANAGER__POINTS:
+			return getPoints();
+		case BasePackage.POLICY_MANAGER__HANDLERS:
+			return getHandlers();
+		case BasePackage.POLICY_MANAGER__POLICIES:
+			return getPolicies();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -172,18 +175,18 @@ public class PolicyManagerImpl extends EObjectImpl implements PolicyManager {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasePackage.POLICY_MANAGER__POINTS:
-				getPoints().clear();
-				getPoints().addAll((Collection<? extends PolicyEvaluationPoint>)newValue);
-				return;
-			case BasePackage.POLICY_MANAGER__HANDLERS:
-				getHandlers().clear();
-				getHandlers().addAll((Collection<? extends PolicyEvaluationHandler>)newValue);
-				return;
-			case BasePackage.POLICY_MANAGER__POLICIES:
-				getPolicies().clear();
-				getPolicies().addAll((Collection<? extends Policy>)newValue);
-				return;
+		case BasePackage.POLICY_MANAGER__POINTS:
+			getPoints().clear();
+			getPoints().addAll((Collection<? extends PolicyEvaluationPoint>) newValue);
+			return;
+		case BasePackage.POLICY_MANAGER__HANDLERS:
+			getHandlers().clear();
+			getHandlers().addAll((Collection<? extends PolicyEvaluationHandler>) newValue);
+			return;
+		case BasePackage.POLICY_MANAGER__POLICIES:
+			getPolicies().clear();
+			getPolicies().addAll((Collection<? extends Policy>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -196,15 +199,15 @@ public class PolicyManagerImpl extends EObjectImpl implements PolicyManager {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasePackage.POLICY_MANAGER__POINTS:
-				getPoints().clear();
-				return;
-			case BasePackage.POLICY_MANAGER__HANDLERS:
-				getHandlers().clear();
-				return;
-			case BasePackage.POLICY_MANAGER__POLICIES:
-				getPolicies().clear();
-				return;
+		case BasePackage.POLICY_MANAGER__POINTS:
+			getPoints().clear();
+			return;
+		case BasePackage.POLICY_MANAGER__HANDLERS:
+			getHandlers().clear();
+			return;
+		case BasePackage.POLICY_MANAGER__POLICIES:
+			getPolicies().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -217,12 +220,12 @@ public class PolicyManagerImpl extends EObjectImpl implements PolicyManager {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasePackage.POLICY_MANAGER__POINTS:
-				return points != null && !points.isEmpty();
-			case BasePackage.POLICY_MANAGER__HANDLERS:
-				return handlers != null && !handlers.isEmpty();
-			case BasePackage.POLICY_MANAGER__POLICIES:
-				return policies != null && !policies.isEmpty();
+		case BasePackage.POLICY_MANAGER__POINTS:
+			return points != null && !points.isEmpty();
+		case BasePackage.POLICY_MANAGER__HANDLERS:
+			return handlers != null && !handlers.isEmpty();
+		case BasePackage.POLICY_MANAGER__POLICIES:
+			return policies != null && !policies.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -27,12 +27,11 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 */
 	public static BaseFactory init() {
 		try {
-			BaseFactory theBaseFactory = (BaseFactory)EPackage.Registry.INSTANCE.getEFactory(BasePackage.eNS_URI);
+			BaseFactory theBaseFactory = (BaseFactory) EPackage.Registry.INSTANCE.getEFactory(BasePackage.eNS_URI);
 			if (theBaseFactory != null) {
 				return theBaseFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new BaseFactoryImpl();
@@ -56,15 +55,22 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case BasePackage.MANAGER: return createManager();
-			case BasePackage.STATE_MANAGER: return createStateManager();
-			case BasePackage.AUTONOMIC_MANAGER: return createAutonomicManager();
-			case BasePackage.POLICY_MANAGER: return createPolicyManager();
-			case BasePackage.HANDLER: return createHandler();
-			case BasePackage.INSTANCE_RESOURCE_MANAGER: return createInstanceResourceManager();
-			case BasePackage.INSTANCE: return createInstance();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case BasePackage.MANAGER:
+			return createManager();
+		case BasePackage.STATE_MANAGER:
+			return createStateManager();
+		case BasePackage.AUTONOMIC_MANAGER:
+			return createAutonomicManager();
+		case BasePackage.POLICY_MANAGER:
+			return createPolicyManager();
+		case BasePackage.HANDLER:
+			return createHandler();
+		case BasePackage.INSTANCE_RESOURCE_MANAGER:
+			return createInstanceResourceManager();
+		case BasePackage.INSTANCE:
+			return createInstance();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -152,7 +158,7 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 */
 	@Override
 	public BasePackage getBasePackage() {
-		return (BasePackage)getEPackage();
+		return (BasePackage) getEPackage();
 	}
 
 	/**

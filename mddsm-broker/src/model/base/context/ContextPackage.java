@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -113,6 +114,15 @@ public interface ContextPackage extends EPackage {
 	int STATE_FEATURE_COUNT = CommonPackage.BINDABLE_FEATURE_COUNT + 4;
 
 	/**
+	 * The number of operations of the '<em>State</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_OPERATION_COUNT = CommonPackage.BINDABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link base.context.impl.PropertyImpl <em>Property</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -140,6 +150,14 @@ public interface ContextPackage extends EPackage {
 	 */
 	int PROPERTY_FEATURE_COUNT = 1;
 
+	/**
+	 * The number of operations of the '<em>Property</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link base.context.State <em>State</em>}'.
@@ -231,6 +249,7 @@ public interface ContextPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>

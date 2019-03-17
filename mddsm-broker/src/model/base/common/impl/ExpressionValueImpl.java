@@ -84,7 +84,8 @@ public class ExpressionValueImpl extends ValueImpl implements ExpressionValue {
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.EXPRESSION_VALUE__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.EXPRESSION_VALUE__VALUE, oldValue,
+					value));
 	}
 
 	/**
@@ -95,8 +96,8 @@ public class ExpressionValueImpl extends ValueImpl implements ExpressionValue {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CommonPackage.EXPRESSION_VALUE__VALUE:
-				return getValue();
+		case CommonPackage.EXPRESSION_VALUE__VALUE:
+			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -109,9 +110,9 @@ public class ExpressionValueImpl extends ValueImpl implements ExpressionValue {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CommonPackage.EXPRESSION_VALUE__VALUE:
-				setValue((String)newValue);
-				return;
+		case CommonPackage.EXPRESSION_VALUE__VALUE:
+			setValue((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -124,9 +125,9 @@ public class ExpressionValueImpl extends ValueImpl implements ExpressionValue {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CommonPackage.EXPRESSION_VALUE__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
+		case CommonPackage.EXPRESSION_VALUE__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -139,8 +140,8 @@ public class ExpressionValueImpl extends ValueImpl implements ExpressionValue {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CommonPackage.EXPRESSION_VALUE__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+		case CommonPackage.EXPRESSION_VALUE__VALUE:
+			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -152,7 +153,8 @@ public class ExpressionValueImpl extends ValueImpl implements ExpressionValue {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (value: ");

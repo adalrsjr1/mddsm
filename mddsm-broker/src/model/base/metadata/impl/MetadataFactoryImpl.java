@@ -27,12 +27,12 @@ public class MetadataFactoryImpl extends EFactoryImpl implements MetadataFactory
 	 */
 	public static MetadataFactory init() {
 		try {
-			MetadataFactory theMetadataFactory = (MetadataFactory)EPackage.Registry.INSTANCE.getEFactory(MetadataPackage.eNS_URI);
+			MetadataFactory theMetadataFactory = (MetadataFactory) EPackage.Registry.INSTANCE
+					.getEFactory(MetadataPackage.eNS_URI);
 			if (theMetadataFactory != null) {
 				return theMetadataFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new MetadataFactoryImpl();
@@ -56,10 +56,12 @@ public class MetadataFactoryImpl extends EFactoryImpl implements MetadataFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case MetadataPackage.FEATURE: return createFeature();
-			case MetadataPackage.ATTRIBUTE: return createAttribute();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case MetadataPackage.FEATURE:
+			return createFeature();
+		case MetadataPackage.ATTRIBUTE:
+			return createAttribute();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -92,7 +94,7 @@ public class MetadataFactoryImpl extends EFactoryImpl implements MetadataFactory
 	 */
 	@Override
 	public MetadataPackage getMetadataPackage() {
-		return (MetadataPackage)getEPackage();
+		return (MetadataPackage) getEPackage();
 	}
 
 	/**

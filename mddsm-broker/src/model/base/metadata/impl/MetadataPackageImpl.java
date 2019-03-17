@@ -102,25 +102,38 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 * @generated
 	 */
 	public static MetadataPackage init() {
-		if (isInited) return (MetadataPackage)EPackage.Registry.INSTANCE.getEPackage(MetadataPackage.eNS_URI);
+		if (isInited)
+			return (MetadataPackage) EPackage.Registry.INSTANCE.getEPackage(MetadataPackage.eNS_URI);
 
 		// Obtain or create and register package
 		Object registeredMetadataPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		MetadataPackageImpl theMetadataPackage = registeredMetadataPackage instanceof MetadataPackageImpl ? (MetadataPackageImpl)registeredMetadataPackage : new MetadataPackageImpl();
+		MetadataPackageImpl theMetadataPackage = registeredMetadataPackage instanceof MetadataPackageImpl
+				? (MetadataPackageImpl) registeredMetadataPackage
+				: new MetadataPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI);
-		BasePackageImpl theBasePackage = (BasePackageImpl)(registeredPackage instanceof BasePackageImpl ? registeredPackage : BasePackage.eINSTANCE);
+		BasePackageImpl theBasePackage = (BasePackageImpl) (registeredPackage instanceof BasePackageImpl
+				? registeredPackage
+				: BasePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
-		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
+		ContextPackageImpl theContextPackage = (ContextPackageImpl) (registeredPackage instanceof ContextPackageImpl
+				? registeredPackage
+				: ContextPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AutonomicPackage.eNS_URI);
-		AutonomicPackageImpl theAutonomicPackage = (AutonomicPackageImpl)(registeredPackage instanceof AutonomicPackageImpl ? registeredPackage : AutonomicPackage.eINSTANCE);
+		AutonomicPackageImpl theAutonomicPackage = (AutonomicPackageImpl) (registeredPackage instanceof AutonomicPackageImpl
+				? registeredPackage
+				: AutonomicPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PolicyPackage.eNS_URI);
-		PolicyPackageImpl thePolicyPackage = (PolicyPackageImpl)(registeredPackage instanceof PolicyPackageImpl ? registeredPackage : PolicyPackage.eINSTANCE);
+		PolicyPackageImpl thePolicyPackage = (PolicyPackageImpl) (registeredPackage instanceof PolicyPackageImpl
+				? registeredPackage
+				: PolicyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
-		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl) (registeredPackage instanceof CommonPackageImpl
+				? registeredPackage
+				: CommonPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theMetadataPackage.createPackageContents();
@@ -163,7 +176,7 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 */
 	@Override
 	public EAttribute getFeature_Name() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) featureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -173,7 +186,7 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 */
 	@Override
 	public EReference getFeature_Attributes() {
-		return (EReference)featureEClass.getEStructuralFeatures().get(1);
+		return (EReference) featureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -183,7 +196,7 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 */
 	@Override
 	public EReference getFeature_SubFeatures() {
-		return (EReference)featureEClass.getEStructuralFeatures().get(2);
+		return (EReference) featureEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -203,7 +216,7 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 */
 	@Override
 	public EAttribute getAnnotable_Name() {
-		return (EAttribute)annotableEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) annotableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -213,7 +226,7 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 */
 	@Override
 	public EReference getAnnotable_Features() {
-		return (EReference)annotableEClass.getEStructuralFeatures().get(1);
+		return (EReference) annotableEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -233,7 +246,7 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 */
 	@Override
 	public EAttribute getAttribute_Name() {
-		return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) attributeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -243,7 +256,7 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 */
 	@Override
 	public EAttribute getAttribute_Value() {
-		return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) attributeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -253,7 +266,7 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 */
 	@Override
 	public MetadataFactory getMetadataFactory() {
-		return (MetadataFactory)getEFactoryInstance();
+		return (MetadataFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -271,7 +284,8 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -304,7 +318,8 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -318,19 +333,31 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 
 		// Add supertypes to classes
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFeature_Name(), ecorePackage.getEString(), "name", null, 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeature_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeature_SubFeatures(), this.getFeature(), null, "subFeatures", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeature_Name(), ecorePackage.getEString(), "name", null, 1, 1, Feature.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeature_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Feature.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeature_SubFeatures(), this.getFeature(), null, "subFeatures", null, 0, -1, Feature.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(annotableEClass, Annotable.class, "Annotable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAnnotable_Name(), ecorePackage.getEString(), "name", null, 1, 1, Annotable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAnnotable_Features(), this.getFeature(), null, "features", null, 0, -1, Annotable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(annotableEClass, Annotable.class, "Annotable", IS_ABSTRACT, IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAnnotable_Name(), ecorePackage.getEString(), "name", null, 1, 1, Annotable.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnnotable_Features(), this.getFeature(), null, "features", null, 0, -1, Annotable.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAttribute_Value(), ecorePackage.getEString(), "value", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 1, 1, Attribute.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttribute_Value(), ecorePackage.getEString(), "value", null, 1, 1, Attribute.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //MetadataPackageImpl

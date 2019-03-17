@@ -134,25 +134,38 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 * @generated
 	 */
 	public static PolicyPackage init() {
-		if (isInited) return (PolicyPackage)EPackage.Registry.INSTANCE.getEPackage(PolicyPackage.eNS_URI);
+		if (isInited)
+			return (PolicyPackage) EPackage.Registry.INSTANCE.getEPackage(PolicyPackage.eNS_URI);
 
 		// Obtain or create and register package
 		Object registeredPolicyPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		PolicyPackageImpl thePolicyPackage = registeredPolicyPackage instanceof PolicyPackageImpl ? (PolicyPackageImpl)registeredPolicyPackage : new PolicyPackageImpl();
+		PolicyPackageImpl thePolicyPackage = registeredPolicyPackage instanceof PolicyPackageImpl
+				? (PolicyPackageImpl) registeredPolicyPackage
+				: new PolicyPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI);
-		BasePackageImpl theBasePackage = (BasePackageImpl)(registeredPackage instanceof BasePackageImpl ? registeredPackage : BasePackage.eINSTANCE);
+		BasePackageImpl theBasePackage = (BasePackageImpl) (registeredPackage instanceof BasePackageImpl
+				? registeredPackage
+				: BasePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
-		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
+		ContextPackageImpl theContextPackage = (ContextPackageImpl) (registeredPackage instanceof ContextPackageImpl
+				? registeredPackage
+				: ContextPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MetadataPackage.eNS_URI);
-		MetadataPackageImpl theMetadataPackage = (MetadataPackageImpl)(registeredPackage instanceof MetadataPackageImpl ? registeredPackage : MetadataPackage.eINSTANCE);
+		MetadataPackageImpl theMetadataPackage = (MetadataPackageImpl) (registeredPackage instanceof MetadataPackageImpl
+				? registeredPackage
+				: MetadataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AutonomicPackage.eNS_URI);
-		AutonomicPackageImpl theAutonomicPackage = (AutonomicPackageImpl)(registeredPackage instanceof AutonomicPackageImpl ? registeredPackage : AutonomicPackage.eINSTANCE);
+		AutonomicPackageImpl theAutonomicPackage = (AutonomicPackageImpl) (registeredPackage instanceof AutonomicPackageImpl
+				? registeredPackage
+				: AutonomicPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
-		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl) (registeredPackage instanceof CommonPackageImpl
+				? registeredPackage
+				: CommonPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		thePolicyPackage.createPackageContents();
@@ -195,7 +208,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EReference getPolicyEvaluationPoint_Signal() {
-		return (EReference)policyEvaluationPointEClass.getEStructuralFeatures().get(0);
+		return (EReference) policyEvaluationPointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -205,7 +218,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EReference getPolicyEvaluationPoint_Request() {
-		return (EReference)policyEvaluationPointEClass.getEStructuralFeatures().get(1);
+		return (EReference) policyEvaluationPointEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -225,7 +238,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EReference getPolicyEvaluationRequest_Handler() {
-		return (EReference)policyEvaluationRequestEClass.getEStructuralFeatures().get(0);
+		return (EReference) policyEvaluationRequestEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -235,7 +248,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EReference getPolicyEvaluationRequest_Bindings() {
-		return (EReference)policyEvaluationRequestEClass.getEStructuralFeatures().get(1);
+		return (EReference) policyEvaluationRequestEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -255,7 +268,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EReference getPolicyEvaluationHandler_Parameters() {
-		return (EReference)policyEvaluationHandlerEClass.getEStructuralFeatures().get(0);
+		return (EReference) policyEvaluationHandlerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -265,7 +278,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EAttribute getPolicyEvaluationHandler_HandlerImpl() {
-		return (EAttribute)policyEvaluationHandlerEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) policyEvaluationHandlerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -275,7 +288,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EReference getPolicyEvaluationHandler_Evaluation() {
-		return (EReference)policyEvaluationHandlerEClass.getEStructuralFeatures().get(2);
+		return (EReference) policyEvaluationHandlerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -295,7 +308,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EReference getPolicyEvaluationContext_Parameters() {
-		return (EReference)policyEvaluationContextEClass.getEStructuralFeatures().get(0);
+		return (EReference) policyEvaluationContextEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -315,7 +328,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EReference getPolicyEvaluation_Feature() {
-		return (EReference)policyEvaluationEClass.getEStructuralFeatures().get(0);
+		return (EReference) policyEvaluationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -325,7 +338,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EReference getPolicyEvaluation_ContextBinding() {
-		return (EReference)policyEvaluationEClass.getEStructuralFeatures().get(1);
+		return (EReference) policyEvaluationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -335,7 +348,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EReference getPolicyEvaluation_Context() {
-		return (EReference)policyEvaluationEClass.getEStructuralFeatures().get(2);
+		return (EReference) policyEvaluationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -355,7 +368,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EAttribute getPolicy_Name() {
-		return (EAttribute)policyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) policyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -365,7 +378,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EAttribute getPolicy_BusinessValue() {
-		return (EAttribute)policyEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) policyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -375,7 +388,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EAttribute getPolicy_Feature() {
-		return (EAttribute)policyEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) policyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -385,7 +398,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EReference getPolicy_Decision() {
-		return (EReference)policyEClass.getEStructuralFeatures().get(3);
+		return (EReference) policyEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -405,7 +418,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EAttribute getPolicyDecision_Parameter() {
-		return (EAttribute)policyDecisionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) policyDecisionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -415,7 +428,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EAttribute getPolicyDecision_Operation() {
-		return (EAttribute)policyDecisionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) policyDecisionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -425,7 +438,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public EAttribute getPolicyDecision_Value() {
-		return (EAttribute)policyDecisionEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) policyDecisionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -435,7 +448,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 */
 	@Override
 	public PolicyFactory getPolicyFactory() {
-		return (PolicyFactory)getEFactoryInstance();
+		return (PolicyFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -453,7 +466,8 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -505,7 +519,8 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -514,7 +529,7 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		CommonPackage theCommonPackage = (CommonPackage)EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackage theCommonPackage = (CommonPackage) EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -522,38 +537,77 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 
 		// Add supertypes to classes
 
-		// Initialize classes and features; add operations and parameters
-		initEClass(policyEvaluationPointEClass, PolicyEvaluationPoint.class, "PolicyEvaluationPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPolicyEvaluationPoint_Signal(), theCommonPackage.getSignal(), null, "signal", null, 1, 1, PolicyEvaluationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPolicyEvaluationPoint_Request(), this.getPolicyEvaluationRequest(), null, "request", null, 1, 1, PolicyEvaluationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		// Initialize classes, features, and operations; add parameters
+		initEClass(policyEvaluationPointEClass, PolicyEvaluationPoint.class, "PolicyEvaluationPoint", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPolicyEvaluationPoint_Signal(), theCommonPackage.getSignal(), null, "signal", null, 1, 1,
+				PolicyEvaluationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPolicyEvaluationPoint_Request(), this.getPolicyEvaluationRequest(), null, "request", null, 1,
+				1, PolicyEvaluationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(policyEvaluationRequestEClass, PolicyEvaluationRequest.class, "PolicyEvaluationRequest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPolicyEvaluationRequest_Handler(), this.getPolicyEvaluationHandler(), null, "handler", null, 1, 1, PolicyEvaluationRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPolicyEvaluationRequest_Bindings(), theCommonPackage.getParameterBinding(), null, "bindings", null, 0, -1, PolicyEvaluationRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(policyEvaluationRequestEClass, PolicyEvaluationRequest.class, "PolicyEvaluationRequest",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPolicyEvaluationRequest_Handler(), this.getPolicyEvaluationHandler(), null, "handler", null,
+				1, 1, PolicyEvaluationRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPolicyEvaluationRequest_Bindings(), theCommonPackage.getParameterBinding(), null, "bindings",
+				null, 0, -1, PolicyEvaluationRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(policyEvaluationHandlerEClass, PolicyEvaluationHandler.class, "PolicyEvaluationHandler", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPolicyEvaluationHandler_Parameters(), theCommonPackage.getParameter(), null, "parameters", null, 0, -1, PolicyEvaluationHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPolicyEvaluationHandler_HandlerImpl(), ecorePackage.getEString(), "handlerImpl", null, 1, 1, PolicyEvaluationHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPolicyEvaluationHandler_Evaluation(), this.getPolicyEvaluation(), null, "evaluation", null, 1, 1, PolicyEvaluationHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(policyEvaluationHandlerEClass, PolicyEvaluationHandler.class, "PolicyEvaluationHandler",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPolicyEvaluationHandler_Parameters(), theCommonPackage.getParameter(), null, "parameters",
+				null, 0, -1, PolicyEvaluationHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPolicyEvaluationHandler_HandlerImpl(), ecorePackage.getEString(), "handlerImpl", null, 1, 1,
+				PolicyEvaluationHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPolicyEvaluationHandler_Evaluation(), this.getPolicyEvaluation(), null, "evaluation", null, 1,
+				1, PolicyEvaluationHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(policyEvaluationContextEClass, PolicyEvaluationContext.class, "PolicyEvaluationContext", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPolicyEvaluationContext_Parameters(), theCommonPackage.getParameter(), null, "parameters", null, 0, -1, PolicyEvaluationContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(policyEvaluationContextEClass, PolicyEvaluationContext.class, "PolicyEvaluationContext",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPolicyEvaluationContext_Parameters(), theCommonPackage.getParameter(), null, "parameters",
+				null, 0, -1, PolicyEvaluationContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(policyEvaluationEClass, PolicyEvaluation.class, "PolicyEvaluation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPolicyEvaluation_Feature(), theCommonPackage.getValue(), null, "feature", null, 1, 1, PolicyEvaluation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPolicyEvaluation_ContextBinding(), theCommonPackage.getParameterBinding(), null, "contextBinding", null, 0, -1, PolicyEvaluation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPolicyEvaluation_Context(), this.getPolicyEvaluationContext(), null, "context", null, 1, 1, PolicyEvaluation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(policyEvaluationEClass, PolicyEvaluation.class, "PolicyEvaluation", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPolicyEvaluation_Feature(), theCommonPackage.getValue(), null, "feature", null, 1, 1,
+				PolicyEvaluation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPolicyEvaluation_ContextBinding(), theCommonPackage.getParameterBinding(), null,
+				"contextBinding", null, 0, -1, PolicyEvaluation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPolicyEvaluation_Context(), this.getPolicyEvaluationContext(), null, "context", null, 1, 1,
+				PolicyEvaluation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(policyEClass, Policy.class, "Policy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPolicy_Name(), ecorePackage.getEString(), "name", null, 1, 1, Policy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPolicy_BusinessValue(), ecorePackage.getEIntegerObject(), "businessValue", null, 1, 1, Policy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPolicy_Feature(), ecorePackage.getEString(), "feature", null, 1, 1, Policy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPolicy_Decision(), this.getPolicyDecision(), null, "decision", null, 1, 1, Policy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPolicy_Name(), ecorePackage.getEString(), "name", null, 1, 1, Policy.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPolicy_BusinessValue(), ecorePackage.getEIntegerObject(), "businessValue", null, 1, 1,
+				Policy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPolicy_Feature(), ecorePackage.getEString(), "feature", null, 1, 1, Policy.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPolicy_Decision(), this.getPolicyDecision(), null, "decision", null, 1, 1, Policy.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(policyDecisionEClass, PolicyDecision.class, "PolicyDecision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPolicyDecision_Parameter(), ecorePackage.getEString(), "parameter", null, 1, 1, PolicyDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPolicyDecision_Operation(), ecorePackage.getEString(), "operation", null, 1, 1, PolicyDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPolicyDecision_Value(), ecorePackage.getEString(), "value", null, 1, 1, PolicyDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(policyDecisionEClass, PolicyDecision.class, "PolicyDecision", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPolicyDecision_Parameter(), ecorePackage.getEString(), "parameter", null, 1, 1,
+				PolicyDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPolicyDecision_Operation(), ecorePackage.getEString(), "operation", null, 1, 1,
+				PolicyDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPolicyDecision_Value(), ecorePackage.getEString(), "value", null, 1, 1, PolicyDecision.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //PolicyPackageImpl

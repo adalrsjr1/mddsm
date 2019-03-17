@@ -68,58 +68,70 @@ public class BaseSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case BasePackage.MANAGER: {
-				Manager manager = (Manager)theEObject;
-				T result = caseManager(manager);
-				if (result == null) result = caseAnnotable(manager);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BasePackage.RESOURCE_MANAGER: {
-				ResourceManager resourceManager = (ResourceManager)theEObject;
-				T result = caseResourceManager(resourceManager);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BasePackage.STATE_MANAGER: {
-				StateManager stateManager = (StateManager)theEObject;
-				T result = caseStateManager(stateManager);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BasePackage.AUTONOMIC_MANAGER: {
-				AutonomicManager autonomicManager = (AutonomicManager)theEObject;
-				T result = caseAutonomicManager(autonomicManager);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BasePackage.POLICY_MANAGER: {
-				PolicyManager policyManager = (PolicyManager)theEObject;
-				T result = casePolicyManager(policyManager);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BasePackage.HANDLER: {
-				Handler handler = (Handler)theEObject;
-				T result = caseHandler(handler);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BasePackage.INSTANCE_RESOURCE_MANAGER: {
-				InstanceResourceManager instanceResourceManager = (InstanceResourceManager)theEObject;
-				T result = caseInstanceResourceManager(instanceResourceManager);
-				if (result == null) result = caseResourceManager(instanceResourceManager);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BasePackage.INSTANCE: {
-				Instance instance = (Instance)theEObject;
-				T result = caseInstance(instance);
-				if (result == null) result = caseAnnotable(instance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case BasePackage.MANAGER: {
+			Manager manager = (Manager) theEObject;
+			T result = caseManager(manager);
+			if (result == null)
+				result = caseAnnotable(manager);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case BasePackage.RESOURCE_MANAGER: {
+			ResourceManager resourceManager = (ResourceManager) theEObject;
+			T result = caseResourceManager(resourceManager);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case BasePackage.STATE_MANAGER: {
+			StateManager stateManager = (StateManager) theEObject;
+			T result = caseStateManager(stateManager);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case BasePackage.AUTONOMIC_MANAGER: {
+			AutonomicManager autonomicManager = (AutonomicManager) theEObject;
+			T result = caseAutonomicManager(autonomicManager);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case BasePackage.POLICY_MANAGER: {
+			PolicyManager policyManager = (PolicyManager) theEObject;
+			T result = casePolicyManager(policyManager);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case BasePackage.HANDLER: {
+			Handler handler = (Handler) theEObject;
+			T result = caseHandler(handler);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case BasePackage.INSTANCE_RESOURCE_MANAGER: {
+			InstanceResourceManager instanceResourceManager = (InstanceResourceManager) theEObject;
+			T result = caseInstanceResourceManager(instanceResourceManager);
+			if (result == null)
+				result = caseResourceManager(instanceResourceManager);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case BasePackage.INSTANCE: {
+			Instance instance = (Instance) theEObject;
+			T result = caseInstance(instance);
+			if (result == null)
+				result = caseAnnotable(instance);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

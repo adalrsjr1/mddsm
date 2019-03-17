@@ -8,6 +8,7 @@ import base.common.Event;
 import base.common.Interface;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -104,7 +105,7 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 * @generated
 	 */
 	@Override
-	public EList<Call> getProvides() {
+	public List<Call> getProvides() {
 		if (provides == null) {
 			provides = new EObjectContainmentEList<Call>(Call.class, this, CommonPackage.INTERFACE__PROVIDES);
 		}
@@ -117,7 +118,7 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 * @generated
 	 */
 	@Override
-	public EList<Event> getSignals() {
+	public List<Event> getSignals() {
 		if (signals == null) {
 			signals = new EObjectContainmentEList<Event>(Event.class, this, CommonPackage.INTERFACE__SIGNALS);
 		}
@@ -155,10 +156,10 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CommonPackage.INTERFACE__PROVIDES:
-				return ((InternalEList<?>)getProvides()).basicRemove(otherEnd, msgs);
-			case CommonPackage.INTERFACE__SIGNALS:
-				return ((InternalEList<?>)getSignals()).basicRemove(otherEnd, msgs);
+		case CommonPackage.INTERFACE__PROVIDES:
+			return ((InternalEList<?>) getProvides()).basicRemove(otherEnd, msgs);
+		case CommonPackage.INTERFACE__SIGNALS:
+			return ((InternalEList<?>) getSignals()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -171,12 +172,12 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CommonPackage.INTERFACE__PROVIDES:
-				return getProvides();
-			case CommonPackage.INTERFACE__SIGNALS:
-				return getSignals();
-			case CommonPackage.INTERFACE__NAME:
-				return getName();
+		case CommonPackage.INTERFACE__PROVIDES:
+			return getProvides();
+		case CommonPackage.INTERFACE__SIGNALS:
+			return getSignals();
+		case CommonPackage.INTERFACE__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -190,17 +191,17 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CommonPackage.INTERFACE__PROVIDES:
-				getProvides().clear();
-				getProvides().addAll((Collection<? extends Call>)newValue);
-				return;
-			case CommonPackage.INTERFACE__SIGNALS:
-				getSignals().clear();
-				getSignals().addAll((Collection<? extends Event>)newValue);
-				return;
-			case CommonPackage.INTERFACE__NAME:
-				setName((String)newValue);
-				return;
+		case CommonPackage.INTERFACE__PROVIDES:
+			getProvides().clear();
+			getProvides().addAll((Collection<? extends Call>) newValue);
+			return;
+		case CommonPackage.INTERFACE__SIGNALS:
+			getSignals().clear();
+			getSignals().addAll((Collection<? extends Event>) newValue);
+			return;
+		case CommonPackage.INTERFACE__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -213,15 +214,15 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CommonPackage.INTERFACE__PROVIDES:
-				getProvides().clear();
-				return;
-			case CommonPackage.INTERFACE__SIGNALS:
-				getSignals().clear();
-				return;
-			case CommonPackage.INTERFACE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		case CommonPackage.INTERFACE__PROVIDES:
+			getProvides().clear();
+			return;
+		case CommonPackage.INTERFACE__SIGNALS:
+			getSignals().clear();
+			return;
+		case CommonPackage.INTERFACE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -234,12 +235,12 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CommonPackage.INTERFACE__PROVIDES:
-				return provides != null && !provides.isEmpty();
-			case CommonPackage.INTERFACE__SIGNALS:
-				return signals != null && !signals.isEmpty();
-			case CommonPackage.INTERFACE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case CommonPackage.INTERFACE__PROVIDES:
+			return provides != null && !provides.isEmpty();
+		case CommonPackage.INTERFACE__SIGNALS:
+			return signals != null && !signals.isEmpty();
+		case CommonPackage.INTERFACE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -251,7 +252,8 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (Name: ");

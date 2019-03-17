@@ -4,7 +4,7 @@ package base;
 
 import base.context.State;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -39,6 +39,6 @@ public interface StateManager extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<State> getStateTypes();
+	List<State> getStateTypes();
 
 } // StateManager

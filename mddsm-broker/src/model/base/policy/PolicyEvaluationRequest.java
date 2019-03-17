@@ -4,7 +4,7 @@ package base.policy;
 
 import base.common.ParameterBinding;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -66,6 +66,6 @@ public interface PolicyEvaluationRequest extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ParameterBinding> getBindings();
+	List<ParameterBinding> getBindings();
 
 } // PolicyEvaluationRequest

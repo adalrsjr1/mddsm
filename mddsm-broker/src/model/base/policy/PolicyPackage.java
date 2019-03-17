@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -93,6 +94,15 @@ public interface PolicyPackage extends EPackage {
 	int POLICY_EVALUATION_POINT_FEATURE_COUNT = 2;
 
 	/**
+	 * The number of operations of the '<em>Evaluation Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLICY_EVALUATION_POINT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link base.policy.impl.PolicyEvaluationRequestImpl <em>Evaluation Request</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -128,6 +138,15 @@ public interface PolicyPackage extends EPackage {
 	 * @ordered
 	 */
 	int POLICY_EVALUATION_REQUEST_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Evaluation Request</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLICY_EVALUATION_REQUEST_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link base.policy.impl.PolicyEvaluationHandlerImpl <em>Evaluation Handler</em>}' class.
@@ -176,6 +195,15 @@ public interface PolicyPackage extends EPackage {
 	int POLICY_EVALUATION_HANDLER_FEATURE_COUNT = 3;
 
 	/**
+	 * The number of operations of the '<em>Evaluation Handler</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLICY_EVALUATION_HANDLER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link base.policy.impl.PolicyEvaluationContextImpl <em>Evaluation Context</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -202,6 +230,15 @@ public interface PolicyPackage extends EPackage {
 	 * @ordered
 	 */
 	int POLICY_EVALUATION_CONTEXT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Evaluation Context</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLICY_EVALUATION_CONTEXT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link base.policy.impl.PolicyEvaluationImpl <em>Evaluation</em>}' class.
@@ -248,6 +285,15 @@ public interface PolicyPackage extends EPackage {
 	 * @ordered
 	 */
 	int POLICY_EVALUATION_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Evaluation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLICY_EVALUATION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link base.policy.impl.PolicyImpl <em>Policy</em>}' class.
@@ -305,6 +351,15 @@ public interface PolicyPackage extends EPackage {
 	int POLICY_FEATURE_COUNT = 4;
 
 	/**
+	 * The number of operations of the '<em>Policy</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLICY_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link base.policy.impl.PolicyDecisionImpl <em>Decision</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -350,6 +405,14 @@ public interface PolicyPackage extends EPackage {
 	 */
 	int POLICY_DECISION_FEATURE_COUNT = 3;
 
+	/**
+	 * The number of operations of the '<em>Decision</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLICY_DECISION_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link base.policy.PolicyEvaluationPoint <em>Evaluation Point</em>}'.
@@ -634,6 +697,7 @@ public interface PolicyPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>

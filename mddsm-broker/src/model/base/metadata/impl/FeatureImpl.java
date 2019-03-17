@@ -7,6 +7,7 @@ import base.metadata.Feature;
 import base.metadata.MetadataPackage;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -126,9 +127,10 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 	 * @generated
 	 */
 	@Override
-	public EList<Attribute> getAttributes() {
+	public List<Attribute> getAttributes() {
 		if (attributes == null) {
-			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, MetadataPackage.FEATURE__ATTRIBUTES);
+			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this,
+					MetadataPackage.FEATURE__ATTRIBUTES);
 		}
 		return attributes;
 	}
@@ -139,9 +141,10 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 	 * @generated
 	 */
 	@Override
-	public EList<Feature> getSubFeatures() {
+	public List<Feature> getSubFeatures() {
 		if (subFeatures == null) {
-			subFeatures = new EObjectContainmentEList<Feature>(Feature.class, this, MetadataPackage.FEATURE__SUB_FEATURES);
+			subFeatures = new EObjectContainmentEList<Feature>(Feature.class, this,
+					MetadataPackage.FEATURE__SUB_FEATURES);
 		}
 		return subFeatures;
 	}
@@ -154,10 +157,10 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MetadataPackage.FEATURE__ATTRIBUTES:
-				return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
-			case MetadataPackage.FEATURE__SUB_FEATURES:
-				return ((InternalEList<?>)getSubFeatures()).basicRemove(otherEnd, msgs);
+		case MetadataPackage.FEATURE__ATTRIBUTES:
+			return ((InternalEList<?>) getAttributes()).basicRemove(otherEnd, msgs);
+		case MetadataPackage.FEATURE__SUB_FEATURES:
+			return ((InternalEList<?>) getSubFeatures()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -170,12 +173,12 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MetadataPackage.FEATURE__NAME:
-				return getName();
-			case MetadataPackage.FEATURE__ATTRIBUTES:
-				return getAttributes();
-			case MetadataPackage.FEATURE__SUB_FEATURES:
-				return getSubFeatures();
+		case MetadataPackage.FEATURE__NAME:
+			return getName();
+		case MetadataPackage.FEATURE__ATTRIBUTES:
+			return getAttributes();
+		case MetadataPackage.FEATURE__SUB_FEATURES:
+			return getSubFeatures();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -189,17 +192,17 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MetadataPackage.FEATURE__NAME:
-				setName((String)newValue);
-				return;
-			case MetadataPackage.FEATURE__ATTRIBUTES:
-				getAttributes().clear();
-				getAttributes().addAll((Collection<? extends Attribute>)newValue);
-				return;
-			case MetadataPackage.FEATURE__SUB_FEATURES:
-				getSubFeatures().clear();
-				getSubFeatures().addAll((Collection<? extends Feature>)newValue);
-				return;
+		case MetadataPackage.FEATURE__NAME:
+			setName((String) newValue);
+			return;
+		case MetadataPackage.FEATURE__ATTRIBUTES:
+			getAttributes().clear();
+			getAttributes().addAll((Collection<? extends Attribute>) newValue);
+			return;
+		case MetadataPackage.FEATURE__SUB_FEATURES:
+			getSubFeatures().clear();
+			getSubFeatures().addAll((Collection<? extends Feature>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -212,15 +215,15 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MetadataPackage.FEATURE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case MetadataPackage.FEATURE__ATTRIBUTES:
-				getAttributes().clear();
-				return;
-			case MetadataPackage.FEATURE__SUB_FEATURES:
-				getSubFeatures().clear();
-				return;
+		case MetadataPackage.FEATURE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case MetadataPackage.FEATURE__ATTRIBUTES:
+			getAttributes().clear();
+			return;
+		case MetadataPackage.FEATURE__SUB_FEATURES:
+			getSubFeatures().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -233,12 +236,12 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MetadataPackage.FEATURE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case MetadataPackage.FEATURE__ATTRIBUTES:
-				return attributes != null && !attributes.isEmpty();
-			case MetadataPackage.FEATURE__SUB_FEATURES:
-				return subFeatures != null && !subFeatures.isEmpty();
+		case MetadataPackage.FEATURE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case MetadataPackage.FEATURE__ATTRIBUTES:
+			return attributes != null && !attributes.isEmpty();
+		case MetadataPackage.FEATURE__SUB_FEATURES:
+			return subFeatures != null && !subFeatures.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -250,7 +253,8 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

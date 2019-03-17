@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -158,6 +159,15 @@ public interface BasePackage extends EPackage {
 	int MANAGER_FEATURE_COUNT = MetadataPackage.ANNOTABLE_FEATURE_COUNT + 7;
 
 	/**
+	 * The number of operations of the '<em>Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGER_OPERATION_COUNT = MetadataPackage.ANNOTABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link base.ResourceManager <em>Resource Manager</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -186,6 +196,15 @@ public interface BasePackage extends EPackage {
 	int RESOURCE_MANAGER_FEATURE_COUNT = 1;
 
 	/**
+	 * The number of operations of the '<em>Resource Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MANAGER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link base.impl.StateManagerImpl <em>State Manager</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -212,6 +231,15 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int STATE_MANAGER_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>State Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_MANAGER_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link base.impl.AutonomicManagerImpl <em>Autonomic Manager</em>}' class.
@@ -260,6 +288,15 @@ public interface BasePackage extends EPackage {
 	int AUTONOMIC_MANAGER_FEATURE_COUNT = 3;
 
 	/**
+	 * The number of operations of the '<em>Autonomic Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTONOMIC_MANAGER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link base.impl.PolicyManagerImpl <em>Policy Manager</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -304,6 +341,15 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int POLICY_MANAGER_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Policy Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLICY_MANAGER_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link base.impl.HandlerImpl <em>Handler</em>}' class.
@@ -352,6 +398,15 @@ public interface BasePackage extends EPackage {
 	int HANDLER_FEATURE_COUNT = 3;
 
 	/**
+	 * The number of operations of the '<em>Handler</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HANDLER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link base.impl.InstanceResourceManagerImpl <em>Instance Resource Manager</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -396,6 +451,15 @@ public interface BasePackage extends EPackage {
 	 * @ordered
 	 */
 	int INSTANCE_RESOURCE_MANAGER_FEATURE_COUNT = RESOURCE_MANAGER_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Instance Resource Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTANCE_RESOURCE_MANAGER_OPERATION_COUNT = RESOURCE_MANAGER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link base.impl.InstanceImpl <em>Instance</em>}' class.
@@ -452,6 +516,14 @@ public interface BasePackage extends EPackage {
 	 */
 	int INSTANCE_FEATURE_COUNT = MetadataPackage.ANNOTABLE_FEATURE_COUNT + 2;
 
+	/**
+	 * The number of operations of the '<em>Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTANCE_OPERATION_COUNT = MetadataPackage.ANNOTABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link base.Manager <em>Manager</em>}'.
@@ -790,6 +862,7 @@ public interface BasePackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>

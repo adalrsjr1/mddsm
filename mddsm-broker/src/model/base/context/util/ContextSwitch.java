@@ -68,20 +68,24 @@ public class ContextSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ContextPackage.STATE: {
-				State state = (State)theEObject;
-				T result = caseState(state);
-				if (result == null) result = caseBindable(state);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ContextPackage.PROPERTY: {
-				Property property = (Property)theEObject;
-				T result = caseProperty(property);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case ContextPackage.STATE: {
+			State state = (State) theEObject;
+			T result = caseState(state);
+			if (result == null)
+				result = caseBindable(state);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ContextPackage.PROPERTY: {
+			Property property = (Property) theEObject;
+			T result = caseProperty(property);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

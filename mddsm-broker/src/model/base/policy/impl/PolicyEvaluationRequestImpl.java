@@ -9,6 +9,7 @@ import base.policy.PolicyEvaluationRequest;
 import base.policy.PolicyPackage;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -86,11 +87,12 @@ public class PolicyEvaluationRequestImpl extends EObjectImpl implements PolicyEv
 	@Override
 	public PolicyEvaluationHandler getHandler() {
 		if (handler != null && handler.eIsProxy()) {
-			InternalEObject oldHandler = (InternalEObject)handler;
-			handler = (PolicyEvaluationHandler)eResolveProxy(oldHandler);
+			InternalEObject oldHandler = (InternalEObject) handler;
+			handler = (PolicyEvaluationHandler) eResolveProxy(oldHandler);
 			if (handler != oldHandler) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PolicyPackage.POLICY_EVALUATION_REQUEST__HANDLER, oldHandler, handler));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							PolicyPackage.POLICY_EVALUATION_REQUEST__HANDLER, oldHandler, handler));
 			}
 		}
 		return handler;
@@ -115,7 +117,8 @@ public class PolicyEvaluationRequestImpl extends EObjectImpl implements PolicyEv
 		PolicyEvaluationHandler oldHandler = handler;
 		handler = newHandler;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION_REQUEST__HANDLER, oldHandler, handler));
+			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION_REQUEST__HANDLER,
+					oldHandler, handler));
 	}
 
 	/**
@@ -124,9 +127,10 @@ public class PolicyEvaluationRequestImpl extends EObjectImpl implements PolicyEv
 	 * @generated
 	 */
 	@Override
-	public EList<ParameterBinding> getBindings() {
+	public List<ParameterBinding> getBindings() {
 		if (bindings == null) {
-			bindings = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this, PolicyPackage.POLICY_EVALUATION_REQUEST__BINDINGS);
+			bindings = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this,
+					PolicyPackage.POLICY_EVALUATION_REQUEST__BINDINGS);
 		}
 		return bindings;
 	}
@@ -139,8 +143,8 @@ public class PolicyEvaluationRequestImpl extends EObjectImpl implements PolicyEv
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_REQUEST__BINDINGS:
-				return ((InternalEList<?>)getBindings()).basicRemove(otherEnd, msgs);
+		case PolicyPackage.POLICY_EVALUATION_REQUEST__BINDINGS:
+			return ((InternalEList<?>) getBindings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -153,11 +157,12 @@ public class PolicyEvaluationRequestImpl extends EObjectImpl implements PolicyEv
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_REQUEST__HANDLER:
-				if (resolve) return getHandler();
-				return basicGetHandler();
-			case PolicyPackage.POLICY_EVALUATION_REQUEST__BINDINGS:
-				return getBindings();
+		case PolicyPackage.POLICY_EVALUATION_REQUEST__HANDLER:
+			if (resolve)
+				return getHandler();
+			return basicGetHandler();
+		case PolicyPackage.POLICY_EVALUATION_REQUEST__BINDINGS:
+			return getBindings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,13 +176,13 @@ public class PolicyEvaluationRequestImpl extends EObjectImpl implements PolicyEv
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_REQUEST__HANDLER:
-				setHandler((PolicyEvaluationHandler)newValue);
-				return;
-			case PolicyPackage.POLICY_EVALUATION_REQUEST__BINDINGS:
-				getBindings().clear();
-				getBindings().addAll((Collection<? extends ParameterBinding>)newValue);
-				return;
+		case PolicyPackage.POLICY_EVALUATION_REQUEST__HANDLER:
+			setHandler((PolicyEvaluationHandler) newValue);
+			return;
+		case PolicyPackage.POLICY_EVALUATION_REQUEST__BINDINGS:
+			getBindings().clear();
+			getBindings().addAll((Collection<? extends ParameterBinding>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -190,12 +195,12 @@ public class PolicyEvaluationRequestImpl extends EObjectImpl implements PolicyEv
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_REQUEST__HANDLER:
-				setHandler((PolicyEvaluationHandler)null);
-				return;
-			case PolicyPackage.POLICY_EVALUATION_REQUEST__BINDINGS:
-				getBindings().clear();
-				return;
+		case PolicyPackage.POLICY_EVALUATION_REQUEST__HANDLER:
+			setHandler((PolicyEvaluationHandler) null);
+			return;
+		case PolicyPackage.POLICY_EVALUATION_REQUEST__BINDINGS:
+			getBindings().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -208,10 +213,10 @@ public class PolicyEvaluationRequestImpl extends EObjectImpl implements PolicyEv
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_REQUEST__HANDLER:
-				return handler != null;
-			case PolicyPackage.POLICY_EVALUATION_REQUEST__BINDINGS:
-				return bindings != null && !bindings.isEmpty();
+		case PolicyPackage.POLICY_EVALUATION_REQUEST__HANDLER:
+			return handler != null;
+		case PolicyPackage.POLICY_EVALUATION_REQUEST__BINDINGS:
+			return bindings != null && !bindings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

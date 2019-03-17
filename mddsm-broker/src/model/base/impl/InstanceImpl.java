@@ -10,6 +10,7 @@ import base.common.Interface;
 import base.metadata.Feature;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -150,7 +151,7 @@ public class InstanceImpl extends EObjectImpl implements Instance {
 	 * @generated
 	 */
 	@Override
-	public EList<Feature> getFeatures() {
+	public List<Feature> getFeatures() {
 		if (features == null) {
 			features = new EObjectContainmentEList<Feature>(Feature.class, this, BasePackage.INSTANCE__FEATURES);
 		}
@@ -188,11 +189,12 @@ public class InstanceImpl extends EObjectImpl implements Instance {
 	@Override
 	public Interface getIface() {
 		if (iface != null && iface.eIsProxy()) {
-			InternalEObject oldIface = (InternalEObject)iface;
-			iface = (Interface)eResolveProxy(oldIface);
+			InternalEObject oldIface = (InternalEObject) iface;
+			iface = (Interface) eResolveProxy(oldIface);
 			if (iface != oldIface) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.INSTANCE__IFACE, oldIface, iface));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.INSTANCE__IFACE, oldIface,
+							iface));
 			}
 		}
 		return iface;
@@ -228,8 +230,8 @@ public class InstanceImpl extends EObjectImpl implements Instance {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasePackage.INSTANCE__FEATURES:
-				return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
+		case BasePackage.INSTANCE__FEATURES:
+			return ((InternalEList<?>) getFeatures()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -242,15 +244,16 @@ public class InstanceImpl extends EObjectImpl implements Instance {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasePackage.INSTANCE__NAME:
-				return getName();
-			case BasePackage.INSTANCE__FEATURES:
-				return getFeatures();
-			case BasePackage.INSTANCE__IMPL:
-				return getImpl();
-			case BasePackage.INSTANCE__IFACE:
-				if (resolve) return getIface();
-				return basicGetIface();
+		case BasePackage.INSTANCE__NAME:
+			return getName();
+		case BasePackage.INSTANCE__FEATURES:
+			return getFeatures();
+		case BasePackage.INSTANCE__IMPL:
+			return getImpl();
+		case BasePackage.INSTANCE__IFACE:
+			if (resolve)
+				return getIface();
+			return basicGetIface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -264,19 +267,19 @@ public class InstanceImpl extends EObjectImpl implements Instance {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasePackage.INSTANCE__NAME:
-				setName((String)newValue);
-				return;
-			case BasePackage.INSTANCE__FEATURES:
-				getFeatures().clear();
-				getFeatures().addAll((Collection<? extends Feature>)newValue);
-				return;
-			case BasePackage.INSTANCE__IMPL:
-				setImpl((String)newValue);
-				return;
-			case BasePackage.INSTANCE__IFACE:
-				setIface((Interface)newValue);
-				return;
+		case BasePackage.INSTANCE__NAME:
+			setName((String) newValue);
+			return;
+		case BasePackage.INSTANCE__FEATURES:
+			getFeatures().clear();
+			getFeatures().addAll((Collection<? extends Feature>) newValue);
+			return;
+		case BasePackage.INSTANCE__IMPL:
+			setImpl((String) newValue);
+			return;
+		case BasePackage.INSTANCE__IFACE:
+			setIface((Interface) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -289,18 +292,18 @@ public class InstanceImpl extends EObjectImpl implements Instance {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasePackage.INSTANCE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case BasePackage.INSTANCE__FEATURES:
-				getFeatures().clear();
-				return;
-			case BasePackage.INSTANCE__IMPL:
-				setImpl(IMPL_EDEFAULT);
-				return;
-			case BasePackage.INSTANCE__IFACE:
-				setIface((Interface)null);
-				return;
+		case BasePackage.INSTANCE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case BasePackage.INSTANCE__FEATURES:
+			getFeatures().clear();
+			return;
+		case BasePackage.INSTANCE__IMPL:
+			setImpl(IMPL_EDEFAULT);
+			return;
+		case BasePackage.INSTANCE__IFACE:
+			setIface((Interface) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -313,14 +316,14 @@ public class InstanceImpl extends EObjectImpl implements Instance {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasePackage.INSTANCE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case BasePackage.INSTANCE__FEATURES:
-				return features != null && !features.isEmpty();
-			case BasePackage.INSTANCE__IMPL:
-				return IMPL_EDEFAULT == null ? impl != null : !IMPL_EDEFAULT.equals(impl);
-			case BasePackage.INSTANCE__IFACE:
-				return iface != null;
+		case BasePackage.INSTANCE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case BasePackage.INSTANCE__FEATURES:
+			return features != null && !features.isEmpty();
+		case BasePackage.INSTANCE__IMPL:
+			return IMPL_EDEFAULT == null ? impl != null : !IMPL_EDEFAULT.equals(impl);
+		case BasePackage.INSTANCE__IFACE:
+			return iface != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -332,7 +335,8 @@ public class InstanceImpl extends EObjectImpl implements Instance {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

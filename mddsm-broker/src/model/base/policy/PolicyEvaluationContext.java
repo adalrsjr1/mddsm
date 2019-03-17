@@ -4,7 +4,7 @@ package base.policy;
 
 import base.common.Parameter;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -39,6 +39,6 @@ public interface PolicyEvaluationContext extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Parameter> getParameters();
+	List<Parameter> getParameters();
 
 } // PolicyEvaluationContext

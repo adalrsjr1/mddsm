@@ -7,6 +7,7 @@ import base.context.Property;
 import base.context.State;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -137,7 +138,7 @@ public class StateImpl extends EObjectImpl implements State {
 	 * @generated
 	 */
 	@Override
-	public EList<State> getChildren() {
+	public List<State> getChildren() {
 		if (children == null) {
 			children = new EObjectContainmentEList<State>(State.class, this, ContextPackage.STATE__CHILDREN);
 		}
@@ -150,7 +151,7 @@ public class StateImpl extends EObjectImpl implements State {
 	 * @generated
 	 */
 	@Override
-	public EList<Property> getProperties() {
+	public List<Property> getProperties() {
 		if (properties == null) {
 			properties = new EObjectContainmentEList<Property>(Property.class, this, ContextPackage.STATE__PROPERTIES);
 		}
@@ -165,8 +166,8 @@ public class StateImpl extends EObjectImpl implements State {
 	@Override
 	public Property getKey() {
 		if (key != null && key.eIsProxy()) {
-			InternalEObject oldKey = (InternalEObject)key;
-			key = (Property)eResolveProxy(oldKey);
+			InternalEObject oldKey = (InternalEObject) key;
+			key = (Property) eResolveProxy(oldKey);
 			if (key != oldKey) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContextPackage.STATE__KEY, oldKey, key));
@@ -205,10 +206,10 @@ public class StateImpl extends EObjectImpl implements State {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ContextPackage.STATE__CHILDREN:
-				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
-			case ContextPackage.STATE__PROPERTIES:
-				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+		case ContextPackage.STATE__CHILDREN:
+			return ((InternalEList<?>) getChildren()).basicRemove(otherEnd, msgs);
+		case ContextPackage.STATE__PROPERTIES:
+			return ((InternalEList<?>) getProperties()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -221,15 +222,16 @@ public class StateImpl extends EObjectImpl implements State {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContextPackage.STATE__NAME:
-				return getName();
-			case ContextPackage.STATE__CHILDREN:
-				return getChildren();
-			case ContextPackage.STATE__PROPERTIES:
-				return getProperties();
-			case ContextPackage.STATE__KEY:
-				if (resolve) return getKey();
-				return basicGetKey();
+		case ContextPackage.STATE__NAME:
+			return getName();
+		case ContextPackage.STATE__CHILDREN:
+			return getChildren();
+		case ContextPackage.STATE__PROPERTIES:
+			return getProperties();
+		case ContextPackage.STATE__KEY:
+			if (resolve)
+				return getKey();
+			return basicGetKey();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -243,20 +245,20 @@ public class StateImpl extends EObjectImpl implements State {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContextPackage.STATE__NAME:
-				setName((String)newValue);
-				return;
-			case ContextPackage.STATE__CHILDREN:
-				getChildren().clear();
-				getChildren().addAll((Collection<? extends State>)newValue);
-				return;
-			case ContextPackage.STATE__PROPERTIES:
-				getProperties().clear();
-				getProperties().addAll((Collection<? extends Property>)newValue);
-				return;
-			case ContextPackage.STATE__KEY:
-				setKey((Property)newValue);
-				return;
+		case ContextPackage.STATE__NAME:
+			setName((String) newValue);
+			return;
+		case ContextPackage.STATE__CHILDREN:
+			getChildren().clear();
+			getChildren().addAll((Collection<? extends State>) newValue);
+			return;
+		case ContextPackage.STATE__PROPERTIES:
+			getProperties().clear();
+			getProperties().addAll((Collection<? extends Property>) newValue);
+			return;
+		case ContextPackage.STATE__KEY:
+			setKey((Property) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -269,18 +271,18 @@ public class StateImpl extends EObjectImpl implements State {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContextPackage.STATE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case ContextPackage.STATE__CHILDREN:
-				getChildren().clear();
-				return;
-			case ContextPackage.STATE__PROPERTIES:
-				getProperties().clear();
-				return;
-			case ContextPackage.STATE__KEY:
-				setKey((Property)null);
-				return;
+		case ContextPackage.STATE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case ContextPackage.STATE__CHILDREN:
+			getChildren().clear();
+			return;
+		case ContextPackage.STATE__PROPERTIES:
+			getProperties().clear();
+			return;
+		case ContextPackage.STATE__KEY:
+			setKey((Property) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -293,14 +295,14 @@ public class StateImpl extends EObjectImpl implements State {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContextPackage.STATE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ContextPackage.STATE__CHILDREN:
-				return children != null && !children.isEmpty();
-			case ContextPackage.STATE__PROPERTIES:
-				return properties != null && !properties.isEmpty();
-			case ContextPackage.STATE__KEY:
-				return key != null;
+		case ContextPackage.STATE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case ContextPackage.STATE__CHILDREN:
+			return children != null && !children.isEmpty();
+		case ContextPackage.STATE__PROPERTIES:
+			return properties != null && !properties.isEmpty();
+		case ContextPackage.STATE__KEY:
+			return key != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -312,7 +314,8 @@ public class StateImpl extends EObjectImpl implements State {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

@@ -85,7 +85,8 @@ public class ConditionImpl extends EObjectImpl implements Condition {
 		String oldExpression = expression;
 		expression = newExpression;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.CONDITION__EXPRESSION, oldExpression, expression));
+			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.CONDITION__EXPRESSION, oldExpression,
+					expression));
 	}
 
 	/**
@@ -96,8 +97,8 @@ public class ConditionImpl extends EObjectImpl implements Condition {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CommonPackage.CONDITION__EXPRESSION:
-				return getExpression();
+		case CommonPackage.CONDITION__EXPRESSION:
+			return getExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,9 +111,9 @@ public class ConditionImpl extends EObjectImpl implements Condition {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CommonPackage.CONDITION__EXPRESSION:
-				setExpression((String)newValue);
-				return;
+		case CommonPackage.CONDITION__EXPRESSION:
+			setExpression((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -125,9 +126,9 @@ public class ConditionImpl extends EObjectImpl implements Condition {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CommonPackage.CONDITION__EXPRESSION:
-				setExpression(EXPRESSION_EDEFAULT);
-				return;
+		case CommonPackage.CONDITION__EXPRESSION:
+			setExpression(EXPRESSION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,8 +141,8 @@ public class ConditionImpl extends EObjectImpl implements Condition {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CommonPackage.CONDITION__EXPRESSION:
-				return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
+		case CommonPackage.CONDITION__EXPRESSION:
+			return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -153,7 +154,8 @@ public class ConditionImpl extends EObjectImpl implements Condition {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (expression: ");

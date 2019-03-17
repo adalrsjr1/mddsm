@@ -222,25 +222,38 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 * @generated
 	 */
 	public static CommonPackage init() {
-		if (isInited) return (CommonPackage)EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		if (isInited)
+			return (CommonPackage) EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
 
 		// Obtain or create and register package
 		Object registeredCommonPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		CommonPackageImpl theCommonPackage = registeredCommonPackage instanceof CommonPackageImpl ? (CommonPackageImpl)registeredCommonPackage : new CommonPackageImpl();
+		CommonPackageImpl theCommonPackage = registeredCommonPackage instanceof CommonPackageImpl
+				? (CommonPackageImpl) registeredCommonPackage
+				: new CommonPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI);
-		BasePackageImpl theBasePackage = (BasePackageImpl)(registeredPackage instanceof BasePackageImpl ? registeredPackage : BasePackage.eINSTANCE);
+		BasePackageImpl theBasePackage = (BasePackageImpl) (registeredPackage instanceof BasePackageImpl
+				? registeredPackage
+				: BasePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
-		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
+		ContextPackageImpl theContextPackage = (ContextPackageImpl) (registeredPackage instanceof ContextPackageImpl
+				? registeredPackage
+				: ContextPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MetadataPackage.eNS_URI);
-		MetadataPackageImpl theMetadataPackage = (MetadataPackageImpl)(registeredPackage instanceof MetadataPackageImpl ? registeredPackage : MetadataPackage.eINSTANCE);
+		MetadataPackageImpl theMetadataPackage = (MetadataPackageImpl) (registeredPackage instanceof MetadataPackageImpl
+				? registeredPackage
+				: MetadataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AutonomicPackage.eNS_URI);
-		AutonomicPackageImpl theAutonomicPackage = (AutonomicPackageImpl)(registeredPackage instanceof AutonomicPackageImpl ? registeredPackage : AutonomicPackage.eINSTANCE);
+		AutonomicPackageImpl theAutonomicPackage = (AutonomicPackageImpl) (registeredPackage instanceof AutonomicPackageImpl
+				? registeredPackage
+				: AutonomicPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PolicyPackage.eNS_URI);
-		PolicyPackageImpl thePolicyPackage = (PolicyPackageImpl)(registeredPackage instanceof PolicyPackageImpl ? registeredPackage : PolicyPackage.eINSTANCE);
+		PolicyPackageImpl thePolicyPackage = (PolicyPackageImpl) (registeredPackage instanceof PolicyPackageImpl
+				? registeredPackage
+				: PolicyPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theCommonPackage.createPackageContents();
@@ -283,7 +296,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EAttribute getParameter_Name() {
-		return (EAttribute)parameterEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) parameterEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -303,7 +316,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EReference getSignal_Parameters() {
-		return (EReference)signalEClass.getEStructuralFeatures().get(0);
+		return (EReference) signalEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -313,7 +326,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EAttribute getSignal_Name() {
-		return (EAttribute)signalEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) signalEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -353,7 +366,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EReference getInterface_Provides() {
-		return (EReference)interfaceEClass.getEStructuralFeatures().get(0);
+		return (EReference) interfaceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -363,7 +376,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EReference getInterface_Signals() {
-		return (EReference)interfaceEClass.getEStructuralFeatures().get(1);
+		return (EReference) interfaceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -373,7 +386,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EAttribute getInterface_Name() {
-		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) interfaceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -413,7 +426,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EReference getParameterValue_Parameter() {
-		return (EReference)parameterValueEClass.getEStructuralFeatures().get(0);
+		return (EReference) parameterValueEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -433,7 +446,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EAttribute getExpressionValue_Value() {
-		return (EAttribute)expressionValueEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) expressionValueEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -453,7 +466,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EAttribute getAction_Name() {
-		return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) actionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -463,7 +476,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EReference getAction_Parameters() {
-		return (EReference)actionEClass.getEStructuralFeatures().get(1);
+		return (EReference) actionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -483,7 +496,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EReference getSequenceAction_Children() {
-		return (EReference)sequenceActionEClass.getEStructuralFeatures().get(0);
+		return (EReference) sequenceActionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -503,7 +516,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EReference getEnqueueCall_Call() {
-		return (EReference)enqueueCallEClass.getEStructuralFeatures().get(0);
+		return (EReference) enqueueCallEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -513,7 +526,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EReference getEnqueueCall_Bindings() {
-		return (EReference)enqueueCallEClass.getEStructuralFeatures().get(1);
+		return (EReference) enqueueCallEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -533,7 +546,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EAttribute getMacroAction_Impl() {
-		return (EAttribute)macroActionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) macroActionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -553,7 +566,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EReference getActionExecution_Action() {
-		return (EReference)actionExecutionEClass.getEStructuralFeatures().get(0);
+		return (EReference) actionExecutionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -563,7 +576,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EReference getActionExecution_Bindings() {
-		return (EReference)actionExecutionEClass.getEStructuralFeatures().get(1);
+		return (EReference) actionExecutionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -583,7 +596,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EReference getParameterBinding_Parameter() {
-		return (EReference)parameterBindingEClass.getEStructuralFeatures().get(0);
+		return (EReference) parameterBindingEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -593,7 +606,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EReference getParameterBinding_Value() {
-		return (EReference)parameterBindingEClass.getEStructuralFeatures().get(1);
+		return (EReference) parameterBindingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -613,7 +626,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EAttribute getCondition_Expression() {
-		return (EAttribute)conditionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) conditionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -633,7 +646,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EReference getBinding_Bindable() {
-		return (EReference)bindingEClass.getEStructuralFeatures().get(0);
+		return (EReference) bindingEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -643,7 +656,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public EAttribute getBinding_Name() {
-		return (EAttribute)bindingEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) bindingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -663,7 +676,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 */
 	@Override
 	public CommonFactory getCommonFactory() {
-		return (CommonFactory)getEFactoryInstance();
+		return (CommonFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -681,7 +694,8 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -758,7 +772,8 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -782,61 +797,107 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 		macroActionEClass.getESuperTypes().add(this.getAction());
 		actionExecutionEClass.getESuperTypes().add(this.getValue());
 
-		// Initialize classes and features; add operations and parameters
-		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 1, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		// Initialize classes, features, and operations; add parameters
+		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 1, 1, Parameter.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(signalEClass, Signal.class, "Signal", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSignal_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSignal_Name(), ecorePackage.getEString(), "name", "", 1, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSignal_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Signal.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSignal_Name(), ecorePackage.getEString(), "name", "", 1, 1, Signal.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(callEClass, Call.class, "Call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(interfaceEClass, Interface.class, "Interface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInterface_Provides(), this.getCall(), null, "provides", null, 0, -1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_Signals(), this.getEvent(), null, "signals", null, 0, -1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInterface_Name(), ecorePackage.getEString(), "Name", "", 0, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(interfaceEClass, Interface.class, "Interface", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInterface_Provides(), this.getCall(), null, "provides", null, 0, -1, Interface.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_Signals(), this.getEvent(), null, "signals", null, 0, -1, Interface.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInterface_Name(), ecorePackage.getEString(), "Name", "", 0, 1, Interface.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(valueEClass, Value.class, "Value", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(signalSourceEClass, SignalSource.class, "SignalSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(signalSourceEClass, SignalSource.class, "SignalSource", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(parameterValueEClass, ParameterValue.class, "ParameterValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getParameterValue_Parameter(), this.getParameter(), null, "parameter", null, 1, 1, ParameterValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(parameterValueEClass, ParameterValue.class, "ParameterValue", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParameterValue_Parameter(), this.getParameter(), null, "parameter", null, 1, 1,
+				ParameterValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(expressionValueEClass, ExpressionValue.class, "ExpressionValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getExpressionValue_Value(), ecorePackage.getEString(), "value", null, 1, 1, ExpressionValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(expressionValueEClass, ExpressionValue.class, "ExpressionValue", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getExpressionValue_Value(), ecorePackage.getEString(), "value", null, 1, 1,
+				ExpressionValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", "", 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAction_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", "", 1, 1, Action.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAction_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Action.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(sequenceActionEClass, SequenceAction.class, "SequenceAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSequenceAction_Children(), this.getActionExecution(), null, "children", null, 1, -1, SequenceAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(sequenceActionEClass, SequenceAction.class, "SequenceAction", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSequenceAction_Children(), this.getActionExecution(), null, "children", null, 1, -1,
+				SequenceAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(enqueueCallEClass, EnqueueCall.class, "EnqueueCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEnqueueCall_Call(), this.getCall(), null, "call", null, 1, 1, EnqueueCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnqueueCall_Bindings(), this.getParameterBinding(), null, "bindings", null, 0, -1, EnqueueCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(enqueueCallEClass, EnqueueCall.class, "EnqueueCall", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEnqueueCall_Call(), this.getCall(), null, "call", null, 1, 1, EnqueueCall.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnqueueCall_Bindings(), this.getParameterBinding(), null, "bindings", null, 0, -1,
+				EnqueueCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(macroActionEClass, MacroAction.class, "MacroAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMacroAction_Impl(), ecorePackage.getEString(), "impl", null, 1, 1, MacroAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(macroActionEClass, MacroAction.class, "MacroAction", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMacroAction_Impl(), ecorePackage.getEString(), "impl", null, 1, 1, MacroAction.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(actionExecutionEClass, ActionExecution.class, "ActionExecution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActionExecution_Action(), this.getAction(), null, "action", null, 1, 1, ActionExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActionExecution_Bindings(), this.getParameterBinding(), null, "bindings", null, 0, -1, ActionExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(actionExecutionEClass, ActionExecution.class, "ActionExecution", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActionExecution_Action(), this.getAction(), null, "action", null, 1, 1, ActionExecution.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActionExecution_Bindings(), this.getParameterBinding(), null, "bindings", null, 0, -1,
+				ActionExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(parameterBindingEClass, ParameterBinding.class, "ParameterBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getParameterBinding_Parameter(), this.getParameter(), null, "parameter", null, 1, 1, ParameterBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getParameterBinding_Value(), this.getValue(), null, "value", null, 1, 1, ParameterBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(parameterBindingEClass, ParameterBinding.class, "ParameterBinding", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParameterBinding_Parameter(), this.getParameter(), null, "parameter", null, 1, 1,
+				ParameterBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParameterBinding_Value(), this.getValue(), null, "value", null, 1, 1, ParameterBinding.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCondition_Expression(), ecorePackage.getEString(), "expression", null, 1, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCondition_Expression(), ecorePackage.getEString(), "expression", null, 1, 1, Condition.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bindingEClass, Binding.class, "Binding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBinding_Bindable(), this.getBindable(), null, "bindable", null, 1, 1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBinding_Name(), ecorePackage.getEString(), "name", null, 1, 1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBinding_Bindable(), this.getBindable(), null, "bindable", null, 1, 1, Binding.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBinding_Name(), ecorePackage.getEString(), "name", null, 1, 1, Binding.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bindableEClass, Bindable.class, "Bindable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}

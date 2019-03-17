@@ -5,7 +5,7 @@ package base.autonomic;
 import base.common.Binding;
 import base.common.Condition;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -68,7 +68,7 @@ public interface Symptom extends EObject {
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Binding> getBindings();
+	List<Binding> getBindings();
 
 	/**
 	 * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.
@@ -84,6 +84,6 @@ public interface Symptom extends EObject {
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Condition> getConditions();
+	List<Condition> getConditions();
 
 } // Symptom

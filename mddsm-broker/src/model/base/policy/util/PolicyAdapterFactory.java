@@ -54,7 +54,7 @@ public class PolicyAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -65,41 +65,47 @@ public class PolicyAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PolicySwitch<Adapter> modelSwitch =
-		new PolicySwitch<Adapter>() {
-			@Override
-			public Adapter casePolicyEvaluationPoint(PolicyEvaluationPoint object) {
-				return createPolicyEvaluationPointAdapter();
-			}
-			@Override
-			public Adapter casePolicyEvaluationRequest(PolicyEvaluationRequest object) {
-				return createPolicyEvaluationRequestAdapter();
-			}
-			@Override
-			public Adapter casePolicyEvaluationHandler(PolicyEvaluationHandler object) {
-				return createPolicyEvaluationHandlerAdapter();
-			}
-			@Override
-			public Adapter casePolicyEvaluationContext(PolicyEvaluationContext object) {
-				return createPolicyEvaluationContextAdapter();
-			}
-			@Override
-			public Adapter casePolicyEvaluation(PolicyEvaluation object) {
-				return createPolicyEvaluationAdapter();
-			}
-			@Override
-			public Adapter casePolicy(Policy object) {
-				return createPolicyAdapter();
-			}
-			@Override
-			public Adapter casePolicyDecision(PolicyDecision object) {
-				return createPolicyDecisionAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected PolicySwitch<Adapter> modelSwitch = new PolicySwitch<Adapter>() {
+		@Override
+		public Adapter casePolicyEvaluationPoint(PolicyEvaluationPoint object) {
+			return createPolicyEvaluationPointAdapter();
+		}
+
+		@Override
+		public Adapter casePolicyEvaluationRequest(PolicyEvaluationRequest object) {
+			return createPolicyEvaluationRequestAdapter();
+		}
+
+		@Override
+		public Adapter casePolicyEvaluationHandler(PolicyEvaluationHandler object) {
+			return createPolicyEvaluationHandlerAdapter();
+		}
+
+		@Override
+		public Adapter casePolicyEvaluationContext(PolicyEvaluationContext object) {
+			return createPolicyEvaluationContextAdapter();
+		}
+
+		@Override
+		public Adapter casePolicyEvaluation(PolicyEvaluation object) {
+			return createPolicyEvaluationAdapter();
+		}
+
+		@Override
+		public Adapter casePolicy(Policy object) {
+			return createPolicyAdapter();
+		}
+
+		@Override
+		public Adapter casePolicyDecision(PolicyDecision object) {
+			return createPolicyDecisionAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -111,9 +117,8 @@ public class PolicyAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link base.policy.PolicyEvaluationPoint <em>Evaluation Point</em>}'.

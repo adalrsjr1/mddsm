@@ -27,12 +27,12 @@ public class CommonFactoryImpl extends EFactoryImpl implements CommonFactory {
 	 */
 	public static CommonFactory init() {
 		try {
-			CommonFactory theCommonFactory = (CommonFactory)EPackage.Registry.INSTANCE.getEFactory(CommonPackage.eNS_URI);
+			CommonFactory theCommonFactory = (CommonFactory) EPackage.Registry.INSTANCE
+					.getEFactory(CommonPackage.eNS_URI);
 			if (theCommonFactory != null) {
 				return theCommonFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new CommonFactoryImpl();
@@ -56,22 +56,36 @@ public class CommonFactoryImpl extends EFactoryImpl implements CommonFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CommonPackage.PARAMETER: return createParameter();
-			case CommonPackage.EVENT: return createEvent();
-			case CommonPackage.CALL: return createCall();
-			case CommonPackage.INTERFACE: return createInterface();
-			case CommonPackage.SIGNAL_SOURCE: return createSignalSource();
-			case CommonPackage.PARAMETER_VALUE: return createParameterValue();
-			case CommonPackage.EXPRESSION_VALUE: return createExpressionValue();
-			case CommonPackage.SEQUENCE_ACTION: return createSequenceAction();
-			case CommonPackage.ENQUEUE_CALL: return createEnqueueCall();
-			case CommonPackage.MACRO_ACTION: return createMacroAction();
-			case CommonPackage.ACTION_EXECUTION: return createActionExecution();
-			case CommonPackage.PARAMETER_BINDING: return createParameterBinding();
-			case CommonPackage.CONDITION: return createCondition();
-			case CommonPackage.BINDING: return createBinding();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case CommonPackage.PARAMETER:
+			return createParameter();
+		case CommonPackage.EVENT:
+			return createEvent();
+		case CommonPackage.CALL:
+			return createCall();
+		case CommonPackage.INTERFACE:
+			return createInterface();
+		case CommonPackage.SIGNAL_SOURCE:
+			return createSignalSource();
+		case CommonPackage.PARAMETER_VALUE:
+			return createParameterValue();
+		case CommonPackage.EXPRESSION_VALUE:
+			return createExpressionValue();
+		case CommonPackage.SEQUENCE_ACTION:
+			return createSequenceAction();
+		case CommonPackage.ENQUEUE_CALL:
+			return createEnqueueCall();
+		case CommonPackage.MACRO_ACTION:
+			return createMacroAction();
+		case CommonPackage.ACTION_EXECUTION:
+			return createActionExecution();
+		case CommonPackage.PARAMETER_BINDING:
+			return createParameterBinding();
+		case CommonPackage.CONDITION:
+			return createCondition();
+		case CommonPackage.BINDING:
+			return createBinding();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -236,7 +250,7 @@ public class CommonFactoryImpl extends EFactoryImpl implements CommonFactory {
 	 */
 	@Override
 	public CommonPackage getCommonPackage() {
-		return (CommonPackage)getEPackage();
+		return (CommonPackage) getEPackage();
 	}
 
 	/**

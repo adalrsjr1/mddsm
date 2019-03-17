@@ -7,7 +7,7 @@ import base.common.Interface;
 
 import base.metadata.Annotable;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public interface Manager extends Annotable {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Action> getActions();
+	List<Action> getActions();
 
 	/**
 	 * Returns the value of the '<em><b>Handlers</b></em>' containment reference list.
@@ -88,7 +88,7 @@ public interface Manager extends Annotable {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Handler> getHandlers();
+	List<Handler> getHandlers();
 
 	/**
 	 * Returns the value of the '<em><b>State Manager</b></em>' containment reference.

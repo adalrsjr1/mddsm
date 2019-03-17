@@ -66,49 +66,57 @@ public class PolicySwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case PolicyPackage.POLICY_EVALUATION_POINT: {
-				PolicyEvaluationPoint policyEvaluationPoint = (PolicyEvaluationPoint)theEObject;
-				T result = casePolicyEvaluationPoint(policyEvaluationPoint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PolicyPackage.POLICY_EVALUATION_REQUEST: {
-				PolicyEvaluationRequest policyEvaluationRequest = (PolicyEvaluationRequest)theEObject;
-				T result = casePolicyEvaluationRequest(policyEvaluationRequest);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PolicyPackage.POLICY_EVALUATION_HANDLER: {
-				PolicyEvaluationHandler policyEvaluationHandler = (PolicyEvaluationHandler)theEObject;
-				T result = casePolicyEvaluationHandler(policyEvaluationHandler);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PolicyPackage.POLICY_EVALUATION_CONTEXT: {
-				PolicyEvaluationContext policyEvaluationContext = (PolicyEvaluationContext)theEObject;
-				T result = casePolicyEvaluationContext(policyEvaluationContext);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PolicyPackage.POLICY_EVALUATION: {
-				PolicyEvaluation policyEvaluation = (PolicyEvaluation)theEObject;
-				T result = casePolicyEvaluation(policyEvaluation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PolicyPackage.POLICY: {
-				Policy policy = (Policy)theEObject;
-				T result = casePolicy(policy);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PolicyPackage.POLICY_DECISION: {
-				PolicyDecision policyDecision = (PolicyDecision)theEObject;
-				T result = casePolicyDecision(policyDecision);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case PolicyPackage.POLICY_EVALUATION_POINT: {
+			PolicyEvaluationPoint policyEvaluationPoint = (PolicyEvaluationPoint) theEObject;
+			T result = casePolicyEvaluationPoint(policyEvaluationPoint);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PolicyPackage.POLICY_EVALUATION_REQUEST: {
+			PolicyEvaluationRequest policyEvaluationRequest = (PolicyEvaluationRequest) theEObject;
+			T result = casePolicyEvaluationRequest(policyEvaluationRequest);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PolicyPackage.POLICY_EVALUATION_HANDLER: {
+			PolicyEvaluationHandler policyEvaluationHandler = (PolicyEvaluationHandler) theEObject;
+			T result = casePolicyEvaluationHandler(policyEvaluationHandler);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PolicyPackage.POLICY_EVALUATION_CONTEXT: {
+			PolicyEvaluationContext policyEvaluationContext = (PolicyEvaluationContext) theEObject;
+			T result = casePolicyEvaluationContext(policyEvaluationContext);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PolicyPackage.POLICY_EVALUATION: {
+			PolicyEvaluation policyEvaluation = (PolicyEvaluation) theEObject;
+			T result = casePolicyEvaluation(policyEvaluation);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PolicyPackage.POLICY: {
+			Policy policy = (Policy) theEObject;
+			T result = casePolicy(policy);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PolicyPackage.POLICY_DECISION: {
+			PolicyDecision policyDecision = (PolicyDecision) theEObject;
+			T result = casePolicyDecision(policyDecision);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

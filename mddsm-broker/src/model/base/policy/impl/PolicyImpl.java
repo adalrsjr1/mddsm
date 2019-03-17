@@ -164,7 +164,8 @@ public class PolicyImpl extends EObjectImpl implements Policy {
 		Integer oldBusinessValue = businessValue;
 		businessValue = newBusinessValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY__BUSINESS_VALUE, oldBusinessValue, businessValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY__BUSINESS_VALUE,
+					oldBusinessValue, businessValue));
 	}
 
 	/**
@@ -209,8 +210,12 @@ public class PolicyImpl extends EObjectImpl implements Policy {
 		PolicyDecision oldDecision = decision;
 		decision = newDecision;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY__DECISION, oldDecision, newDecision);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					PolicyPackage.POLICY__DECISION, oldDecision, newDecision);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -225,14 +230,17 @@ public class PolicyImpl extends EObjectImpl implements Policy {
 		if (newDecision != decision) {
 			NotificationChain msgs = null;
 			if (decision != null)
-				msgs = ((InternalEObject)decision).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY__DECISION, null, msgs);
+				msgs = ((InternalEObject) decision).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY__DECISION, null, msgs);
 			if (newDecision != null)
-				msgs = ((InternalEObject)newDecision).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY__DECISION, null, msgs);
+				msgs = ((InternalEObject) newDecision).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY__DECISION, null, msgs);
 			msgs = basicSetDecision(newDecision, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY__DECISION, newDecision, newDecision));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY__DECISION, newDecision,
+					newDecision));
 	}
 
 	/**
@@ -243,8 +251,8 @@ public class PolicyImpl extends EObjectImpl implements Policy {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PolicyPackage.POLICY__DECISION:
-				return basicSetDecision(null, msgs);
+		case PolicyPackage.POLICY__DECISION:
+			return basicSetDecision(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -257,14 +265,14 @@ public class PolicyImpl extends EObjectImpl implements Policy {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PolicyPackage.POLICY__NAME:
-				return getName();
-			case PolicyPackage.POLICY__BUSINESS_VALUE:
-				return getBusinessValue();
-			case PolicyPackage.POLICY__FEATURE:
-				return getFeature();
-			case PolicyPackage.POLICY__DECISION:
-				return getDecision();
+		case PolicyPackage.POLICY__NAME:
+			return getName();
+		case PolicyPackage.POLICY__BUSINESS_VALUE:
+			return getBusinessValue();
+		case PolicyPackage.POLICY__FEATURE:
+			return getFeature();
+		case PolicyPackage.POLICY__DECISION:
+			return getDecision();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -277,18 +285,18 @@ public class PolicyImpl extends EObjectImpl implements Policy {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PolicyPackage.POLICY__NAME:
-				setName((String)newValue);
-				return;
-			case PolicyPackage.POLICY__BUSINESS_VALUE:
-				setBusinessValue((Integer)newValue);
-				return;
-			case PolicyPackage.POLICY__FEATURE:
-				setFeature((String)newValue);
-				return;
-			case PolicyPackage.POLICY__DECISION:
-				setDecision((PolicyDecision)newValue);
-				return;
+		case PolicyPackage.POLICY__NAME:
+			setName((String) newValue);
+			return;
+		case PolicyPackage.POLICY__BUSINESS_VALUE:
+			setBusinessValue((Integer) newValue);
+			return;
+		case PolicyPackage.POLICY__FEATURE:
+			setFeature((String) newValue);
+			return;
+		case PolicyPackage.POLICY__DECISION:
+			setDecision((PolicyDecision) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -301,18 +309,18 @@ public class PolicyImpl extends EObjectImpl implements Policy {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PolicyPackage.POLICY__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case PolicyPackage.POLICY__BUSINESS_VALUE:
-				setBusinessValue(BUSINESS_VALUE_EDEFAULT);
-				return;
-			case PolicyPackage.POLICY__FEATURE:
-				setFeature(FEATURE_EDEFAULT);
-				return;
-			case PolicyPackage.POLICY__DECISION:
-				setDecision((PolicyDecision)null);
-				return;
+		case PolicyPackage.POLICY__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case PolicyPackage.POLICY__BUSINESS_VALUE:
+			setBusinessValue(BUSINESS_VALUE_EDEFAULT);
+			return;
+		case PolicyPackage.POLICY__FEATURE:
+			setFeature(FEATURE_EDEFAULT);
+			return;
+		case PolicyPackage.POLICY__DECISION:
+			setDecision((PolicyDecision) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -325,14 +333,15 @@ public class PolicyImpl extends EObjectImpl implements Policy {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PolicyPackage.POLICY__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case PolicyPackage.POLICY__BUSINESS_VALUE:
-				return BUSINESS_VALUE_EDEFAULT == null ? businessValue != null : !BUSINESS_VALUE_EDEFAULT.equals(businessValue);
-			case PolicyPackage.POLICY__FEATURE:
-				return FEATURE_EDEFAULT == null ? feature != null : !FEATURE_EDEFAULT.equals(feature);
-			case PolicyPackage.POLICY__DECISION:
-				return decision != null;
+		case PolicyPackage.POLICY__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case PolicyPackage.POLICY__BUSINESS_VALUE:
+			return BUSINESS_VALUE_EDEFAULT == null ? businessValue != null
+					: !BUSINESS_VALUE_EDEFAULT.equals(businessValue);
+		case PolicyPackage.POLICY__FEATURE:
+			return FEATURE_EDEFAULT == null ? feature != null : !FEATURE_EDEFAULT.equals(feature);
+		case PolicyPackage.POLICY__DECISION:
+			return decision != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -344,7 +353,8 @@ public class PolicyImpl extends EObjectImpl implements Policy {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

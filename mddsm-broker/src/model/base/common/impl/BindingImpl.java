@@ -86,11 +86,12 @@ public class BindingImpl extends EObjectImpl implements Binding {
 	@Override
 	public Bindable getBindable() {
 		if (bindable != null && bindable.eIsProxy()) {
-			InternalEObject oldBindable = (InternalEObject)bindable;
-			bindable = (Bindable)eResolveProxy(oldBindable);
+			InternalEObject oldBindable = (InternalEObject) bindable;
+			bindable = (Bindable) eResolveProxy(oldBindable);
 			if (bindable != oldBindable) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommonPackage.BINDING__BINDABLE, oldBindable, bindable));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommonPackage.BINDING__BINDABLE,
+							oldBindable, bindable));
 			}
 		}
 		return bindable;
@@ -115,7 +116,8 @@ public class BindingImpl extends EObjectImpl implements Binding {
 		Bindable oldBindable = bindable;
 		bindable = newBindable;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.BINDING__BINDABLE, oldBindable, bindable));
+			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.BINDING__BINDABLE, oldBindable,
+					bindable));
 	}
 
 	/**
@@ -149,11 +151,12 @@ public class BindingImpl extends EObjectImpl implements Binding {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CommonPackage.BINDING__BINDABLE:
-				if (resolve) return getBindable();
-				return basicGetBindable();
-			case CommonPackage.BINDING__NAME:
-				return getName();
+		case CommonPackage.BINDING__BINDABLE:
+			if (resolve)
+				return getBindable();
+			return basicGetBindable();
+		case CommonPackage.BINDING__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -166,12 +169,12 @@ public class BindingImpl extends EObjectImpl implements Binding {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CommonPackage.BINDING__BINDABLE:
-				setBindable((Bindable)newValue);
-				return;
-			case CommonPackage.BINDING__NAME:
-				setName((String)newValue);
-				return;
+		case CommonPackage.BINDING__BINDABLE:
+			setBindable((Bindable) newValue);
+			return;
+		case CommonPackage.BINDING__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -184,12 +187,12 @@ public class BindingImpl extends EObjectImpl implements Binding {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CommonPackage.BINDING__BINDABLE:
-				setBindable((Bindable)null);
-				return;
-			case CommonPackage.BINDING__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		case CommonPackage.BINDING__BINDABLE:
+			setBindable((Bindable) null);
+			return;
+		case CommonPackage.BINDING__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,10 +205,10 @@ public class BindingImpl extends EObjectImpl implements Binding {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CommonPackage.BINDING__BINDABLE:
-				return bindable != null;
-			case CommonPackage.BINDING__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case CommonPackage.BINDING__BINDABLE:
+			return bindable != null;
+		case CommonPackage.BINDING__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -217,7 +220,8 @@ public class BindingImpl extends EObjectImpl implements Binding {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

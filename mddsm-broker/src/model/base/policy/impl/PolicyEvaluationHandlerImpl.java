@@ -9,6 +9,7 @@ import base.policy.PolicyEvaluationHandler;
 import base.policy.PolicyPackage;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -105,9 +106,10 @@ public class PolicyEvaluationHandlerImpl extends EObjectImpl implements PolicyEv
 	 * @generated
 	 */
 	@Override
-	public EList<Parameter> getParameters() {
+	public List<Parameter> getParameters() {
 		if (parameters == null) {
-			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, PolicyPackage.POLICY_EVALUATION_HANDLER__PARAMETERS);
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this,
+					PolicyPackage.POLICY_EVALUATION_HANDLER__PARAMETERS);
 		}
 		return parameters;
 	}
@@ -132,7 +134,8 @@ public class PolicyEvaluationHandlerImpl extends EObjectImpl implements PolicyEv
 		String oldHandlerImpl = handlerImpl;
 		handlerImpl = newHandlerImpl;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION_HANDLER__HANDLER_IMPL, oldHandlerImpl, handlerImpl));
+			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION_HANDLER__HANDLER_IMPL,
+					oldHandlerImpl, handlerImpl));
 	}
 
 	/**
@@ -154,8 +157,12 @@ public class PolicyEvaluationHandlerImpl extends EObjectImpl implements PolicyEv
 		PolicyEvaluation oldEvaluation = evaluation;
 		evaluation = newEvaluation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION, oldEvaluation, newEvaluation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION, oldEvaluation, newEvaluation);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -170,14 +177,17 @@ public class PolicyEvaluationHandlerImpl extends EObjectImpl implements PolicyEv
 		if (newEvaluation != evaluation) {
 			NotificationChain msgs = null;
 			if (evaluation != null)
-				msgs = ((InternalEObject)evaluation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION, null, msgs);
+				msgs = ((InternalEObject) evaluation).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION, null, msgs);
 			if (newEvaluation != null)
-				msgs = ((InternalEObject)newEvaluation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION, null, msgs);
+				msgs = ((InternalEObject) newEvaluation).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION, null, msgs);
 			msgs = basicSetEvaluation(newEvaluation, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION, newEvaluation, newEvaluation));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION,
+					newEvaluation, newEvaluation));
 	}
 
 	/**
@@ -188,10 +198,10 @@ public class PolicyEvaluationHandlerImpl extends EObjectImpl implements PolicyEv
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_HANDLER__PARAMETERS:
-				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
-			case PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION:
-				return basicSetEvaluation(null, msgs);
+		case PolicyPackage.POLICY_EVALUATION_HANDLER__PARAMETERS:
+			return ((InternalEList<?>) getParameters()).basicRemove(otherEnd, msgs);
+		case PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION:
+			return basicSetEvaluation(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -204,12 +214,12 @@ public class PolicyEvaluationHandlerImpl extends EObjectImpl implements PolicyEv
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_HANDLER__PARAMETERS:
-				return getParameters();
-			case PolicyPackage.POLICY_EVALUATION_HANDLER__HANDLER_IMPL:
-				return getHandlerImpl();
-			case PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION:
-				return getEvaluation();
+		case PolicyPackage.POLICY_EVALUATION_HANDLER__PARAMETERS:
+			return getParameters();
+		case PolicyPackage.POLICY_EVALUATION_HANDLER__HANDLER_IMPL:
+			return getHandlerImpl();
+		case PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION:
+			return getEvaluation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -223,16 +233,16 @@ public class PolicyEvaluationHandlerImpl extends EObjectImpl implements PolicyEv
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_HANDLER__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends Parameter>)newValue);
-				return;
-			case PolicyPackage.POLICY_EVALUATION_HANDLER__HANDLER_IMPL:
-				setHandlerImpl((String)newValue);
-				return;
-			case PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION:
-				setEvaluation((PolicyEvaluation)newValue);
-				return;
+		case PolicyPackage.POLICY_EVALUATION_HANDLER__PARAMETERS:
+			getParameters().clear();
+			getParameters().addAll((Collection<? extends Parameter>) newValue);
+			return;
+		case PolicyPackage.POLICY_EVALUATION_HANDLER__HANDLER_IMPL:
+			setHandlerImpl((String) newValue);
+			return;
+		case PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION:
+			setEvaluation((PolicyEvaluation) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -245,15 +255,15 @@ public class PolicyEvaluationHandlerImpl extends EObjectImpl implements PolicyEv
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_HANDLER__PARAMETERS:
-				getParameters().clear();
-				return;
-			case PolicyPackage.POLICY_EVALUATION_HANDLER__HANDLER_IMPL:
-				setHandlerImpl(HANDLER_IMPL_EDEFAULT);
-				return;
-			case PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION:
-				setEvaluation((PolicyEvaluation)null);
-				return;
+		case PolicyPackage.POLICY_EVALUATION_HANDLER__PARAMETERS:
+			getParameters().clear();
+			return;
+		case PolicyPackage.POLICY_EVALUATION_HANDLER__HANDLER_IMPL:
+			setHandlerImpl(HANDLER_IMPL_EDEFAULT);
+			return;
+		case PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION:
+			setEvaluation((PolicyEvaluation) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -266,12 +276,12 @@ public class PolicyEvaluationHandlerImpl extends EObjectImpl implements PolicyEv
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PolicyPackage.POLICY_EVALUATION_HANDLER__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
-			case PolicyPackage.POLICY_EVALUATION_HANDLER__HANDLER_IMPL:
-				return HANDLER_IMPL_EDEFAULT == null ? handlerImpl != null : !HANDLER_IMPL_EDEFAULT.equals(handlerImpl);
-			case PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION:
-				return evaluation != null;
+		case PolicyPackage.POLICY_EVALUATION_HANDLER__PARAMETERS:
+			return parameters != null && !parameters.isEmpty();
+		case PolicyPackage.POLICY_EVALUATION_HANDLER__HANDLER_IMPL:
+			return HANDLER_IMPL_EDEFAULT == null ? handlerImpl != null : !HANDLER_IMPL_EDEFAULT.equals(handlerImpl);
+		case PolicyPackage.POLICY_EVALUATION_HANDLER__EVALUATION:
+			return evaluation != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -283,7 +293,8 @@ public class PolicyEvaluationHandlerImpl extends EObjectImpl implements PolicyEv
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (handlerImpl: ");

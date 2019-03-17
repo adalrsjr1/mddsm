@@ -8,6 +8,7 @@ import base.StateManager;
 import base.context.State;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -70,7 +71,7 @@ public class StateManagerImpl extends EObjectImpl implements StateManager {
 	 * @generated
 	 */
 	@Override
-	public EList<State> getStateTypes() {
+	public List<State> getStateTypes() {
 		if (stateTypes == null) {
 			stateTypes = new EObjectContainmentEList<State>(State.class, this, BasePackage.STATE_MANAGER__STATE_TYPES);
 		}
@@ -85,8 +86,8 @@ public class StateManagerImpl extends EObjectImpl implements StateManager {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasePackage.STATE_MANAGER__STATE_TYPES:
-				return ((InternalEList<?>)getStateTypes()).basicRemove(otherEnd, msgs);
+		case BasePackage.STATE_MANAGER__STATE_TYPES:
+			return ((InternalEList<?>) getStateTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -99,8 +100,8 @@ public class StateManagerImpl extends EObjectImpl implements StateManager {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasePackage.STATE_MANAGER__STATE_TYPES:
-				return getStateTypes();
+		case BasePackage.STATE_MANAGER__STATE_TYPES:
+			return getStateTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -114,10 +115,10 @@ public class StateManagerImpl extends EObjectImpl implements StateManager {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasePackage.STATE_MANAGER__STATE_TYPES:
-				getStateTypes().clear();
-				getStateTypes().addAll((Collection<? extends State>)newValue);
-				return;
+		case BasePackage.STATE_MANAGER__STATE_TYPES:
+			getStateTypes().clear();
+			getStateTypes().addAll((Collection<? extends State>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -130,9 +131,9 @@ public class StateManagerImpl extends EObjectImpl implements StateManager {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasePackage.STATE_MANAGER__STATE_TYPES:
-				getStateTypes().clear();
-				return;
+		case BasePackage.STATE_MANAGER__STATE_TYPES:
+			getStateTypes().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -145,8 +146,8 @@ public class StateManagerImpl extends EObjectImpl implements StateManager {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasePackage.STATE_MANAGER__STATE_TYPES:
-				return stateTypes != null && !stateTypes.isEmpty();
+		case BasePackage.STATE_MANAGER__STATE_TYPES:
+			return stateTypes != null && !stateTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

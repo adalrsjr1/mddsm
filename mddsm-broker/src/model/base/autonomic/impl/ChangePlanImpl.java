@@ -100,11 +100,12 @@ public class ChangePlanImpl extends EObjectImpl implements ChangePlan {
 	@Override
 	public ChangeRequest getBasedOn() {
 		if (basedOn != null && basedOn.eIsProxy()) {
-			InternalEObject oldBasedOn = (InternalEObject)basedOn;
-			basedOn = (ChangeRequest)eResolveProxy(oldBasedOn);
+			InternalEObject oldBasedOn = (InternalEObject) basedOn;
+			basedOn = (ChangeRequest) eResolveProxy(oldBasedOn);
 			if (basedOn != oldBasedOn) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AutonomicPackage.CHANGE_PLAN__BASED_ON, oldBasedOn, basedOn));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AutonomicPackage.CHANGE_PLAN__BASED_ON,
+							oldBasedOn, basedOn));
 			}
 		}
 		return basedOn;
@@ -129,7 +130,8 @@ public class ChangePlanImpl extends EObjectImpl implements ChangePlan {
 		ChangeRequest oldBasedOn = basedOn;
 		basedOn = newBasedOn;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AutonomicPackage.CHANGE_PLAN__BASED_ON, oldBasedOn, basedOn));
+			eNotify(new ENotificationImpl(this, Notification.SET, AutonomicPackage.CHANGE_PLAN__BASED_ON, oldBasedOn,
+					basedOn));
 	}
 
 	/**
@@ -151,8 +153,12 @@ public class ChangePlanImpl extends EObjectImpl implements ChangePlan {
 		ActionExecution oldAction = action;
 		action = newAction;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AutonomicPackage.CHANGE_PLAN__ACTION, oldAction, newAction);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					AutonomicPackage.CHANGE_PLAN__ACTION, oldAction, newAction);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -167,14 +173,17 @@ public class ChangePlanImpl extends EObjectImpl implements ChangePlan {
 		if (newAction != action) {
 			NotificationChain msgs = null;
 			if (action != null)
-				msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AutonomicPackage.CHANGE_PLAN__ACTION, null, msgs);
+				msgs = ((InternalEObject) action).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - AutonomicPackage.CHANGE_PLAN__ACTION, null, msgs);
 			if (newAction != null)
-				msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AutonomicPackage.CHANGE_PLAN__ACTION, null, msgs);
+				msgs = ((InternalEObject) newAction).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - AutonomicPackage.CHANGE_PLAN__ACTION, null, msgs);
 			msgs = basicSetAction(newAction, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AutonomicPackage.CHANGE_PLAN__ACTION, newAction, newAction));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AutonomicPackage.CHANGE_PLAN__ACTION, newAction,
+					newAction));
 	}
 
 	/**
@@ -208,8 +217,8 @@ public class ChangePlanImpl extends EObjectImpl implements ChangePlan {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case AutonomicPackage.CHANGE_PLAN__ACTION:
-				return basicSetAction(null, msgs);
+		case AutonomicPackage.CHANGE_PLAN__ACTION:
+			return basicSetAction(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -222,13 +231,14 @@ public class ChangePlanImpl extends EObjectImpl implements ChangePlan {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AutonomicPackage.CHANGE_PLAN__BASED_ON:
-				if (resolve) return getBasedOn();
-				return basicGetBasedOn();
-			case AutonomicPackage.CHANGE_PLAN__ACTION:
-				return getAction();
-			case AutonomicPackage.CHANGE_PLAN__NAME:
-				return getName();
+		case AutonomicPackage.CHANGE_PLAN__BASED_ON:
+			if (resolve)
+				return getBasedOn();
+			return basicGetBasedOn();
+		case AutonomicPackage.CHANGE_PLAN__ACTION:
+			return getAction();
+		case AutonomicPackage.CHANGE_PLAN__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -241,15 +251,15 @@ public class ChangePlanImpl extends EObjectImpl implements ChangePlan {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AutonomicPackage.CHANGE_PLAN__BASED_ON:
-				setBasedOn((ChangeRequest)newValue);
-				return;
-			case AutonomicPackage.CHANGE_PLAN__ACTION:
-				setAction((ActionExecution)newValue);
-				return;
-			case AutonomicPackage.CHANGE_PLAN__NAME:
-				setName((String)newValue);
-				return;
+		case AutonomicPackage.CHANGE_PLAN__BASED_ON:
+			setBasedOn((ChangeRequest) newValue);
+			return;
+		case AutonomicPackage.CHANGE_PLAN__ACTION:
+			setAction((ActionExecution) newValue);
+			return;
+		case AutonomicPackage.CHANGE_PLAN__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -262,15 +272,15 @@ public class ChangePlanImpl extends EObjectImpl implements ChangePlan {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AutonomicPackage.CHANGE_PLAN__BASED_ON:
-				setBasedOn((ChangeRequest)null);
-				return;
-			case AutonomicPackage.CHANGE_PLAN__ACTION:
-				setAction((ActionExecution)null);
-				return;
-			case AutonomicPackage.CHANGE_PLAN__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		case AutonomicPackage.CHANGE_PLAN__BASED_ON:
+			setBasedOn((ChangeRequest) null);
+			return;
+		case AutonomicPackage.CHANGE_PLAN__ACTION:
+			setAction((ActionExecution) null);
+			return;
+		case AutonomicPackage.CHANGE_PLAN__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -283,12 +293,12 @@ public class ChangePlanImpl extends EObjectImpl implements ChangePlan {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AutonomicPackage.CHANGE_PLAN__BASED_ON:
-				return basedOn != null;
-			case AutonomicPackage.CHANGE_PLAN__ACTION:
-				return action != null;
-			case AutonomicPackage.CHANGE_PLAN__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case AutonomicPackage.CHANGE_PLAN__BASED_ON:
+			return basedOn != null;
+		case AutonomicPackage.CHANGE_PLAN__ACTION:
+			return action != null;
+		case AutonomicPackage.CHANGE_PLAN__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -300,7 +310,8 @@ public class ChangePlanImpl extends EObjectImpl implements ChangePlan {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

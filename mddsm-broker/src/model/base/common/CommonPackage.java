@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -84,6 +85,15 @@ public interface CommonPackage extends EPackage {
 	int PARAMETER_FEATURE_COUNT = 1;
 
 	/**
+	 * The number of operations of the '<em>Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link base.common.Bindable <em>Bindable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,6 +111,15 @@ public interface CommonPackage extends EPackage {
 	 * @ordered
 	 */
 	int BINDABLE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Bindable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINDABLE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link base.common.impl.SignalImpl <em>Signal</em>}' class.
@@ -140,6 +159,15 @@ public interface CommonPackage extends EPackage {
 	int SIGNAL_FEATURE_COUNT = BINDABLE_FEATURE_COUNT + 2;
 
 	/**
+	 * The number of operations of the '<em>Signal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIGNAL_OPERATION_COUNT = BINDABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link base.common.impl.EventImpl <em>Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -177,6 +205,15 @@ public interface CommonPackage extends EPackage {
 	int EVENT_FEATURE_COUNT = SIGNAL_FEATURE_COUNT + 0;
 
 	/**
+	 * The number of operations of the '<em>Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_OPERATION_COUNT = SIGNAL_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link base.common.impl.CallImpl <em>Call</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -212,6 +249,15 @@ public interface CommonPackage extends EPackage {
 	 * @ordered
 	 */
 	int CALL_FEATURE_COUNT = SIGNAL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Call</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALL_OPERATION_COUNT = SIGNAL_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link base.common.impl.InterfaceImpl <em>Interface</em>}' class.
@@ -260,6 +306,15 @@ public interface CommonPackage extends EPackage {
 	int INTERFACE_FEATURE_COUNT = 3;
 
 	/**
+	 * The number of operations of the '<em>Interface</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link base.common.impl.ValueImpl <em>Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -279,6 +334,15 @@ public interface CommonPackage extends EPackage {
 	int VALUE_FEATURE_COUNT = 0;
 
 	/**
+	 * The number of operations of the '<em>Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link base.common.impl.SignalSourceImpl <em>Signal Source</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -296,6 +360,15 @@ public interface CommonPackage extends EPackage {
 	 * @ordered
 	 */
 	int SIGNAL_SOURCE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Signal Source</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIGNAL_SOURCE_OPERATION_COUNT = VALUE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link base.common.impl.ParameterValueImpl <em>Parameter Value</em>}' class.
@@ -326,6 +399,15 @@ public interface CommonPackage extends EPackage {
 	int PARAMETER_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>Parameter Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_VALUE_OPERATION_COUNT = VALUE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link base.common.impl.ExpressionValueImpl <em>Expression Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -352,6 +434,15 @@ public interface CommonPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXPRESSION_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Expression Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION_VALUE_OPERATION_COUNT = VALUE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link base.common.impl.ActionImpl <em>Action</em>}' class.
@@ -389,6 +480,15 @@ public interface CommonPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTION_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link base.common.impl.SequenceActionImpl <em>Sequence Action</em>}' class.
@@ -435,6 +535,15 @@ public interface CommonPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEQUENCE_ACTION_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Sequence Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENCE_ACTION_OPERATION_COUNT = ACTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link base.common.impl.EnqueueCallImpl <em>Enqueue Call</em>}' class.
@@ -492,6 +601,15 @@ public interface CommonPackage extends EPackage {
 	int ENQUEUE_CALL_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
 
 	/**
+	 * The number of operations of the '<em>Enqueue Call</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENQUEUE_CALL_OPERATION_COUNT = ACTION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link base.common.impl.MacroActionImpl <em>Macro Action</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -538,6 +656,15 @@ public interface CommonPackage extends EPackage {
 	int MACRO_ACTION_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>Macro Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MACRO_ACTION_OPERATION_COUNT = ACTION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link base.common.impl.ActionExecutionImpl <em>Action Execution</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -573,6 +700,15 @@ public interface CommonPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTION_EXECUTION_FEATURE_COUNT = VALUE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Action Execution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_EXECUTION_OPERATION_COUNT = VALUE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link base.common.impl.ParameterBindingImpl <em>Parameter Binding</em>}' class.
@@ -612,6 +748,15 @@ public interface CommonPackage extends EPackage {
 	int PARAMETER_BINDING_FEATURE_COUNT = 2;
 
 	/**
+	 * The number of operations of the '<em>Parameter Binding</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link base.common.impl.ConditionImpl <em>Condition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -638,6 +783,15 @@ public interface CommonPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONDITION_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link base.common.impl.BindingImpl <em>Binding</em>}' class.
@@ -676,6 +830,14 @@ public interface CommonPackage extends EPackage {
 	 */
 	int BINDING_FEATURE_COUNT = 2;
 
+	/**
+	 * The number of operations of the '<em>Binding</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINDING_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link base.common.Parameter <em>Parameter</em>}'.
@@ -1103,6 +1265,7 @@ public interface CommonPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>

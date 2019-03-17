@@ -94,25 +94,38 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	public static ContextPackage init() {
-		if (isInited) return (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
+		if (isInited)
+			return (ContextPackage) EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 
 		// Obtain or create and register package
 		Object registeredContextPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		ContextPackageImpl theContextPackage = registeredContextPackage instanceof ContextPackageImpl ? (ContextPackageImpl)registeredContextPackage : new ContextPackageImpl();
+		ContextPackageImpl theContextPackage = registeredContextPackage instanceof ContextPackageImpl
+				? (ContextPackageImpl) registeredContextPackage
+				: new ContextPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI);
-		BasePackageImpl theBasePackage = (BasePackageImpl)(registeredPackage instanceof BasePackageImpl ? registeredPackage : BasePackage.eINSTANCE);
+		BasePackageImpl theBasePackage = (BasePackageImpl) (registeredPackage instanceof BasePackageImpl
+				? registeredPackage
+				: BasePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MetadataPackage.eNS_URI);
-		MetadataPackageImpl theMetadataPackage = (MetadataPackageImpl)(registeredPackage instanceof MetadataPackageImpl ? registeredPackage : MetadataPackage.eINSTANCE);
+		MetadataPackageImpl theMetadataPackage = (MetadataPackageImpl) (registeredPackage instanceof MetadataPackageImpl
+				? registeredPackage
+				: MetadataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AutonomicPackage.eNS_URI);
-		AutonomicPackageImpl theAutonomicPackage = (AutonomicPackageImpl)(registeredPackage instanceof AutonomicPackageImpl ? registeredPackage : AutonomicPackage.eINSTANCE);
+		AutonomicPackageImpl theAutonomicPackage = (AutonomicPackageImpl) (registeredPackage instanceof AutonomicPackageImpl
+				? registeredPackage
+				: AutonomicPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PolicyPackage.eNS_URI);
-		PolicyPackageImpl thePolicyPackage = (PolicyPackageImpl)(registeredPackage instanceof PolicyPackageImpl ? registeredPackage : PolicyPackage.eINSTANCE);
+		PolicyPackageImpl thePolicyPackage = (PolicyPackageImpl) (registeredPackage instanceof PolicyPackageImpl
+				? registeredPackage
+				: PolicyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
-		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl) (registeredPackage instanceof CommonPackageImpl
+				? registeredPackage
+				: CommonPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theContextPackage.createPackageContents();
@@ -155,7 +168,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 */
 	@Override
 	public EAttribute getState_Name() {
-		return (EAttribute)stateEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) stateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -165,7 +178,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 */
 	@Override
 	public EReference getState_Children() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(1);
+		return (EReference) stateEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -175,7 +188,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 */
 	@Override
 	public EReference getState_Properties() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(2);
+		return (EReference) stateEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -185,7 +198,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 */
 	@Override
 	public EReference getState_Key() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(3);
+		return (EReference) stateEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -205,7 +218,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 */
 	@Override
 	public EAttribute getProperty_Name() {
-		return (EAttribute)propertyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) propertyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -215,7 +228,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 */
 	@Override
 	public ContextFactory getContextFactory() {
-		return (ContextFactory)getEFactoryInstance();
+		return (ContextFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -233,7 +246,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -262,7 +276,8 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -271,7 +286,7 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		CommonPackage theCommonPackage = (CommonPackage)EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackage theCommonPackage = (CommonPackage) EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -280,15 +295,24 @@ public class ContextPackageImpl extends EPackageImpl implements ContextPackage {
 		// Add supertypes to classes
 		stateEClass.getESuperTypes().add(theCommonPackage.getBindable());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getState_Name(), ecorePackage.getEString(), "name", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_Children(), this.getState(), null, "children", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_Properties(), this.getProperty(), null, "properties", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_Key(), this.getProperty(), null, "key", null, 1, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getState_Name(), ecorePackage.getEString(), "name", null, 0, 1, State.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_Children(), this.getState(), null, "children", null, 0, -1, State.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getState_Properties(), this.getProperty(), null, "properties", null, 0, -1, State.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_Key(), this.getProperty(), null, "key", null, 1, 1, State.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
-		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 1, 1, Property.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //ContextPackageImpl

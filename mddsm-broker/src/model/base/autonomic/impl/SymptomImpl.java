@@ -9,6 +9,7 @@ import base.common.Binding;
 import base.common.Condition;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -128,7 +129,7 @@ public class SymptomImpl extends EObjectImpl implements Symptom {
 	 * @generated
 	 */
 	@Override
-	public EList<Binding> getBindings() {
+	public List<Binding> getBindings() {
 		if (bindings == null) {
 			bindings = new EObjectContainmentEList<Binding>(Binding.class, this, AutonomicPackage.SYMPTOM__BINDINGS);
 		}
@@ -141,9 +142,10 @@ public class SymptomImpl extends EObjectImpl implements Symptom {
 	 * @generated
 	 */
 	@Override
-	public EList<Condition> getConditions() {
+	public List<Condition> getConditions() {
 		if (conditions == null) {
-			conditions = new EObjectContainmentEList<Condition>(Condition.class, this, AutonomicPackage.SYMPTOM__CONDITIONS);
+			conditions = new EObjectContainmentEList<Condition>(Condition.class, this,
+					AutonomicPackage.SYMPTOM__CONDITIONS);
 		}
 		return conditions;
 	}
@@ -156,10 +158,10 @@ public class SymptomImpl extends EObjectImpl implements Symptom {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case AutonomicPackage.SYMPTOM__BINDINGS:
-				return ((InternalEList<?>)getBindings()).basicRemove(otherEnd, msgs);
-			case AutonomicPackage.SYMPTOM__CONDITIONS:
-				return ((InternalEList<?>)getConditions()).basicRemove(otherEnd, msgs);
+		case AutonomicPackage.SYMPTOM__BINDINGS:
+			return ((InternalEList<?>) getBindings()).basicRemove(otherEnd, msgs);
+		case AutonomicPackage.SYMPTOM__CONDITIONS:
+			return ((InternalEList<?>) getConditions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -172,12 +174,12 @@ public class SymptomImpl extends EObjectImpl implements Symptom {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AutonomicPackage.SYMPTOM__NAME:
-				return getName();
-			case AutonomicPackage.SYMPTOM__BINDINGS:
-				return getBindings();
-			case AutonomicPackage.SYMPTOM__CONDITIONS:
-				return getConditions();
+		case AutonomicPackage.SYMPTOM__NAME:
+			return getName();
+		case AutonomicPackage.SYMPTOM__BINDINGS:
+			return getBindings();
+		case AutonomicPackage.SYMPTOM__CONDITIONS:
+			return getConditions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -191,17 +193,17 @@ public class SymptomImpl extends EObjectImpl implements Symptom {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AutonomicPackage.SYMPTOM__NAME:
-				setName((String)newValue);
-				return;
-			case AutonomicPackage.SYMPTOM__BINDINGS:
-				getBindings().clear();
-				getBindings().addAll((Collection<? extends Binding>)newValue);
-				return;
-			case AutonomicPackage.SYMPTOM__CONDITIONS:
-				getConditions().clear();
-				getConditions().addAll((Collection<? extends Condition>)newValue);
-				return;
+		case AutonomicPackage.SYMPTOM__NAME:
+			setName((String) newValue);
+			return;
+		case AutonomicPackage.SYMPTOM__BINDINGS:
+			getBindings().clear();
+			getBindings().addAll((Collection<? extends Binding>) newValue);
+			return;
+		case AutonomicPackage.SYMPTOM__CONDITIONS:
+			getConditions().clear();
+			getConditions().addAll((Collection<? extends Condition>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -214,15 +216,15 @@ public class SymptomImpl extends EObjectImpl implements Symptom {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AutonomicPackage.SYMPTOM__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case AutonomicPackage.SYMPTOM__BINDINGS:
-				getBindings().clear();
-				return;
-			case AutonomicPackage.SYMPTOM__CONDITIONS:
-				getConditions().clear();
-				return;
+		case AutonomicPackage.SYMPTOM__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case AutonomicPackage.SYMPTOM__BINDINGS:
+			getBindings().clear();
+			return;
+		case AutonomicPackage.SYMPTOM__CONDITIONS:
+			getConditions().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -235,12 +237,12 @@ public class SymptomImpl extends EObjectImpl implements Symptom {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AutonomicPackage.SYMPTOM__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case AutonomicPackage.SYMPTOM__BINDINGS:
-				return bindings != null && !bindings.isEmpty();
-			case AutonomicPackage.SYMPTOM__CONDITIONS:
-				return conditions != null && !conditions.isEmpty();
+		case AutonomicPackage.SYMPTOM__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case AutonomicPackage.SYMPTOM__BINDINGS:
+			return bindings != null && !bindings.isEmpty();
+		case AutonomicPackage.SYMPTOM__CONDITIONS:
+			return conditions != null && !conditions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -252,7 +254,8 @@ public class SymptomImpl extends EObjectImpl implements Symptom {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

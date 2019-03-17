@@ -2,7 +2,7 @@
  */
 package base.metadata;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -64,6 +64,6 @@ public interface Annotable extends EObject {
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<Feature> getFeatures();
+	List<Feature> getFeatures();
 
 } // Annotable

@@ -54,7 +54,7 @@ public class MetadataAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -65,25 +65,27 @@ public class MetadataAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MetadataSwitch<Adapter> modelSwitch =
-		new MetadataSwitch<Adapter>() {
-			@Override
-			public Adapter caseFeature(Feature object) {
-				return createFeatureAdapter();
-			}
-			@Override
-			public Adapter caseAnnotable(Annotable object) {
-				return createAnnotableAdapter();
-			}
-			@Override
-			public Adapter caseAttribute(Attribute object) {
-				return createAttributeAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected MetadataSwitch<Adapter> modelSwitch = new MetadataSwitch<Adapter>() {
+		@Override
+		public Adapter caseFeature(Feature object) {
+			return createFeatureAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotable(Annotable object) {
+			return createAnnotableAdapter();
+		}
+
+		@Override
+		public Adapter caseAttribute(Attribute object) {
+			return createAttributeAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -95,9 +97,8 @@ public class MetadataAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link base.metadata.Feature <em>Feature</em>}'.

@@ -6,7 +6,7 @@ import base.policy.Policy;
 import base.policy.PolicyEvaluationHandler;
 import base.policy.PolicyEvaluationPoint;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -43,7 +43,7 @@ public interface PolicyManager extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<PolicyEvaluationPoint> getPoints();
+	List<PolicyEvaluationPoint> getPoints();
 
 	/**
 	 * Returns the value of the '<em><b>Handlers</b></em>' containment reference list.
@@ -59,7 +59,7 @@ public interface PolicyManager extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<PolicyEvaluationHandler> getHandlers();
+	List<PolicyEvaluationHandler> getHandlers();
 
 	/**
 	 * Returns the value of the '<em><b>Policies</b></em>' containment reference list.
@@ -75,6 +75,6 @@ public interface PolicyManager extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Policy> getPolicies();
+	List<Policy> getPolicies();
 
 } // PolicyManager

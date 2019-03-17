@@ -27,12 +27,12 @@ public class AutonomicFactoryImpl extends EFactoryImpl implements AutonomicFacto
 	 */
 	public static AutonomicFactory init() {
 		try {
-			AutonomicFactory theAutonomicFactory = (AutonomicFactory)EPackage.Registry.INSTANCE.getEFactory(AutonomicPackage.eNS_URI);
+			AutonomicFactory theAutonomicFactory = (AutonomicFactory) EPackage.Registry.INSTANCE
+					.getEFactory(AutonomicPackage.eNS_URI);
 			if (theAutonomicFactory != null) {
 				return theAutonomicFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new AutonomicFactoryImpl();
@@ -56,11 +56,14 @@ public class AutonomicFactoryImpl extends EFactoryImpl implements AutonomicFacto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case AutonomicPackage.SYMPTOM: return createSymptom();
-			case AutonomicPackage.CHANGE_REQUEST: return createChangeRequest();
-			case AutonomicPackage.CHANGE_PLAN: return createChangePlan();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case AutonomicPackage.SYMPTOM:
+			return createSymptom();
+		case AutonomicPackage.CHANGE_REQUEST:
+			return createChangeRequest();
+		case AutonomicPackage.CHANGE_PLAN:
+			return createChangePlan();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -104,7 +107,7 @@ public class AutonomicFactoryImpl extends EFactoryImpl implements AutonomicFacto
 	 */
 	@Override
 	public AutonomicPackage getAutonomicPackage() {
-		return (AutonomicPackage)getEPackage();
+		return (AutonomicPackage) getEPackage();
 	}
 
 	/**

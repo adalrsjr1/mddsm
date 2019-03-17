@@ -96,8 +96,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContextPackage.PROPERTY__NAME:
-				return getName();
+		case ContextPackage.PROPERTY__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,9 +110,9 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContextPackage.PROPERTY__NAME:
-				setName((String)newValue);
-				return;
+		case ContextPackage.PROPERTY__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -125,9 +125,9 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContextPackage.PROPERTY__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		case ContextPackage.PROPERTY__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,8 +140,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContextPackage.PROPERTY__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case ContextPackage.PROPERTY__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -153,7 +153,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

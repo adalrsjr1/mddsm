@@ -54,7 +54,7 @@ public class CommonAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -65,85 +65,102 @@ public class CommonAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CommonSwitch<Adapter> modelSwitch =
-		new CommonSwitch<Adapter>() {
-			@Override
-			public Adapter caseParameter(Parameter object) {
-				return createParameterAdapter();
-			}
-			@Override
-			public Adapter caseSignal(Signal object) {
-				return createSignalAdapter();
-			}
-			@Override
-			public Adapter caseEvent(Event object) {
-				return createEventAdapter();
-			}
-			@Override
-			public Adapter caseCall(Call object) {
-				return createCallAdapter();
-			}
-			@Override
-			public Adapter caseInterface(Interface object) {
-				return createInterfaceAdapter();
-			}
-			@Override
-			public Adapter caseValue(Value object) {
-				return createValueAdapter();
-			}
-			@Override
-			public Adapter caseSignalSource(SignalSource object) {
-				return createSignalSourceAdapter();
-			}
-			@Override
-			public Adapter caseParameterValue(ParameterValue object) {
-				return createParameterValueAdapter();
-			}
-			@Override
-			public Adapter caseExpressionValue(ExpressionValue object) {
-				return createExpressionValueAdapter();
-			}
-			@Override
-			public Adapter caseAction(Action object) {
-				return createActionAdapter();
-			}
-			@Override
-			public Adapter caseSequenceAction(SequenceAction object) {
-				return createSequenceActionAdapter();
-			}
-			@Override
-			public Adapter caseEnqueueCall(EnqueueCall object) {
-				return createEnqueueCallAdapter();
-			}
-			@Override
-			public Adapter caseMacroAction(MacroAction object) {
-				return createMacroActionAdapter();
-			}
-			@Override
-			public Adapter caseActionExecution(ActionExecution object) {
-				return createActionExecutionAdapter();
-			}
-			@Override
-			public Adapter caseParameterBinding(ParameterBinding object) {
-				return createParameterBindingAdapter();
-			}
-			@Override
-			public Adapter caseCondition(Condition object) {
-				return createConditionAdapter();
-			}
-			@Override
-			public Adapter caseBinding(Binding object) {
-				return createBindingAdapter();
-			}
-			@Override
-			public Adapter caseBindable(Bindable object) {
-				return createBindableAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected CommonSwitch<Adapter> modelSwitch = new CommonSwitch<Adapter>() {
+		@Override
+		public Adapter caseParameter(Parameter object) {
+			return createParameterAdapter();
+		}
+
+		@Override
+		public Adapter caseSignal(Signal object) {
+			return createSignalAdapter();
+		}
+
+		@Override
+		public Adapter caseEvent(Event object) {
+			return createEventAdapter();
+		}
+
+		@Override
+		public Adapter caseCall(Call object) {
+			return createCallAdapter();
+		}
+
+		@Override
+		public Adapter caseInterface(Interface object) {
+			return createInterfaceAdapter();
+		}
+
+		@Override
+		public Adapter caseValue(Value object) {
+			return createValueAdapter();
+		}
+
+		@Override
+		public Adapter caseSignalSource(SignalSource object) {
+			return createSignalSourceAdapter();
+		}
+
+		@Override
+		public Adapter caseParameterValue(ParameterValue object) {
+			return createParameterValueAdapter();
+		}
+
+		@Override
+		public Adapter caseExpressionValue(ExpressionValue object) {
+			return createExpressionValueAdapter();
+		}
+
+		@Override
+		public Adapter caseAction(Action object) {
+			return createActionAdapter();
+		}
+
+		@Override
+		public Adapter caseSequenceAction(SequenceAction object) {
+			return createSequenceActionAdapter();
+		}
+
+		@Override
+		public Adapter caseEnqueueCall(EnqueueCall object) {
+			return createEnqueueCallAdapter();
+		}
+
+		@Override
+		public Adapter caseMacroAction(MacroAction object) {
+			return createMacroActionAdapter();
+		}
+
+		@Override
+		public Adapter caseActionExecution(ActionExecution object) {
+			return createActionExecutionAdapter();
+		}
+
+		@Override
+		public Adapter caseParameterBinding(ParameterBinding object) {
+			return createParameterBindingAdapter();
+		}
+
+		@Override
+		public Adapter caseCondition(Condition object) {
+			return createConditionAdapter();
+		}
+
+		@Override
+		public Adapter caseBinding(Binding object) {
+			return createBindingAdapter();
+		}
+
+		@Override
+		public Adapter caseBindable(Bindable object) {
+			return createBindableAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -155,9 +172,8 @@ public class CommonAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link base.common.Parameter <em>Parameter</em>}'.

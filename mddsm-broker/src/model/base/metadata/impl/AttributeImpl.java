@@ -140,10 +140,10 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MetadataPackage.ATTRIBUTE__NAME:
-				return getName();
-			case MetadataPackage.ATTRIBUTE__VALUE:
-				return getValue();
+		case MetadataPackage.ATTRIBUTE__NAME:
+			return getName();
+		case MetadataPackage.ATTRIBUTE__VALUE:
+			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -156,12 +156,12 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MetadataPackage.ATTRIBUTE__NAME:
-				setName((String)newValue);
-				return;
-			case MetadataPackage.ATTRIBUTE__VALUE:
-				setValue((String)newValue);
-				return;
+		case MetadataPackage.ATTRIBUTE__NAME:
+			setName((String) newValue);
+			return;
+		case MetadataPackage.ATTRIBUTE__VALUE:
+			setValue((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -174,12 +174,12 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MetadataPackage.ATTRIBUTE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case MetadataPackage.ATTRIBUTE__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
+		case MetadataPackage.ATTRIBUTE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case MetadataPackage.ATTRIBUTE__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,10 +192,10 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MetadataPackage.ATTRIBUTE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case MetadataPackage.ATTRIBUTE__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+		case MetadataPackage.ATTRIBUTE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case MetadataPackage.ATTRIBUTE__VALUE:
+			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -207,7 +207,8 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

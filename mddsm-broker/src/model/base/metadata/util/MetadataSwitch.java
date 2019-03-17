@@ -66,25 +66,29 @@ public class MetadataSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case MetadataPackage.FEATURE: {
-				Feature feature = (Feature)theEObject;
-				T result = caseFeature(feature);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MetadataPackage.ANNOTABLE: {
-				Annotable annotable = (Annotable)theEObject;
-				T result = caseAnnotable(annotable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MetadataPackage.ATTRIBUTE: {
-				Attribute attribute = (Attribute)theEObject;
-				T result = caseAttribute(attribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case MetadataPackage.FEATURE: {
+			Feature feature = (Feature) theEObject;
+			T result = caseFeature(feature);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case MetadataPackage.ANNOTABLE: {
+			Annotable annotable = (Annotable) theEObject;
+			T result = caseAnnotable(annotable);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case MetadataPackage.ATTRIBUTE: {
+			Attribute attribute = (Attribute) theEObject;
+			T result = caseAttribute(attribute);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

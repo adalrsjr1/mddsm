@@ -64,11 +64,12 @@ public class ParameterValueImpl extends ValueImpl implements ParameterValue {
 	@Override
 	public Parameter getParameter() {
 		if (parameter != null && parameter.eIsProxy()) {
-			InternalEObject oldParameter = (InternalEObject)parameter;
-			parameter = (Parameter)eResolveProxy(oldParameter);
+			InternalEObject oldParameter = (InternalEObject) parameter;
+			parameter = (Parameter) eResolveProxy(oldParameter);
 			if (parameter != oldParameter) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommonPackage.PARAMETER_VALUE__PARAMETER, oldParameter, parameter));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommonPackage.PARAMETER_VALUE__PARAMETER,
+							oldParameter, parameter));
 			}
 		}
 		return parameter;
@@ -93,7 +94,8 @@ public class ParameterValueImpl extends ValueImpl implements ParameterValue {
 		Parameter oldParameter = parameter;
 		parameter = newParameter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.PARAMETER_VALUE__PARAMETER, oldParameter, parameter));
+			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.PARAMETER_VALUE__PARAMETER,
+					oldParameter, parameter));
 	}
 
 	/**
@@ -104,9 +106,10 @@ public class ParameterValueImpl extends ValueImpl implements ParameterValue {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CommonPackage.PARAMETER_VALUE__PARAMETER:
-				if (resolve) return getParameter();
-				return basicGetParameter();
+		case CommonPackage.PARAMETER_VALUE__PARAMETER:
+			if (resolve)
+				return getParameter();
+			return basicGetParameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,9 +122,9 @@ public class ParameterValueImpl extends ValueImpl implements ParameterValue {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CommonPackage.PARAMETER_VALUE__PARAMETER:
-				setParameter((Parameter)newValue);
-				return;
+		case CommonPackage.PARAMETER_VALUE__PARAMETER:
+			setParameter((Parameter) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -134,9 +137,9 @@ public class ParameterValueImpl extends ValueImpl implements ParameterValue {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CommonPackage.PARAMETER_VALUE__PARAMETER:
-				setParameter((Parameter)null);
-				return;
+		case CommonPackage.PARAMETER_VALUE__PARAMETER:
+			setParameter((Parameter) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -149,8 +152,8 @@ public class ParameterValueImpl extends ValueImpl implements ParameterValue {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CommonPackage.PARAMETER_VALUE__PARAMETER:
-				return parameter != null;
+		case CommonPackage.PARAMETER_VALUE__PARAMETER:
+			return parameter != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -102,25 +102,38 @@ public class AutonomicPackageImpl extends EPackageImpl implements AutonomicPacka
 	 * @generated
 	 */
 	public static AutonomicPackage init() {
-		if (isInited) return (AutonomicPackage)EPackage.Registry.INSTANCE.getEPackage(AutonomicPackage.eNS_URI);
+		if (isInited)
+			return (AutonomicPackage) EPackage.Registry.INSTANCE.getEPackage(AutonomicPackage.eNS_URI);
 
 		// Obtain or create and register package
 		Object registeredAutonomicPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		AutonomicPackageImpl theAutonomicPackage = registeredAutonomicPackage instanceof AutonomicPackageImpl ? (AutonomicPackageImpl)registeredAutonomicPackage : new AutonomicPackageImpl();
+		AutonomicPackageImpl theAutonomicPackage = registeredAutonomicPackage instanceof AutonomicPackageImpl
+				? (AutonomicPackageImpl) registeredAutonomicPackage
+				: new AutonomicPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI);
-		BasePackageImpl theBasePackage = (BasePackageImpl)(registeredPackage instanceof BasePackageImpl ? registeredPackage : BasePackage.eINSTANCE);
+		BasePackageImpl theBasePackage = (BasePackageImpl) (registeredPackage instanceof BasePackageImpl
+				? registeredPackage
+				: BasePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
-		ContextPackageImpl theContextPackage = (ContextPackageImpl)(registeredPackage instanceof ContextPackageImpl ? registeredPackage : ContextPackage.eINSTANCE);
+		ContextPackageImpl theContextPackage = (ContextPackageImpl) (registeredPackage instanceof ContextPackageImpl
+				? registeredPackage
+				: ContextPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MetadataPackage.eNS_URI);
-		MetadataPackageImpl theMetadataPackage = (MetadataPackageImpl)(registeredPackage instanceof MetadataPackageImpl ? registeredPackage : MetadataPackage.eINSTANCE);
+		MetadataPackageImpl theMetadataPackage = (MetadataPackageImpl) (registeredPackage instanceof MetadataPackageImpl
+				? registeredPackage
+				: MetadataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PolicyPackage.eNS_URI);
-		PolicyPackageImpl thePolicyPackage = (PolicyPackageImpl)(registeredPackage instanceof PolicyPackageImpl ? registeredPackage : PolicyPackage.eINSTANCE);
+		PolicyPackageImpl thePolicyPackage = (PolicyPackageImpl) (registeredPackage instanceof PolicyPackageImpl
+				? registeredPackage
+				: PolicyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
-		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl) (registeredPackage instanceof CommonPackageImpl
+				? registeredPackage
+				: CommonPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAutonomicPackage.createPackageContents();
@@ -163,7 +176,7 @@ public class AutonomicPackageImpl extends EPackageImpl implements AutonomicPacka
 	 */
 	@Override
 	public EAttribute getSymptom_Name() {
-		return (EAttribute)symptomEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) symptomEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -173,7 +186,7 @@ public class AutonomicPackageImpl extends EPackageImpl implements AutonomicPacka
 	 */
 	@Override
 	public EReference getSymptom_Bindings() {
-		return (EReference)symptomEClass.getEStructuralFeatures().get(1);
+		return (EReference) symptomEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -183,7 +196,7 @@ public class AutonomicPackageImpl extends EPackageImpl implements AutonomicPacka
 	 */
 	@Override
 	public EReference getSymptom_Conditions() {
-		return (EReference)symptomEClass.getEStructuralFeatures().get(2);
+		return (EReference) symptomEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -203,7 +216,7 @@ public class AutonomicPackageImpl extends EPackageImpl implements AutonomicPacka
 	 */
 	@Override
 	public EAttribute getChangeRequest_Name() {
-		return (EAttribute)changeRequestEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) changeRequestEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -213,7 +226,7 @@ public class AutonomicPackageImpl extends EPackageImpl implements AutonomicPacka
 	 */
 	@Override
 	public EReference getChangeRequest_BasedOn() {
-		return (EReference)changeRequestEClass.getEStructuralFeatures().get(1);
+		return (EReference) changeRequestEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -233,7 +246,7 @@ public class AutonomicPackageImpl extends EPackageImpl implements AutonomicPacka
 	 */
 	@Override
 	public EReference getChangePlan_BasedOn() {
-		return (EReference)changePlanEClass.getEStructuralFeatures().get(0);
+		return (EReference) changePlanEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -243,7 +256,7 @@ public class AutonomicPackageImpl extends EPackageImpl implements AutonomicPacka
 	 */
 	@Override
 	public EReference getChangePlan_Action() {
-		return (EReference)changePlanEClass.getEStructuralFeatures().get(1);
+		return (EReference) changePlanEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -253,7 +266,7 @@ public class AutonomicPackageImpl extends EPackageImpl implements AutonomicPacka
 	 */
 	@Override
 	public EAttribute getChangePlan_Name() {
-		return (EAttribute)changePlanEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) changePlanEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -263,7 +276,7 @@ public class AutonomicPackageImpl extends EPackageImpl implements AutonomicPacka
 	 */
 	@Override
 	public AutonomicFactory getAutonomicFactory() {
-		return (AutonomicFactory)getEFactoryInstance();
+		return (AutonomicFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -281,7 +294,8 @@ public class AutonomicPackageImpl extends EPackageImpl implements AutonomicPacka
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -315,7 +329,8 @@ public class AutonomicPackageImpl extends EPackageImpl implements AutonomicPacka
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -324,7 +339,7 @@ public class AutonomicPackageImpl extends EPackageImpl implements AutonomicPacka
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		CommonPackage theCommonPackage = (CommonPackage)EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackage theCommonPackage = (CommonPackage) EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -332,20 +347,35 @@ public class AutonomicPackageImpl extends EPackageImpl implements AutonomicPacka
 
 		// Add supertypes to classes
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(symptomEClass, Symptom.class, "Symptom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSymptom_Name(), ecorePackage.getEString(), "name", null, 1, 1, Symptom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSymptom_Bindings(), theCommonPackage.getBinding(), null, "bindings", null, 1, -1, Symptom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSymptom_Conditions(), theCommonPackage.getCondition(), null, "conditions", null, 1, -1, Symptom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSymptom_Name(), ecorePackage.getEString(), "name", null, 1, 1, Symptom.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSymptom_Bindings(), theCommonPackage.getBinding(), null, "bindings", null, 1, -1,
+				Symptom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSymptom_Conditions(), theCommonPackage.getCondition(), null, "conditions", null, 1, -1,
+				Symptom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(changeRequestEClass, ChangeRequest.class, "ChangeRequest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getChangeRequest_Name(), ecorePackage.getEString(), "name", null, 1, 1, ChangeRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getChangeRequest_BasedOn(), this.getSymptom(), null, "basedOn", null, 1, 1, ChangeRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(changeRequestEClass, ChangeRequest.class, "ChangeRequest", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getChangeRequest_Name(), ecorePackage.getEString(), "name", null, 1, 1, ChangeRequest.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getChangeRequest_BasedOn(), this.getSymptom(), null, "basedOn", null, 1, 1, ChangeRequest.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(changePlanEClass, ChangePlan.class, "ChangePlan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getChangePlan_BasedOn(), this.getChangeRequest(), null, "basedOn", null, 1, 1, ChangePlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getChangePlan_Action(), theCommonPackage.getActionExecution(), null, "action", null, 1, 1, ChangePlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getChangePlan_Name(), ecorePackage.getEString(), "name", null, 1, 1, ChangePlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(changePlanEClass, ChangePlan.class, "ChangePlan", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChangePlan_BasedOn(), this.getChangeRequest(), null, "basedOn", null, 1, 1, ChangePlan.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getChangePlan_Action(), theCommonPackage.getActionExecution(), null, "action", null, 1, 1,
+				ChangePlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChangePlan_Name(), ecorePackage.getEString(), "name", null, 1, 1, ChangePlan.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //AutonomicPackageImpl

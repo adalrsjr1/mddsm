@@ -5,7 +5,7 @@ package base.policy;
 import base.common.ParameterBinding;
 import base.common.Value;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -68,7 +68,7 @@ public interface PolicyEvaluation extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ParameterBinding> getContextBinding();
+	List<ParameterBinding> getContextBinding();
 
 	/**
 	 * Returns the value of the '<em><b>Context</b></em>' containment reference.

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -102,6 +103,15 @@ public interface MetadataPackage extends EPackage {
 	int FEATURE_FEATURE_COUNT = 3;
 
 	/**
+	 * The number of operations of the '<em>Feature</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link base.metadata.Annotable <em>Annotable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,6 +147,15 @@ public interface MetadataPackage extends EPackage {
 	 * @ordered
 	 */
 	int ANNOTABLE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Annotable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTABLE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link base.metadata.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -175,6 +194,14 @@ public interface MetadataPackage extends EPackage {
 	 */
 	int ATTRIBUTE_FEATURE_COUNT = 2;
 
+	/**
+	 * The number of operations of the '<em>Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link base.metadata.Feature <em>Feature</em>}'.
@@ -298,6 +325,7 @@ public interface MetadataPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>

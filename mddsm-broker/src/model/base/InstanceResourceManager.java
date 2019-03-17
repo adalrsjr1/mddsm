@@ -2,7 +2,7 @@
  */
 package base;
 
-import org.eclipse.emf.common.util.EList;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +36,7 @@ public interface InstanceResourceManager extends ResourceManager {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Instance> getInstances();
+	List<Instance> getInstances();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

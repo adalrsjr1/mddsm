@@ -27,12 +27,12 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	 */
 	public static ContextFactory init() {
 		try {
-			ContextFactory theContextFactory = (ContextFactory)EPackage.Registry.INSTANCE.getEFactory(ContextPackage.eNS_URI);
+			ContextFactory theContextFactory = (ContextFactory) EPackage.Registry.INSTANCE
+					.getEFactory(ContextPackage.eNS_URI);
 			if (theContextFactory != null) {
 				return theContextFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new ContextFactoryImpl();
@@ -56,10 +56,12 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ContextPackage.STATE: return createState();
-			case ContextPackage.PROPERTY: return createProperty();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case ContextPackage.STATE:
+			return createState();
+		case ContextPackage.PROPERTY:
+			return createProperty();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -92,7 +94,7 @@ public class ContextFactoryImpl extends EFactoryImpl implements ContextFactory {
 	 */
 	@Override
 	public ContextPackage getContextPackage() {
-		return (ContextPackage)getEPackage();
+		return (ContextPackage) getEPackage();
 	}
 
 	/**
