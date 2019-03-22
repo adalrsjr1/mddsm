@@ -34,7 +34,7 @@ class HandlerFactory {
     }
 
     private ActionInstance createActionInstance(MacroAction action) {
-        Class.forName(action.impl).newInstance()
+		Class.forName(action.impl).getConstructor().newInstance()
     }
 
     private ActionInstance createActionInstance(EnqueueCall action) {

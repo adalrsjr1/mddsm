@@ -4,11 +4,52 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:sb.base="http://www.inf.ufg.br/mestrado/sb/base"
-    xsi:schemaLocation="http://www.inf.ufg.br/mestrado/sb/base ../../main/resources/metamodel/base.ecore"
+    xmlns:sb.base.common="http://www.inf.ufg.br/mestrado/sb/base/common"
+    xsi:schemaLocation="http://www.inf.ufg.br/mestrado/sb/base ../../main/resources/metamodel/base.ecore http://www.inf.ufg.br/mestrado/sb/base/common ../../main/resources/metamodel/base.ecore#//common"
     name="HelloManager">
+  <iface Name="HelloTest">
+    <provides
+        name="testCall">
+      <parameters
+          name="arg"/>
+    </provides>
+    <signals
+        name="testEvent">
+      <parameters
+          name="arg"/>
+    </signals>
+  </iface>
+  <actions xsi:type="sb.base.common:MacroAction"
+      name="TestAction"
+      impl="br.inf.ufg.mddsm.broker.tests.TestAction"/>
+  <handlers
+      signal="//@iface/@provides.0">
+    <action
+        action="//@actions.0"/>
+  </handlers>
   <stateManager/>
   <resourceManager
-      xsi:type="sb.base:InstanceResourceManager"/>
+      xsi:type="sb.base:InstanceResourceManager">
+    <iface Name="TestHelloAdapter">
+      <provides
+          name="testCallAdapter">
+        <parameters
+            name="arg"/>
+      </provides>
+      <signals
+          name="testEventAdapter">
+        <parameters
+            name="arg"/>
+      </signals>
+    </iface>
+    <instances
+        name="TestHelloAdapterImpl"
+        impl="br.inf.ufg.mddsm.broker.tests.TestHelloAdapterImpl"
+        iface="//@resourceManager/@iface">
+      <features
+          name="feature1"/>
+    </instances>
+  </resourceManager>
   <autonomicManager/>
   <policyManager/>
 </sb.base:Manager>
