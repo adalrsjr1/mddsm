@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sb.base:Manager
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:sb.base="http://www.inf.ufg.br/mestrado/sb/base"
+    xsi:schemaLocation="http://www.inf.ufg.br/mestrado/sb/base ../../main/resources/metamodel/base.ecore"
+    name="HelloManager">
+  <stateManager/>
+  <resourceManager
+      xsi:type="sb.base:InstanceResourceManager"/>
+  <autonomicManager/>
+  <policyManager/>
+</sb.base:Manager>
