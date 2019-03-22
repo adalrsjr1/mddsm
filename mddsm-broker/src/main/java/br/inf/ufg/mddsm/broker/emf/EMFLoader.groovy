@@ -29,11 +29,16 @@ class EMFLoader {
     }
 
     public static Resource loadResource(String name) {
-		URL url = EMFLoader.classLoader.getResource("${name}.xmi")
+		URL url = EMFLoader.classLoader.getResource(validateName(name))
 		loadURL(url.toURI())
-//		loadURL(new File("cvm/emf/${name}.xmi").toURI())
-		//loadURL(new File("${name}.xmi").toURI())
     }
+	
+	private static String validateName(String name) {
+		if(!(name ==~ /.*\.xmi/)) {
+			return name + ".xmi"
+		}
+		return name
+	}
 	
     public static <T> T loadFirst(String name, Class<T> type) {
         loadResource(name).contents.find { type.isAssignableFrom(it.getClass()) }
