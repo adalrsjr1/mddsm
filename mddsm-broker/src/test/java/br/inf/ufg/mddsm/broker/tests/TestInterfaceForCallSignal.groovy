@@ -16,78 +16,77 @@ import br.inf.ufg.mddsm.broker.handlers.EventManager
 import br.inf.ufg.mddsm.broker.manager.MainManager
 import br.inf.ufg.mddsm.broker.manager.ManagerContext
 import br.inf.ufg.mddsm.broker.manager.ManagerFacade
+import br.inf.ufg.mddsm.broker.manager.SignalInstance
 import br.inf.ufg.mddsm.broker.manager.actions.MacroActionInstance
+import br.inf.ufg.mddsm.broker.resource.EventListener
 import br.inf.ufg.mddsm.broker.resource.ResourceManager
 import groovy.util.logging.Log4j2
 
 @Log4j2
-class TestAction implements MacroActionInstance {
+class TestCall implements MacroActionInstance {
 
 	@Override
 	public Object execute(ManagerContext ctx, Map<String, Object> params) {
 		log.info "Executing TestAction with params: ${params}"
-		return new Object();
+		log.info "Sending event"
+		ctx.mainManager.sendEvent(new SignalInstance("testEvent", ["callReturn": params]))
+		return new Object()
 	}
-	
-}
 
-interface TestHelloAdapter {
-	Object testCallAdapter(Object arg)
 }
 
 @Log4j2
-class TestHelloAdapterImpl implements TestHelloAdapter, Manageable {
+class ManagerFacadeForTest extends ManagerFacade implements EventListener {
 
-	@Override
-	public void setEventNotifier(EventNotifier eventListener) {
+	@Delegate
+	EventListener listener = [notify: { SignalInstance event ->
+			log.info "notification: {}", event
+			assert "testEvent" == event.name
+			assert [callReturn: [expressionArg:42, valueArg:"string"], source:null, name:"testEvent"] == event.params
+		}] as EventListener
+
+	public ManagerFacadeForTest(MainManager manager) {
+		super(manager)
 	}
 
-	@Override
-	@Call(name="testCallAdapter", parameters=["arg"])
-	public Object testCallAdapter(Object arg) {
-		log.info "Executing testCallAdapter with params: ${param}"
-		return new Object()
+	def testCall(def callArg) {
+		enqueue(new SignalInstance("testCall", ["valueArg":"string"]))
+		Thread.sleep(10000)
 	}
-	
+
 }
 
-class TestHelloWorld {
+class TestInterfaceForCallSignal {
 
 	static EventManager eventManager
 	static MainManager mainManager
 	static ResourceManager resourceManager
-	
+
+	static ManagerFacadeForTest facade
+
 	@BeforeAll
 	static void setup() {
-		
-		Manager managerDef = EMFLoader.loadFirst("hello.xmi", Manager)
+
+		Manager managerDef = EMFLoader.loadFirst("TestInterfaceForCallSignal.xmi", Manager)
 		eventManager = new EventManager()
 		mainManager = new ManagerFactory().createManager(managerDef)
 		resourceManager = mainManager.resourceManager
-		
+
+		facade = new ManagerFacadeForTest(mainManager)
+		mainManager.setEventListener(facade)
+
 		mainManager.start()
-		
+
 	}
-	
+
 	@AfterAll
 	static void tearDown() {
 		mainManager.stop()
 	}
-	
+
 	@Test
 	void test() {
-		TestFrontEnd frontend = new TestFrontEnd(mainManager)
-		frontend.testCall(new Object())
+		facade.testCall(new Object())
 	}
 
-}
-
-class TestFrontEnd extends ManagerFacade {
-	public TestFrontEnd(MainManager manager) {
-		super(manager)
-	}
-	
-	def testCall(def arg) {
-		enqueue("testAction", ["arg":arg])
-	}
 }
