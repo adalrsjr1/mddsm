@@ -56,7 +56,7 @@ class ManagerFacadeForTest extends ManagerFacade implements EventListener {
 
 }
 
-class TestInterfaceForCallSignal {
+class TestInterfaceForCallingSignal {
 
 	static EventManager eventManager
 	static MainManager mainManager
@@ -67,7 +67,7 @@ class TestInterfaceForCallSignal {
 	@BeforeAll
 	static void setup() {
 
-		Manager managerDef = EMFLoader.loadFirst("TestInterfaceForCallSignal.xmi", Manager)
+		Manager managerDef = EMFLoader.loadFirst("TestInterfaceForCallingSignal.xmi", Manager)
 		eventManager = new EventManager()
 		mainManager = new ManagerFactory().createManager(managerDef)
 		resourceManager = mainManager.resourceManager
