@@ -1,98 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    modelDirectory="/metametamodel/src-gen" creationIcons="false" editDirectory="/metametamodel.edit/src-gen"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/metametamodel/src-gen" creationIcons="false" editDirectory="/metametamodel.edit/src-gen"
     editorDirectory="/metametamodel.editor/src-gen" modelPluginID="metametamodel"
     modelName="Metametamodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
     copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>metametamodel.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="Metametamodel" disposableProviderFactory="true" ecorePackage="metametamodel.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="metametamodel.ecore#//ExecutionType">
-      <genEnumLiterals ecoreEnumLiteral="metametamodel.ecore#//ExecutionType/SYNC"/>
-      <genEnumLiterals ecoreEnumLiteral="metametamodel.ecore#//ExecutionType/ASYNC"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="metametamodel.ecore#//RisingType">
-      <genEnumLiterals ecoreEnumLiteral="metametamodel.ecore#//RisingType/STATIC"/>
-      <genEnumLiterals ecoreEnumLiteral="metametamodel.ecore#//RisingType/DYNAMIC"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="metametamodel.ecore#//AttributeType">
-      <genEnumLiterals ecoreEnumLiteral="metametamodel.ecore#//AttributeType/STRING"/>
-      <genEnumLiterals ecoreEnumLiteral="metametamodel.ecore#//AttributeType/ANY"/>
-      <genEnumLiterals ecoreEnumLiteral="metametamodel.ecore#//AttributeType/NUMERIC"/>
-      <genEnumLiterals ecoreEnumLiteral="metametamodel.ecore#//AttributeType/INTEGER"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="metametamodel.ecore#//Cardinality">
-      <genEnumLiterals ecoreEnumLiteral="metametamodel.ecore#//Cardinality/ZERO"/>
-      <genEnumLiterals ecoreEnumLiteral="metametamodel.ecore#//Cardinality/ONE"/>
-      <genEnumLiterals ecoreEnumLiteral="metametamodel.ecore#//Cardinality/ZERO_OR_ANY"/>
-      <genEnumLiterals ecoreEnumLiteral="metametamodel.ecore#//Cardinality/ONE_OR_ANY"/>
-    </genEnums>
-    <genClasses ecoreClass="metametamodel.ecore#//Resource">
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metametamodel.ecore#//Resource/subResources"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metametamodel.ecore#//Resource/executionType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metametamodel.ecore#//Resource/risingType"/>
-    </genClasses>
-    <genClasses ecoreClass="metametamodel.ecore#//AbstractController">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metametamodel.ecore#//AbstractController/usesType"/>
-    </genClasses>
-    <genClasses ecoreClass="metametamodel.ecore#//SubResource">
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metametamodel.ecore#//SubResource/subResources"/>
-    </genClasses>
-    <genClasses ecoreClass="metametamodel.ecore#//DataSchema">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metametamodel.ecore#//DataSchema/resource"/>
-    </genClasses>
-    <genClasses ecoreClass="metametamodel.ecore#//AbstractResource">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metametamodel.ecore#//AbstractResource/usesType"/>
-    </genClasses>
-    <genClasses ecoreClass="metametamodel.ecore#//Attribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metametamodel.ecore#//Attribute/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metametamodel.ecore#//Attribute/type"/>
-    </genClasses>
-    <genClasses ecoreClass="metametamodel.ecore#//MetaAttribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metametamodel.ecore#//MetaAttribute/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metametamodel.ecore#//MetaAttribute/type"/>
-    </genClasses>
-    <genClasses ecoreClass="metametamodel.ecore#//ControlSchema">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metametamodel.ecore#//ControlSchema/controller"/>
-    </genClasses>
-    <genClasses ecoreClass="metametamodel.ecore#//Schema">
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metametamodel.ecore#//Schema/dataschema"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metametamodel.ecore#//Schema/controlschema"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metametamodel.ecore#//Schema/enumerations"/>
-    </genClasses>
-    <genClasses ecoreClass="metametamodel.ecore#//Element">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metametamodel.ecore#//Element/attribute"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metametamodel.ecore#//Element/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metametamodel.ecore#//Element/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metametamodel.ecore#//Element/enumeration"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metametamodel.ecore#//Element/composition"/>
-    </genClasses>
-    <genClasses ecoreClass="metametamodel.ecore#//Type">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metametamodel.ecore#//Type/subTypes"/>
-    </genClasses>
-    <genClasses ecoreClass="metametamodel.ecore#//Controller">
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metametamodel.ecore#//Controller/subControllers"/>
-    </genClasses>
-    <genClasses ecoreClass="metametamodel.ecore#//SubController">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metametamodel.ecore#//SubController/subControllers"/>
-    </genClasses>
-    <genClasses ecoreClass="metametamodel.ecore#//Enumeration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metametamodel.ecore#//Enumeration/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metametamodel.ecore#//Enumeration/literals"/>
-    </genClasses>
-    <genClasses ecoreClass="metametamodel.ecore#//EnumerationLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metametamodel.ecore#//EnumerationLiteral/name"/>
-    </genClasses>
-    <genClasses ecoreClass="metametamodel.ecore#//AbstractType"/>
-    <genClasses ecoreClass="metametamodel.ecore#//SubType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metametamodel.ecore#//SubType/subTypes"/>
-    </genClasses>
-    <genClasses ecoreClass="metametamodel.ecore#//Composition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metametamodel.ecore#//Composition/sourceCardinality"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metametamodel.ecore#//Composition/targetCardinality"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metametamodel.ecore#//Composition/target"/>
-    </genClasses>
-  </genPackages>
+  <genPackages prefix="Metametamodel" disposableProviderFactory="true" ecorePackage="metametamodel.ecore#/"/>
 </genmodel:GenModel>
