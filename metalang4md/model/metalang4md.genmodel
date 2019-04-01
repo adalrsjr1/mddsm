@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/metalang4md/src" modelPluginID="metalang4md" modelName="Metalang4md"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>metalang4md.ecore</foreignModel>
+  <genPackages prefix="Metalang4md" disposableProviderFactory="true" ecorePackage="metalang4md.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="metalang4md.ecore#//ECardinality">
+      <genEnumLiterals ecoreEnumLiteral="metalang4md.ecore#//ECardinality/ONE"/>
+      <genEnumLiterals ecoreEnumLiteral="metalang4md.ecore#//ECardinality/MANY"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="metalang4md.ecore#//EInteractionBehavior">
+      <genEnumLiterals ecoreEnumLiteral="metalang4md.ecore#//EInteractionBehavior/SYNC"/>
+      <genEnumLiterals ecoreEnumLiteral="metalang4md.ecore#//EInteractionBehavior/ASYNC"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="metalang4md.ecore#//EArising">
+      <genEnumLiterals ecoreEnumLiteral="metalang4md.ecore#//EArising/STATIC"/>
+      <genEnumLiterals ecoreEnumLiteral="metalang4md.ecore#//EArising/DYNAMIC"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="metalang4md.ecore#//EKindInteraction">
+      <genEnumLiterals ecoreEnumLiteral="metalang4md.ecore#//EKindInteraction/LOCAL"/>
+      <genEnumLiterals ecoreEnumLiteral="metalang4md.ecore#//EKindInteraction/DISTRIBUTED"/>
+    </genEnums>
+    <genClasses ecoreClass="metalang4md.ecore#//EActor"/>
+    <genClasses ecoreClass="metalang4md.ecore#//EItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EItem/arisingBehavior"/>
+    </genClasses>
+    <genClasses ecoreClass="metalang4md.ecore#//EInteraction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EInteraction/interactionBehavior"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EInteraction/kindInteraction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metalang4md.ecore#//EInteraction/eInteractionType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EInteraction/targetCardinality"/>
+    </genClasses>
+    <genClasses ecoreClass="metalang4md.ecore#//EDomainSpecificType"/>
+    <genClasses ecoreClass="metalang4md.ecore#//EDomainSpecificElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metalang4md.ecore#//EDomainSpecificElement/eDomainSpecificProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metalang4md.ecore#//EDomainSpecificElement/eInteractions"/>
+    </genClasses>
+    <genClasses ecoreClass="metalang4md.ecore#//EDomainSpecificPackage"/>
+    <genClasses ecoreClass="metalang4md.ecore#//EDomainSpecificProperty"/>
+    <genClasses ecoreClass="metalang4md.ecore#//EComposableProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metalang4md.ecore#//EComposableProperty/eSubProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="metalang4md.ecore#//ELeafProperty"/>
+    <genClasses ecoreClass="metalang4md.ecore#//ECompositionInteraction"/>
+    <genClasses ecoreClass="metalang4md.ecore#//EBindinginteraction"/>
+  </genPackages>
+</genmodel:GenModel>

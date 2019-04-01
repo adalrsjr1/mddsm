@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="metalang4md" nsURI="http://www.inf.ufg.br/metalang4md" nsPrefix="ml4md">
+  <eClassifiers xsi:type="ecore:EClass" name="EActor" eSuperTypes="#//EDomainSpecificElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EItem" eSuperTypes="#//EDomainSpecificElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arisingBehavior" eType="#//EArising"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EInteraction" abstract="true" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//EReference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interactionBehavior" eType="#//EInteractionBehavior"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kindInteraction" eType="#//EKindInteraction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eInteractionType" eType="#//EDomainSpecificElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetCardinality" eType="#//ECardinality"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ECardinality">
+    <eLiterals name="ONE"/>
+    <eLiterals name="MANY" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EInteractionBehavior">
+    <eLiterals name="SYNC"/>
+    <eLiterals name="ASYNC" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EDomainSpecificType" eSuperTypes="#//EDomainSpecificElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EDomainSpecificElement" abstract="true"
+      eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eDomainSpecificProperty"
+        upperBound="-1" eType="#//EDomainSpecificProperty" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eInteractions" upperBound="-1"
+        eType="#//EInteraction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EDomainSpecificPackage" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EDomainSpecificProperty" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//ETypedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EComposableProperty" eSuperTypes="#//EDomainSpecificProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eSubProperty" upperBound="-1"
+        eType="#//EDomainSpecificProperty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ELeafProperty" eSuperTypes="#//EDomainSpecificProperty"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="EArising">
+    <eLiterals name="STATIC"/>
+    <eLiterals name="DYNAMIC" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EKindInteraction">
+    <eLiterals name="LOCAL"/>
+    <eLiterals name="DISTRIBUTED" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ECompositionInteraction" eSuperTypes="#//EInteraction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EBindinginteraction" eSuperTypes="#//EInteraction"/>
+</ecore:EPackage>
