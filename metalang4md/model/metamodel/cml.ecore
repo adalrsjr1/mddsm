@@ -8,6 +8,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataContent" eType="#//DataContent"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="connectionID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Request">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="requestID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -21,12 +22,27 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediumURL" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataContent"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Medium" eSuperTypes="#//DataContent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Medium" eSuperTypes="#//DataContent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediumDataType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediumName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediumURL" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediumSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastModTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="validityPeriod" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstTransferTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="voiceCommand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//DataContent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subForm" upperBound="-1"
         eType="#//Form" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subMedium" lowerBound="1"
         upperBound="-1" eType="#//Medium" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formDataType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="suggestedApp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="voiceCommand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="#//ActionTypeForm"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutSpec" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BuiltInType">
     <eLiterals name="TEXT_FILE"/>
@@ -55,6 +71,7 @@
         upperBound="-1" eType="#//AttachedParty" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" lowerBound="1"
         upperBound="-1" eType="#//DataType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="communicationID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Device">
     <eStructuralFeatures xsi:type="ecore:EReference" name="deviceCaps" lowerBound="1"
