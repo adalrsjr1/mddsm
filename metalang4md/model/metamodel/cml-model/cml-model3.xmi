@@ -9,6 +9,7 @@
       xsi:type="cml:Form"
       formID="DisPkg_1">
     <subMedium
+        priority="5"
         mediumName="RecSum-Jane.txt"
         mediumURL="D:Jane/RecSum-Jane.txt"/>
     <subMedium

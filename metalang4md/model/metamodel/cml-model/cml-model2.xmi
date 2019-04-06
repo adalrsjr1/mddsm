@@ -4,15 +4,16 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:cml="http://www.inf.ufg.br/metalang4md/cml"
-    xsi:schemaLocation="http://www.inf.ufg.br/metalang4md/cml ../cml.ecore"
     connectionID="C1">
   <dataContent
       xsi:type="cml:Form"
       formID="DisPkg_1">
     <subMedium
+        priority="10"
         mediumName="RecSum-Jane.txt"
         mediumURL="D:Jane/RecSum-Jane.txt"/>
     <subMedium
+        arisingBehavior="DYNAMIC"
         mediumName="xRay-Jane.jpg"
         mediumURL="D:Jane/xRay-Jane.jpg"/>
     <subMedium

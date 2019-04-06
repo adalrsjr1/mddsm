@@ -19,20 +19,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="interactionBehavior" eType="#//EInteractionBehavior"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kindInteraction" eType="#//EKindInteraction"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EDomainSpecificElement" abstract="true"
-      interface="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eDomainSpecificProperty"
-        upperBound="-1" eType="#//EDomainSpecificProperty" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EDomainSpecificElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EDomainSpecificProperty">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EComposableProperty" eSuperTypes="#//EDomainSpecificProperty">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eSubProperty" upperBound="-1"
-        eType="#//EDomainSpecificProperty" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ELeafProperty" eSuperTypes="#//EDomainSpecificProperty"/>
   <eClassifiers xsi:type="ecore:EEnum" name="EArising">
     <eLiterals name="STATIC"/>
     <eLiterals name="DYNAMIC" value="1"/>

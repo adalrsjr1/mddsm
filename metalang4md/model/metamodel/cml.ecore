@@ -21,7 +21,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediumURL" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataContent"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Medium" eSuperTypes="#//DataContent">
+  <eClassifiers xsi:type="ecore:EClass" name="Medium" eSuperTypes="#//DataContent ../metalang4md.ecore#//EItem">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediumDataType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediumName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediumURL" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -31,7 +31,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstTransferTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="voiceCommand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//DataContent">
+  <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//DataContent ../metalang4md.ecore#//EItem">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subForm" upperBound="-1"
         eType="#//Form" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subMedium" lowerBound="1"
@@ -79,7 +79,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isVirtual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isLocal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Connection">
+  <eClassifiers xsi:type="ecore:EClass" name="Connection" eSuperTypes="../metalang4md.ecore#//EActor">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataTypeRef" lowerBound="1"
         upperBound="-1" eType="#//DataTypeRef" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="device" lowerBound="1"

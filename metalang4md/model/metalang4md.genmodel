@@ -2,8 +2,7 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/metalang4md/src" modelPluginID="metalang4md" modelName="Metalang4md"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
-    operationReflection="true" importOrganizing="true">
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>metalang4md.ecore</foreignModel>
   <genPackages prefix="Metalang4md" disposableProviderFactory="true" ecorePackage="metalang4md.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="metalang4md.ecore#//ECardinality">
@@ -33,15 +32,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificType/kindInteraction"/>
     </genClasses>
     <genClasses ecoreClass="metalang4md.ecore#//EDomainSpecificElement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metalang4md.ecore#//EDomainSpecificElement/eDomainSpecificProperty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificElement/priority"/>
     </genClasses>
-    <genClasses ecoreClass="metalang4md.ecore#//EDomainSpecificProperty">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificProperty/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificProperty/value"/>
-    </genClasses>
-    <genClasses ecoreClass="metalang4md.ecore#//EComposableProperty">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metalang4md.ecore#//EComposableProperty/eSubProperty"/>
-    </genClasses>
-    <genClasses ecoreClass="metalang4md.ecore#//ELeafProperty"/>
   </genPackages>
 </genmodel:GenModel>
