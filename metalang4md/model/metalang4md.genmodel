@@ -26,24 +26,22 @@
     <genClasses ecoreClass="metalang4md.ecore#//EItem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EItem/arisingBehavior"/>
     </genClasses>
-    <genClasses ecoreClass="metalang4md.ecore#//EInteraction">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EInteraction/interactionBehavior"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EInteraction/kindInteraction"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metalang4md.ecore#//EInteraction/eInteractionType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EInteraction/targetCardinality"/>
+    <genClasses ecoreClass="metalang4md.ecore#//EDomainSpecificType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificType/cardinality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificType/arisingBehavior"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificType/interactionBehavior"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificType/kindInteraction"/>
     </genClasses>
-    <genClasses ecoreClass="metalang4md.ecore#//EDomainSpecificType"/>
     <genClasses ecoreClass="metalang4md.ecore#//EDomainSpecificElement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metalang4md.ecore#//EDomainSpecificElement/eDomainSpecificProperty"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metalang4md.ecore#//EDomainSpecificElement/eInteractions"/>
     </genClasses>
-    <genClasses ecoreClass="metalang4md.ecore#//EDomainSpecificPackage"/>
-    <genClasses ecoreClass="metalang4md.ecore#//EDomainSpecificProperty"/>
+    <genClasses ecoreClass="metalang4md.ecore#//EDomainSpecificProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificProperty/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificProperty/value"/>
+    </genClasses>
     <genClasses ecoreClass="metalang4md.ecore#//EComposableProperty">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metalang4md.ecore#//EComposableProperty/eSubProperty"/>
     </genClasses>
     <genClasses ecoreClass="metalang4md.ecore#//ELeafProperty"/>
-    <genClasses ecoreClass="metalang4md.ecore#//ECompositionInteraction"/>
-    <genClasses ecoreClass="metalang4md.ecore#//EBindinginteraction"/>
   </genPackages>
 </genmodel:GenModel>

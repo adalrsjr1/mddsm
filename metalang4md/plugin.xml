@@ -7,6 +7,14 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated cml -->
+      <package
+            uri="http://www.inf.ufg.br/metalang4md/cml"
+            class="cml.CmlPackage"
+            genModel="model/metamodel/cml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated metalang4md -->
       <package
             uri="http://www.inf.ufg.br/metalang4md"
