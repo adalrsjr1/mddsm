@@ -84,6 +84,7 @@ class Ml4mdModelComparator {
 			println diff
 			println ">> ${diff.kind} ${diff.value}"
 			if(diff.value instanceof EDomainSpecificElement) {
+//				print " ${diff.reference}"
 				print " ${diff.value.eContainer()}"
 			} 
 //			def value = diff.value
