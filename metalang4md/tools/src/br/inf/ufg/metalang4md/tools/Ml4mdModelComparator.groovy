@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 
 import cml.CmlPackage
-import metalang4md.Metalang4mdPackage
+import metalang4md.EDomainSpecificElement
 
 class Ml4mdModelComparator {
 
@@ -81,8 +81,11 @@ class Ml4mdModelComparator {
 		List<Diff> differences = comparison.getDifferences()
 		differences.each { Diff diff ->
 //			println ${diff.attribute.eContainer()} ${diff.value}
-//			println diff
-			println "${diff.kind} ${diff.value}" 
+			println diff
+			println ">> ${diff.kind} ${diff.value}"
+			if(diff.value instanceof EDomainSpecificElement) {
+				print " ${diff.value.eContainer()}"
+			} 
 //			def value = diff.value
 //			println value instanceof EItem
 		}

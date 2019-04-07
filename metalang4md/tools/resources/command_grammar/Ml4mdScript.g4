@@ -53,12 +53,14 @@ chg_expression
 del_expression
   : ACTOR 'from' ACTOR
   | TYPE 'from' ACTOR
+  | ITEM 'from' ITEM
   | element
   ;
 
 add_expression
   : TYPE 'to' ACTOR
   | TYPE 'to' ACTOR metadata
+  | ITEM 'to' ITEM
   | element
   ;
 
