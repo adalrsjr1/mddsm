@@ -333,7 +333,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_3M_pcFYmEemoF7UNVDF2RQ" name="kindInteraction : EKindInteraction = LOCAL" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_3M_pcFYmEemoF7UNVDF2RQ" name="kindInteraction : ECoordinationBehavior = LOCAL" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="metalang4md.ecore#//EDomainSpecificType/kindInteraction"/>
         <semanticElements xmi:type="ecore:EAttribute" href="metalang4md.ecore#//EDomainSpecificType/kindInteraction"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_53YMFFYmEemoF7UNVDF2RQ" labelAlignment="LEFT">
@@ -425,9 +425,9 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_zApYMFSOEemWWMZLiwz9SA" name="EKindInteraction" tooltipText="" width="12" height="10">
-      <target xmi:type="ecore:EEnum" href="metalang4md.ecore#//EKindInteraction"/>
-      <semanticElements xmi:type="ecore:EEnum" href="metalang4md.ecore#//EKindInteraction"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_zApYMFSOEemWWMZLiwz9SA" name="ECoordinationBehavior" tooltipText="" width="12" height="10">
+      <target xmi:type="ecore:EEnum" href="metalang4md.ecore#//ECoordinationBehavior"/>
+      <semanticElements xmi:type="ecore:EEnum" href="metalang4md.ecore#//ECoordinationBehavior"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -436,16 +436,16 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_zYDyoFSOEemWWMZLiwz9SA" name="LOCAL" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="metalang4md.ecore#//EKindInteraction/LOCAL"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="metalang4md.ecore#//EKindInteraction/LOCAL"/>
+        <target xmi:type="ecore:EEnumLiteral" href="metalang4md.ecore#//ECoordinationBehavior/LOCAL"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="metalang4md.ecore#//ECoordinationBehavior/LOCAL"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_zYFAwFSOEemWWMZLiwz9SA" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_1HxcwFSOEemWWMZLiwz9SA" name="DISTRIBUTED" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="metalang4md.ecore#//EKindInteraction/DISTRIBUTED"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="metalang4md.ecore#//EKindInteraction/DISTRIBUTED"/>
+        <target xmi:type="ecore:EEnumLiteral" href="metalang4md.ecore#//ECoordinationBehavior/DISTRIBUTED"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="metalang4md.ecore#//ECoordinationBehavior/DISTRIBUTED"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_1HyD0FSOEemWWMZLiwz9SA" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
@@ -787,23 +787,23 @@
       </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_gCc_AFYyEemZr9TU8mvkJQ" name="EKindInteraction" tooltipText="" width="12" height="10">
-      <target xmi:type="ecore:EEnum" href="metalang4md.ecore#//EKindInteraction"/>
-      <semanticElements xmi:type="ecore:EEnum" href="metalang4md.ecore#//EKindInteraction"/>
+      <target xmi:type="ecore:EEnum" href="metalang4md.ecore#//ECoordinationBehavior"/>
+      <semanticElements xmi:type="ecore:EEnum" href="metalang4md.ecore#//ECoordinationBehavior"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_gCc_AVYyEemZr9TU8mvkJQ" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="221,236,202">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_gCmwBFYyEemZr9TU8mvkJQ" name="LOCAL" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="metalang4md.ecore#//EKindInteraction/LOCAL"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="metalang4md.ecore#//EKindInteraction/LOCAL"/>
+        <target xmi:type="ecore:EEnumLiteral" href="metalang4md.ecore#//ECoordinationBehavior/LOCAL"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="metalang4md.ecore#//ECoordinationBehavior/LOCAL"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_gCnXEFYyEemZr9TU8mvkJQ" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_gCnXEVYyEemZr9TU8mvkJQ" name="DISTRIBUTED" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="metalang4md.ecore#//EKindInteraction/DISTRIBUTED"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="metalang4md.ecore#//EKindInteraction/DISTRIBUTED"/>
+        <target xmi:type="ecore:EEnumLiteral" href="metalang4md.ecore#//ECoordinationBehavior/DISTRIBUTED"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="metalang4md.ecore#//ECoordinationBehavior/DISTRIBUTED"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_gCnXElYyEemZr9TU8mvkJQ" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>

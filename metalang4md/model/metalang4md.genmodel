@@ -17,9 +17,9 @@
       <genEnumLiterals ecoreEnumLiteral="metalang4md.ecore#//EArising/STATIC"/>
       <genEnumLiterals ecoreEnumLiteral="metalang4md.ecore#//EArising/DYNAMIC"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="metalang4md.ecore#//EKindInteraction">
-      <genEnumLiterals ecoreEnumLiteral="metalang4md.ecore#//EKindInteraction/LOCAL"/>
-      <genEnumLiterals ecoreEnumLiteral="metalang4md.ecore#//EKindInteraction/DISTRIBUTED"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="metalang4md.ecore#//ECoordinationBehavior">
+      <genEnumLiterals ecoreEnumLiteral="metalang4md.ecore#//ECoordinationBehavior/LOCAL"/>
+      <genEnumLiterals ecoreEnumLiteral="metalang4md.ecore#//ECoordinationBehavior/DISTRIBUTED"/>
     </genEnums>
     <genClasses ecoreClass="metalang4md.ecore#//EActor"/>
     <genClasses ecoreClass="metalang4md.ecore#//EItem">
