@@ -12,6 +12,7 @@ command
 
 attribute
   : NAME '=' token
+  | NAME '=' token ',' attribute
   ;
 
 token
@@ -28,9 +29,21 @@ NUMBER
   ;
 
 element
-  : 'actor'
-  | 'type'
-  | 'item'
+  : ACTOR
+  | TYPE
+  | ITEM
+  ;
+
+ACTOR
+  : 'actor' '=' NAME
+  ;
+
+TYPE
+  : 'type' '=' NAME
+  ;
+
+ITEM
+  :	'item' '=' NAME
   ;
 
 chg_expression
@@ -38,14 +51,14 @@ chg_expression
   ;
 
 del_expression
-  : 'actor' 'from' 'actor'
-  | 'type' 'from' 'actor'
+  : ACTOR 'from' ACTOR
+  | TYPE 'from' ACTOR
   | element
   ;
 
 add_expression
-  : 'actor' 'to' 'actor'
-  | 'type' 'to' 'actor' metadata
+  : TYPE 'to' ACTOR
+  | TYPE 'to' ACTOR metadata
   | element
   ;
 
