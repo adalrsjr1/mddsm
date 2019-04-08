@@ -15,7 +15,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EDomainSpecificType" eSuperTypes="#//EDomainSpecificElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" eType="#//ECardinality"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arisingBehavior" eType="#//EArising"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="interactionBehavior" eType="#//EInteractionBehavior"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kindInteraction" eType="#//ECoordinationBehavior"/>
   </eClassifiers>

@@ -27,7 +27,6 @@
     </genClasses>
     <genClasses ecoreClass="metalang4md.ecore#//EDomainSpecificType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificType/cardinality"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificType/arisingBehavior"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificType/interactionBehavior"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificType/kindInteraction"/>
     </genClasses>

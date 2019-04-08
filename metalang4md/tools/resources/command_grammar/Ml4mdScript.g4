@@ -59,18 +59,18 @@ del_expression
 
 add_expression
   : TYPE 'to' ACTOR
-  | TYPE 'to' ACTOR metadata
+  | TYPE 'to' ACTOR metadata_option_type
   | ITEM 'to' ITEM
+  | ITEM metadata_option_item
   | element
   ;
 
-metadata
-  : 'with' metadata_option
-  |
+metadata_option_type
+  : 'with' 'interaction' '=' interaction_behavior 'cardinality' '=' cardinality 'coordination' '=' coordination_behavior
   ;
 
-metadata_option
-  : 'interaction' '=' interaction_behavior 'arising' '=' arising_behavior 'cardinality' '=' cardinality 'coordination' '=' coordination_behavior
+metadata_option_item
+  : 'with' 'arising' '=' arising_behavior
   ;
 
 interaction_behavior

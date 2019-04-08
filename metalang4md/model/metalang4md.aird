@@ -99,10 +99,6 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_hIDLkVYmEemoF7UNVDF2RQ" fontColor="2697711" fontName="Cantarell" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_hIDLklYmEemoF7UNVDF2RQ"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_ndMIsFYmEemoF7UNVDF2RQ" type="3010" element="_ncx5AFYmEemoF7UNVDF2RQ">
-              <styles xmi:type="notation:FontStyle" xmi:id="_ndMIsVYmEemoF7UNVDF2RQ" fontColor="2697711" fontName="Cantarell" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_ndMIslYmEemoF7UNVDF2RQ"/>
-            </children>
             <children xmi:type="notation:Node" xmi:id="_v8cM8FYmEemoF7UNVDF2RQ" type="3010" element="_v8Iq8FYmEemoF7UNVDF2RQ">
               <styles xmi:type="notation:FontStyle" xmi:id="_v8cM8VYmEemoF7UNVDF2RQ" fontColor="2697711" fontName="Cantarell" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_v8cM8lYmEemoF7UNVDF2RQ"/>
@@ -313,14 +309,6 @@
         <target xmi:type="ecore:EAttribute" href="metalang4md.ecore#//EDomainSpecificType/cardinality"/>
         <semanticElements xmi:type="ecore:EAttribute" href="metalang4md.ecore#//EDomainSpecificType/cardinality"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_kIvVYVYmEemoF7UNVDF2RQ" labelAlignment="LEFT">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
-      </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_ncx5AFYmEemoF7UNVDF2RQ" name="arisingBehavior : EArising = STATIC" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="metalang4md.ecore#//EDomainSpecificType/arisingBehavior"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="metalang4md.ecore#//EDomainSpecificType/arisingBehavior"/>
-        <ownedStyle xmi:type="diagram:BundledImage" uid="_rwfw8lYmEemoF7UNVDF2RQ" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
@@ -729,8 +717,6 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_gCiekVYyEemZr9TU8mvkJQ" name="arisingBehavior : EArising = STATIC" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="metalang4md.ecore#//EDomainSpecificType/arisingBehavior"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="metalang4md.ecore#//EDomainSpecificType/arisingBehavior"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_gCjFoFYyEemZr9TU8mvkJQ" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
