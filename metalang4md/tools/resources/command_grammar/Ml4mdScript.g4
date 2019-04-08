@@ -47,7 +47,7 @@ ITEM
   ;
 
 chg_expression
-  : attribute 'from' element
+  : attribute 'in' element
   ;
 
 del_expression
