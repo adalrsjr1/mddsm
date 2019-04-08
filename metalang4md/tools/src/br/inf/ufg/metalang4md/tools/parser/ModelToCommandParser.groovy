@@ -1,4 +1,4 @@
-package br.inf.ufg.metalang4md.tools
+package br.inf.ufg.metalang4md.tools.parser
 
 import org.eclipse.emf.compare.Diff
 import org.eclipse.emf.ecore.EObject

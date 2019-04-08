@@ -1,4 +1,4 @@
-package br.inf.ufg.metalang4md.tools
+package br.inf.ufg.metalang4md.tools.comparator
 
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.compare.Comparison
