@@ -48,12 +48,13 @@ abstract class CommandControl {
 @Builder(prefix = "with")
 class CommandControlChange extends CommandControl {
     Tuple2<String, String> attribute
+    Tuple2<String, String> target
     CommandExpression expression
 
     CommandControlChange() { super(CommandAction.CHANGE) }
 
     String toString() {
-        "${action} $expression"
+        "${action} ${attribute[0]}=${attribute[1]} in ${target[0]}=${target[1]}"
     }
 }
 
@@ -92,14 +93,20 @@ class CommandExpression {
     }
 
     String toString(boolean  withMetadata) {
-        def srcStr = "${source[0]}=${source[1]}"
-        def tgtStr = "${target[0]}=${target[1]}"
+        def elemStr = element ? "${element[0]}=${element[1]}" : ""
+        def srcStr = source ? "${source[0]}=${source[1]}" : ""
+        def tgtStr = target ? "${target[0]}=${target[1]}" : ""
         def metaStr = metadata ?: ""
 
-        if(withMetadata) {
-            return "$srcStr COMMAND_EXPRESSION $tgtStr $metaStr".strip()
+        def srcTgt = "$srcStr COMMAND_EXPRESSION $tgtStr"
+        if(element) {
+            srcTgt = "${element[0]}=${element[1]}"
         }
-        return "$srcStr COMMAND_EXPRESSION $tgtStr".strip()
+
+        if(withMetadata) {
+            return "$srcTgt $metaStr".strip()
+        }
+        return "$srcTgt".strip()
 
 
     }
