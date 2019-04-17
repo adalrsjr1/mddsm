@@ -5,7 +5,6 @@ import metalang4md.EArising
 import metalang4md.ECardinality
 import metalang4md.ECoordinationBehavior
 import metalang4md.EInteractionBehavior
-import org.apache.groovy.parser.antlr4.GroovyParser.CommandArgumentContext
 
 import javax.naming.OperationNotSupportedException
 
@@ -36,7 +35,7 @@ abstract class CommandControl {
                 case CommandAction.CHANGE: return CommandControlChange.builder()
                     break
                 default:
-                    throw new OperationNotSupportedException("There is no builder for this action")
+                    throw new OperationNotSupportedException("There is no builder for $action")
                     break
             }
         }
@@ -49,7 +48,6 @@ abstract class CommandControl {
 class CommandControlChange extends CommandControl {
     Tuple2<String, String> attribute
     Tuple2<String, String> target
-    CommandExpression expression
 
     CommandControlChange() { super(CommandAction.CHANGE) }
 
@@ -65,7 +63,7 @@ class CommandControlAdd extends CommandControl {
     CommandControlAdd() { super(CommandAction.ADD) }
 
     String toString() {
-        "${super.action} $expression"
+        "${super.action} ${expression.toString(true, "to")}"
     }
 }
 
@@ -76,7 +74,7 @@ class CommandControlDelete extends CommandControl {
     CommandControlDelete() { super(CommandAction.DELETE) }
 
     String toString() {
-        "${super.action} ${expression.toString(false)}"
+        "${super.action} ${expression.toString(false, "from")}"
     }
 }
 
@@ -89,18 +87,18 @@ class CommandExpression {
     CommandExpressionMetadata metadata
 
     String toString() {
-        toString(true)
+        toString(true, "")
     }
 
-    String toString(boolean  withMetadata) {
+    String toString(boolean  withMetadata, String commandExpression) {
         def elemStr = element ? "${element[0]}=${element[1]}" : ""
         def srcStr = source ? "${source[0]}=${source[1]}" : ""
         def tgtStr = target ? "${target[0]}=${target[1]}" : ""
         def metaStr = metadata ?: ""
 
-        def srcTgt = "$srcStr COMMAND_EXPRESSION $tgtStr"
+        def srcTgt = "$srcStr $commandExpression $tgtStr"
         if(element) {
-            srcTgt = "${element[0]}=${element[1]}"
+            srcTgt = elemStr
         }
 
         if(withMetadata) {

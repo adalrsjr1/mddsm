@@ -24,7 +24,7 @@ class TestCommand {
 				.build()
 
 
-		assert "ADD source=sourceXMI COMMAND_EXPRESSION target=targetXMI" == c.toString()
+		assert "ADD source=sourceXMI to target=targetXMI" == c.toString()
 	}
 	
 	@Test
@@ -51,7 +51,7 @@ class TestCommand {
 					.build())
 				.build()
 
-		assert "ADD source=sourceXMI COMMAND_EXPRESSION target=targetXMI" == c.toString()
+		assert "ADD source=sourceXMI to target=targetXMI" == c.toString()
 	}
 	
 	@Test
@@ -69,7 +69,7 @@ class TestCommand {
 					.build())
 				.build()
 
-		assert "ADD source=sourceXMI COMMAND_EXPRESSION target=targetXMI" == c.toString()
+		assert "ADD source=sourceXMI to target=targetXMI" == c.toString()
 	}
 	
 	@Test
@@ -110,7 +110,7 @@ class TestCommand {
 					.build())
 				.build()
 				
-		assert "ADD source=sourceXMI COMMAND_EXPRESSION target=targetXMI with cardinality=MANY coordination=DISTRIBUTED interaction=SYNC" == c.toString()
+		assert "ADD source=sourceXMI to target=targetXMI with cardinality=MANY coordination=DISTRIBUTED interaction=SYNC" == c.toString()
 	}
 
 	@Test
@@ -122,7 +122,7 @@ class TestCommand {
 					.build())
 				.build()
 
-		assert "DELETE source=sourceXMI COMMAND_EXPRESSION target=targetXMI" == c.toString()
+		assert "DELETE source=sourceXMI from target=targetXMI" == c.toString()
 	}
 	
 	@Test
@@ -139,7 +139,7 @@ class TestCommand {
 					.build())
 				.build()
 
-		assert "DELETE source=sourceXMI COMMAND_EXPRESSION target=targetXMI with interaction=SYNC cardinality=MANY coordination=DISTRIBUTED" != c.toString()
+		assert "DELETE source=sourceXMI from target=targetXMI with interaction=SYNC cardinality=MANY coordination=DISTRIBUTED" != c.toString()
 	}
 	
 	@Test
@@ -156,7 +156,7 @@ class TestCommand {
 					.build())
 				.build()
 
-		assert "DELETE source=sourceXMI COMMAND_EXPRESSION target=targetXMI" == c.toString()
+		assert "DELETE source=sourceXMI from target=targetXMI" == c.toString()
 	}
 	
 	@Test
