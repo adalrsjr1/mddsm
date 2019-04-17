@@ -1,14 +1,12 @@
 package br.ufg.inf.synthesis
 
+import cml.CmlPackage
+import metalang4md.EDomainSpecificElement
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.compare.Comparison
 import org.eclipse.emf.compare.Diff
 import org.eclipse.emf.compare.EMFCompare
-import org.eclipse.emf.compare.match.DefaultComparisonFactory
-import org.eclipse.emf.compare.match.DefaultEqualityHelperFactory
-import org.eclipse.emf.compare.match.DefaultMatchEngine
-import org.eclipse.emf.compare.match.IComparisonFactory
-import org.eclipse.emf.compare.match.IMatchEngine
+import org.eclipse.emf.compare.match.*
 import org.eclipse.emf.compare.match.eobject.IEObjectMatcher
 import org.eclipse.emf.compare.match.impl.MatchEngineFactoryImpl
 import org.eclipse.emf.compare.match.impl.MatchEngineFactoryRegistryImpl
@@ -24,13 +22,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 
-import com.google.common.collect.Collections2
-import com.google.common.collect.ComparisonChain
-import com.google.common.collect.Ordering
-
-import cml.CmlPackage
-import metalang4md.EDomainSpecificElement
-
 class Ml4mdModelComparator {
 
 	static Tuple3<Resource, Resource, Comparison> compare(File newModel, File oldModel) {
@@ -43,13 +34,13 @@ class Ml4mdModelComparator {
 		def newResource = load(xmi1, newResourceSet)
 		def oldResource = load(xmi2, oldResourceSet)
 
-		IEObjectMatcher matcher = DefaultMatchEngine.createDefaultEObjectMatcher(UseIdentifiers.NEVER);
-		IComparisonFactory comparisonFactory = new DefaultComparisonFactory(new DefaultEqualityHelperFactory());
-		IMatchEngine.Factory matchEngineFactory = new MatchEngineFactoryImpl(matcher, comparisonFactory);
-		matchEngineFactory.setRanking(20);
-		IMatchEngine.Factory.Registry matchEngineRegistry = new MatchEngineFactoryRegistryImpl();
-		matchEngineRegistry.add(matchEngineFactory);
-		EMFCompare comparator = EMFCompare.builder().setMatchEngineFactoryRegistry(matchEngineRegistry).build();
+		IEObjectMatcher matcher = DefaultMatchEngine.createDefaultEObjectMatcher(UseIdentifiers.NEVER)
+		IComparisonFactory comparisonFactory = new DefaultComparisonFactory(new DefaultEqualityHelperFactory())
+		IMatchEngine.Factory matchEngineFactory = new MatchEngineFactoryImpl(matcher, comparisonFactory)
+		matchEngineFactory.setRanking(20)
+		IMatchEngine.Factory.Registry matchEngineRegistry = new MatchEngineFactoryRegistryImpl()
+		matchEngineRegistry.add(matchEngineFactory)
+		EMFCompare comparator = EMFCompare.builder().setMatchEngineFactoryRegistry(matchEngineRegistry).build()
 
 		IComparisonScope scope = new DefaultComparisonScope(newResourceSet, oldResourceSet, null)
 
@@ -87,32 +78,32 @@ class Ml4mdModelComparator {
 
 		List<Diff> differences = comparison.getDifferences()
 		
-		Ordering ordering = new Ordering() {
-
-			@Override
-			public int compare(def arg0, def arg1) {
-				def elem0 = null
-				def elem1 = null
-				if(arg0 instanceof EDomainSpecificElement) {
-					elem0 = arg0
-				}
-				
-				if(arg1 instanceof EDomainSpecificElement) {
-					elem1 = arg1
-				}
-				
-				if(elem0 != null && elem1 != null) {
-					return ComparisonChain.start()
-					.compare(elem0.priority, elem1.priority)
-					.result()
-				}
-				return 0
-				
-			}
-			
-		}
-		
-		differences = ordering.sortedCopy(differences)
+//		Ordering ordering = new Ordering() {
+//
+//			@Override
+//			public int compare(def arg0, def arg1) {
+//				def elem0 = null
+//				def elem1 = null
+//				if(arg0 instanceof EDomainSpecificElement) {
+//					elem0 = arg0
+//				}
+//
+//				if(arg1 instanceof EDomainSpecificElement) {
+//					elem1 = arg1
+//				}
+//
+//				if(elem0 != null && elem1 != null) {
+//					return ComparisonChain.start()
+//					.compare(elem0.priority, elem1.priority)
+//					.result()
+//				}
+//				return 0
+//
+//			}
+//
+//		}
+//
+//		differences = ordering.sortedCopy(differences)
 		
 		differences.each { Diff diff ->
 //			println ${diff.attribute.eContainer()} ${diff.value}
