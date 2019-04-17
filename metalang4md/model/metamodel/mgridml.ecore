@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mgridml" nsURI="http://www.inf.ufg.br/metalang4md/mgridml" nsPrefix="mgridml">
+  <eClassifiers xsi:type="ecore:EClass" name="MGridSchema">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mgridModelID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MGridControlSchema" eSuperTypes="#//MGridSchema">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mcgrid" lowerBound="1"
+        eType="#//MCGrid" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MGridDataSchema" eSuperTypes="#//MGridSchema">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mdGrid" upperBound="-1"
+        eType="#//MDGrid" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MCGrid">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mgcontroller" lowerBound="1"
+        upperBound="-1" eType="#//MGController" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MDGrid">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plantElem" upperBound="-1"
+        eType="#//PlantElem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlantElem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="#//PlantElem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deviceProperty" upperBound="-1"
+        eType="#//DeviceProperty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LoadDevice" eSuperTypes="#//Device"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StorageDevice" eSuperTypes="#//Device"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Source" eSuperTypes="#//PlantElem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SmartMeter" eSuperTypes="#//Meter"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Meter" eSuperTypes="#//PlantElem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LegacyMeter" eSuperTypes="#//Meter"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MGController"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicController" eSuperTypes="#//MGController"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MGridController" eSuperTypes="#//MGController">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mgcontroller" upperBound="-1"
+        eType="#//MGController" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LoadController" eSuperTypes="#//AtomicController">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loadDeviceType" lowerBound="1"
+        upperBound="-1" eType="#//LoadDeviceType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lcProperty" upperBound="-1"
+        eType="#//LC_Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StorageController" eSuperTypes="#//AtomicController">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="storageDeviceType" lowerBound="1"
+        upperBound="-1" eType="#//StorageDeviceType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceController" eSuperTypes="#//AtomicController">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceType" lowerBound="1"
+        upperBound="-1" eType="#//SourceType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PCC" eSuperTypes="#//AtomicController">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="meterType" lowerBound="1"
+        eType="#//MeterType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MeterType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StorageDeviceType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LoadDeviceType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LC_Property"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SmartMType" eSuperTypes="#//MeterType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LegacyMType" eSuperTypes="#//MeterType"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="CriticalEnum"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="SourceEnum"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ControlEnum"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ChargeEnum"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="UsageEnum"/>
+</ecore:EPackage>
