@@ -32,7 +32,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificType/kindInteraction"/>
     </genClasses>
     <genClasses image="false" ecoreClass="metalang4md.ecore#//EDomainSpecificElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificElement/priority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metalang4md.ecore#//EDomainSpecificElement/commandPriority"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

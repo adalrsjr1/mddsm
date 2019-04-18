@@ -19,7 +19,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kindInteraction" eType="#//ECoordinationBehavior"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EDomainSpecificElement" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commandPriority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EArising">
     <eLiterals name="STATIC"/>

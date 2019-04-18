@@ -341,9 +341,9 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_39L30Fi5Eemp0JIvmAlH6A" name="priority : EInt" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="metalang4md.ecore#//EDomainSpecificElement/priority"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="metalang4md.ecore#//EDomainSpecificElement/priority"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_39L30Fi5Eemp0JIvmAlH6A" name="commandPriority : EInt" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="metalang4md.ecore#//EDomainSpecificElement/commandPriority"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="metalang4md.ecore#//EDomainSpecificElement/commandPriority"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_6nyc5Fi5Eemp0JIvmAlH6A" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
