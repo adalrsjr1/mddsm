@@ -22,4 +22,20 @@
             genModel="model/metalang4md.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated policies -->
+      <package
+            uri="http://www.inf.ufg.br/metalang4md/policies"
+            class="policies.PoliciesPackage"
+            genModel="model/policies.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mgridml -->
+      <package
+            uri="http://www.inf.ufg.br/metalang4md/mgridml"
+            class="mgridml.MgridmlPackage"
+            genModel="model/metamodel/mgridml.genmodel"/>
+   </extension>
+
 </plugin>

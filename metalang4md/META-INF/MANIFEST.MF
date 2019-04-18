@@ -34,6 +34,12 @@ Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: metalang4md,
  metalang4md.impl,
  metalang4md.util,
+ policies,
+ policies.impl,
+ policies.util,
  cml,
  cml.impl,
- cml.util
+ cml.util,
+ mgridml,
+ mgridml.impl,
+ mgridml.util
