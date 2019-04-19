@@ -10,7 +10,7 @@
       connectionID="c1">
     <dataTypeRef
         xsi:type="cml:FormTypeRef"
-        formTypeName="DisPkg_1"/>
+        formTypeName="Patient Record"/>
     <dataTypeRef
         xsi:type="cml:MediumTypeRef"
         mediumTypeName="LiveAudio"/>
