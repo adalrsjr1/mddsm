@@ -13,12 +13,12 @@ import javax.naming.OperationNotSupportedException
 class ModelToCommandParser {
 
 	String eObjectToXmiString(def eObject) {
-		log.warn ">>> ModelToCommandParser.eObjectToXmiString not implemented yet"
+		log.warn "ModelToCommandParser.eObjectToXmiString not implemented yet"
 		return eObject
 	}
 
 	String xmiStringToEObject(String xmiString) {
-		log.warn ">>> ModelToCommandParser.xmiStringToEObject not implemented yet"
+		log.warn "ModelToCommandParser.xmiStringToEObject not implemented yet"
 		return xmiString
 	}
 
