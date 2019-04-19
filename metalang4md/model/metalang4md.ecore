@@ -17,7 +17,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" eType="#//ECardinality"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="interactionBehavior" eType="#//EInteractionBehavior"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kindInteraction" eType="#//ECoordinationBehavior"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="binding" eType="#//EDomainSpecificType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="binding" upperBound="-1"
+        eType="#//EDomainSpecificType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EDomainSpecificElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="commandPriority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

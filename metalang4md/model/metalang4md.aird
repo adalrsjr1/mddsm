@@ -456,7 +456,7 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_rueXgGI2Eem0kcfZllVMtA" name="[0..1] binding" sourceNode="__xp1QFR9EemgnL_Lvm9tJA" targetNode="__xp1QFR9EemgnL_Lvm9tJA">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_rueXgGI2Eem0kcfZllVMtA" name="[0..*] binding" sourceNode="__xp1QFR9EemgnL_Lvm9tJA" targetNode="__xp1QFR9EemgnL_Lvm9tJA">
       <target xmi:type="ecore:EReference" href="metalang4md.ecore#//EDomainSpecificType/binding"/>
       <semanticElements xmi:type="ecore:EReference" href="metalang4md.ecore#//EDomainSpecificType/binding"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_rue-kGI2Eem0kcfZllVMtA" routingStyle="manhattan" strokeColor="0,0,0">
