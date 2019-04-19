@@ -42,4 +42,7 @@ Export-Package: metalang4md,
  cml.util,
  mgridml,
  mgridml.impl,
- mgridml.util
+ mgridml.util,
+ rbcml,
+ rbcml.impl,
+ rbcml.util

@@ -3,6 +3,7 @@
 /*.editor
 /*.tests
 **/src/main/cml
+**/src/main/rbcml
 **/src/main/metalang4md
 **/src/main/mgridml
 **/src/main/policies

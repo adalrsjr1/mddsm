@@ -38,4 +38,12 @@
             genModel="model/metamodel/mgridml.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated rbcml -->
+      <package
+            uri="http://www.inf.ufg.br/metalang4md/rbcml"
+            class="rbcml.RbcmlPackage"
+            genModel="model/metamodel/rbcml.genmodel"/>
+   </extension>
+
 </plugin>
