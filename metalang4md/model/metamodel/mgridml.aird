@@ -4,6 +4,7 @@
     <semanticResources>mgridml.ecore</semanticResources>
     <semanticResources>../metalang4md.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+    <semanticResources>platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_sfSPcGEwEemE1dY53CvbDQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_t_YJMGEwEemE1dY53CvbDQ" name=" class diagram" repPath="#_t-KBMGEwEemE1dY53CvbDQ">
