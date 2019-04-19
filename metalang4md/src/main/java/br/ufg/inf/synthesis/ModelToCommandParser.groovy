@@ -1,31 +1,45 @@
 package br.ufg.inf.synthesis
 
+import br.ufg.inf.metalang4md.*
+import groovy.util.logging.Log4j2
 import org.eclipse.emf.compare.Diff
+import org.eclipse.emf.compare.ResourceAttachmentChange
+import org.eclipse.emf.compare.internal.spec.AttributeChangeSpec
+import org.eclipse.emf.compare.internal.spec.ReferenceChangeSpec
 
-import br.ufg.inf.metalang4md.EArising
-import br.ufg.inf.metalang4md.ECardinality
-import br.ufg.inf.metalang4md.ECoordinationBehavior
-import br.ufg.inf.metalang4md.EDomainSpecificElement
-import br.ufg.inf.metalang4md.EDomainSpecificType
-import br.ufg.inf.metalang4md.EInteractionBehavior
+import javax.naming.OperationNotSupportedException
 
+@Log4j2
 class ModelToCommandParser {
 
-	public String eObjectToXmiString(def eObject) {
-		System.err.println(">>> ModelToCommandParser.eObjectToXmiString not implemented yet")
+	String eObjectToXmiString(def eObject) {
+		log.warn ">>> ModelToCommandParser.eObjectToXmiString not implemented yet"
 		return eObject
 	}
-	
-	public String xmiStringToEObject(String xmiString) {
-		System.err.println(">>> ModelToCommandParser.xmiStringToEObject not implemented yet")
+
+	String xmiStringToEObject(String xmiString) {
+		log.warn ">>> ModelToCommandParser.xmiStringToEObject not implemented yet"
 		return xmiString
 	}
-	
-	public CommandControl process(Diff diff) {
-		if((diff.value instanceof EDomainSpecificElement)) {
+
+	CommandControl process(Diff diff) {
+		if(diff instanceof ResourceAttachmentChange) {
+			return processResourceAttachementChangeSpec(diff)
+		}
+
+		if(diff instanceof ReferenceChangeSpec) {
 			return processDomainSpecificElement(diff)
 		}
-		return processAttribute(diff)
+
+		if(diff instanceof AttributeChangeSpec) {
+			return processAttribute(diff)
+		}
+
+		throw new OperationNotSupportedException("There is no processor to handle $diff.class diff operation")
+	}
+
+	private CommandControl processResourceAttachementChangeSpec(Diff diff) {
+		return null
 	}
 
 	private CommandControl processDomainSpecificElement(Diff diff) {
@@ -46,6 +60,10 @@ class ModelToCommandParser {
 				.build())
 			.build())
 		.build()
+	}
+
+	private CommandControl processReferenceChange(Diff diff) {
+		return null
 	}
 	
 	private CommandControl processAttribute(Diff diff) {

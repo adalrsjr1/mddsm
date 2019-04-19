@@ -4,13 +4,7 @@ import br.ufg.inf.metalang4md.EDomainSpecificElement
 import br.ufg.inf.metalang4md.cml.CmlPackage
 import com.google.common.collect.ComparisonChain
 import org.eclipse.emf.common.util.URI
-import org.eclipse.emf.compare.AttributeChange
-import org.eclipse.emf.compare.Comparison
-import org.eclipse.emf.compare.Diff
-import org.eclipse.emf.compare.EMFCompare
-import org.eclipse.emf.compare.ReferenceChange
-import org.eclipse.emf.compare.ResourceAttachmentChange
-import org.eclipse.emf.compare.internal.spec.ResourceAttachmentChangeSpec
+import org.eclipse.emf.compare.*
 import org.eclipse.emf.compare.match.*
 import org.eclipse.emf.compare.match.eobject.IEObjectMatcher
 import org.eclipse.emf.compare.match.impl.MatchEngineFactoryImpl
@@ -27,7 +21,6 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
-import org.w3c.dom.Attr
 
 class Ml4mdModelComparator {
 
@@ -70,8 +63,8 @@ class Ml4mdModelComparator {
         return differences.sort { Diff arg0, Diff arg1 ->
             // decreasing sort
 
-            def elem0 = extractValue(arg0)
-            def elem1 = extractValue(arg1)
+            def elem0 = DiffExtractor.getValue(arg0)
+            def elem1 = DiffExtractor.getValue(arg1)
 
             ComparisonChain chain = ComparisonChain.start()
 
@@ -92,22 +85,6 @@ class Ml4mdModelComparator {
 
             return chain.result()
         }
-    }
-
-    static private def extractValue(Diff diff) {
-        if(diff instanceof AttributeChange) {
-            return diff.attribute.eContainer()
-        }
-
-        if(diff instanceof ReferenceChange) {
-            return diff.reference.eContainer()
-        }
-
-        if(diff instanceof ResourceAttachmentChange) {
-            return diff.resourceURI
-        }
-
-        return diff.value
     }
 
     static Resource load(String absolutePath, ResourceSet resourceSet) {
@@ -133,9 +110,9 @@ class Ml4mdModelComparator {
         }
     }
 
-    static List<Diff> computeChangesAndSave(String pathnameModel1, String pathnameModel2, String pathnameNewModel) {
-        def model1 = new File(pathnameModel1)
-        def model2 = new File(pathnameModel2)
+    static List<Diff> computeChangesAndSave(String oldModel, String newModel, String pataToSaveNewModel) {
+        def model1 = new File(oldModel)
+        def model2 = new File(newModel)
 
         def (newModelResource, comparison) = compare(model2, model1)
 
@@ -145,14 +122,14 @@ class Ml4mdModelComparator {
         IBatchMerger merger = new BatchMerger(mergerRegistry)
         merger.copyAllLeftToRight(differences, null)
 
-        save(pathnameNewModel, newModelResource)
+        save(pataToSaveNewModel, newModelResource)
 
         return differences
     }
 
-    static List<Diff> computeChanges(String pathnameModel1, String pathnameModel2) {
-        def model1 = new File(pathnameModel1)
-        def model2 = new File(pathnameModel2)
+    static List<Diff> computeChanges(String oldModel, String newModel) {
+        def model1 = new File(oldModel)
+        def model2 = new File(newModel)
 
         def (newModelResource, comparison) = compare(model2, model1)
 

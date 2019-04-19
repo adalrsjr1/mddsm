@@ -1,13 +1,15 @@
 package br.ufg.inf.synthesis
 
-import groovy.transform.builder.Builder
 import br.ufg.inf.metalang4md.EArising
 import br.ufg.inf.metalang4md.ECardinality
 import br.ufg.inf.metalang4md.ECoordinationBehavior
 import br.ufg.inf.metalang4md.EInteractionBehavior
+import groovy.transform.builder.Builder
+import groovy.util.logging.Log4j2
 
 import javax.naming.OperationNotSupportedException
 
+@Log4j2
 abstract class CommandControl {
     final protected CommandAction action
 
@@ -35,7 +37,8 @@ abstract class CommandControl {
                 case CommandAction.CHANGE: return CommandControlChange.builder()
                     break
                 default:
-                    throw new OperationNotSupportedException("There is no builder for $action")
+                    log.error "There is no builder for action.$action"
+                    throw new OperationNotSupportedException("There is no builder for action.$action")
                     break
             }
         }
@@ -134,5 +137,5 @@ class CommandExpressionMetadata {
 }
 
 enum CommandAction{
-    ADD, DELETE, CHANGE
+    ADD, DELETE, CHANGE, MOVE
 }

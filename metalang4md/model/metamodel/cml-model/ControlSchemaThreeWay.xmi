@@ -48,7 +48,8 @@
           capability="NON_STREAM_FILE"/>
     </device>
   </connection>
-  <attachedParty>
+  <attachedParty
+      commandPriority="50">
     <isAttached
         deviceID="001"
         personID="burke23"/>
