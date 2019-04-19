@@ -2,12 +2,12 @@ package br.ufg.inf.synthesis
 
 import org.eclipse.emf.compare.Diff
 
-import metalang4md.EArising
-import metalang4md.ECardinality
-import metalang4md.ECoordinationBehavior
-import metalang4md.EDomainSpecificElement
-import metalang4md.EDomainSpecificType
-import metalang4md.EInteractionBehavior
+import br.ufg.inf.metalang4md.EArising
+import br.ufg.inf.metalang4md.ECardinality
+import br.ufg.inf.metalang4md.ECoordinationBehavior
+import br.ufg.inf.metalang4md.EDomainSpecificElement
+import br.ufg.inf.metalang4md.EDomainSpecificType
+import br.ufg.inf.metalang4md.EInteractionBehavior
 
 class ModelToCommandParser {
 

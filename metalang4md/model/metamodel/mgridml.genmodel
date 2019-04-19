@@ -6,7 +6,8 @@
     usedGenPackages="../metalang4md.genmodel#//metalang4md" operationReflection="true"
     importOrganizing="true">
   <foreignModel>mgridml.ecore</foreignModel>
-  <genPackages prefix="Mgridml" disposableProviderFactory="true" ecorePackage="mgridml.ecore#/">
+  <genPackages prefix="Mgridml" basePackage="br.ufg.inf.metalang4md" disposableProviderFactory="true"
+      ecorePackage="mgridml.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="mgridml.ecore#//CriticalEnum">
       <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//CriticalEnum/SENSITIVE"/>
       <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//CriticalEnum/ADJUSTABLE"/>

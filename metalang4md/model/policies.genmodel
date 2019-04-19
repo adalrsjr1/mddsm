@@ -5,7 +5,8 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>policies.ecore</foreignModel>
-  <genPackages prefix="Policies" disposableProviderFactory="true" ecorePackage="policies.ecore#/">
+  <genPackages prefix="Policies" basePackage="br.ufg.inf.metalang4md" disposableProviderFactory="true"
+      ecorePackage="policies.ecore#/">
     <genClasses ecoreClass="policies.ecore#//Event">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute policies.ecore#//Event/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference policies.ecore#//Event/eventProperties"/>

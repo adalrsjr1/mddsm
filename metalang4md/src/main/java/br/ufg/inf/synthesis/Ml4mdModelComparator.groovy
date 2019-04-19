@@ -1,7 +1,7 @@
 package br.ufg.inf.synthesis
 
-import cml.CmlPackage
-import metalang4md.EDomainSpecificElement
+import br.ufg.inf.metalang4md.cml.CmlPackage
+import br.ufg.inf.metalang4md.EDomainSpecificElement
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.compare.Comparison
 import org.eclipse.emf.compare.Diff

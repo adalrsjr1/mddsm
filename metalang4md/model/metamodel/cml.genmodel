@@ -6,7 +6,8 @@
     usedGenPackages="../metalang4md.genmodel#//metalang4md" operationReflection="true"
     importOrganizing="true">
   <foreignModel>cml.ecore</foreignModel>
-  <genPackages prefix="Cml" disposableProviderFactory="true" ecorePackage="cml.ecore#/">
+  <genPackages prefix="Cml" basePackage="br.ufg.inf.metalang4md" disposableProviderFactory="true"
+      ecorePackage="cml.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="cml.ecore#//BuiltInType">
       <genEnumLiterals ecoreEnumLiteral="cml.ecore#//BuiltInType/TEXT_FILE"/>
       <genEnumLiterals ecoreEnumLiteral="cml.ecore#//BuiltInType/LIVE_AUDIO"/>

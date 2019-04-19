@@ -6,10 +6,10 @@ import br.ufg.inf.synthesis.CommandControlAdd
 import br.ufg.inf.synthesis.CommandControlChange
 import br.ufg.inf.synthesis.CommandExpression
 import br.ufg.inf.synthesis.CommandExpressionMetadata
-import metalang4md.EArising
-import metalang4md.ECardinality
-import metalang4md.ECoordinationBehavior
-import metalang4md.EInteractionBehavior
+import br.ufg.inf.metalang4md.EArising
+import br.ufg.inf.metalang4md.ECardinality
+import br.ufg.inf.metalang4md.ECoordinationBehavior
+import br.ufg.inf.metalang4md.EInteractionBehavior
 import org.junit.jupiter.api.Test
 
 class TestCommand {

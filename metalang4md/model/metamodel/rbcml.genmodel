@@ -6,7 +6,8 @@
     usedGenPackages="../metalang4md.genmodel#//metalang4md" operationReflection="true"
     importOrganizing="true">
   <foreignModel>rbcml.ecore</foreignModel>
-  <genPackages prefix="Rbcml" disposableProviderFactory="true" ecorePackage="rbcml.ecore#/">
+  <genPackages prefix="Rbcml" basePackage="br.ufg.inf.metalang4md" disposableProviderFactory="true"
+      ecorePackage="rbcml.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="rbcml.ecore#//PrimitiveType">
       <genEnumLiterals ecoreEnumLiteral="rbcml.ecore#//PrimitiveType/STRING_TYPE"/>
       <genEnumLiterals ecoreEnumLiteral="rbcml.ecore#//PrimitiveType/BLOB_TYPE"/>
