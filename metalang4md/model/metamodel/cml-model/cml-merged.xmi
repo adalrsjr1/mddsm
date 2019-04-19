@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cml:DataSchema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cml="http://www.inf.ufg.br/metalang4md/cml" connectionID="C1">
-  <dataContent xsi:type="cml:Form" formID="DisPkg_1">
-    <subMedium priority="5" mediumName="RecSum-Jane-new.txt" mediumURL="D:Jane/RecSum-Jane.txt"/>
-    <subMedium mediumName="xRay-Jane.jpg" mediumURL="D:Jane/xRay-Jane.jpg"/>
-    <subMedium mediumName="HeartEcho-Jane.mpg" mediumURL="D:Jane/HeartEcho-Jane.mpg"/>
-    <subMedium mediumName="HeartEcho2-Jane.mpg" mediumURL="D:Jane/HeartEcho2-Jane.mpg"/>
-  </dataContent>
-</cml:DataSchema>
+<cml:ControlSchema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cml="http://www.inf.ufg.br/metalang4md/cml" communicationID="ControlSchemaTwoWay">
+  <connection commandPriority="1000" connectionID="c1">
+    <dataTypeRef xsi:type="cml:FormTypeRef" formTypeName="DisPkg_1"/>
+    <dataTypeRef xsi:type="cml:MediumTypeRef" mediumTypeName="LiveAudio"/>
+    <device commandPriority="100" deviceID="001" isVirtual="true">
+      <deviceCaps/>
+      <deviceCaps capability="VIDEO_FILE"/>
+      <deviceCaps capability="LIVE_AUDIO"/>
+      <deviceCaps capability="NON_STREAM_FILE"/>
+    </device>
+    <device commandPriority="100" deviceID="002" isLocal="true">
+      <deviceCaps/>
+      <deviceCaps capability="VIDEO_FILE"/>
+      <deviceCaps capability="LIVE_AUDIO"/>
+      <deviceCaps capability="NON_STREAM_FILE"/>
+    </device>
+  </connection>
+  <attachedParty commandPriority="50">
+    <isAttached deviceID="001" personID="burke23"/>
+    <person personID="burke23" personName="Dr. Burke" personRole="Surgeon"/>
+  </attachedParty>
+  <attachedParty>
+    <isAttached deviceID="002" personID="monte06"/>
+    <person personID="monte06" personName="Monteiro" personRole="SC"/>
+  </attachedParty>
+</cml:ControlSchema>

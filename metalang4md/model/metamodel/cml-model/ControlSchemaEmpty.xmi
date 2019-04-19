@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cml:DataSchema
+<cml:ControlSchema
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:cml="http://www.inf.ufg.br/metalang4md/cml"
     xsi:schemaLocation="http://www.inf.ufg.br/metalang4md/cml ../cml.ecore"
-    connectionID="C1">
-  <dataContent
-      xsi:type="cml:Medium"
-      mediumDataType="LiveAudio"
-      mediumName="AV-C1"/>
-</cml:DataSchema>
+    communicationID="ControlSchemaEmpty"/>

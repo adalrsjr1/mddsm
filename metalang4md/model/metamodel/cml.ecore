@@ -72,7 +72,7 @@
         upperBound="-1" eType="#//DataType" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="communicationID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Device">
+  <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="../metalang4md.ecore#//EActor">
     <eStructuralFeatures xsi:type="ecore:EReference" name="deviceCaps" lowerBound="1"
         upperBound="-1" eType="#//DeviceCapability" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -84,8 +84,9 @@
         upperBound="-1" eType="#//DataTypeRef" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="device" lowerBound="1"
         upperBound="-1" eType="#//Device" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="connectionID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AttachedParty">
+  <eClassifiers xsi:type="ecore:EClass" name="AttachedParty" eSuperTypes="../metalang4md.ecore#//EActor">
     <eStructuralFeatures xsi:type="ecore:EReference" name="isAttached" lowerBound="1"
         eType="#//IsAttached" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="person" lowerBound="1"

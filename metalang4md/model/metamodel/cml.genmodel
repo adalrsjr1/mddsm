@@ -81,6 +81,7 @@
     <genClasses ecoreClass="cml.ecore#//Connection">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//Connection/dataTypeRef"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//Connection/device"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Connection/connectionID"/>
     </genClasses>
     <genClasses ecoreClass="cml.ecore#//AttachedParty">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//AttachedParty/isAttached"/>
