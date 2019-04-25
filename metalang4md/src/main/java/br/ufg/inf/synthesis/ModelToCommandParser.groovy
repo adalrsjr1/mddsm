@@ -6,6 +6,12 @@ import org.eclipse.emf.compare.Diff
 import org.eclipse.emf.compare.ResourceAttachmentChange
 import org.eclipse.emf.compare.internal.spec.AttributeChangeSpec
 import org.eclipse.emf.compare.internal.spec.ReferenceChangeSpec
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.emf.ecore.resource.ResourceSet
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
+import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 
 import javax.naming.OperationNotSupportedException
 
@@ -13,8 +19,24 @@ import javax.naming.OperationNotSupportedException
 class ModelToCommandParser {
 
 	String eObjectToXmiString(def eObject) {
-		log.warn "ModelToCommandParser.eObjectToXmiString not implemented yet"
-		return eObject
+		if(!(eObject instanceof EObject)) {
+			return eObject
+		}
+
+		ResourceSet resourceSet = new ResourceSetImpl()
+
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(".ecore", new EcoreResourceFactoryImpl())
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(".xmi", new XMIResourceFactoryImpl())
+
+		Resource myResource = eObject.eRe
+
+		OutputStream os = new ByteArrayOutputStream()
+
+		myResource.save(os, Collections.EMPTY_MAP)
+
+		String string = os.toString("UTF-8")
+		os.close()
+		return string
 	}
 
 	String xmiStringToEObject(String xmiString) {

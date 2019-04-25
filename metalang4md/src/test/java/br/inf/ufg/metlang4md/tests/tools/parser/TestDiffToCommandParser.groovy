@@ -46,7 +46,7 @@ class TestDiffToCommandParser {
 		ModelToCommandParser parser = new ModelToCommandParser()
 
 		Ml4mdModelComparator.computeChanges(oldModel, newModel).each {
-			println parser.process(it)
+			parser.process(it)
 		}
 	}
 
@@ -58,7 +58,7 @@ class TestDiffToCommandParser {
 		ModelToCommandParser parser = new ModelToCommandParser()
 
 		Ml4mdModelComparator.computeChanges(oldModel, newModel).each {
-			println parser.process(it)
+			parser.process(it)
 		}
 	}
 
@@ -70,7 +70,7 @@ class TestDiffToCommandParser {
 		ModelToCommandParser parser = new ModelToCommandParser()
 
 		Ml4mdModelComparator.computeChanges(oldModel, newModel).each {
-			println parser.process(it)
+			parser.process(it)
 		}
 	}
 
@@ -82,7 +82,7 @@ class TestDiffToCommandParser {
 		ModelToCommandParser parser = new ModelToCommandParser()
 
 		Ml4mdModelComparator.computeChanges(oldModel, newModel).each {
-			println parser.process(it)
+			parser.process(it)
 		}
 	}
 

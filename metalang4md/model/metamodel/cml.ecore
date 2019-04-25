@@ -92,7 +92,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="person" lowerBound="1"
         eType="#//Person" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataType" eSuperTypes="../metalang4md.ecore#//EDomainSpecificType"/>
   <eClassifiers xsi:type="ecore:EClass" name="FormType" eSuperTypes="#//DataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subFormType" upperBound="-1"
         eType="#//FormType" containment="true"/>

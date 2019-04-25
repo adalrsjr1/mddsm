@@ -6,6 +6,8 @@ import br.ufg.inf.metalang4md.ECoordinationBehavior
 import br.ufg.inf.metalang4md.EInteractionBehavior
 import groovy.transform.builder.Builder
 import groovy.util.logging.Log4j2
+import org.eclipse.emf.common.command.Command
+import org.eclipse.emf.compare.DifferenceKind
 
 import javax.naming.OperationNotSupportedException
 
@@ -138,4 +140,14 @@ class CommandExpressionMetadata {
 
 enum CommandAction{
     ADD, DELETE, CHANGE, MOVE
+
+    static CommandAction transformDifferenceKind(DifferenceKind kind) {
+        switch (kind) {
+            case DifferenceKind.ADD: return this.ADD
+            case DifferenceKind.DELETE: return this.DELETE
+            case DifferenceKind.CHANGE: return this.CHANGE
+            case DifferenceKind.MOVE: return this.MOVE
+            default: throw new OperationNotSupportedException("Kind $kind not expected")
+        }
+    }
 }

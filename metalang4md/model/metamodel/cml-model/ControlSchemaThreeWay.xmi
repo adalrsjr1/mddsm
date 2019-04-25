@@ -5,7 +5,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:cml="http://www.inf.ufg.br/metalang4md/cml"
     xsi:schemaLocation="http://www.inf.ufg.br/metalang4md/cml ../cml.ecore"
-    communicationID="ControlSchemaThreeWay">
+    communicationID="Communication">
   <connection
       connectionID="c1">
     <dataTypeRef
@@ -54,7 +54,7 @@
         deviceID="001"
         personID="burke23"/>
     <person
-        personID="burke23"
+        personID="burke26"
         personName="Dr. Burke"
         personRole="Surgeon"/>
   </attachedParty>

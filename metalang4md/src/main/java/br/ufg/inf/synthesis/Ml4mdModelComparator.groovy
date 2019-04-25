@@ -3,6 +3,7 @@ package br.ufg.inf.synthesis
 import br.ufg.inf.metalang4md.EDomainSpecificElement
 import br.ufg.inf.metalang4md.cml.CmlPackage
 import com.google.common.collect.ComparisonChain
+import groovy.util.logging.Log4j2
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.compare.*
 import org.eclipse.emf.compare.match.*
@@ -22,6 +23,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 
+@Log4j2
 class Ml4mdModelComparator {
 
     static Tuple2<Resource, Comparison> compare(File newModel, File oldModel) {
@@ -101,12 +103,13 @@ class Ml4mdModelComparator {
         OutputStream os = new FileOutputStream(new File(savePath))
 
         try {
-            resource.save(os, Collections.EMPTY_MAP);
+            resource.save(os, Collections.EMPTY_MAP)
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error e.message
+            e.printStackTrace()
         }
         finally {
-            os.close();
+            os.close()
         }
     }
 
