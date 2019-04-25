@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated metalang4md -->
+      <package
+            uri="http://www.inf.ufg.br/metalang4md"
+            class="br.ufg.inf.metalang4md.Metalang4mdPackage"
+            genModel="model/metalang4md.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated rbcml -->
+      <package
+            uri="http://www.inf.ufg.br/metalang4md/rbcml"
+            class="br.ufg.inf.metalang4md.rbcml.RbcmlPackage"
+            genModel="model/metamodel/rbcml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated policies -->
+      <package
+            uri="http://www.inf.ufg.br/metalang4md/policies"
+            class="br.ufg.inf.metalang4md.policies.PoliciesPackage"
+            genModel="model/policies.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated cml -->
+      <package
+            uri="http://www.inf.ufg.br/metalang4md/cml"
+            class="br.ufg.inf.metalang4md.cml.CmlPackage"
+            genModel="model/metamodel/cml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mgridml -->
+      <package
+            uri="http://www.inf.ufg.br/metalang4md/mgridml"
+            class="br.ufg.inf.metalang4md.mgridml.MgridmlPackage"
+            genModel="model/metamodel/mgridml.genmodel"/>
+   </extension>
+
+</plugin>

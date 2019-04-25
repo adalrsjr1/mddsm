@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cml:ControlSchema
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:cml="http://www.inf.ufg.br/metalang4md/cml"
+    xsi:schemaLocation="http://www.inf.ufg.br/metalang4md/cml ../cml.ecore"
+    communicationID="Communication">
+  <connection
+      connectionID="c1">
+    <dataTypeRef
+        xsi:type="cml:FormTypeRef"
+        formTypeName="Patient Record"/>
+    <dataTypeRef
+        xsi:type="cml:MediumTypeRef"
+        mediumTypeName="LiveAudio"/>
+    <device
+        deviceID="001"
+        isVirtual="true">
+      <deviceCaps/>
+      <deviceCaps
+          capability="VIDEO_FILE"/>
+      <deviceCaps
+          capability="LIVE_AUDIO"/>
+      <deviceCaps
+          capability="NON_STREAM_FILE"/>
+    </device>
+    <device
+        deviceID="002"
+        isLocal="true">
+      <deviceCaps/>
+      <deviceCaps
+          capability="VIDEO_FILE"/>
+      <deviceCaps
+          capability="LIVE_AUDIO"/>
+      <deviceCaps
+          capability="NON_STREAM_FILE"/>
+    </device>
+    <device
+        deviceID="003"
+        isLocal="true">
+      <deviceCaps/>
+      <deviceCaps
+          capability="VIDEO_FILE"/>
+      <deviceCaps
+          capability="LIVE_AUDIO"/>
+      <deviceCaps
+          capability="NON_STREAM_FILE"/>
+    </device>
+  </connection>
+  <attachedParty
+      commandPriority="50">
+    <isAttached
+        deviceID="001"
+        personID="burke23"/>
+    <person
+        personID="burke26"
+        personName="Dr. Burke"
+        personRole="Surgeon"/>
+  </attachedParty>
+  <attachedParty>
+    <isAttached
+        deviceID="002"
+        personID="monte06"/>
+    <person
+        personID="monte06"
+        personName="Monteiro"
+        personRole="SC"/>
+  </attachedParty>
+  <attachedParty>
+    <isAttached
+        deviceID="003"
+        personID="monte06"/>
+    <person
+        personID="sanchez12"
+        personName="Dr. Sanchez"
+        personRole="Referring Physcian"/>
+  </attachedParty>
+</cml:ControlSchema>

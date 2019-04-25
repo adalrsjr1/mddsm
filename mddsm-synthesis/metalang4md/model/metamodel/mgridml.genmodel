@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/metalang4md/src/main/mgridml" modelPluginID="metalang4md"
+    modelName="Mgridml" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    usedGenPackages="../metalang4md.genmodel#//metalang4md" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>mgridml.ecore</foreignModel>
+  <genPackages prefix="Mgridml" basePackage="br.ufg.inf.metalang4md" disposableProviderFactory="true"
+      ecorePackage="mgridml.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mgridml.ecore#//CriticalEnum">
+      <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//CriticalEnum/SENSITIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//CriticalEnum/ADJUSTABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//CriticalEnum/SHEDABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//CriticalEnum/ANY"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mgridml.ecore#//SourceEnum">
+      <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//SourceEnum/AC"/>
+      <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//SourceEnum/DC"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mgridml.ecore#//ControlEnum">
+      <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//ControlEnum/CONTROLLABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//ControlEnum/NON_CONTROLLABLE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mgridml.ecore#//ChargeEnum">
+      <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//ChargeEnum/CHARGE"/>
+      <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//ChargeEnum/NEUTRAL"/>
+      <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//ChargeEnum/DISCHARGE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mgridml.ecore#//UsageEnum">
+      <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//UsageEnum/HVAC"/>
+      <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//UsageEnum/LIGHTING"/>
+      <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//UsageEnum/SMALL_APPLS"/>
+      <genEnumLiterals ecoreEnumLiteral="mgridml.ecore#//UsageEnum/LARGER_APPLS"/>
+    </genEnums>
+    <genClasses ecoreClass="mgridml.ecore#//MGridSchema">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//MGridSchema/mgridModelID"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//MGridControlSchema">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mgridml.ecore#//MGridControlSchema/mcgrid"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//MGridDataSchema">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mgridml.ecore#//MGridDataSchema/mdGrid"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//MCGrid">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mgridml.ecore#//MCGrid/mgcontroller"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//MCGrid/mcgridID"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//MDGrid">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mgridml.ecore#//MDGrid/plantElem"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//MDGrid/mdgridID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//MDGrid/mdgrid"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//PlantElem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//PlantElem/platE_ID"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//Device">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mgridml.ecore#//Device/deviceProperty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//Device/deviceTypeID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//Device/deviceName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//Device/wattage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//Device/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//Device/operational"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//LoadDevice">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//LoadDevice/control"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//LoadDevice/critical"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//StorageDevice">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//StorageDevice/capacity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//StorageDevice/charging"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//StorageDevice/chargeT"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//DeviceProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//DeviceProperty/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//DeviceProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//Source">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//Source/soTypeID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//Source/sourceName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//Source/wattage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//Source/onDemand"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//Source/operational"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//SmartMeter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//SmartMeter/tariff"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//SmartMeter/usage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//SmartMeter/operational"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//Meter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//Meter/mTypeID"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//LegacyMeter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//LegacyMeter/operational"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//MGController">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//MGController/ctypeID"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//AtomicController">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//AtomicController/controllerID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//AtomicController/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//AtomicController/cardinality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//AtomicController/description"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//MGridController">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mgridml.ecore#//MGridController/mgcontroller"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//MGridController/mgridControllerID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//MGridController/totalLoads"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//MGridController/totalSources"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//LoadController">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mgridml.ecore#//LoadController/loadDeviceType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mgridml.ecore#//LoadController/lcProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//StorageController">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mgridml.ecore#//StorageController/storageDeviceType"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//SourceController">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mgridml.ecore#//SourceController/sourceType"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//PCC">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mgridml.ecore#//PCC/meterType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//PCC/connected"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//MeterType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//MeterType/mTypeID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//MeterType/typeName"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//SourceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//SourceType/soTypeID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//SourceType/typeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//SourceType/sourceC"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//SourceType/priority"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//StorageDeviceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//StorageDeviceType/soTypeID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//StorageDeviceType/typeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//StorageDeviceType/lowerThres"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//StorageDeviceType/upperThres"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//LoadDeviceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//LoadDeviceType/soTypeID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//LoadDeviceType/typeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//LoadDeviceType/critical"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//LoadDeviceType/usage"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//LC_Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//LC_Property/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mgridml.ecore#//LC_Property/value"/>
+    </genClasses>
+    <genClasses ecoreClass="mgridml.ecore#//SmartMType"/>
+    <genClasses ecoreClass="mgridml.ecore#//LegacyMType"/>
+  </genPackages>
+</genmodel:GenModel>

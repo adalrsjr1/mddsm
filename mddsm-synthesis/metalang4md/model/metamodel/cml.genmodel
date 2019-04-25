@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/metalang4md/src/main/cml" modelPluginID="metalang4md"
+    modelName="Cml" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    usedGenPackages="../metalang4md.genmodel#//metalang4md" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>cml.ecore</foreignModel>
+  <genPackages prefix="Cml" basePackage="br.ufg.inf.metalang4md" disposableProviderFactory="true"
+      ecorePackage="cml.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cml.ecore#//BuiltInType">
+      <genEnumLiterals ecoreEnumLiteral="cml.ecore#//BuiltInType/TEXT_FILE"/>
+      <genEnumLiterals ecoreEnumLiteral="cml.ecore#//BuiltInType/LIVE_AUDIO"/>
+      <genEnumLiterals ecoreEnumLiteral="cml.ecore#//BuiltInType/LIVE_VIDEO"/>
+      <genEnumLiterals ecoreEnumLiteral="cml.ecore#//BuiltInType/LIVE_AV"/>
+      <genEnumLiterals ecoreEnumLiteral="cml.ecore#//BuiltInType/TEXT"/>
+      <genEnumLiterals ecoreEnumLiteral="cml.ecore#//BuiltInType/AUDIO_FILE"/>
+      <genEnumLiterals ecoreEnumLiteral="cml.ecore#//BuiltInType/VIDEO_FILE"/>
+      <genEnumLiterals ecoreEnumLiteral="cml.ecore#//BuiltInType/AV_FILE"/>
+      <genEnumLiterals ecoreEnumLiteral="cml.ecore#//BuiltInType/NON_STREAM_FILE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cml.ecore#//ActionTypeRequest">
+      <genEnumLiterals ecoreEnumLiteral="cml.ecore#//ActionTypeRequest/OPEN"/>
+      <genEnumLiterals ecoreEnumLiteral="cml.ecore#//ActionTypeRequest/SAVE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cml.ecore#//ActionTypeForm">
+      <genEnumLiterals ecoreEnumLiteral="cml.ecore#//ActionTypeForm/SEND"/>
+      <genEnumLiterals ecoreEnumLiteral="cml.ecore#//ActionTypeForm/SEND_ON_DEMAND"/>
+      <genEnumLiterals ecoreEnumLiteral="cml.ecore#//ActionTypeForm/SECURE_SEND"/>
+    </genEnums>
+    <genClasses ecoreClass="cml.ecore#//CommunicationSchema"/>
+    <genClasses ecoreClass="cml.ecore#//DataSchema">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//DataSchema/request"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//DataSchema/dataContent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//DataSchema/connectionID"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//Request">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Request/requestID"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//MediaRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//MediaRequest/mediumName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//MediaRequest/requestAction"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//FormRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//FormRequest/formID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//FormRequest/mediumURL"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//DataContent"/>
+    <genClasses ecoreClass="cml.ecore#//Medium">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Medium/mediumDataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Medium/mediumName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Medium/mediumURL"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Medium/mediumSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Medium/lastModTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Medium/validityPeriod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Medium/firstTransferTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Medium/voiceCommand"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//Form">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//Form/subForm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//Form/subMedium"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Form/formDataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Form/formID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Form/suggestedApp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Form/voiceCommand"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Form/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Form/layoutSpec"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//ControlSchema">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//ControlSchema/connection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//ControlSchema/attachedParty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//ControlSchema/dataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//ControlSchema/communicationID"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//Device">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//Device/deviceCaps"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Device/deviceID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Device/isVirtual"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Device/isLocal"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//Connection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//Connection/dataTypeRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//Connection/device"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Connection/connectionID"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//AttachedParty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//AttachedParty/isAttached"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//AttachedParty/person"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//DataType"/>
+    <genClasses ecoreClass="cml.ecore#//FormType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//FormType/subFormType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//FormType/subMediumType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//FormType/actionTF"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//FormType/suggestedApp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//FormType/voiceCommand"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//FormType/layoutSpec"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//FormType/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//FormType/formTypeName"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//MediumType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//MediumType/mediumTypeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//MediumType/mediumURL"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//MediumType/mediumSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//MediumType/lastModifiedTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//MediumType/validityPeriod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//MediumType/fileTransferTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//MediumType/voiceCommand"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//MediumType/derivedFromBuiltInType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//MediumType/source"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Person/personID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Person/personName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Person/personRole"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//IsAttached">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//IsAttached/deviceID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//IsAttached/personID"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//DataTypeRef"/>
+    <genClasses ecoreClass="cml.ecore#//DeviceCapability">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//DeviceCapability/capability"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//FormTypeRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//FormTypeRef/formTypeName"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//MediumTypeRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//MediumTypeRef/mediumTypeName"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
