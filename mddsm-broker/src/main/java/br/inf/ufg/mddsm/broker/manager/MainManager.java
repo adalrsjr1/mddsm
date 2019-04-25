@@ -46,7 +46,7 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
         this.resourceManager = resourceManager;
         this.stateManager = stateManager;
         
-        //valueEvaluator.stateManager = stateManager;]
+        //valueEvaluator.stateManager = stateManager;
         
     }
 
@@ -97,15 +97,27 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
         return null;
     }
 
+    /**
+     * Use this method for external notifications only
+     * @param signal
+     */
     public void sendEvent(SignalInstance signal) {
         if (getEventListener() != null)
             getEventListener().notify(signal);        
     }
 
+    /**
+     * Use this method for internal evaluation of the event without enqueueing
+     * @param e
+     */
     public void throwEvent(SignalInstance e) {
         execute(e);
     }
 
+    /**
+     * Use this method for internal evaluation of the event enqueuing
+     * @param event
+     */
     public void notify(SignalInstance event) {
         enqueue(event.getSource(), event.getName(), event.getParams());
     }

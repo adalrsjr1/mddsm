@@ -1,6 +1,7 @@
 package br.inf.ufg.mddsm.broker.expression
 
 class CombinationEvaluator {
+	
     public static Collection<EvaluationResult> evaluate(String expression, Map<String, Collection<ContextProvider>> context) {
         evaluate(expression, [:], context.entrySet() as List)
     }
@@ -19,6 +20,7 @@ class CombinationEvaluator {
         }.flatten()
     }
 
+	// How to improve the performcance for instantiating GroovyShell
     public static EvaluationResult evaluateExpression(String expression, Map context) {
         Object result = new GroovyShell(new Binding(ContextProviderWrapper.wrap(context))).evaluate(expression)
         new EvaluationResult(result: result, params: context)

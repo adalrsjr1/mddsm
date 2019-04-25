@@ -28,15 +28,4 @@ class ConditionEvaluator {
         result
     }
 
-//    static void main(String[] args) {
-//        Map ctx = [
-//                a: [5, 4],
-//                b: [7, 11],
-//                c: [1, 2]
-//        ]
-//
-//        List result = evaluate("a * b == 56 - c", ctx)
-//        result.each { println it.dump() }
-//
-//    }
 }
