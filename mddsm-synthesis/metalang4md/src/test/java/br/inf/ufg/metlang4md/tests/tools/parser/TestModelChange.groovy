@@ -1,6 +1,6 @@
 package br.inf.ufg.metlang4md.tests.tools.parser
 
-import br.ufg.inf.synthesis.Ml4mdModelComparator
+import br.ufg.inf.synthesis.EmfModelComparator
 import br.ufg.inf.synthesis.ModelChange
 import org.eclipse.emf.compare.Diff
 import org.junit.jupiter.api.Test
@@ -13,7 +13,7 @@ class TestModelChange {
         String version2 = "model/metamodel/cml-model/ControlSchemaThreeWay.xmi"
 
 
-        List<Diff> differences = Ml4mdModelComparator.computeChanges(version1, version2)
+        List<Diff> differences = EmfModelComparator.computeChanges(version1, version2)
 
         differences.each { Diff diff ->
             println diff
@@ -30,7 +30,7 @@ class TestModelChange {
         String version2 = "model/metamodel/cml-model/ControlSchemaThreeWay.xmi"
 
 
-        List<Diff> differences = Ml4mdModelComparator.computeChanges(version1, version2)
+        List<Diff> differences = EmfModelComparator.computeChanges(version1, version2)
 
         differences.each { Diff diff ->
             ModelChange change = new ModelChange(diff)

@@ -2,6 +2,8 @@ package br.ufg.inf.synthesis
 
 import br.ufg.inf.metalang4md.EDomainSpecificElement
 import br.ufg.inf.metalang4md.cml.CmlPackage
+import br.ufg.inf.synthesis.api.ModelComparator
+import br.ufg.inf.synthesis.api.ModelHandler
 import com.google.common.collect.ComparisonChain
 import groovy.util.logging.Log4j2
 import org.eclipse.emf.common.util.URI
@@ -24,7 +26,17 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 
 @Log4j2
-class Ml4mdModelComparator {
+class EmfModelComparator implements ModelComparator<Resource> {
+
+    private ModelHandler modelHandler
+
+    EmfModelComparator(ModelHandler modelHandler) {
+        this.modelHandler = modelHandler
+    }
+
+    List<ModelChange> compares(Resource newModel, Resource oldModel) {
+        return null
+    }
 
     static Tuple2<Resource, Comparison> compare(File newModel, File oldModel) {
         ResourceSet newResourceSet = new ResourceSetImpl()
@@ -158,4 +170,5 @@ class Ml4mdModelComparator {
 //			println value instanceof EItem
         }
     }
+
 }

@@ -1,6 +1,6 @@
 package br.inf.ufg.metlang4md.tests.tools.parser
 
-import br.ufg.inf.synthesis.Ml4mdModelComparator
+import br.ufg.inf.synthesis.EmfModelComparator
 import br.ufg.inf.synthesis.ModelToCommandParser
 import org.junit.jupiter.api.Test
 
@@ -11,7 +11,7 @@ class TestDiffToCommandParser {
 		def oldModel = "model/metamodel/cml-model/DataSchemaEmpty.xmi"
 		def newModel = "model/metamodel/cml-model/DataSchema-1.xmi"
 
-		Ml4mdModelComparator.computeChanges(newModel, oldModel)
+		EmfModelComparator.computeChanges(newModel, oldModel)
 	}
 
 	@Test
@@ -19,7 +19,7 @@ class TestDiffToCommandParser {
 		def oldModel = "model/metamodel/cml-model/DataSchema-1.xmi"
 		def newModel = "model/metamodel/cml-model/DataSchema-2.xmi"
 
-		Ml4mdModelComparator.computeChanges(newModel, oldModel)
+		EmfModelComparator.computeChanges(newModel, oldModel)
 	}
 
 	@Test
@@ -27,7 +27,7 @@ class TestDiffToCommandParser {
 		def oldModel = "model/metamodel/cml-model/ControlSchemaEmpty.xmi"
 		def newModel = "model/metamodel/cml-model/ControlSchemaTwoWay.xmi"
 
-		Ml4mdModelComparator.computeChanges(newModel, oldModel)
+		EmfModelComparator.computeChanges(newModel, oldModel)
 	}
 
 	@Test
@@ -35,7 +35,7 @@ class TestDiffToCommandParser {
 		def oldModel = "model/metamodel/cml-model/ControlSchemaTwoWay.xmi"
 		def newModel = "model/metamodel/cml-model/ControlSchemaThreeWay.xmi"
 
-		Ml4mdModelComparator.computeChanges(oldModel, newModel)
+		EmfModelComparator.computeChanges(oldModel, newModel)
 	}
 
 	@Test
@@ -45,7 +45,7 @@ class TestDiffToCommandParser {
 
 		ModelToCommandParser parser = new ModelToCommandParser()
 
-		Ml4mdModelComparator.computeChanges(oldModel, newModel).each {
+		EmfModelComparator.computeChanges(oldModel, newModel).each {
 			parser.process(it)
 		}
 	}
@@ -57,7 +57,7 @@ class TestDiffToCommandParser {
 
 		ModelToCommandParser parser = new ModelToCommandParser()
 
-		Ml4mdModelComparator.computeChanges(oldModel, newModel).each {
+		EmfModelComparator.computeChanges(oldModel, newModel).each {
 			parser.process(it)
 		}
 	}
@@ -69,7 +69,7 @@ class TestDiffToCommandParser {
 
 		ModelToCommandParser parser = new ModelToCommandParser()
 
-		Ml4mdModelComparator.computeChanges(oldModel, newModel).each {
+		EmfModelComparator.computeChanges(oldModel, newModel).each {
 			parser.process(it)
 		}
 	}
@@ -81,7 +81,7 @@ class TestDiffToCommandParser {
 
 		ModelToCommandParser parser = new ModelToCommandParser()
 
-		Ml4mdModelComparator.computeChanges(oldModel, newModel).each {
+		EmfModelComparator.computeChanges(oldModel, newModel).each {
 			parser.process(it)
 		}
 	}
