@@ -18,11 +18,19 @@ class TestEmfModelHandler extends GroovyTestCase {
     }
 
     void testSaveNull() {
-        shouldFail {
+        shouldFail(RuntimeException) {
             URI uri = File.createTempFile(TEMP_MODEL_NAME, ".xmi").toURI()
             modelHandler.save(null, uri)
         }
     }
+
+    void testSaveNonEObject() {
+        shouldFail(RuntimeException) {
+            URI uri = File.createTempFile(TEMP_MODEL_NAME, ".xmi").toURI()
+            modelHandler.save(null, uri)
+        }
+    }
+
 
     void testSaveInvalidPath() {
         shouldFail {
@@ -41,7 +49,7 @@ class TestEmfModelHandler extends GroovyTestCase {
 
     void testLoadNonExistFile() {
         URI uri = URI.create("/tmp/mock-temp-test.xmi")
-        shouldFail {
+        shouldFail(RuntimeException) {
             modelHandler.load(uri)
         }
     }

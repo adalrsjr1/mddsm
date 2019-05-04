@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 
 @Log4j2
-class EmfModelComparator implements ModelComparator<Resource> {
+class EmfModelComparator implements ModelComparator {
 
     private ModelHandler modelHandler
 
