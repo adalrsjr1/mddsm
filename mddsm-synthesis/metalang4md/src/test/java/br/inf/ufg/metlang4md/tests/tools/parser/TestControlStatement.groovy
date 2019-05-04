@@ -8,8 +8,8 @@ class TestControlStatement {
     @Test
     void testAddCommandSyntax() {
         ControlStatement.builder()
-                .withAction(CommandAction.ADD)
-                .withExpressionStatement(
+                .action(CommandAction.ADD)
+                .expressionStatement(
                         ExpressionStatementAdd.builder()
                         .element()
                         .to()

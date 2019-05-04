@@ -2,7 +2,6 @@ package br.ufg.inf.synthesis
 
 import br.ufg.inf.metalang4md.EDomainSpecificElement
 import br.ufg.inf.synthesis.api.ModelComparator
-import br.ufg.inf.synthesis.api.ModelHandler
 import groovy.util.logging.Log4j2
 import org.eclipse.emf.common.notify.Notifier
 import org.eclipse.emf.compare.*
@@ -21,10 +20,7 @@ import org.eclipse.emf.ecore.EObject
 @Log4j2
 class EmfModelComparator implements ModelComparator {
 
-    private ModelHandler modelHandler
-
-    EmfModelComparator(ModelHandler modelHandler) {
-        this.modelHandler = modelHandler
+    EmfModelComparator() {
     }
 
     List<Diff> compares(Notifier newModel, Notifier oldModel) {
@@ -41,7 +37,7 @@ class EmfModelComparator implements ModelComparator {
         return comparator.compare(scope).getDifferences()
     }
 
-    List<ModelChange> sortingDifferences(List<Diff> differences) {
+    List<Diff> sortingDifferences(List<Diff> differences) {
         return differences.sort(new DiffComparator())
     }
 

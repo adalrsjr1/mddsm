@@ -3,15 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="57ae44d1-c365-4e9d-91a1-e54e8ad81c50" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/model/metalang4md.ecore" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/model/metalang4md.ecore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/CommandControl.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/DiffExtractor.groovy" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/EmfModelComparator.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/EmfModelComparator.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/EmfModelHandler.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/EmfModelHandler.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ModelChange.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ModelChange.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ModelToCommandParser.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ModelToCommandParser.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelComparator.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelComparator.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelHandler.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelHandler.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestCommand.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlStatement.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlStatement.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestDiffToCommandParser.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestModelChange.groovy" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfComparator.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfComparator.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfModelHandler.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfModelHandler.groovy" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/metalang4md/target/" />
@@ -28,23 +28,32 @@
     <splitter split-orientation="horizontal" split-proportion="0.4847775">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/EmfModelComparator.groovy">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ChangeInterpreter.groovy">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-250">
-                  <caret line="68" column="23" lean-forward="true" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="25" />
-                  <folding>
-                    <element signature="e#30#82#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="68">
+                  <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/DiffExtractor.groovy">
+            <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/Dispatcher.groovy">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+                <state relative-caret-position="68">
+                  <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/EmfModelComparator.groovy">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="747">
+                  <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+                  <folding>
+                    <element signature="e#30#82#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -61,10 +70,22 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelComparator.groovy">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+                <state relative-caret-position="170">
+                  <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
                   <folding>
                     <element signature="e#34#73#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelHandler.groovy">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="102">
+                  <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+                  <folding>
+                    <element signature="e#34#70#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -74,11 +95,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfComparator.groovy">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1869">
-                  <caret line="165" column="16" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="16" />
+                <state relative-caret-position="141">
+                  <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
                   <folding>
                     <element signature="e#54#106#0" expanded="true" />
                   </folding>
@@ -87,10 +108,28 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlStatement.groovy">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ModelToCommandParser.groovy">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+                <state relative-caret-position="-797">
+                  <caret line="63" column="19" lean-forward="true" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ControlScript.groovy">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="170">
+                  <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
                 </state>
               </provider>
             </entry>
@@ -125,9 +164,11 @@
         <option value="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfModelHandler.groovy" />
         <option value="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ModelToCommandParser.groovy" />
         <option value="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ModelChange.groovy" />
-        <option value="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelComparator.groovy" />
         <option value="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/EmfModelComparator.groovy" />
+        <option value="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelComparator.groovy" />
         <option value="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfComparator.groovy" />
+        <option value="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestCommand.groovy" />
+        <option value="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlStatement.groovy" />
       </list>
     </option>
   </component>
@@ -217,6 +258,15 @@
               <item name="metalang4md" type="b2602c69:ProjectViewProjectNode" />
               <item name="metalang4md" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="synthesis" type="462c0819:PsiDirectoryNode" />
+              <item name="ControlScript.groovy" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="metalang4md" type="b2602c69:ProjectViewProjectNode" />
+              <item name="metalang4md" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -265,7 +315,24 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestEmfComparator">
+  <component name="RunManager" selected="JUnit.TestControlStatement">
+    <configuration name="All in metalang4md" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="metalang4md" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestControlStatement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="metalang4md" />
+      <option name="PACKAGE_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser" />
+      <option name="MAIN_CLASS_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser.TestControlStatement" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestEmfComparator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="metalang4md" />
       <option name="PACKAGE_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser.api" />
@@ -275,21 +342,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestEmfComparator.testApplyChanges" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestEmfComparator.testDiffComparatorEObjectsNullEcontents" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="metalang4md" />
       <option name="PACKAGE_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser.api" />
       <option name="MAIN_CLASS_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser.api.TestEmfComparator" />
-      <option name="METHOD_NAME" value="testApplyChanges" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestEmfComparator.testDiffComparator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="metalang4md" />
-      <option name="PACKAGE_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser.api" />
-      <option name="MAIN_CLASS_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser.api.TestEmfComparator" />
-      <option name="METHOD_NAME" value="testDiffComparator" />
+      <option name="METHOD_NAME" value="testDiffComparatorEObjectsNullEcontents" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -305,23 +362,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestEmfComparator.testModelComaparationDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="metalang4md" />
-      <option name="PACKAGE_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser.api" />
-      <option name="MAIN_CLASS_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser.api.TestEmfComparator" />
-      <option name="METHOD_NAME" value="testModelComaparationDelete" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestControlStatement" />
+        <item itemvalue="JUnit.All in metalang4md" />
+        <item itemvalue="JUnit.TestEmfComparator.testDiffComparatorEObjectsNullEcontents" />
         <item itemvalue="JUnit.TestEmfComparator" />
         <item itemvalue="JUnit.TestEmfComparator.testDiffComparatorNotEObjectIntStr" />
-        <item itemvalue="JUnit.TestEmfComparator.testDiffComparator" />
-        <item itemvalue="JUnit.TestEmfComparator.testApplyChanges" />
-        <item itemvalue="JUnit.TestEmfComparator.testModelComaparationDelete" />
       </list>
     </recent_temporary>
   </component>
@@ -336,59 +383,59 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestEmfComparator - 2019.05.04 at 19h 52m 18s.xml">
+    <history-entry file="TestEmfComparator - 2019.05.04 at 20h 08m 58s.xml">
       <configuration name="TestEmfComparator" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestEmfComparator - 2019.05.04 at 19h 54m 19s.xml">
-      <configuration name="TestEmfComparator" configurationId="JUnit" />
+    <history-entry file="All_in_metalang4md - 2019.05.04 at 20h 14m 13s.xml">
+      <configuration name="All in metalang4md" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestEmfComparator - 2019.05.04 at 19h 56m 38s.xml">
-      <configuration name="TestEmfComparator" configurationId="JUnit" />
+    <history-entry file="TestEmfComparator_testDiffComparatorEObjectsNullEcontents - 2019.05.04 at 20h 14m 26s.xml">
+      <configuration name="TestEmfComparator.testDiffComparatorEObjectsNullEcontents" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestEmfComparator - 2019.05.04 at 19h 57m 19s.xml">
-      <configuration name="TestEmfComparator" configurationId="JUnit" />
+    <history-entry file="TestEmfComparator_testDiffComparatorEObjectsNullEcontents - 2019.05.04 at 20h 14m 53s.xml">
+      <configuration name="TestEmfComparator.testDiffComparatorEObjectsNullEcontents" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestEmfComparator - 2019.05.04 at 19h 58m 20s.xml">
-      <configuration name="TestEmfComparator" configurationId="JUnit" />
+    <history-entry file="All_in_metalang4md - 2019.05.04 at 20h 15m 05s.xml">
+      <configuration name="All in metalang4md" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestEmfComparator - 2019.05.04 at 19h 58m 35s.xml">
-      <configuration name="TestEmfComparator" configurationId="JUnit" />
+    <history-entry file="All_in_metalang4md - 2019.05.04 at 20h 16m 53s.xml">
+      <configuration name="All in metalang4md" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestEmfComparator - 2019.05.04 at 20h 01m 18s.xml">
-      <configuration name="TestEmfComparator" configurationId="JUnit" />
+    <history-entry file="TestControlStatement - 2019.05.04 at 20h 20m 17s.xml">
+      <configuration name="TestControlStatement" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestEmfComparator - 2019.05.04 at 20h 03m 51s.xml">
-      <configuration name="TestEmfComparator" configurationId="JUnit" />
+    <history-entry file="TestControlStatement - 2019.05.04 at 20h 20m 46s.xml">
+      <configuration name="TestControlStatement" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestEmfComparator - 2019.05.04 at 20h 04m 27s.xml">
-      <configuration name="TestEmfComparator" configurationId="JUnit" />
+    <history-entry file="TestControlStatement - 2019.05.04 at 20h 20m 57s.xml">
+      <configuration name="TestControlStatement" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestEmfComparator - 2019.05.04 at 20h 05m 12s.xml">
-      <configuration name="TestEmfComparator" configurationId="JUnit" />
+    <history-entry file="TestControlStatement - 2019.05.04 at 20h 21m 03s.xml">
+      <configuration name="TestControlStatement" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="2560" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15007962" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15007962" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32911393" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32911393" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32911393" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32911393" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32911393" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.32911393" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32911393" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32911393" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -404,41 +451,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ChangeInterpreter.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/Dispatcher.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlStatement.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestModelChange.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestCommand.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -523,30 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelHandler.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#34#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestDiffToCommandParser.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="38" column="5" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ModelToCommandParser.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/emf/ecore/2.9.0/ecore-2.9.0-sources.jar!/org/eclipse/emf/ecore/impl/BasicEObjectImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -558,13 +546,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/DiffExtractor.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/Dispatcher.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelComparator.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        <state relative-caret-position="170">
+          <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
           <folding>
             <element signature="e#34#73#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelHandler.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <folding>
+            <element signature="e#34#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ChangeInterpreter.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -575,17 +594,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/DiffExtractor.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/EmfModelComparator.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-250">
-          <caret line="68" column="23" lean-forward="true" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="25" />
+        <state relative-caret-position="747">
+          <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
           <folding>
             <element signature="e#30#82#0" expanded="true" />
           </folding>
@@ -594,11 +606,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfComparator.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1869">
-          <caret line="165" column="16" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="16" />
+        <state relative-caret-position="141">
+          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
           <folding>
             <element signature="e#54#106#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestModelChange.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestDiffToCommandParser.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ControlScript.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlStatement.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/CommandControl.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestCommand.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ModelToCommandParser.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-797">
+          <caret line="63" column="19" lean-forward="true" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
         </state>
       </provider>
     </entry>

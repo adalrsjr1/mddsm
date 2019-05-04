@@ -23,7 +23,7 @@ class TestEmfComparator extends GroovyTestCase {
 
     void setUp() {
         modelHandler = new EmfModelHandler()
-        modelComparator = new EmfModelComparator(modelHandler)
+        modelComparator = new EmfModelComparator()
     }
 
     void testModelComparisonAdd() {
