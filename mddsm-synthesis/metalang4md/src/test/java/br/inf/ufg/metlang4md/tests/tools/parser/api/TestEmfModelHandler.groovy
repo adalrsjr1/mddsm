@@ -1,8 +1,10 @@
 package br.inf.ufg.metlang4md.tests.tools.parser.api
 
+import br.ufg.inf.metalang4md.cml.CmlPackage
 import br.ufg.inf.synthesis.EmfModelHandler
 import br.ufg.inf.synthesis.api.ModelHandler
 import org.eclipse.emf.ecore.impl.EObjectImpl
+import org.eclipse.emf.ecore.impl.EPackageImpl
 
 class TestEmfModelHandler extends GroovyTestCase {
     final static TEMP_MODEL_NAME = "temp-model"
@@ -31,7 +33,6 @@ class TestEmfModelHandler extends GroovyTestCase {
         }
     }
 
-
     void testSaveInvalidPath() {
         shouldFail {
             URI uri = URI.create()
@@ -42,9 +43,18 @@ class TestEmfModelHandler extends GroovyTestCase {
     void testLoad() {
         URI uri = File.createTempFile(TEMP_MODEL_NAME, ".xmi").toURI()
         modelHandler.save(new EObjectImpl(), uri)
-        def model = modelHandler.load(uri)
+        def model = modelHandler.load(uri, "teste", new EPackageImpl())
 
         assert model
+    }
+
+    void testLoadNoMetaAttributes() {
+        URI uri = File.createTempFile(TEMP_MODEL_NAME, ".xmi").toURI()
+        modelHandler.save(new EObjectImpl(), uri)
+        shouldFail {
+            def model = modelHandler.load(uri)
+        }
+
     }
 
     void testLoadNonExistFile() {
@@ -76,6 +86,12 @@ class TestEmfModelHandler extends GroovyTestCase {
         shouldFail(UnsupportedOperationException) {
             modelHandler.createElement(null)
         }
+    }
+
+    void testLoadWellDefinedMetamodel() {
+        def oldModel = "model/metamodel/cml-model/ControlSchemaTwoWay.xmi"
+
+        def resOldModel = modelHandler.load(URI.create(oldModel), CmlPackage.eNS_URI, CmlPackage.eINSTANCE)
     }
 
 }

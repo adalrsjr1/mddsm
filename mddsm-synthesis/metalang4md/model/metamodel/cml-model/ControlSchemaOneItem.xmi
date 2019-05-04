@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cml:ControlSchema
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:cml="http://www.inf.ufg.br/metalang4md/cml"
+    xsi:schemaLocation="http://www.inf.ufg.br/metalang4md/cml ../cml.ecore"
+    communicationID="ControlSchemaEmpty">
+  <connection/>
+</cml:ControlSchema>

@@ -1,8 +1,11 @@
 package br.ufg.inf.synthesis
 
+
 import br.ufg.inf.synthesis.api.ModelHandler
 import groovy.util.logging.Log4j2
+
 import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EPackage
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
@@ -11,7 +14,8 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 @Log4j2
 class EmfModelHandler implements ModelHandler {
 
-    EObject load(URI filepath) {
+    EObject load(URI filepath, String eNS_URI='', EPackage ePackageInstance=null ) {
+        EPackage.Registry.INSTANCE.put(eNS_URI, ePackageInstance)
         // Register the XMI resource factory for the .website extension
         Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE
         Map<String, Object> m = reg.getExtensionToFactoryMap()
@@ -56,6 +60,20 @@ class EmfModelHandler implements ModelHandler {
         } catch (IOException e) {
             log.error(e.message)
             throw new RuntimeException(e)
+        }
+    }
+
+    void save(Resource model, URI filepath) {
+        OutputStream os = new FileOutputStream(new File(savePath))
+
+        try {
+            model.save(os, Collections.EMPTY_MAP)
+        } catch (IOException e) {
+            log.error e.message
+            e.printStackTrace()
+        }
+        finally {
+            os.close()
         }
     }
 

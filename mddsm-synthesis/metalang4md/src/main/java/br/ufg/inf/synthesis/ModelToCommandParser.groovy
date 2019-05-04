@@ -57,7 +57,7 @@ class ModelToCommandParser {
 			return processAttribute(diff)
 		}
 
-		throw new OperationNotSupportedException("There is no processor to handle $diff.class diff operation")
+		throw new OperationNotSupportedException("There is no processor to handle ${diff.class} diff operation")
 	}
 
 	private CommandControl processResourceAttachementChangeSpec(Diff diff) {

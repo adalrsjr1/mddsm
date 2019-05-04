@@ -9,7 +9,7 @@ import org.eclipse.emf.compare.ReferenceChange
 import org.eclipse.emf.compare.ResourceAttachmentChange
 
 @Canonical
-class ModelChange {
+class ModelChange  {
 
     private Diff diff
 

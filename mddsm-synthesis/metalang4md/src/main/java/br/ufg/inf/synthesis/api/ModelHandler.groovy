@@ -1,12 +1,16 @@
 package br.ufg.inf.synthesis.api
 
 import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EPackage
+import org.eclipse.emf.ecore.resource.Resource
 
 interface ModelHandler {
 
-    EObject load(URI filepath)
+    EObject load(URI filepath, String eNS_URI, EPackage ePackageInstance)
 
     void save(EObject model, URI filepath)
+
+    void save(Resource model, URI filepath)
 
     void addElementTo(def element, def target)
 
