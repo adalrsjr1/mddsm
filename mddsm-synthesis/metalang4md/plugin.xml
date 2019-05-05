@@ -46,4 +46,12 @@
             genModel="model/metamodel/mgridml.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated testing -->
+      <package
+            uri="http://www.inf.ufg.br/metalang4md/testing"
+            class="testing.TestingPackage"
+            genModel="model/metamodel/testing/testing.genmodel"/>
+   </extension>
+
 </plugin>

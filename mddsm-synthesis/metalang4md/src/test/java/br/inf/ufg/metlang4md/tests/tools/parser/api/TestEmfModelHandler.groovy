@@ -1,7 +1,7 @@
 package br.inf.ufg.metlang4md.tests.tools.parser.api
 
 import br.ufg.inf.metalang4md.cml.CmlPackage
-import br.ufg.inf.synthesis.EmfModelHandler
+import br.ufg.inf.synthesis.api.EmfModelHandler
 import br.ufg.inf.synthesis.api.ModelHandler
 import org.eclipse.emf.ecore.impl.EObjectImpl
 import org.eclipse.emf.ecore.impl.EPackageImpl

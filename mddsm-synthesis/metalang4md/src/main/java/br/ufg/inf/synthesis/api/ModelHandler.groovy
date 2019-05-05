@@ -6,7 +6,7 @@ import org.eclipse.emf.ecore.resource.Resource
 
 interface ModelHandler {
 
-    EObject load(URI filepath, String eNS_URI, EPackage ePackageInstance)
+    Resource load(URI filepath, String eNS_URI, EPackage ePackageInstance)
 
     void save(EObject model, URI filepath)
 

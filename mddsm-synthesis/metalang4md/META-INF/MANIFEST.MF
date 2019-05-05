@@ -45,4 +45,7 @@ Export-Package: br.ufg.inf.metalang4md,
  br.ufg.inf.metalang4md.cml.util,
  br.ufg.inf.metalang4md.mgridml,
  br.ufg.inf.metalang4md.mgridml.impl,
- br.ufg.inf.metalang4md.mgridml.util
+ br.ufg.inf.metalang4md.mgridml.util,
+ testing,
+ testing.impl,
+ testing.util

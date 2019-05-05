@@ -7,6 +7,7 @@
 **/src/main/metalang4md
 **/src/main/mgridml
 **/src/main/policies
+**/src/test/testing
 # Created by https://www.gitignore.io/api/eclipse,java,maven
 # Edit at https://www.gitignore.io/?templates=eclipse,java,maven
 

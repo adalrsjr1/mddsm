@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testing:ClassActor
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:testing="http://www.inf.ufg.br/metalang4md/testing"
+    xsi:schemaLocation="http://www.inf.ufg.br/metalang4md/testing testing.ecore"
+    commandPriority="10"
+    attrInt="1"
+    attrString="test"
+    byReferences="//@byComposition.0">
+  <byComposition
+      xsi:type="testing:ClassActor"
+      attrInt="12"
+      attrString="asdf"/>
+</testing:ClassActor>
