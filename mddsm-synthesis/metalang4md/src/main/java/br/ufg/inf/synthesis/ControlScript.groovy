@@ -131,17 +131,48 @@ class Command {
     }
 
     EObject source() {
+        diff.match.left
     }
 
     EObject target() {
+        if(diff instanceof AttributeChange) {
+            return diff.attribute
+        }
+        return diff.reference
     }
 
-    Object value() {
-
+    EObject updatedElement() {
+        diff.match.right
     }
 
-    Map metadata() {
+    def value() {
+        diff.value
+    }
 
+    Map valueMetadata() {
+        extractMetadata(value())
+    }
+
+    private Map extractMetadata(def value) {
+        Map metadata = [:]
+        if(value instanceof EDomainSpecificElement) {
+            metadata["priority"] = value.commandPriority
+            addMetapropertyToMap(metadata, "cardinality", value)
+            addMetapropertyToMap(metadata, "interactionBehavior", value)
+            addMetapropertyToMap(metadata, "kindInteraction", value)
+            addMetapropertyToMap(metadata, "arisingBehavior", value)
+        }
+        return metadata
+    }
+
+    private addMetapropertyToMap(Map map, String propertyName, def source) {
+        if(source.properties.containsKey(propertyName)) {
+            map[propertyName] = source?."${propertyName}"
+        }
+    }
+
+    Map sourceMetadata() {
+        extractMetadata(source())
     }
 
     CommandAction action() {

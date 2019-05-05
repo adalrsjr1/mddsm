@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57ae44d1-c365-4e9d-91a1-e54e8ad81c50" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/EmfModelComparator.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlScript.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metalang4md/model/metamodel/testing/ClassActor1.xmi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metalang4md/model/metamodel/testing/ClassActor2.xmi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metalang4md/model/metamodel/testing/testing.ecore" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/model/metamodel/testing/testing.ecore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metalang4md/model/metamodel/testing/testing.genmodel" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/model/metamodel/testing/testing.genmodel" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ControlScript.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ControlScript.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/EmfModelComparator.groovy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/EmfModelHandler.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/EmfModelHandler.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ModelChange.groovy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ModelToCommandParser.groovy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ChangeInterpreter.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ChangeInterpreter.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelComparator.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelComparator.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelHandler.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelHandler.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlScript.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlScript.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfComparator.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfComparator.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfModelHandler.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfModelHandler.groovy" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/metalang4md/target/" />
@@ -69,8 +61,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ControlScript.groovy">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="407">
-                  <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
+                <state relative-caret-position="311">
+                  <caret line="159" column="109" selection-start-line="159" selection-start-column="109" selection-end-line="159" selection-end-column="109" />
                   <folding>
                     <element signature="e#30#61#0" expanded="true" />
                     <element signature="n#!!block;n#DiffComparator#0;n#!!block;n#ControlScript#0" />
@@ -79,15 +71,24 @@
               </provider>
             </entry>
           </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/EmfModelComparator.groovy">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="349">
+                  <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlScript.groovy">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="118">
-                  <caret line="147" column="46" selection-start-line="147" selection-start-column="46" selection-end-line="147" selection-end-column="46" />
+                <state relative-caret-position="441">
+                  <caret line="235" column="40" selection-start-line="235" selection-start-column="40" selection-end-line="235" selection-end-column="40" />
                   <folding>
                     <element signature="e#50#102#0" expanded="true" />
                   </folding>
@@ -95,11 +96,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfComparator.groovy">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="441">
-                  <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+                <state relative-caret-position="84">
+                  <caret line="75" column="82" lean-forward="true" selection-start-line="74" selection-start-column="8" selection-end-line="75" selection-end-column="82" />
                   <folding>
                     <element signature="e#55#99#0" expanded="true" />
                   </folding>
@@ -110,8 +111,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/EmfModelHandler.groovy">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+                <state relative-caret-position="328">
+                  <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
                   <folding>
                     <element signature="e#34#78#0" expanded="true" />
                   </folding>
@@ -156,13 +157,13 @@
         <option value="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlStatement.groovy" />
         <option value="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ChangeInterpreter.groovy" />
         <option value="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestScript.groovy" />
-        <option value="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ControlScript.groovy" />
         <option value="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/EmfModelComparator.groovy" />
         <option value="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelComparator.groovy" />
-        <option value="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlScript.groovy" />
         <option value="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/EmfModelHandler.groovy" />
         <option value="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelHandler.groovy" />
         <option value="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfComparator.groovy" />
+        <option value="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlScript.groovy" />
+        <option value="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ControlScript.groovy" />
       </list>
     </option>
   </component>
@@ -342,15 +343,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestEmfComparator">
-    <configuration name="All in metalang4md" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="metalang4md" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestControlScript.testExtractMetadata">
     <configuration name="TestControlScript" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="metalang4md" />
       <option name="PACKAGE_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser" />
@@ -370,31 +363,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestControlStatement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestControlScript.testChangeAttributeIntoElement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="metalang4md" />
       <option name="PACKAGE_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser" />
-      <option name="MAIN_CLASS_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser.TestControlStatement" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser.TestControlScript" />
+      <option name="METHOD_NAME" value="testChangeAttributeIntoElement" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestEmfComparator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestControlScript.testDeleteElementToAnotherReferenceBased" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="metalang4md" />
-      <option name="PACKAGE_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser.api" />
-      <option name="MAIN_CLASS_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser.api.TestEmfComparator" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser" />
+      <option name="MAIN_CLASS_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser.TestControlScript" />
+      <option name="METHOD_NAME" value="testDeleteElementToAnotherReferenceBased" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestControlScript.testExtractMetadata" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="metalang4md" />
+      <option name="PACKAGE_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser" />
+      <option name="MAIN_CLASS_NAME" value="br.inf.ufg.metlang4md.tests.tools.parser.TestControlScript" />
+      <option name="METHOD_NAME" value="testExtractMetadata" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestEmfComparator" />
-        <item itemvalue="JUnit.TestControlScript.testAddElementToAnotherReferenceBased" />
+        <item itemvalue="JUnit.TestControlScript.testExtractMetadata" />
+        <item itemvalue="JUnit.TestControlScript.testDeleteElementToAnotherReferenceBased" />
         <item itemvalue="JUnit.TestControlScript" />
-        <item itemvalue="JUnit.TestControlStatement" />
-        <item itemvalue="JUnit.All in metalang4md" />
+        <item itemvalue="JUnit.TestControlScript.testChangeAttributeIntoElement" />
+        <item itemvalue="JUnit.TestControlScript.testAddElementToAnotherReferenceBased" />
       </list>
     </recent_temporary>
   </component>
@@ -409,35 +414,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestControlScript_testAddElementToAnotherReferenceBased - 2019.05.05 at 18h 20m 55s.xml">
-      <configuration name="TestControlScript.testAddElementToAnotherReferenceBased" configurationId="JUnit" />
+    <history-entry file="TestControlScript - 2019.05.05 at 19h 38m 14s.xml">
+      <configuration name="TestControlScript" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestControlScript_testAddElementToAnotherReferenceBased - 2019.05.05 at 18h 22m 56s.xml">
-      <configuration name="TestControlScript.testAddElementToAnotherReferenceBased" configurationId="JUnit" />
+    <history-entry file="TestControlScript - 2019.05.05 at 19h 39m 05s.xml">
+      <configuration name="TestControlScript" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestControlScript_testAddElementToAnotherReferenceBased - 2019.05.05 at 18h 23m 41s.xml">
-      <configuration name="TestControlScript.testAddElementToAnotherReferenceBased" configurationId="JUnit" />
+    <history-entry file="TestControlScript - 2019.05.05 at 19h 42m 10s.xml">
+      <configuration name="TestControlScript" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestControlScript_testAddElementToAnotherReferenceBased - 2019.05.05 at 18h 24m 05s.xml">
-      <configuration name="TestControlScript.testAddElementToAnotherReferenceBased" configurationId="JUnit" />
+    <history-entry file="TestControlScript - 2019.05.05 at 19h 42m 58s.xml">
+      <configuration name="TestControlScript" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestControlScript_testAddElementToAnotherReferenceBased - 2019.05.05 at 18h 24m 29s.xml">
-      <configuration name="TestControlScript.testAddElementToAnotherReferenceBased" configurationId="JUnit" />
+    <history-entry file="TestControlScript - 2019.05.05 at 19h 43m 42s.xml">
+      <configuration name="TestControlScript" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestControlScript_testAddElementToAnotherReferenceBased - 2019.05.05 at 18h 24m 57s.xml">
-      <configuration name="TestControlScript.testAddElementToAnotherReferenceBased" configurationId="JUnit" />
+    <history-entry file="TestControlScript - 2019.05.05 at 19h 44m 02s.xml">
+      <configuration name="TestControlScript" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestEmfComparator - 2019.05.05 at 18h 26m 20s.xml">
-      <configuration name="TestEmfComparator" configurationId="JUnit" />
+    <history-entry file="TestControlScript_testDeleteElementToAnotherReferenceBased - 2019.05.05 at 19h 44m 48s.xml">
+      <configuration name="TestControlScript.testDeleteElementToAnotherReferenceBased" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestEmfComparator - 2019.05.05 at 18h 28m 05s.xml">
-      <configuration name="TestEmfComparator" configurationId="JUnit" />
+    <history-entry file="TestControlScript_testExtractMetadata - 2019.05.05 at 19h 52m 43s.xml">
+      <configuration name="TestControlScript.testExtractMetadata" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestEmfComparator - 2019.05.05 at 18h 28m 45s.xml">
-      <configuration name="TestEmfComparator" configurationId="JUnit" />
+    <history-entry file="TestControlScript_testExtractMetadata - 2019.05.05 at 19h 53m 30s.xml">
+      <configuration name="TestControlScript.testExtractMetadata" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestEmfComparator - 2019.05.05 at 18h 29m 30s.xml">
-      <configuration name="TestEmfComparator" configurationId="JUnit" />
+    <history-entry file="TestControlScript_testExtractMetadata - 2019.05.05 at 19h 54m 17s.xml">
+      <configuration name="TestControlScript.testExtractMetadata" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -638,44 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/EmfModelComparator.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelHandler.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-          <folding>
-            <element signature="e#34#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/EmfModelHandler.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-          <folding>
-            <element signature="e#34#78#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ControlScript.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
-          <folding>
-            <element signature="e#30#61#0" expanded="true" />
-            <element signature="n#!!block;n#DiffComparator#0;n#!!block;n#ControlScript#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlStatement.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -683,22 +650,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlScript.groovy">
+    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/EmfModelComparator.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="147" column="46" selection-start-line="147" selection-start-column="46" selection-end-line="147" selection-end-column="46" />
+        <state relative-caret-position="349">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/ModelHandler.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
-            <element signature="e#50#102#0" expanded="true" />
+            <element signature="e#34#70#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfComparator.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+        <state relative-caret-position="84">
+          <caret line="75" column="82" lean-forward="true" selection-start-line="74" selection-start-column="8" selection-end-line="75" selection-end-column="82" />
           <folding>
             <element signature="e#55#99#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/api/EmfModelHandler.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+          <folding>
+            <element signature="e#34#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlScript.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="235" column="40" selection-start-line="235" selection-start-column="40" selection-end-line="235" selection-end-column="40" />
+          <folding>
+            <element signature="e#50#102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ControlScript.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="159" column="109" selection-start-line="159" selection-start-column="109" selection-end-line="159" selection-end-column="109" />
+          <folding>
+            <element signature="e#30#61#0" expanded="true" />
+            <element signature="n#!!block;n#DiffComparator#0;n#!!block;n#ControlScript#0" />
           </folding>
         </state>
       </provider>

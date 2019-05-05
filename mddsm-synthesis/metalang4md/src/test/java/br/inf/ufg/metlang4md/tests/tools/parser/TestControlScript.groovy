@@ -2,15 +2,23 @@ package br.inf.ufg.metlang4md.tests.tools.parser
 
 import br.ufg.inf.metalang4md.EDomainSpecificElement
 import br.ufg.inf.synthesis.Command
+import br.ufg.inf.synthesis.CommandAction
 import br.ufg.inf.synthesis.ControlScript
 import br.ufg.inf.synthesis.api.EmfModelComparator
 import br.ufg.inf.synthesis.api.EmfModelHandler
 import br.ufg.inf.synthesis.api.ModelComparator
+import br.ufg.inf.synthesis.api.ModelHandler
 import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.compare.Diff
 import org.eclipse.emf.compare.DifferenceKind
+import org.eclipse.emf.compare.ReferenceChange
 import org.eclipse.emf.ecore.EObject
-import testing.impl.TestingPackageImpl
+import org.eclipse.emf.ecore.EReference
+import org.eclipse.emf.ecore.impl.EAttributeImpl
+import sun.font.EAttribute
+import testing.BaseClass
+import testing.Sandbox
+import testing.TestingPackage
 
 class TestControlScript extends GroovyTestCase {
 
@@ -144,25 +152,87 @@ class TestControlScript extends GroovyTestCase {
         assert 3 == script.size()
     }
 
+    static private ModelHandler modelHandler = new EmfModelHandler()
+
     void testAddElementToAnotherReferenceBased() {
-        def model1 = new EmfModelHandler().load("model/metamodel/testing/ClassActor1.xmi".toURI(), TestingPackageImpl.eNS_URI, TestingPackageImpl.eINSTANCE)
-        def model2 = new EmfModelHandler().load("model/metamodel/testing/ClassActor2.xmi".toURI(), TestingPackageImpl.eNS_URI, TestingPackageImpl.eINSTANCE)
+        def oldModel = "model/metamodel/testing/SandboxEmpty.xmi"
+        def newModel = "model/metamodel/testing/SandboxOneElement.xmi"
 
-        def comparator = new EmfModelComparator(model1)
+        def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+        ModelComparator modelComparator = new EmfModelComparator(resOldModel)
+        def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
 
-        def diffs = comparator.compares(model2)
+        def diffs = modelComparator.compares(resNewModel)
 
-        diffs.each { diff ->
-            println diff
-            new Command(diff)
-        }
+        def diff = diffs[0]
+        def command = new Command(diff)
+
+        assert CommandAction.ADD == command.action()
+
+        assert command.source() instanceof Sandbox
+        assert command.target() instanceof EReference
+        assert command.updatedElement() instanceof Sandbox
+        assert command.value() instanceof BaseClass
+
     }
 
-    void testAddElementToAnotherCompositionBased() { }
+    void testDeleteElementToAnotherReferenceBased() {
+        def newModel = "model/metamodel/testing/SandboxEmpty.xmi"
+        def oldModel = "model/metamodel/testing/SandboxOneElement.xmi"
 
-    void testRemoveElementFromAnotherReferenceBased() { }
+        def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+        ModelComparator modelComparator = new EmfModelComparator(resOldModel)
+        def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
 
-    void testRemoveElementFromAnotherCompositionBased() { }
+        def diffs = modelComparator.compares(resNewModel)
 
-    void testChangeAttributeIntoElement() { }
+        def diff = diffs[0]
+        def command = new Command(diff)
+
+        assert CommandAction.DELETE == command.action()
+
+        assert command.source() instanceof Sandbox
+        assert command.target() instanceof EReference
+        assert command.updatedElement() instanceof Sandbox
+        assert command.value() instanceof BaseClass
+
+    }
+
+    void testChangeAttributeIntoElement() {
+        def oldModel = "model/metamodel/testing/SandboxOneElement.xmi"
+        def newModel = "model/metamodel/testing/SandboxOneElementNewAttribute.xmi"
+
+        def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+        ModelComparator modelComparator = new EmfModelComparator(resOldModel)
+        def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+
+        def diffs = modelComparator.compares(resNewModel)
+
+        def diff = diffs[0]
+        def command = new Command(diff)
+
+        assert CommandAction.CHANGE == command.action()
+
+        assert command.source() instanceof BaseClass
+        assert command.target() instanceof EAttributeImpl
+        assert command.updatedElement() instanceof BaseClass
+        assert command.value() instanceof Integer
+    }
+
+    void testExtractMetadata() {
+        def oldModel = "model/metamodel/testing/SandboxOneElement.xmi"
+        def newModel = "model/metamodel/testing/SandboxOneElementNewAttribute.xmi"
+
+        def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+        ModelComparator modelComparator = new EmfModelComparator(resOldModel)
+        def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+
+        def diffs = modelComparator.compares(resNewModel)
+
+        def diff = diffs[0]
+        def command = new Command(diff)
+
+        println command.valueMetadata()
+        println command.sourceMetadata()
+    }
 }

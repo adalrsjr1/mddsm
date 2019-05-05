@@ -6,57 +6,114 @@ import br.ufg.inf.synthesis.api.EmfModelComparator
 import br.ufg.inf.synthesis.api.EmfModelHandler
 import br.ufg.inf.synthesis.api.ModelComparator
 import br.ufg.inf.synthesis.api.ModelHandler
+import org.eclipse.emf.compare.AttributeChange
 import org.eclipse.emf.compare.Diff
 import org.eclipse.emf.compare.DifferenceKind
+import org.eclipse.emf.compare.ReferenceChange
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.emf.ecore.util.EcoreUtil
+import testing.TestingPackage
 
 class TestEmfComparator extends GroovyTestCase {
     private static ModelHandler modelHandler = new EmfModelHandler()
 
-    void testModelComparisonAdd() {
-        def oldModel = "model/metamodel/cml-model/ControlSchemaEmpty.xmi"
-        def newModel = "model/metamodel/cml-model/ControlSchemaOneItem.xmi"
-
-        def resOldModel = modelHandler.load(URI.create(oldModel), CmlPackage.eNS_URI, CmlPackage.eINSTANCE)
-        ModelComparator modelComparator = new EmfModelComparator(resOldModel)
-        def resNewModel = modelHandler.load(URI.create(newModel), CmlPackage.eNS_URI, CmlPackage.eINSTANCE)
-
-        assert 1 == modelComparator.compares(resNewModel).findAll { DifferenceKind.ADD == it.kind }.size()
-        assert 0 == modelComparator.compares(resNewModel).findAll { DifferenceKind.DELETE == it.kind }.size()
-
-    }
-
-    void testModelComparisonDelete() {
-        def newModel = "model/metamodel/cml-model/ControlSchemaEmpty.xmi"
-        def oldModel = "model/metamodel/cml-model/ControlSchemaOneItem.xmi"
-
-        def resOldModel = modelHandler.load(URI.create(oldModel), CmlPackage.eNS_URI, CmlPackage.eINSTANCE)
-        ModelComparator modelComparator = new EmfModelComparator(resOldModel)
-        def resNewModel = modelHandler.load(URI.create(newModel), CmlPackage.eNS_URI, CmlPackage.eINSTANCE)
-
-        assert 0 == modelComparator.compares(resNewModel).findAll { DifferenceKind.ADD == it.kind }.size()
-        assert 1 == modelComparator.compares(resNewModel).findAll { DifferenceKind.DELETE == it.kind }.size()
-    }
-
     void testApplyChanges() {
-        def oldModel = "model/metamodel/cml-model/ControlSchemaEmpty.xmi"
-        def newModel = "model/metamodel/cml-model/ControlSchemaOneItem.xmi"
+        def oldModel = "model/metamodel/testing/SandboxEmpty.xmi"
+        def newModel = "model/metamodel/testing/SandboxOneElement.xmi"
 
-        def resOldModel = modelHandler.load(URI.create(oldModel), CmlPackage.eNS_URI, CmlPackage.eINSTANCE)
+
+        def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
         ModelComparator modelComparator = new EmfModelComparator(resOldModel)
-        def resNewModel = modelHandler.load(URI.create(newModel), CmlPackage.eNS_URI, CmlPackage.eINSTANCE)
+        def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
 
+        def diffs = modelComparator.compares(resNewModel)
 
+        def beforeUpdate = resOldModel.contents[0].elements.size()
 
-        def beforeUpdate = resOldModel.getAllContents().size()
+        modelComparator.updateModel(diffs)
 
-        List<Diff> differences = modelComparator.compares(resNewModel)
-        modelComparator.updateModel(differences)
-
-        def afterUpdate = resOldModel.getAllContents().size()
-
-        resOldModel.getAllContents().each {println it}
+        def afterUpdate = resOldModel.contents[0].elements.size()
 
         assert beforeUpdate != afterUpdate
+
+    }
+
+    void testAddNewElement() {
+        def oldModel = "model/metamodel/testing/SandboxEmpty.xmi"
+        def newModel = "model/metamodel/testing/SandboxOneElement.xmi"
+
+
+        def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+        ModelComparator modelComparator = new EmfModelComparator(resOldModel)
+        def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+
+        def diffs = modelComparator.compares(resNewModel)
+
+        assert 1 == diffs.size()
+        assert diffs[0] instanceof ReferenceChange
+        assert DifferenceKind.ADD == diffs[0].kind
+
+    }
+
+    void testRemoveNewElement() {
+        def newModel = "model/metamodel/testing/SandboxEmpty.xmi"
+        def oldModel = "model/metamodel/testing/SandboxOneElement.xmi"
+
+
+        def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+        ModelComparator modelComparator = new EmfModelComparator(resOldModel)
+        def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+
+        def diffs = modelComparator.compares(resNewModel)
+
+        assert 1 == diffs.size()
+        assert diffs[0] instanceof ReferenceChange
+        assert DifferenceKind.DELETE == diffs[0].kind
+    }
+
+    void testChangeAttributeIntoElement() {
+        def oldModel = "model/metamodel/testing/SandboxOneElement.xmi"
+        def newModel = "model/metamodel/testing/SandboxOneElementNewAttribute.xmi"
+
+        def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+        ModelComparator modelComparator = new EmfModelComparator(resOldModel)
+        Resource resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+
+        def diffs = modelComparator.compares(resNewModel)
+
+        assert 1 == diffs.size()
+        assert diffs[0] instanceof AttributeChange
+        assert DifferenceKind.CHANGE == diffs[0].kind
+    }
+
+    void testAddNewElementToReference() {
+        def oldModel = "model/metamodel/testing/SandboxOneElement.xmi"
+        def newModel = "model/metamodel/testing/SandboxOneElementNewReference.xmi"
+
+        def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+        ModelComparator modelComparator = new EmfModelComparator(resOldModel)
+        Resource resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+
+        def diffs = modelComparator.compares(resNewModel)
+
+        assert 1 == diffs.size()
+        assert diffs[0] instanceof ReferenceChange
+        assert DifferenceKind.ADD == diffs[0].kind
+    }
+
+    void testDeleteElementFromReference() {
+        def newModel = "model/metamodel/testing/SandboxOneElement.xmi"
+        def oldModel = "model/metamodel/testing/SandboxOneElementNewReference.xmi"
+
+        def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+        ModelComparator modelComparator = new EmfModelComparator(resOldModel)
+        Resource resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+
+        def diffs = modelComparator.compares(resNewModel)
+
+        assert 1 == diffs.size()
+        assert diffs[0] instanceof ReferenceChange
+        assert DifferenceKind.DELETE == diffs[0].kind
     }
 
 }

@@ -16,5 +16,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference testing.ecore#//BaseClass/byReferences"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testing.ecore#//BaseClass/byComposition"/>
     </genClasses>
+    <genClasses ecoreClass="testing.ecore#//Sandbox">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference testing.ecore#//Sandbox/elements"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
