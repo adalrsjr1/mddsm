@@ -232,7 +232,7 @@ class TestControlScript extends GroovyTestCase {
         def diff = diffs[0]
         def command = new Command(diff)
 
-        println command.valueMetadata()
-        println command.sourceMetadata()
+        assert command.sourceMetadata() != [:]
+        assert command.valueMetadata() != [:]
     }
 }
