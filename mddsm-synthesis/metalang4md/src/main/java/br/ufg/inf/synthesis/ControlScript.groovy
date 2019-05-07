@@ -30,6 +30,10 @@ class ControlScript {
         this
     }
 
+    ControlScript leftShift(EventObject event) {
+        commands << new Command(event)
+    }
+
     int size() {
         commands.size()
     }
@@ -126,6 +130,10 @@ class ControlScript {
 class Command {
     final private Diff diff
 
+    Command(EventObject event) {
+        throw new UnsupportedOperationException("Not handling EventObject yet")
+    }
+
     Command(Diff diff) {
         this.diff = diff
     }
@@ -190,9 +198,6 @@ class Command {
                 throw new RuntimeException("Action not supported")
         }
     }
-
-
-
 }
 
 enum CommandAction {
