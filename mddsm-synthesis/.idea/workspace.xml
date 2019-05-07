@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57ae44d1-c365-4e9d-91a1-e54e8ad81c50" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/metalang4md/model/metamodel/testing/ClassActor1.xmi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/model/metamodel/testing/ClassActor2.xmi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/model/metamodel/testing/testing.ecore" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/model/metamodel/testing/testing.ecore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/model/metamodel/testing/testing.genmodel" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/model/metamodel/testing/testing.genmodel" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ControlScript.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ControlScript.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlScript.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/TestControlScript.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfComparator.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/metalang4md/src/test/java/br/inf/ufg/metlang4md/tests/tools/parser/api/TestEmfComparator.groovy" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/metalang4md/target/" />
@@ -61,8 +55,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ControlScript.groovy">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="311">
-                  <caret line="159" column="109" selection-start-line="159" selection-start-column="109" selection-end-line="159" selection-end-column="109" />
+                <state relative-caret-position="543">
+                  <caret line="148" column="20" selection-start-line="148" selection-start-column="20" selection-end-line="148" selection-end-column="20" />
                   <folding>
                     <element signature="e#30#61#0" expanded="true" />
                     <element signature="n#!!block;n#DiffComparator#0;n#!!block;n#ControlScript#0" />
@@ -414,15 +408,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestControlScript - 2019.05.05 at 19h 38m 14s.xml">
-      <configuration name="TestControlScript" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestControlScript - 2019.05.05 at 19h 39m 05s.xml">
-      <configuration name="TestControlScript" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestControlScript - 2019.05.05 at 19h 42m 10s.xml">
-      <configuration name="TestControlScript" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestControlScript - 2019.05.05 at 19h 42m 58s.xml">
       <configuration name="TestControlScript" configurationId="JUnit" />
     </history-entry>
@@ -442,6 +427,15 @@
       <configuration name="TestControlScript.testExtractMetadata" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TestControlScript_testExtractMetadata - 2019.05.05 at 19h 54m 17s.xml">
+      <configuration name="TestControlScript.testExtractMetadata" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestControlScript_testExtractMetadata - 2019.05.05 at 19h 55m 25s.xml">
+      <configuration name="TestControlScript.testExtractMetadata" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestControlScript_testExtractMetadata - 2019.05.05 at 19h 57m 43s.xml">
+      <configuration name="TestControlScript.testExtractMetadata" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestControlScript_testExtractMetadata - 2019.05.05 at 19h 58m 19s.xml">
       <configuration name="TestControlScript.testExtractMetadata" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -699,8 +693,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/metalang4md/src/main/java/br/ufg/inf/synthesis/ControlScript.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="159" column="109" selection-start-line="159" selection-start-column="109" selection-end-line="159" selection-end-column="109" />
+        <state relative-caret-position="543">
+          <caret line="148" column="20" selection-start-line="148" selection-start-column="20" selection-end-line="148" selection-end-column="20" />
           <folding>
             <element signature="e#30#61#0" expanded="true" />
             <element signature="n#!!block;n#DiffComparator#0;n#!!block;n#ControlScript#0" />

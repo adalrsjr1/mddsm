@@ -146,7 +146,7 @@ class Command {
     }
 
     def value() {
-        diff.value
+        diff.value  
     }
 
     Map valueMetadata() {
