@@ -1,4 +1,6 @@
-package br.ufg.inf.synthesis.api;
+package br.ufg.inf.synthesis.api
+
+import org.eclipse.emf.ecore.resource.Resource;
 
 class SynthesisEngine {
     private final ModelHandler modelHandler
@@ -10,8 +12,8 @@ class SynthesisEngine {
     private def controlLayer
 
     SynthesisEngine(Resource model) {
-        this.modelHandler = new ModelHandler()
-        this.modelComparator = new ModelComparator(model)
+        this.modelHandler = new EmfModelHandler()
+        this.modelComparator = new EmfModelComparator(model)
         this.dispatcher = null
         this.changeInterpreter = new ChangeInterpreter()
     }
