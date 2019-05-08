@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 import base.impl.BasePackageImpl
 
 class EMFLoader {
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(EMFLoader.class);
     private static ResourceSet resourceSet
     public static ResourceSet getResourceSet() {
         if (resourceSet == null) {
@@ -20,12 +21,15 @@ class EMFLoader {
 
             BasePackageImpl.init()
         }
-
+		log.trace "getResourceSet() = {}", resourceSet
         resourceSet
     }
 
     public static Resource loadURL(URI uri) {
-        getResourceSet().getResource(org.eclipse.emf.common.util.URI.createURI(uri.toString()), true)
+		log.trace "loadURL(uri:{})", uri
+        Resource resource = getResourceSet().getResource(org.eclipse.emf.common.util.URI.createURI(uri.toString()), true)
+		log.trace "loadURL() = {}", resource
+		return resource
     }
 
     public static Resource loadResource(String name) {

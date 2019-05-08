@@ -15,11 +15,13 @@ import br.inf.ufg.mddsm.broker.resource.EventListener;
  * @author fhern006_1
  */
 public class EventManager implements EventListener {
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(EventManager.class);
 	// previously the listeners was static
 	//private static List<UsesEventListener> listeners = new ArrayList<UsesEventListener>();
 	private List<UsesEventListener> listeners = new ArrayList<UsesEventListener>();
 
     public synchronized void addUpListener(UsesEventListener listener) {
+    	log.trace("addUpListener(listener:{})", listener);
     	// did't have this decision clause in the original code; Adalberto
     	/*
     	 * if exists a listener, don't need add the same again
@@ -33,7 +35,7 @@ public class EventManager implements EventListener {
     }
 
     public void notify(SignalInstance event) {
-    
+    	log.trace("notify(event:{})", event);
         if (listeners != null && !listeners.isEmpty()) {
             List<UsesEventListener> list;
             synchronized (this) {

@@ -10,11 +10,13 @@ import br.inf.ufg.mddsm.broker.resource.ResourceManager
 import br.inf.ufg.mddsm.broker.state.StateManager
 
 class ManagerFactory {
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ManagerFactory.class);
     private HandlerFactory handlerFactory = new HandlerFactory()
     private ResourceManagerFactory objectManagerFactory = new ResourceManagerFactory()
     private MetadataFactory metadataFactory = new MetadataFactory()
 
     MainManager createManager(Manager manager) {
+		log.trace("createManager(manager:{})", manager)
         SignalHandlerManager signalHandlerManager = handlerFactory.createSignalHandlerManager(manager.handlers)
         ResourceManager resourceManager = objectManagerFactory.createObjectManager(manager.resourceManager)
 
@@ -31,7 +33,7 @@ class ManagerFactory {
             signalHandlerManager.register(-1, pem.getSignalHandler())
         }
 
-
+		log.trace("createManager() = {}", mainManager)
         mainManager
     }
 }
