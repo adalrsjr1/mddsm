@@ -18,4 +18,8 @@ public class PolicyContext {
     public Map<String, Object> getParams() {
         return params;
     }
+    
+    public String toString() {
+    	return "PolicyContext(feature:" + feature + ", params:" + params+")";
+    }
 }

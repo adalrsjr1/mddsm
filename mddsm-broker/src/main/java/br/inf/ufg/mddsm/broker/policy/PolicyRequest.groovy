@@ -1,5 +1,10 @@
 package br.inf.ufg.mddsm.broker.policy;
 
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import base.policy.PolicyEvaluation;
 import base.policy.PolicyEvaluationRequest;
 import br.inf.ufg.mddsm.broker.expression.ContextProvider;
@@ -7,9 +12,9 @@ import br.inf.ufg.mddsm.broker.expression.ValueEvaluator;
 import br.inf.ufg.mddsm.broker.manager.ManagerContext;
 import br.inf.ufg.mddsm.broker.resource.Resource;
 
-import java.util.Map;
-
 public class PolicyRequest implements ContextProvider {
+	private static Logger log = LoggerFactory.getLogger(PolicyRequest.class);
+			
     private PolicyEvaluationRequest request;
     private Map<String, Object> params;
     private ValueEvaluator evaluator;
@@ -33,6 +38,7 @@ public class PolicyRequest implements ContextProvider {
     }
 
     private PolicyContext createPolicyContext(ContextProvider context, PolicyEvaluation evaluation) {
+    	log.debug("createPolicyContext(context:{}, evaluation:{}", context.dump(), evaluation.dump());
         Map<String, Object> params = evaluator.getParams(context, evaluation.getContextBinding());
         Object feature = evaluator.getValue(context, evaluation.getFeature());
         return new PolicyContext(feature.toString(), params);

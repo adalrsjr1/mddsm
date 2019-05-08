@@ -16,21 +16,25 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 
 public class Monitor {
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(Monitor.class);
     private SignalRegistry signalRegistry = new SignalRegistry();
     private ManagerContext context;
     private Collection<Symptom> identifies;
 
     public Monitor(Collection<Symptom> identifies) {
+    	log.trace("new Monitor(identifies:{})", identifies);
         this.identifies = identifies;
     }
 
     private Analyzer analyzer;
 
     public void setAnalyzer(Analyzer analyzer) {
+    	log.trace("setAnalyzer(analyzer:{})", analyzer);
         this.analyzer = analyzer;
     }
 
     public void sense(SignalInstance signal) {
+    	log.trace("sense(signal:{})", signal);
         signalRegistry.registerSignal(signal);
 
         for (Symptom symptom : identifies) {
@@ -39,6 +43,7 @@ public class Monitor {
     }
 
     public void checkSymptom(Symptom symptom) {
+    	log.trace("checkSymptom(symptom:{})", symptom);
         Collection<EvaluationResult> results = evaluateConditions(symptom);
         for (EvaluationResult result : results) {
             enableSymptom(symptom, result);
@@ -46,6 +51,7 @@ public class Monitor {
     }
 
     private Collection<EvaluationResult> evaluateConditions(Symptom symptom) {
+    	log.trace("evaluateConditions(symptom:{})", symptom);
         Collection<String> expressions = new LinkedHashSet<String>();
         Collection<Binding> bindings = symptom.getBindings();
 
@@ -54,14 +60,20 @@ public class Monitor {
         }
 
         ConditionEvaluator evaluator = new ConditionEvaluator(new ContextBinder(context, signalRegistry));
-        return evaluator.evaluate(expressions, bindings);
+        Collection<EvaluationResult> evaluationResults = evaluator.evaluate(expressions, bindings);
+        
+        log.trace("evaluationConditions() = {}", evaluationResults);
+        
+        return evaluationResults;
     }
 
     public synchronized void enableSymptom(Symptom symptom, EvaluationResult result) {
+    	log.trace("enableSymptom(symptom:{}, result:{})", symptom, result);
         analyzer.symptomDetected(new SymptomOccurrence(symptom, result.getParams()));
     }
 
     public void setContext(ManagerContext context) {
+    	log.trace("setContext(context:{})", context);
         this.context = context;
     }
 }

@@ -4,10 +4,12 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class EventException extends RuntimeException {
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(EventException.class);
 	private static final long serialVersionUID = 1L;
 	private Event event;
 
     public EventException(Event event) {
+    	log.error("EventException: {}", event);
         this.event = event;
     }
 

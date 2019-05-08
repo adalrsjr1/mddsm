@@ -1,15 +1,19 @@
 package br.inf.ufg.mddsm.broker.resource;
 
-import java.lang.Thread.State;
 import java.util.Queue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import br.inf.ufg.mddsm.broker.manager.SignalInstance;
 
 public class ThreadedQueue implements Runnable {
+	private final Logger log = LoggerFactory.getLogger(ThreadedQueue.class);
+	
 	private ExecutorService thread = Executors.newSingleThreadExecutor();
 	private Effector effector;
 	private Queue<SignalInstance> queue;
@@ -73,6 +77,7 @@ public class ThreadedQueue implements Runnable {
 	}
 
 	public void process(SignalInstance signal) {
+		log.debug("processing {}:", signal);
 		long t1 = System.nanoTime();
 		effector.execute(signal);
 		long t2 = System.nanoTime();

@@ -1,5 +1,8 @@
 package br.inf.ufg.mddsm.broker.expression
 
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
+
 import base.common.*
 import br.inf.ufg.mddsm.broker.state.StateHolder
 import br.inf.ufg.mddsm.broker.state.StateManager
@@ -7,6 +10,7 @@ import br.inf.ufg.mddsm.broker.state.StateTypeManager
 
 class ValueEvaluator {
     // TODO: remove & fix this hack
+	private static final Logger log = LoggerFactory.getLogger(ValueEvaluator.class)
     private StateManager stateManager
 
 	ValueEvaluator(StateManager stateManager)
@@ -28,10 +32,12 @@ class ValueEvaluator {
     }
 
     public Object getValue(ContextProvider context, Value value) {
+		log.debug("getValue(context:{}, value:{})", context, value)
         evaluate(context, value)
     }
 
     private Object evaluate(ContextProvider context, Value value) {
+		log.warn("getValue(context:{}, value:{})", context, value.dump())
         null
     }
 

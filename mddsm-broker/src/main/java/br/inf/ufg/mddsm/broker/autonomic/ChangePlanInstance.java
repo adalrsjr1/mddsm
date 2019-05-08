@@ -9,24 +9,32 @@ import java.util.Map;
 
 
 public class ChangePlanInstance implements ContextProvider {
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ChangePlanInstance.class);
     private ChangePlan plan;
     private ChangeRequestInstance request;
 
     public ChangePlanInstance(ChangePlan plan, ChangeRequestInstance request) {
+    	log.trace("new ChangePlanInstance(plan:{}, request:{})", plan, request);
         this.plan = plan;
         this.request = request;
     }
 
     public ActionExecution getAction() {
-        return plan.getAction();
+    	ActionExecution action = plan.getAction();
+    	log.trace("getAction() = {}", action);
+        return action;
     }
 
     public Map<String, Object> getParams() {
-        return request.getParams();
+    	Map<String, Object> params = request.getParams();
+    	log.trace("getParams() = {}", params);
+        return params;
     }
 
 
     public Object getVariable(String name) {
-        return getParams().get(name);
+    	Object variable = getParams().get(name);
+    	log.trace("getVariable() = {}", variable);
+        return variable;
     }
 }

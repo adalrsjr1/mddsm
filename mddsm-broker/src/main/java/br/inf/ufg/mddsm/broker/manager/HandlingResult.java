@@ -25,4 +25,9 @@ public class HandlingResult {
     public Object getResult() {
         return result;
     }
+    
+    public String toString() {
+		return "result(handled:" + handled +" , result:"+ result +")";
+    	
+    }
 }

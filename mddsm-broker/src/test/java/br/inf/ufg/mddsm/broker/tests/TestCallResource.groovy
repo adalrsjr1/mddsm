@@ -26,8 +26,15 @@ class TestCallResource extends GroovyTestCase {
     static MainManager mainManager
     static ResourceManager resourceManager
     static PolicyManager policyManager
-    static ManagerFacadeForTest facade
+    static ResourceSelectionManagerFacade facade
 
+	public static void main(String[] args) {
+		def instance = new TestCallResource()
+		instance.setUp()
+		instance.test()
+		instance.tearDown()
+	}
+	
     void setUp() {
 
         Manager managerDef = EMFLoader.loadFirst("TestResourceSelection.xmi", Manager)
@@ -35,17 +42,21 @@ class TestCallResource extends GroovyTestCase {
         mainManager = new ManagerFactory().createManager(managerDef)
         resourceManager = mainManager.resourceManager
 
-        facade = new ManagerFacadeForTest(mainManager)
+        facade = new ResourceSelectionManagerFacade(mainManager)
         mainManager.setEventListener(facade)
 
         mainManager.start()
 
     }
+	
+	void tearDown() {
+		mainManager.stop()
+	}
 
     void test() {
         def facade = new ResourceSelectionManagerFacade(mainManager)
 
-        facade.testCall("resource1")
+        facade.testCall("resource2")
     }
 }
 
@@ -55,8 +66,6 @@ class ResourceSelectionManagerFacade extends ManagerFacade implements EventListe
     @Delegate
     EventListener listener = [notify: { SignalInstance event ->
         log.info "notification: {}", event
-        assert "testEvent" == event.name
-        assert [callReturn: [expressionArg:42, valueArg:"string"], source:null, name:"testEvent"] == event.params
     }] as EventListener
 
     public ResourceSelectionManagerFacade(MainManager manager) {
@@ -64,7 +73,7 @@ class ResourceSelectionManagerFacade extends ManagerFacade implements EventListe
     }
 
     def testCall(def name) {
-        enqueue(new SignalInstance("selects", ["name":"resource1", "args":"method_parameters"]))
+        enqueue(new SignalInstance("selects", ["resourceName":name, "args":"method_parameters"]))
     }
 
 }
@@ -112,7 +121,9 @@ class ResourceSelectionHandler implements PolicyEvaluationHandler {
 
     @Override
     void handleResource(PolicyRequest request, ManagerContext ctx, Resource selected) {
+//		selected.enqueue(new SignalInstance("callResource", request.params))
+		println ctx.dump()
         println request.dump()
-        println "[${selected.name}]:${selected.metadata.dump()}]"
+        println ">>> [${selected.name}]:${selected.metadata.dump()}]"
     }
 }
