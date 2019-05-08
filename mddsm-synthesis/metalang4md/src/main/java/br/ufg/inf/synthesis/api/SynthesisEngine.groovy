@@ -1,6 +1,6 @@
 package br.ufg.inf.synthesis.api
 
-import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.Resource
 
 class SynthesisEngine {
     private final ModelHandler modelHandler

@@ -1,7 +1,6 @@
 package br.inf.ufg.mddsm.broker.autonomic;
 
 import java.util.Collection;
-
 import base.autonomic.ChangeRequest;
 
 public class Analyzer {

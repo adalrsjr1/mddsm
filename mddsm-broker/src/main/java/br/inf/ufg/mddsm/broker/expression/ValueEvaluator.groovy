@@ -9,7 +9,7 @@ class ValueEvaluator {
     // TODO: remove & fix this hack
     private StateManager stateManager
 
-	public ValueEvaluator(StateManager stateManager)
+	ValueEvaluator(StateManager stateManager)
 	{
 		this.stateManager = stateManager
 	}

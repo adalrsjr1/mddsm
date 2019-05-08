@@ -29,10 +29,6 @@ public class PolicyEvaluationManager implements SignalHandler {
     }
 
     private void eval(SignalInstance signal, ManagerContext ctx, PolicyEvaluationPoint evalPoint) {
-    	if(signal.getName().contains("startDevice"))
-    	{
-    		int a = 0;
-    	}
         PolicyRequest request = getRequest(signal, evalPoint, ctx);
         if (request == null)
             return;

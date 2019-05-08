@@ -52,7 +52,7 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
 
 	public ValueEvaluator getEvaluator()
     {	
-    	return new ValueEvaluator(stateManager);
+    	return new ValueEvaluator(this.stateManager);
     }
     
     public ResourceManager getResourceManager() {

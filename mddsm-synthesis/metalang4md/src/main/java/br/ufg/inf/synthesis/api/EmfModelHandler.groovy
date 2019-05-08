@@ -24,7 +24,7 @@ class EmfModelHandler implements ModelHandler {
 
         // Get the resource
         def emfUri = org.eclipse.emf.common.util.URI.createURI(filepath.toString())
-        Resource resource = resSet.getResource(emfUri, true);
+        Resource resource = resSet.getResource(emfUri, true)
         // Get the first model element and cast it to the right type, in my
         // example everything is hierarchical included in this first node
         def root =  resource.getContents()?.get(0)
