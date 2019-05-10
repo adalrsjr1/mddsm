@@ -11,6 +11,7 @@ public class SignalHandlerManager {
 	private Collection<HandlerEntry> handlers = new PriorityQueue<HandlerEntry>();
 
     public void register(int priority, SignalHandler handler) {
+    	log.trace("register(priority:{}, handler:{})", priority, handler);
         handlers.add(new HandlerEntry(priority, handler));
     }
 
@@ -18,12 +19,14 @@ public class SignalHandlerManager {
         register(0, handler);
     }
 
-    public HandlingResult handle(SignalInstance signal, ManagerContext ctx) { 
+    public HandlingResult handle(SignalInstance signal, ManagerContext ctx) {
+    	log.trace("handle(signal:{}, ctx:{})", signal, ctx);
         for (HandlerEntry entry : handlers) {
             SignalHandler handler = entry.getHandler();
             HandlingResult result = handler.handle(signal, ctx);
             log.debug("handled: {}, result: {}", handler, result);
             if (result.isHandled())
+            	log.trace("handle() = {}", result);
                 return result;
         }
 

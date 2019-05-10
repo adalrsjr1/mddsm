@@ -6,11 +6,13 @@ import java.util.Map;
 import br.inf.ufg.mddsm.broker.expression.ContextProvider;
 
 public class SignalInstance implements ContextProvider {
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SignalInstance.class);
     private Object source;
     private String name;
     private Map<String, Object> params;   
 
     public SignalInstance(Object source, String name, Map<String, Object> params) {
+    	log.trace("SignalInstance(source:{}, name:{}, params:{})");
         this.source = source;
         this.name = name;
         this.params = params;
@@ -41,10 +43,12 @@ public class SignalInstance implements ContextProvider {
     }
 
     public String toString() {
-        return getName() + "(" + getParams() + ")";
+        return getName() + "(source:" + getSource() + ", params:" + getParams() + ")";
     }
 
     public Object getSource() {
         return source;
     }
+    
+    
 }

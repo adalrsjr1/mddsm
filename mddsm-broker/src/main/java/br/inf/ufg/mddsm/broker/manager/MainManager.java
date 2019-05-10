@@ -25,7 +25,6 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
     }
         
     private class MainManagerContext implements ManagerContext {
-
         public StateManager getStateManager() {
             return MainManager.this.getStateManager();
         }
@@ -42,6 +41,7 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
     public MainManager(Metadata metadata, SignalHandlerManager signalHandlerManager, ResourceManager resourceManager,
                        StateManager stateManager) {
         super(metadata);
+        log.trace("new MainManager(metadata:{}, signalHandlerManager:{}, resoruceManager:{}, statemManager:{}", metadata, signalHandlerManager, resourceManager, stateManager);
         this.signalHandlerManager = signalHandlerManager;
         this.resourceManager = resourceManager;
         this.stateManager = stateManager;
@@ -52,24 +52,30 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
 
 	public ValueEvaluator getEvaluator()
     {	
-    	return new ValueEvaluator(this.stateManager);
+		ValueEvaluator evaluator = new ValueEvaluator(this.stateManager);
+		log.trace("getEvaluator() = {}", evaluator);
+		return evaluator;
     }
     
     public ResourceManager getResourceManager() {
+    	log.trace("getResourceManager() = {}", resourceManager);
         return resourceManager;
     }
 
     public StateManager getStateManager() {
+    	log.trace("getStateManager() = {}", stateManager);
         return stateManager;
     }
 
     public void start() {
+    	log.trace("state()");
         resourceManager.setEventListener(this);
         resourceManager.start();
         super.start();
     }
 
     public void stop() {
+    	log.trace("stop()");
         super.stop();
         resourceManager.stop();
     }
@@ -79,6 +85,7 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
      * find the appropriate framework
      */
     public Object execute(SignalInstance signal) {
+    	log.trace("execute(signal:{})", signal);
     	long t1 = System.nanoTime();
     	
         log.debug("Evaluating: " + signal);
@@ -94,6 +101,7 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
         log.warn("Signal [" + signal + "] not handled!");
         
         System.out.println("MM("+signal+"):" + TimeUnit.MILLISECONDS.convert((t2-t1), TimeUnit.NANOSECONDS) + "ms");
+        log.trace("execute() = null");
         return null;
     }
 
@@ -102,6 +110,7 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
      * @param signal
      */
     public void sendEvent(SignalInstance signal) {
+    	log.trace("sendEvent(signal:{})", signal);
         if (getEventListener() != null)
             getEventListener().notify(signal);        
     }
@@ -119,6 +128,7 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
      * @param event
      */
     public void notify(SignalInstance event) {
+    	log.trace("notify({})", event);
         enqueue(event.getSource(), event.getName(), event.getParams());
     }
 }

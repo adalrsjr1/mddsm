@@ -32,6 +32,10 @@ public class Feature {
         this(nodeName);
         setParent(parent);
     }
+    
+    public String toString() {
+    	return "feature:" + getName() + "(" +  + ")";
+    }
 
     public HashSet<Attribute> getAttributes() {
         return attributes;
