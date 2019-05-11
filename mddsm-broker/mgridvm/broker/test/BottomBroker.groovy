@@ -23,14 +23,14 @@ import br.inf.ufg.mddsm.broker.resource.ResourceManager
 @Log4j2
 class BottomBroker implements UsesEventListener, IMHB_Bottom
 {
-	public static final InputConverter[] CLI_INPUT_CONVERTERS = [
+	public static final def CLI_INPUT_CONVERTERS = [
 		TypeEnum.getCliConverter(),
 		ControlEnum.getCliConverter(),
 		ChargeEnum.getCliConverter(),
 		CriticalEnum.getCliConverter(),
 		SourceEnum.getCliConverter(),
 		UsageEnum.getCliConverter(),
-
+			
 		new InputConverter() {
 			public Object convertInput(String original, Class toClass)
 			throws Exception {

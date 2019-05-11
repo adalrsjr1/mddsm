@@ -7,12 +7,14 @@ import br.inf.ufg.mddsm.broker.resource.Resource;
 import java.util.*;
 
 public class StateHolder implements ContextProvider {
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(StateHolder.class);
     private State state;
 
     private Map<String, Object> attributes = Collections.synchronizedMap(new LinkedHashMap<String, Object>());
     private Map<String, StateTypeManager> children = Collections.synchronizedMap(new LinkedHashMap<String, StateTypeManager>());
 
     public StateHolder(State state, Object id) {
+    	log.trace("new StateHolder(state:{}, id:{})", state, id);
         this.state = state;
         attributes.put(state.getKey().getName(), id);
 
@@ -22,16 +24,21 @@ public class StateHolder implements ContextProvider {
     }
 
     public Object getId() {
-        return attributes.get(state.getKey().getName());
+        Object id = attributes.get(state.getKey().getName());
+        log.trace("getId() = {}", id);
+        return id;
     }
 
     public Set getAsSet(String name) {
-    	
-        return (Set) get(name, Collections.synchronizedSet(new LinkedHashSet()));
+    	Set set = (Set) get(name, Collections.synchronizedSet(new LinkedHashSet()));
+    	log.trace("getAsSet(name:{}) = set");
+    	return set;
     }
 
     public List getAsList(String name) {
-        return (List) get(name, Collections.synchronizedList(new LinkedList()));
+        List list = (List) get(name, Collections.synchronizedList(new LinkedList()));
+        log.trace("getAsList(name:{})");
+        return list;
     }
 
 
@@ -46,22 +53,30 @@ public class StateHolder implements ContextProvider {
     }
 
     public Object get(String name) {
-        return attributes.get(name);
+        Object obj = attributes.get(name);
+        log.trace("get(name:{}) = {}", name, obj);
+        return obj;
     }
 
     public void set(String name, Object value) {
+    	log.trace("set(name:{}, value:{})");
         attributes.put(name, value);
     }
 
     public Resource getResource(String name) {
-        return (Resource) get(name);
+    	Resource resource = (Resource) get(name);
+    	log.trace("getResource(name:{}) = {}", name, resource);
+        return resource;
     }
 
     public StateTypeManager getChild(String name) {
-        return children.get(name);
+    	StateTypeManager type = children.get(name);
+    	log.trace("getChild(name:{})", type);
+    	return type;
     }
 
     public Map<String, Object> getParams() {
+    	log.trace("getParams() = {}", attributes);
         return attributes;
     }
 
@@ -70,6 +85,8 @@ public class StateHolder implements ContextProvider {
     }
 
     public Object getVariable(String name) {
-        return getParams().get(name);
+    	Object variable = getParams().get(name);
+    	log.trace("getVariable(name:{})", name);
+        return variable;
     }
 }

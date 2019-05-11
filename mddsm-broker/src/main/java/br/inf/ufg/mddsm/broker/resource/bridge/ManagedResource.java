@@ -19,10 +19,12 @@ import br.inf.ufg.mddsm.broker.resource.Resource;
  * @author Frank Hernandez
  */
 public class ManagedResource extends AbstractTouchpoint implements EventNotifier, Resource {
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ManagedResource.class);
     private Manageable bridge;
 
     public ManagedResource(Metadata metadata, Manageable bridge) {
         super(metadata);
+        log.trace("new ManagedResource(metadata:{}, bridge:{})", metadata, bridge);
         bridge.setEventNotifier(this);
         this.bridge = bridge;
         
@@ -33,19 +35,24 @@ public class ManagedResource extends AbstractTouchpoint implements EventNotifier
     }
 
     public Object execute(String message, Map<String, Object> params) {
+    	log.trace("execute(message:{}, params:{})", message, params);
+    	Object result = null;
         try {
-            return new CallExecutor(bridge).execute(message, params);
+            result = new CallExecutor(bridge).execute(message, params);
         } catch (InvocationTargetException e) {
+        	log.error(e.getMessage());
             if (e.getCause() instanceof EventException) {
                 EventException ee = (EventException) e.getCause();
                 throwEvent(ee.getEvent());
-            } else if (e.getCause() instanceof RuntimeException)
+            } else if (e.getCause() instanceof RuntimeException) {
                 throw (RuntimeException) e.getCause();
+            }
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
 
         // TODO: fixme
-        return null;
+        log.trace("execute() = {}", result);
+        return result;
     }
 
     public Object execute(String message) {
@@ -53,6 +60,7 @@ public class ManagedResource extends AbstractTouchpoint implements EventNotifier
     }
 
     public void notify(SignalInstance signal) {
+    	log.trace("notify(signal:{})", signal);
         getEventListener().notify(signal);
     }
 
@@ -61,6 +69,7 @@ public class ManagedResource extends AbstractTouchpoint implements EventNotifier
     }
 
     public void throwEvent(SignalInstance signal) throws EventException {
+    	log.trace("throwEvent(signal:{})", signal);
         getEventListener().throwEvent(signal);
     }
 
@@ -69,6 +78,7 @@ public class ManagedResource extends AbstractTouchpoint implements EventNotifier
     }
 
     private SignalInstance newSignalInstance(Event event) {
+    	log.trace("newSignalInstance(event:{})", event);
         return new SignalInstance(this, event.getName(), event.getParams());
     }
 

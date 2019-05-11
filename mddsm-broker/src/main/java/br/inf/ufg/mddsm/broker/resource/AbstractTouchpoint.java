@@ -17,11 +17,12 @@ public abstract class AbstractTouchpoint implements Resource {
     private EventListener eventListener;
 
     public void start() {
+    	log.trace("start()");
         queue.start(this);
     }
 
     public final void enqueue(SignalInstance signal) {
-        log.debug("Call enqueued: " + signal);
+        log.trace("enqueue(signal:{})", signal);
         queue.enqueue(signal);
     }
 
@@ -41,28 +42,35 @@ public abstract class AbstractTouchpoint implements Resource {
     }
 
     public final void setEventListener(EventListener eventListener) {
+    	log.trace("setEventListerner(eventListener:{})", eventListener);
         this.eventListener = eventListener;
     }
 
     public final EventListener getEventListener() {
+    	log.trace("getEventListener() = {}", eventListener);
         return eventListener;
     }
 
     public void stop() {
+    	log.trace("stop()");
         queue.stop();
     }
 
     private Metadata metadata;
 
     public AbstractTouchpoint(Metadata metadata) {
+    	log.trace("new AbstractTouchpoint(metadata:{})", metadata);
         this.metadata = metadata;
     }
 
     public Metadata getMetadata() {
+    	log.trace("getMetadata() = {}", metadata);
         return metadata;
     }
 
     public String getName() {
-        return metadata.getName();
+    	String name = metadata.getName();
+    	log.trace("getName() = {}", name);
+        return name;
     }
 }

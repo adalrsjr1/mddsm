@@ -22,6 +22,7 @@ public class Feature {
     public static final int GT = 2;
 
     public Feature(String fn) {
+    	log.trace("new Feature(fn: {})", fn);
         name = fn;
         attributes = new HashSet<Attribute>();
         subFeatures = new HashSet<Feature>();
@@ -33,60 +34,74 @@ public class Feature {
         setParent(parent);
     }
     
-    public String toString() {
-    	return "feature:" + getName() + "(" +  + ")";
-    }
-
     public HashSet<Attribute> getAttributes() {
+    	log.trace("getAttributes() = {}", attributes);
         return attributes;
     }
 
     public HashSet<Feature> getSubFeatures() {
+    	log.trace("getSubFeatures() == {}", subFeatures);
         return subFeatures;
     }
 
     public String getName() {
+    	log.trace("getName() = {}", name);
         return name;
     }
 
 
     public void addAttribute(Attribute attr) {
+    	log.trace("addAttribute(attr:{})", attr);
         attributes.add(attr);
     }
 
     public void addSubFeature(Feature feat) {
+    	log.trace("addSubFeature(feat:{})", feat);
         subFeatures.add(feat);
     }
 
     public Attribute getAttribute(String attributeName) {
+    	log.trace("getSubFeature(featureName:{})", attributeName);
         for (Attribute attribute : getAttributes()) {
-            if (attribute.name.equals(attributeName))
+            if (attribute.name.equals(attributeName)) {
+            	log.trace("getSubFeature() == {}", attribute);
                 return attribute;
+            }
         }
-
+        log.trace("getSubFeature() == null");
         return null;
     }
 
     public Feature getSubFeature(String featureName) {
+    	log.trace("getSubFeature(featureName:{})", featureName);
         for (Feature feature : getSubFeatures()) {
-            if (feature.getName().equals(featureName))
+            if (feature.getName().equals(featureName)) {
+            	log.trace("getSubFeature() == {}", feature);
                 return feature;
+            }
         }
-
+        log.trace("getSubFeature() == null");
         return null;
     }
 
     public boolean hasAttributeValue(String attrName, Object val, int opcode) {
-        if (val instanceof Integer)
-            return hasAttributeValue(attrName, (Integer) val, opcode);
-
-        if (val instanceof Boolean)
-            return hasAttributeValue(attrName, (Boolean) val, opcode);
-
-        return hasAttributeValue(attrName, val.toString(), opcode);
+    	log.trace("hasAttributeValue(attrName:{}, val:{}, opcode:{}", attrName, val, opcode);
+    	boolean result = false;
+        if (val instanceof Integer) {
+            result = hasAttributeValue(attrName, (Integer) val, opcode);
+        }
+        else if (val instanceof Boolean) {
+            result = hasAttributeValue(attrName, (Boolean) val, opcode);
+        }
+        else {
+        	result = hasAttributeValue(attrName, val.toString(), opcode);
+        }
+        log.trace("hasAttributeValue() = {}", result);
+        return result;
     }
 
     public boolean hasAttributeValue(String attrName, Integer val, int opcode) {
+    	log.trace("hasAttributeValue(attrName:{}, val:{}, opcode:{}", attrName, val, opcode);
         Attribute attr = getAttribute(attrName);
         if (attr == null)
             return false;
@@ -102,21 +117,33 @@ public class Feature {
 
         log.debug("@@@@@@@@@@@@@@@@@@@@@@@@@");
         log.debug("The integer comparison is " + val + " " + opcode + " " + attrVal);
+        boolean result = false;
         switch (opcode) {
             case EQ:
-                return val == attrVal;
+                result = val == attrVal;
+                break;
             case LEQ:
-                return val <= attrVal;
+                result = val <= attrVal;
+                break;
+            case LT:
+            	result = val < attrVal;
+            	break;
+            case GT:
+            	result = val > attrVal;
+            	break;
             case GEQ:
-                return val >= attrVal;
+                result = val >= attrVal;
+                break;
             default:
                 log.debug("Invalid opcode!!");
-                return false;
+                result = false;
         }
+        log.trace("hasAttributeValue() = {}", result);
+        return result;
     }
 
     public boolean hasAttributeValue(String attrName, Boolean val, int opcode) {
-        log.debug("Finding attr " + attrName);
+    	log.trace("hasAttributeValue(attrName:{}, val:{}, opcode:{}", attrName, val, opcode);
 
         Attribute attr = getAttribute(attrName);
         if (attr == null)
@@ -124,14 +151,18 @@ public class Feature {
 
         log.debug("Found attribute");
         boolean attrVal = Boolean.parseBoolean(attr.attributeValue);
-        return attrVal == val;
+        boolean result = attrVal == val;
+        log.trace("hasAttributeValue() = {}", result);
+        return result;
     }
 
     public boolean hasAttributeValue(String attrName, String val, int opcode) {
-        log.debug("here in string");
+    	log.trace("hasAttributeValue(attrName:{}, val:{}, opcode:{}", attrName, val, opcode);
 
         Attribute attr = getAttribute(attrName);
-        return attr != null && attr.attributeValue.equals(val);
+        boolean result = attr != null && attr.attributeValue.equals(val);
+        log.trace("hasAttributeValue() = {}", result);
+        return result;
     }
 
     public String toString() {
@@ -153,10 +184,12 @@ public class Feature {
     }
 
     public Feature getParentFeature() {
+    	log.trace("getParentFeature() = {}", parentFeature);
         return parentFeature;
     }
 
     public void setParent(Feature parent) {
+    	log.trace("setParente(parente:{})", parent);
         parentFeature = parent;
     }
 }

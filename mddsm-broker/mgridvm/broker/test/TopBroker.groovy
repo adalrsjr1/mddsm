@@ -28,7 +28,7 @@ import types.UsageEnum
 
 @Log4j2
 class TopBroker implements UsesEventListener, IMHB_Top {
-	public static final InputConverter[] CLI_INPUT_CONVERTERS = [
+	public static final def CLI_INPUT_CONVERTERS = [
 		TypeEnum.getCliConverter(),
 		ControlEnum.getCliConverter(),
 		ChargeEnum.getCliConverter(),

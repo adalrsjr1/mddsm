@@ -7,9 +7,11 @@ import java.util.Collections;
 import java.util.List;
 
 public class DefaultPolicyRepository implements PolicyRepository {
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DefaultPolicyRepository.class);
     List<Policy> policies = new ArrayList<Policy>();
 
     public DefaultPolicyRepository(Collection<base.policy.Policy> definitions) {
+    	log.trace("new DefaultPolicyRepository(definitions:{})", definitions);
         for (base.policy.Policy def : definitions) {
             Condition cond = new Condition(def.getFeature(), "request", "");
             Decision dec = new Decision(def.getDecision().getParameter(), def.getDecision().getOperation(), def.getDecision().getValue());
@@ -21,6 +23,7 @@ public class DefaultPolicyRepository implements PolicyRepository {
 
 
     public List<Policy> load(String feature, String oper) {
+    	log.trace("load(feature:{}, operation:{}", feature, oper);
         List<Policy> arr = new ArrayList<Policy>();
 
         for (Policy policy : policies) {
@@ -29,6 +32,7 @@ public class DefaultPolicyRepository implements PolicyRepository {
         }
 
         Collections.sort(arr);
+        log.trace("load() = {}", arr);
         return arr;
     }
 

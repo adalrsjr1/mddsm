@@ -23,21 +23,25 @@ public class ThreadedQueue implements Runnable {
 	private volatile boolean run = true;
 
 	public ThreadedQueue(Queue<SignalInstance> queue) {
+		log.trace("new ThreadedQueue(queue:{})", queue);
 		this.queue = queue;
 	}
 
 	public void enqueue(SignalInstance signal) {
+		log.trace("enqueue(signal:{})", signal);
 		queue.offer(signal);
 		wake();
 	}
 
 	public void start(Effector effector) {
+		log.trace("start(effector:{}", effector);
 		this.effector = effector;
 		thread.execute(this);
 		//        new Thread(this).start();
 	}
 
 	public void stop() {
+		log.trace("stop()");
 		run = false;
 		thread.shutdown();
 
@@ -58,15 +62,18 @@ public class ThreadedQueue implements Runnable {
 	}
 
 	public void run() {
+		log.trace("run()");
 		while (run) {
 			while (!queue.isEmpty()) {
 				process(queue.poll());
 			}
+			log.trace("Threaded Queue is Empty!!!");
 			doWait();
 		}
 	}
 
 	private void doWait() {
+		log.trace("doWait()");
 		try {
 			synchronized (this) {
 				this.wait();
@@ -77,7 +84,7 @@ public class ThreadedQueue implements Runnable {
 	}
 
 	public void process(SignalInstance signal) {
-		log.debug("processing {}:", signal);
+		log.trace("process(signal:{})", signal);
 		long t1 = System.nanoTime();
 		effector.execute(signal);
 		long t2 = System.nanoTime();
@@ -85,6 +92,7 @@ public class ThreadedQueue implements Runnable {
 	}
 
 	public void wake() {
+		log.trace("wake()");
 		synchronized (this) {
 			this.notify();
 		}

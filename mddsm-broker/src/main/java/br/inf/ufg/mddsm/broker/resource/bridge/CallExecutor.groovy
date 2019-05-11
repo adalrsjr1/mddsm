@@ -14,10 +14,12 @@ class CallExecutor {
     private Object bridge
 
     public CallExecutor(Object bridge) {
+		log.trace("new CallExecutor({})", bridge);
         this.bridge = bridge
     }
 
-    public JavaMethod getMethod(String name, Map<String, Object> params) {		
+    public JavaMethod getMethod(String name, Map<String, Object> params) {
+		log.trace("getMethod(name:{}, params:{})", name, params);		
 		JavaMethod[] methods = bridge.getClass().getMethods()
 	
 		
@@ -34,23 +36,21 @@ class CallExecutor {
 				
 		}
 		
-		if(annotation != null && method.name == name && areParamsEquiv(method, annotation, params))
+		if(annotation != null && method.name == name && areParamsEquiv(method, annotation, params)) {
+			log.trace("getMethod() = {}", method);
 			return method
+		}
+		log.trace("getMethod() = null");
 		null
-		
-		
-		// TODO: Bugged
-        /*bridge.getClass().methods.find { JavaMethod method ->
-            Call annotation = method.getAnnotation(Call)
-            annotation != null && method.name == name && areParamsEquiv(method, annotation, params)
-        }*/
     }
 
     boolean areParamsEquiv(JavaMethod method, Call annotation, Map<String, Object> params) {
+		log.trace("areParamsEquiv(method:{}, annotation:{}, params:{}", method, annotation, params)
 		
         if (method.parameterTypes.length != annotation.parameters().size())
 		{
 			println method.parameterTypes.length ":" annotation.parameters().size()
+			log.trace("areParamsEquiv() = {}", false)
             return false
 		}
 		
@@ -60,26 +60,28 @@ class CallExecutor {
             Class paramType = method.parameterTypes[i];
 
             Object paramValue = params.get(paramName);
-            if (paramValue != null && !paramType.isAssignableFrom(paramValue.getClass()))
+            if (paramValue != null && !paramType.isAssignableFrom(paramValue.getClass())) {
+				log.trace("areParamsEquiv() = {}", false)
                 return false
+            }
         }
-
+		log.trace("areParamsEquiv() = {}", true)
         return true
     }
 
     public Object execute(String message, Map<String, Object> params) throws InvocationTargetException {
+		log.trace("execute(message:{}, params:{})", message, params)
         if (!Thread.currentThread().getName().startsWith("CVM_SC_MGR"))
             log.debug("${bridge}.$message($params)")
 
         JavaMethod method = getMethod(message, params)
-        method.invoke(bridge, orderParameters(method, params))
+        def result = method.invoke(bridge, orderParameters(method, params))
+		log.trace("execute() = {}", result)
+		return result
     }
 
-//    public boolean executeBoolean(String name, Map<String, Object> params) throws InvocationTargetException {
-//        execute(name, params)
-//    }
-
     public Object[] orderParameters(JavaMethod method, Map<String, Object> params) {
+		log.trace("orderParameters(method:{}, params:{})", method, params);
         Call annotation = method.getAnnotation(Call)
 
         Object[] result = new Object[annotation.parameters().size()];
@@ -88,6 +90,7 @@ class CallExecutor {
             result[i] = params.get(paramName);
         }
 
+		log.trace("orderParameters() = {}", result)
         result
     }
 }
