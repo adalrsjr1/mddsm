@@ -8,7 +8,7 @@ package br.inf.ufg.mddsm.broker.state;
  * To change this template use File | Settings | File Templates.
  */
 public interface StateChangeListener {
-    void registerCreated(StateHolder register);
-    void registerDestroyed(StateHolder register);
-    void registerChanged(StateHolder register, String[] properties);
+	void registerCreated(StateHolder register);
+	void registerDestroyed(StateHolder register);
+	void registerChanged(StateHolder register, String[] properties);
 }

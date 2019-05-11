@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sb.base:Manager
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:sb.base="http://www.inf.ufg.br/mestrado/sb/base"
+    xmlns:sb.base.common="http://www.inf.ufg.br/mestrado/sb/base/common"
+    xsi:schemaLocation="http://www.inf.ufg.br/mestrado/sb/base ../../main/resources/metamodel/base.ecore http://www.inf.ufg.br/mestrado/sb/base/common ../../main/resources/metamodel/base.ecore#//common"
+    name="HelloManager">
+  <iface Name="HelloTest">
+    <provides
+        name="testCall">
+      <parameters
+          name="interfValueArg"/>
+    </provides>
+  </iface>
+  <actions xsi:type="sb.base.common:EnqueueCall"
+      name="resourceCall"
+      call="//@resourceManager/@iface/@provides.0">
+    <parameters
+        name="resourceValueArg"/>
+    <bindings
+        parameter="//@actions.0/@parameters.0">
+      <value
+          xsi:type="sb.base.common:ParameterValue"
+          parameter="//@actions.0/@parameters.0"/>
+    </bindings>
+  </actions>
+  <stateManager/>
+  <resourceManager
+      xsi:type="sb.base:InstanceResourceManager"
+      Name="br.inf.ufg.mddsm.broker.tests.TestResourceImpl">
+    <iface Name="ResourceInterface">
+      <provides
+          name="resourceCall">
+        <parameters
+            name="resourceValueArg"/>
+      </provides>
+    </iface>
+    <instances
+        name="TestResource"
+        impl="br.inf.ufg.mddsm.broker.tests.TestResourceImpl"
+        iface="//@resourceManager/@iface">
+      <features
+          name="Feature1">
+        <attributes
+            name="key"
+            value="value"/>
+      </features>
+    </instances>
+  </resourceManager>
+  <autonomicManager>
+    <identifies
+        name="symptonTestCall">
+      <bindings
+          bindable="//@iface/@provides.0"
+          name="testCallBinding"/>
+      <conditions
+          expression="testCallBinding.valueArg == 'string'"/>
+    </identifies>
+    <requests
+        name="testCallChangeRequest"
+        basedOn="//@autonomicManager/@identifies.0"/>
+    <plans basedOn="//@autonomicManager/@requests.0"
+        name="testCallChangePlan">
+      <action
+          action="//@actions.0">
+        <bindings
+            parameter="//@resourceManager/@iface/@provides.0/@parameters.0">
+          <value
+              xsi:type="sb.base.common:ParameterValue"
+              parameter="//@actions.0/@parameters.0"/>
+        </bindings>
+      </action>
+    </plans>
+  </autonomicManager>
+</sb.base:Manager>

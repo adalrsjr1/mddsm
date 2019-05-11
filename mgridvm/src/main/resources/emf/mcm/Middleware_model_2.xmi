@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sb.base:Manager
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:sb.base="http://www.inf.ufg.br/mestrado/sb/base"
+    xmlns:sb.base.common="http://www.inf.ufg.br/mestrado/sb/base/common"
+    xsi:schemaLocation="http://www.inf.ufg.br/mestrado/sb/base base.ecore http://www.inf.ufg.br/mestrado/sb/base/common base.ecore#//common"
+    name="">
+  <iface>
+    <provides
+        name="RemoveDevice"/>
+  </iface>
+  <actions xsi:type="sb.base.common:MacroAction"
+      name="RemoveDevice"
+      impl="middleware.actions.RemoveDevice"/>
+  <handlers
+      signal="//@iface/@provides.0">
+    <action
+        action="//@actions.0"/>
+  </handlers>
+  <stateManager>
+    <stateTypes
+        name="mainManagerState"
+        key="//@stateManager/@stateTypes.0/@properties.0">
+      <properties
+          name="name"/>
+      <properties
+          name="type"/>
+    </stateTypes>
+  </stateManager>
+  <resourceManager
+      xsi:type="sb.base:InstanceResourceManager">
+    <iface/>
+  </resourceManager>
+  <policyManager/>
+</sb.base:Manager>

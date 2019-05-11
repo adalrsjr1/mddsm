@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sb.base:Manager
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:sb.base="http://www.inf.ufg.br/mestrado/sb/base"
+    xmlns:sb.base.common="http://www.inf.ufg.br/mestrado/sb/base/common"
+    xsi:schemaLocation="http://www.inf.ufg.br/mestrado/sb/base ../../main/resources/metamodel/base.ecore http://www.inf.ufg.br/mestrado/sb/base/common ../../main/resources/metamodel/base.ecore#//common"
+    name="HelloManager">
+  <iface Name="HelloTest">
+    <provides
+        name="testCall">
+      <parameters
+          name="valueArg"/>
+    </provides>
+  </iface>
+  <actions xsi:type="sb.base.common:MacroAction"
+      name="TestCall"
+      impl="br.inf.ufg.mddsm.broker.tests.TestCall">
+    <parameters
+        name="valueArg"/>
+    <parameters
+        name="expressionArg"/>
+  </actions>
+  <handlers
+      signal="//@iface/@provides.0">
+    <action
+        action="//@actions.0">
+      <bindings
+          parameter="//@actions.0/@parameters.1">
+        <value
+            xsi:type="sb.base.common:ExpressionValue"
+            value="42"/>
+      </bindings>
+      <bindings
+          parameter="//@iface/@provides.0/@parameters.0">
+        <value
+            xsi:type="sb.base.common:ParameterValue"
+            parameter="//@iface/@provides.0/@parameters.0"/>
+      </bindings>
+    </action>
+  </handlers>
+  <stateManager/>
+  <resourceManager
+      xsi:type="sb.base:InstanceResourceManager"/>
+</sb.base:Manager>

@@ -13,7 +13,7 @@ import br.inf.ufg.mddsm.broker.manager.SignalInstance;
 
 public class ThreadedQueue implements Runnable {
 	private final Logger log = LoggerFactory.getLogger(ThreadedQueue.class);
-	
+
 	private ExecutorService thread = Executors.newSingleThreadExecutor();
 	private Effector effector;
 	private Queue<SignalInstance> queue;
