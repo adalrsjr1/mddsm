@@ -54,8 +54,11 @@ public class ResourceManager implements Sensor, Executable {
     			.filter(obj -> name.equals(obj.getName()))
     			.map(Optional::of)
     			.collect(Collectors.toList());
-
-        Resource result = resources.get(0).orElse(null);
+    	
+        Resource result = null;
+        if(resources.size() > 0) {
+        	result = resources.get(0).orElse(null);
+        }
         log.trace("getObject() = {}", result);
         return result;
     }
