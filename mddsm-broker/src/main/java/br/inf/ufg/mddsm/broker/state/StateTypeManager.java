@@ -69,5 +69,9 @@ public class StateTypeManager {
 		return objects;
 	}
 
-
+	@Override
+	public String toString() {
+		return "StateTypeManager [state=" + state + ", objects=" + objects + "]";
+	}
+	
 }

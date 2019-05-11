@@ -97,7 +97,7 @@ class StateTypeManagerContext extends AbstractMap {
 	private StateTypeManager typeManager
 
 	public StateTypeManagerContext(StateTypeManager typeManager) {
-		log.trace("new StateTypeManagerContext(typeManager:{}", typeManager())
+		log.trace("new StateTypeManagerContext(typeManager:{})", typeManager)
 		this.typeManager = typeManager
 	}
 
