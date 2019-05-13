@@ -12,7 +12,7 @@ public class SignalInstance implements ContextProvider {
     private Map<String, Object> params;   
 
     public SignalInstance(Object source, String name, Map<String, Object> params) {
-    	log.trace("SignalInstance(source:{}, name:{}, params:{})");
+    	log.trace("SignalInstance(source:{}, name:{}, params:{})", source, name, params);
         this.source = source;
         this.name = name;
         this.params = params;

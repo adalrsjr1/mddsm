@@ -47,7 +47,7 @@
 				<executions>
 					<execution>
 						<id>Generating EMF model</id>
-						<phase>prepare-package</phase>
+						<phase>generate-sources</phase>
 						<goals>
 							<goal>run</goal>
 						</goals>
@@ -56,7 +56,7 @@
 								<exec dir="${project.basedir}"
 									executable="${project.basedir}/src/main/resources/ant/genmodel.sh"
 									failonerror="true">
-									<arg line="/opt/eclipse"/> <!-- Eclipse Modeling Folder -->
+									<arg line="${eclipse.path}"/> <!-- Eclipse Modeling Folder -->
 								</exec>
 							</tasks>
 						</configuration>
