@@ -10,42 +10,48 @@
       <!-- @generated base -->
       <package
             uri="http://www.inf.ufg.br/mestrado/sb/base"
-            class="base.impl.BasePackageImpl"/>
+            class="base.impl.BasePackageImpl"
+            genModel="src/main/resources/model/base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated base -->
       <package
             uri="http://www.inf.ufg.br/mestrado/sb/base/context"
-            class="base.context.impl.ContextPackageImpl"/>
+            class="base.context.impl.ContextPackageImpl"
+            genModel="src/main/resources/model/base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated base -->
       <package
             uri="http://www.inf.ufg.br/mestrado/sb/base/metadata"
-            class="base.metadata.impl.MetadataPackageImpl"/>
+            class="base.metadata.impl.MetadataPackageImpl"
+            genModel="src/main/resources/model/base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated base -->
       <package
             uri="http://www.inf.ufg.br/mestrado/sb/base/autonomic"
-            class="base.autonomic.impl.AutonomicPackageImpl"/>
+            class="base.autonomic.impl.AutonomicPackageImpl"
+            genModel="src/main/resources/model/base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated base -->
       <package
             uri="http://www.inf.ufg.br/mestrado/sb/base/policy"
-            class="base.policy.impl.PolicyPackageImpl"/>
+            class="base.policy.impl.PolicyPackageImpl"
+            genModel="src/main/resources/model/base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated base -->
       <package
             uri="http://www.inf.ufg.br/mestrado/sb/base/common"
-            class="base.common.impl.CommonPackageImpl"/>
+            class="base.common.impl.CommonPackageImpl"
+            genModel="src/main/resources/model/base.genmodel"/>
    </extension>
 
 </plugin>

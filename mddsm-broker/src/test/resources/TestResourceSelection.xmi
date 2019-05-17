@@ -5,7 +5,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:sb.base="http://www.inf.ufg.br/mestrado/sb/base"
     xmlns:sb.base.common="http://www.inf.ufg.br/mestrado/sb/base/common"
-    xsi:schemaLocation="http://www.inf.ufg.br/mestrado/sb/base ../../main/resources/metamodel/base.ecore http://www.inf.ufg.br/mestrado/sb/base/common ../../main/resources/metamodel/base.ecore#//common"
+    xsi:schemaLocation="http://www.inf.ufg.br/mestrado/sb/base http://www.inf.ufg.br/mestrado/sb/base/common"
     name="HelloManager">
   <iface Name="ResourceSelection">
     <provides
@@ -100,11 +100,14 @@
       <parameters
           name="resourceName"/>
       <evaluation>
+        <feature
+            xsi:type="sb.base.common:ParameterValue"
+            parameter="//@actions.0/@parameters.0"/>
         <contextBinding
             parameter="//@iface/@provides.0/@parameters.0">
           <value
               xsi:type="sb.base.common:ParameterValue"
-              parameter="//@policyManager/@handlers.0/@parameters.0"/>
+              parameter="//@iface/@provides.0/@parameters.0"/>
         </contextBinding>
         <context>
           <parameters

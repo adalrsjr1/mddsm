@@ -55,7 +55,7 @@ class TestCallResource extends GroovyTestCase {
     void test() {
         def facade = new ResourceSelectionManagerFacade(mainManager)
 
-        facade.testCall("resource2")
+        facade.testCall("resource1")
     }
 }
 

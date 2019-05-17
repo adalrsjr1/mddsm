@@ -19,6 +19,20 @@ public class PolicyRequest implements ContextProvider {
     private Map<String, Object> params;
     private ValueEvaluator evaluator;
 
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("PolicyRequest (")
+		  .append("request: ")
+		  .append(request)
+		  .append(", params: ")
+		  .append(params)
+		  .append(", evaluator: ")
+		  .append(evaluator)
+		  .append(')');
+		  
+		return sb.toString()
+	}
+	
     public PolicyRequest(PolicyEvaluationRequest request, Map<String, Object> params, ValueEvaluator eval) {
         this.request = request;
         this.params = params;
