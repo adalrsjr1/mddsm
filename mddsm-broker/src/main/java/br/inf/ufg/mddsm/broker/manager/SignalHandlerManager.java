@@ -25,9 +25,10 @@ public class SignalHandlerManager {
             SignalHandler handler = entry.getHandler();
             HandlingResult result = handler.handle(signal, ctx);
             log.debug("handled: {}, result: {}", handler, result);
-            if (result.isHandled())
+            if (result.isHandled()) {
             	log.trace("handle() = {}", result);
                 return result;
+            }
         }
 
         return null;

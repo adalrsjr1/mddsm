@@ -12,6 +12,7 @@ import br.inf.ufg.mddsm.broker.manager.MainManager
 import br.inf.ufg.mddsm.broker.manager.ManagerContext
 import br.inf.ufg.mddsm.broker.manager.ManagerFacade
 import br.inf.ufg.mddsm.broker.manager.SignalInstance
+import br.inf.ufg.mddsm.broker.manager.actions.MacroActionInstance
 import br.inf.ufg.mddsm.broker.model.UsesEventListener
 import br.inf.ufg.mddsm.broker.policy.PolicyEvaluationHandler
 import br.inf.ufg.mddsm.broker.policy.PolicyRequest
@@ -55,7 +56,9 @@ class TestCallResource extends GroovyTestCase {
     void test() {
         def facade = new ResourceSelectionManagerFacade(mainManager)
 
-        facade.testCall("resource1")
+//        facade.testCall("resource2")
+		facade.testCallByPassingPolicy("resource1")
+		Thread.sleep(10000)
     }
 }
 
@@ -74,6 +77,10 @@ class ResourceSelectionManagerFacade extends ManagerFacade implements EventListe
     def testCall(def name) {
         enqueue(new SignalInstance("selects", ["resourceName":name, "args":"method_parameters"]))
     }
+	
+	def testCallByPassingPolicy(name) {
+		enqueue(new SignalInstance("byPassingPolicy", ["resourceName":name, "args":"method_parameters"]))
+	}
 
 }
 
@@ -87,8 +94,13 @@ class Resource1 implements Manageable, UsesEventListener {
 
     @Call(name="callResource", parameters = ["args"])
     def callResource(def args) {
-        println "resource1: $args"
+        println ">>> resource1: $args"
     }
+	
+	@Call(name="callResourceByPassingPolicy", parameters = ["args"])
+	def callResourceByPassingPolicy(def args) {
+		println ">>> [byPassingPolicy] resource1: $args"
+	}
 
     @Override
     void setEventNotifier(EventNotifier eventListener) {
@@ -107,8 +119,13 @@ class Resource2 implements Manageable, UsesEventListener {
 
     @Call(name="callResource", parameters = ["args"])
     def callResource(def args) {
-        println "resource2: $args"
+        println ">>> resource2: $args"
     }
+	
+	@Call(name="callResourceByPassingPolicy", parameters = ["args"])
+	def callResourceByPassingPolicy(def args) {
+		println ">>> [byPassingPolicy] resource2: $args"
+	}
 
     @Override
     void setEventNotifier(EventNotifier eventListener) {
@@ -116,13 +133,18 @@ class Resource2 implements Manageable, UsesEventListener {
     }
 }
 
+class MacroActionCallResource implements MacroActionInstance {
+	
+	@Override
+	public Object execute(ManagerContext ctx, Map<String, Object> params) {
+		ctx.getResourceManager().getObject("resource1").enqueue(new SignalInstance("callResourceByPassingPolicy", params))
+	}
+}
+
 class ResourceSelectionHandler implements PolicyEvaluationHandler {
 
     @Override
     void handleResource(PolicyRequest request, ManagerContext ctx, Resource selected) {
-//		selected.enqueue(new SignalInstance("callResource", request.params))
-		println ctx.dump()
-        println request.dump()
-        println ">>> [${selected.name}]:${selected.metadata.dump()}]"
-    }
+		selected.enqueue(new SignalInstance("callResource", request.params))
+	}
 }

@@ -74,10 +74,10 @@ public class Policy implements Comparable {
     public String toString() {
     	StringBuilder sb = new StringBuilder();
     	String str = sb.append("Policy(")
-    	  .append(String.format("scope: %b", pScope))
-		  .append(String.format("condition: %b", pCondition))
-		  .append(String.format("value: %b", pbvalue))
-		  .append(String.format("decision: %b", pDecision))
+    	  .append(String.format("scope: %b, ", pScope))
+		  .append(String.format("condition: %b, ", pCondition))
+		  .append(String.format("value: %b, ", pbvalue))
+		  .append(String.format("decision: %b)", pDecision))
 	      .toString();
         
         return str;

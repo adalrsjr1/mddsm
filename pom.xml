@@ -16,7 +16,7 @@
 	
 	<modules>
 	   <module>mddsm-broker-model</module>
-        <module>mddsm-broker</module>
+     <module>mddsm-broker</module>
     <module>mgridvm</module>
   </modules>
 	

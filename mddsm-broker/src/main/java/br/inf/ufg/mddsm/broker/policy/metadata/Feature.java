@@ -61,7 +61,7 @@ public class Feature {
     }
 
     public Attribute getAttribute(String attributeName) {
-    	log.trace("getSubFeature(featureName:{})", attributeName);
+    	log.trace("getAttribute(featureName:{})", attributeName);
         for (Attribute attribute : getAttributes()) {
             if (attribute.name.equals(attributeName)) {
             	log.trace("getSubFeature() == {}", attribute);

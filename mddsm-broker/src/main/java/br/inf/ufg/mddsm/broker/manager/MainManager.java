@@ -88,7 +88,7 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
     	log.trace("execute(signal:{})", signal);
     	long t1 = System.nanoTime();
     	
-        log.debug("Evaluating: " + signal);
+//        log.debug("Evaluating: " + signal);
 //        evaluatePolicies(signal);
         
              

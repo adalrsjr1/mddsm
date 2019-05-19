@@ -34,34 +34,34 @@ class ValueEvaluator {
 	}
 
 	public Object getValue(ContextProvider context, Value value) {
-		log.trace("getValue(context:{}, value:{})", context, value)
+		log.trace("getValue(context:{}, value:{}, valueInstance:{})", context, value, value.class)
 		def result = evaluate(context, value)
 		log.trace("getValue() = {}", result)
-		return value
+		return result
 		
 	}
 
 	private Object evaluate(ContextProvider context, Value value) {
-		log.warn("getValue(context:{}, value:{}) = null", context, value)
+		log.trace("evaluate(context:{}, value:{}) = null", context, value)
 		null
 	}
 
 	private Object evaluate(ContextProvider context, ParameterValue value) {
-		log.trace("getValue(context:{}, value:{})", context, value)
+		log.trace("evaluate(context:{}, value:{})", context, value)
 		def result = context.getVariable(value.parameter.name)
-		log.trace("getValue() = {}", result)
+		log.trace("evaluate() = {}", result)
 		return result
 	}
 
 	private Object evaluate(ContextProvider context, SignalSource value) {
-		log.trace("getValue(context:{}, value:{})", context, value)
+		log.trace("evaluate(context:{}, value:{})", context, value)
 		def result = context.getVariable("source")
-		log.trace("getValue() = {}", result)
+		log.trace("evaluate() = {}", result)
 		return result
 	}
 
 	private Object evaluate(ContextProvider context, ExpressionValue value) {
-		log.trace("getValue(context:{}, value:{})", context, value)
+		log.trace("evaluate(context:{}, value:{})", context, value)
 		CombinedContextProvider params = new CombinedContextProvider(context)
 		stateManager.types.each { StateTypeManager typeManager ->
 			params[typeManager.name] = new StateTypeManagerContext(typeManager)

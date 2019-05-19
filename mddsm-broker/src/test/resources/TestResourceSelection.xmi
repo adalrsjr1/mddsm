@@ -15,9 +15,16 @@
       <parameters
           name="args"/>
     </provides>
+    <provides
+        name="byPassingPolicy">
+      <parameters
+          name="resourceName"/>
+      <parameters
+          name="args"/>
+    </provides>
   </iface>
   <actions xsi:type="sb.base.common:EnqueueCall"
-      name="callResource"
+      name="callResourceByPassingPolicy"
       call="//@resourceManager/@iface/@provides.0">
     <parameters
         name="resourceName"/>
@@ -27,19 +34,58 @@
         parameter="//@iface/@provides.0/@parameters.0">
       <value
           xsi:type="sb.base.common:ParameterValue"
-          parameter="//@iface/@provides.0/@parameters.0"/>
+          parameter="//@iface/@provides.1/@parameters.0"/>
     </bindings>
     <bindings
-        parameter="//@resourceManager/@iface/@provides.0/@parameters.0">
+        parameter="//@iface/@provides.1/@parameters.1">
       <value
           xsi:type="sb.base.common:ParameterValue"
-          parameter="//@actions.0/@parameters.1"/>
+          parameter="//@iface/@provides.1/@parameters.1"/>
     </bindings>
   </actions>
+  <actions xsi:type="sb.base.common:MacroAction"
+      name="macroActionCallResource"
+      impl="br.inf.ufg.mddsm.broker.tests.MacroActionCallResource">
+    <parameters
+        name="resourceName"/>
+    <parameters
+        name="args"/>
+  </actions>
   <handlers
-      signal="//@iface/@provides.0">
+      signal="//@iface/@provides.1">
     <action
-        action="//@actions.0"/>
+        action="//@actions.0">
+      <bindings
+          parameter="//@iface/@provides.1/@parameters.0">
+        <value
+            xsi:type="sb.base.common:ParameterValue"
+            parameter="//@iface/@provides.1/@parameters.0"/>
+      </bindings>
+      <bindings
+          parameter="//@iface/@provides.1/@parameters.1">
+        <value
+            xsi:type="sb.base.common:ParameterValue"
+            parameter="//@iface/@provides.1/@parameters.1"/>
+      </bindings>
+    </action>
+  </handlers>
+  <handlers
+      signal="//@resourceManager/@iface/@provides.0">
+    <action
+        action="//@actions.1">
+      <bindings
+          parameter="//@iface/@provides.1/@parameters.0">
+        <value
+            xsi:type="sb.base.common:ParameterValue"
+            parameter="//@iface/@provides.1/@parameters.0"/>
+      </bindings>
+      <bindings
+          parameter="//@iface/@provides.1/@parameters.1">
+        <value
+            xsi:type="sb.base.common:ParameterValue"
+            parameter="//@iface/@provides.1/@parameters.1"/>
+      </bindings>
+    </action>
   </handlers>
   <stateManager>
     <stateTypes
@@ -54,9 +100,11 @@
       Name="resourceManager">
     <iface Name="ResourceCallee">
       <provides
-          name="callResource">
+          name="callResourceByPassingPolicy">
         <parameters
             name="args"/>
+        <parameters
+            name="resourceName"/>
       </provides>
     </iface>
     <instances
@@ -64,7 +112,7 @@
         impl="br.inf.ufg.mddsm.broker.tests.Resource1"
         iface="//@resourceManager/@iface">
       <features
-          name="resourceFeature">
+          name="resource1">
         <attributes
             name="resourceName"
             value="resource1"/>
@@ -75,7 +123,7 @@
         impl="br.inf.ufg.mddsm.broker.tests.Resource2"
         iface="//@resourceManager/@iface">
       <features
-          name="resourceFeature">
+          name="resource2">
         <attributes
             name="resourceName"
             value="resource2"/>
@@ -88,10 +136,16 @@
       <request
           handler="//@policyManager/@handlers.0">
         <bindings
-            parameter="//@iface/@provides.0/@parameters.0">
+            parameter="//@policyManager/@handlers.0/@parameters.0">
           <value
               xsi:type="sb.base.common:ParameterValue"
-              parameter="//@iface/@provides.0/@parameters.0"/>
+              parameter="//@policyManager/@handlers.0/@parameters.0"/>
+        </bindings>
+        <bindings
+            parameter="//@iface/@provides.0/@parameters.1">
+          <value
+              xsi:type="sb.base.common:ParameterValue"
+              parameter="//@iface/@provides.0/@parameters.1"/>
         </bindings>
       </request>
     </points>
@@ -102,12 +156,12 @@
       <evaluation>
         <feature
             xsi:type="sb.base.common:ParameterValue"
-            parameter="//@actions.0/@parameters.0"/>
+            parameter="//@policyManager/@handlers.0/@evaluation/@context/@parameters.0"/>
         <contextBinding
-            parameter="//@iface/@provides.0/@parameters.0">
+            parameter="//@policyManager/@handlers.0/@parameters.0">
           <value
-              xsi:type="sb.base.common:ParameterValue"
-              parameter="//@iface/@provides.0/@parameters.0"/>
+              xsi:type="sb.base.common:ExpressionValue"
+              value="resourceName"/>
         </contextBinding>
         <context>
           <parameters
@@ -118,7 +172,7 @@
     <policies
         name="selectResource1"
         businessValue="100"
-        feature="resourceFeature">
+        feature="resource1">
       <decision
           parameter="resourceName"
           operation="equalTo"
@@ -127,7 +181,7 @@
     <policies
         name="selectResource2"
         businessValue="100"
-        feature="resourceFeature">
+        feature="resource2">
       <decision
           parameter="resourceName"
           operation="equalTo"

@@ -130,7 +130,7 @@ public class PolicyManager {
         TreeSet<Metadata> fwSet = getConformingObjects(allMetadatas, feature, operation, params);
 
         log.debug("All objects: " + allMetadatas + " Reduced set: " + fwSet);
-        Metadata metadata = fwSet.iterator().next();//fwSet.size() > 0 ? fwSet.iterator().next() : null;
+        Metadata metadata = fwSet.size() > 0 ? fwSet.iterator().next() : null;
         //Metadata metadata = fwSet.size() > 0 ? fwSet.iterator().next() : null;
         return metadata != null ? resourceManager.getObject(metadata.getName()) : null;
     }

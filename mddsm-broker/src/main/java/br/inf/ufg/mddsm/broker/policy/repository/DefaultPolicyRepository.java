@@ -23,7 +23,7 @@ public class DefaultPolicyRepository implements PolicyRepository {
 
 
     public List<Policy> load(String feature, String oper) {
-    	log.trace("load(feature:{}, operation:{}", feature, oper);
+    	log.trace("load(feature:{}, operation:{})", feature, oper);
         List<Policy> arr = new ArrayList<Policy>();
 
         for (Policy policy : policies) {
