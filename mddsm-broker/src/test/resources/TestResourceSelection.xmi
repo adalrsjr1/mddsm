@@ -70,8 +70,7 @@
     </action>
   </handlers>
   <handlers
-      signal="//@resourceManager/@iface/@provides.0"
-      enabled="false">
+      signal="//@resourceManager/@iface/@provides.0">
     <action
         action="//@actions.1">
       <bindings
