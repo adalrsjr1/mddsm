@@ -62,6 +62,10 @@ public class ResourceManager implements Sensor, Executable {
         log.trace("getObject() = {}", result);
         return result;
     }
+    
+    public synchronized Collection<Resource> getAllObjects() {
+    	return objects.stream().collect(Collectors.toList());
+    }
 
     public synchronized boolean removeObject(String name) {
     	log.trace("removeObject(name:{})", name);

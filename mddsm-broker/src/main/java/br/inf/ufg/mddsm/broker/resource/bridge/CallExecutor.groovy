@@ -7,6 +7,7 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 import br.inf.ufg.mddsm.broker.adapters.Call
+import br.inf.ufg.mddsm.broker.adapters.EventException
 
 class CallExecutor {
     private static Logger log = LoggerFactory.getLogger(Call.class);
@@ -71,10 +72,13 @@ class CallExecutor {
 
     public Object execute(String message, Map<String, Object> params) throws InvocationTargetException {
 		log.trace("execute(message:{}, params:{})", message, params)
-        if (!Thread.currentThread().getName().startsWith("CVM_SC_MGR"))
-            log.debug("${bridge}.$message($params)")
 
         JavaMethod method = getMethod(message, params)
+		
+		if(!method) {
+			throw new InvocationTargetException(new RuntimeException("Method $message not found in ${bridge.class}."))
+		}
+		
         def result = method.invoke(bridge, orderParameters(method, params))
 		log.trace("execute() = {}", result)
 		return result

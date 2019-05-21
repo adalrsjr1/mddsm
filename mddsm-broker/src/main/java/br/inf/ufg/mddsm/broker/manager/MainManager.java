@@ -97,6 +97,9 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
         if (result != null)
             return result.getResult();
         
+        resourceManager.getAllObjects().forEach(obj -> {
+        	obj.enqueue(signal);
+        });
         
         sendEvent(signal);
         long t2 = System.nanoTime();
