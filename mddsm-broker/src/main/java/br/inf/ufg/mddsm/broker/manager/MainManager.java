@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import br.inf.ufg.mddsm.broker.expression.ValueEvaluator;
+import br.inf.ufg.mddsm.broker.manager.actions.CallActionInstance;
 import br.inf.ufg.mddsm.broker.policy.metadata.Metadata;
 import br.inf.ufg.mddsm.broker.resource.AbstractTouchpoint;
 import br.inf.ufg.mddsm.broker.resource.EventListener;
@@ -95,7 +96,8 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
         HandlingResult result = signalHandlerManager.handle(signal, getContext());
         if (result != null)
             return result.getResult();
-
+        
+        
         sendEvent(signal);
         long t2 = System.nanoTime();
         log.warn("Signal [" + signal + "] not handled!");

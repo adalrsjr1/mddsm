@@ -14,7 +14,7 @@ import br.inf.ufg.mddsm.broker.manager.SignalInstance;
 public class ThreadedQueue implements Runnable {
 	private final Logger log = LoggerFactory.getLogger(ThreadedQueue.class);
 
-	private ExecutorService thread = Executors.newSingleThreadExecutor();
+	private ExecutorService thread = Executors.newCachedThreadPool();
 	private Effector effector;
 	private Queue<SignalInstance> queue;
 
@@ -34,7 +34,7 @@ public class ThreadedQueue implements Runnable {
 	}
 
 	public void start(Effector effector) {
-		log.trace("start(effector:{}", effector);
+		log.trace("start(effector:{})", effector);
 		this.effector = effector;
 		thread.execute(this);
 		//        new Thread(this).start();

@@ -7,7 +7,7 @@ public class HandlingResult {
     public static final HandlingResult NOT_HANDLED = new HandlingResult();
 
     public HandlingResult(boolean handled, Object result) {
-    	log.trace("new HandlingResult(handled:{}, result:{})");
+    	log.trace("new HandlingResult(handled:{}, result:{})", handled, result);
         this.handled = handled;
         this.result = result;
     }
