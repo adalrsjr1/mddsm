@@ -31,7 +31,7 @@ public class SignalHandlerManager {
             }
         }
 
-        return null;
+        return HandlingResult.NOT_HANDLED;
     }
 
     class HandlerEntry implements Comparable<HandlerEntry> {

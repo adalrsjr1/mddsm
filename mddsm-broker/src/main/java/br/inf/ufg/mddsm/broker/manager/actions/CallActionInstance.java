@@ -21,8 +21,8 @@ public class CallActionInstance implements ActionInstance {
     	log.trace("execute(ctx:{}, params:{})", ctx, params);
     	ValueEvaluator eval = ctx.getMainManager().getEvaluator();
         Map<String, Object> callParams = eval.getParams(new ContextProviderParams(params), call.getBindings());
-
-        ctx.getMainManager().enqueue(new SignalInstance(call.getCall().getName(), callParams));
+        
+        ctx.getMainManager().enqueue(new SignalInstance(call, call.getCall().getName(), callParams));
         log.trace("execute() = null");
         return null;
     }

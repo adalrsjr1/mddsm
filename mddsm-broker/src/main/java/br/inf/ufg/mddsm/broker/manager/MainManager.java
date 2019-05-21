@@ -1,10 +1,14 @@
 package br.inf.ufg.mddsm.broker.manager;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import base.common.EnqueueCall;
 import br.inf.ufg.mddsm.broker.expression.ValueEvaluator;
 import br.inf.ufg.mddsm.broker.manager.actions.CallActionInstance;
 import br.inf.ufg.mddsm.broker.policy.metadata.Metadata;
@@ -93,13 +97,10 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
 //        evaluatePolicies(signal);
         
              
-        HandlingResult result = signalHandlerManager.handle(signal, getContext());
-        if (result != null)
-            return result.getResult();
-        
-        resourceManager.getAllObjects().forEach(obj -> {
-        	obj.enqueue(signal);
-        });
+        HandlingResult handlingResult = handle(signal, getContext());
+        if(handlingResult != HandlingResult.NOT_HANDLED) {
+        	return handlingResult.getResult();
+        }
         
         sendEvent(signal);
         long t2 = System.nanoTime();
@@ -109,7 +110,30 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
         log.trace("execute() = null");
         return null;
     }
-
+    
+    private HandlingResult handle(SignalInstance signal, MainManagerContext ctx) {
+    	HandlingResult handlingResult = signalHandlerManager.handle(signal, ctx);
+    	
+    	Function<SignalInstance, Boolean> checkSignal = (SignalInstance s) -> {
+			return (null != signal && null != signal.getSource() && signal.getSource() instanceof EnqueueCall);
+    		
+    	};
+    	
+    	if(handlingResult.isHandled()) {
+        	return handlingResult;
+        } else if(checkSignal.apply(signal)) {
+        	log.info(String.format("signal %s not handled, but it is an EnqueueCall so it will applied on all resources", signal));
+        	
+        	Map<String, Object> result = new HashMap<>();
+        	resourceManager.getAllObjects().forEach(obj -> {
+        		result.put(obj.getName(), obj.execute(signal));
+            });
+        	
+        	return new HandlingResult(false, result);
+        }
+		return HandlingResult.NOT_HANDLED;   
+    }
+    
     /**
      * Use this method for external notifications only
      * @param signal

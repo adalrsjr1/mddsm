@@ -76,7 +76,7 @@ class CallExecutor {
         JavaMethod method = getMethod(message, params)
 		
 		if(!method) {
-			throw new InvocationTargetException(new RuntimeException("Method $message not found in ${bridge.class}."))
+			throw new InvocationTargetException(new RuntimeException("Method '$message' not found in '${bridge.class}'"))
 		}
 		
         def result = method.invoke(bridge, orderParameters(method, params))
