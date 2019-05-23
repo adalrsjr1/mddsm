@@ -18,6 +18,8 @@
 	   <module>mddsm-broker-model</module>
      <module>mddsm-broker</module>
     <module>mgridvm</module>
+    <module>mddsm-controller-model</module>
+    <module>mddsm-controller</module>
   </modules>
 	
 </project>

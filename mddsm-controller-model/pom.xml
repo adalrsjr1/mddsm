@@ -1,19 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>br.inf.ufg.br.mddsm</groupId>
-	<artifactId>mddsm-broker-model</artifactId>
-	<packaging>jar</packaging>
-	<name>mddsm-broker-model</name>
-	<url>http://maven.apache.org</url>
-	
-	<parent>
-        <groupId>br.inf.ufg.mddsm</groupId>
-        <artifactId>mddsm</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
-	
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>br.inf.ufg.mddsm</groupId>
+    <artifactId>mddsm</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <groupId>br.inf.ufg.br.mddsm</groupId>
+  <artifactId>mddsm-controller-model</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>mddsm-controller-model</name>
+  <url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -81,5 +79,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
