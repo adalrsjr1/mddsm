@@ -7,19 +7,21 @@
 	<version>1.0-SNAPSHOT</version>
 	<name>mddsm</name>
 	<url>github.com/adalrsjr1/mddsm</url>
-	
+
 	<properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
-	
+
 	<modules>
-	   <module>mddsm-broker-model</module>
-     <module>mddsm-broker</module>
-    <module>mgridvm</module>
+	  <module>mddsm-broker-model</module>
+    <module>mddsm-broker</module>
     <module>mddsm-controller-model</module>
     <module>mddsm-controller</module>
+    <module>mddsm-synthesis-model</module>
+    <module>mddsm-synthesis</module>
+    <module>mgridvm</module>
   </modules>
-	
+
 </project>
