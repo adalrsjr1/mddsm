@@ -1,0 +1,79 @@
+Actor <>---> Type
+  - Command
+    - Configure: changes on attributes
+    - Add: add new type into references
+    - Remove: remove new type from references
+    - UpdateMart: changes on Properties
+  - Event
+    - Arise: an item comed up into system
+    - Retire: an item goes out from system
+
+Actor <>---> Property --- by matching ids
+  - Add (property): may Bind
+  - Remove (property): may Unbind
+  - Bind: if actor ID matches to property ID
+  - Unbind: if property is removed from actor, or actor/property
+    changes its ID
+
+Actor <>---> Actor --- simple agregation
+  - Bind: add a new actor
+  - Unbind: remove an actor
+
+
+COMMAND:= ADD|REMOVE|CONFIGURE|UPDATE_MART
+  <REMOVE,CONFIGURE, UPDATE_MART> depends on ADD
+  ADD may depends on ARISE
+
+<ADD|REMOVE> ELEMENT INTO <SCHEMA>
+
+RUN <COMMAND> ON <TYPE|ACTOR>
+
+type HANDLES <SYNC|ASYNC> <LOCAL|DISTRIBUTED> <COMMAND> ON <ONE|MANY> <ITEM>
+
+<ADD|REMOVE> <PROPERTY> ON <ACTOR>
+
+<ADD|REMOVE> <PROPERTY>:= <BIND|UNBIND>
+
+actor BIND (actors) ---- negotiation
+  BIND depends on ADD
+
+-----
+
+is there any preference on populating the user model?
+  -- if yes, it should be coordinated by controller layer.
+
+1. sort all commands in a script making ADD first
+2. configure
+3. bind
+
+precedence on types
+
+
+---------------------
+COMMAND ::= <COMPOSITION_ACTION | UPDATE_ACTION>
+
+COMPOSITION_ACTION ::= <ACTION> <EXPRESSION>
+
+ACTION ::= "add" | "delete" | "change"
+
+UPDATE_ACTION ::= Change  <ATTRIBUTE> on <ELEMENT>
+
+ELEMENT ::= "actor" | "type" | "item"
+
+EXPRESSION ::=  "actor" "to" "actor"  |
+                "type" "to" "actor" with <METADATA> |
+                "item"
+
+METADATA ::=    <INTERACTION_BEHAVIOR> <ARISING_BEHAVIOR> <CARDINALITY> <COORDINATION_BEHAVIOR>
+
+INTERACTION_BEHAVIOR ::= <Sync | Async>
+
+ARISING_BEHAVIOR ::= <Static | Dynamic>
+
+CARDINALITY ::= <One | Many>
+
+COORDINATION_BEHAVIOR ::= <Local | Distributed>
+
+
+
+

@@ -10,7 +10,11 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: br.ufg.inf.metalang4md,
  br.ufg.inf.metalang4md.impl,
- br.ufg.inf.metalang4md.util
+ br.ufg.inf.metalang4md.util,
+ testing,
+ testing.impl,
+ testing.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ metalang4md;visibility:=reexport
 Bundle-ActivationPolicy: lazy
