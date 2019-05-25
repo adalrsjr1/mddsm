@@ -4,8 +4,8 @@
     editorDirectory="/mddsm-broker-model.editor/src" modelPluginID="sb" templateDirectory="/mddsm-broker-model/templates"
     dynamicTemplates="true" modelName="Base" suppressEMFTypes="true" suppressEMFMetaData="true"
     suppressEMFModelTags="true" codeFormatting="true" testsDirectory="/mddsm-broker-model.test/src"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
-    cleanup="true">
+    importerID="org.eclipse.emf.importer.ecore" bundleManifest="false" complianceLevel="7.0"
+    copyrightFields="false" cleanup="true">
   <foreignModel>base.ecore</foreignModel>
   <genPackages prefix="Base" disposableProviderFactory="true" ecorePackage="base.ecore#/">
     <genClasses ecoreClass="base.ecore#//Manager">

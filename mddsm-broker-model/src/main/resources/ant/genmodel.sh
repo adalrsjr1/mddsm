@@ -13,6 +13,6 @@ $ECLIPSE_DIR/eclipse -nosplash \
 $PROJECT_DIR/src/main/resources/model/base.genmodel
 
 ## workaround to generate classes into correct folder
-GENERATED_SRC=$(find ../home -name base)
-cp -R $GENERATED_SRC ./src/main/java
+echo ">>> Coping folders <<<"
+find ../home -name base -exec cp -R {} ./src/main/java \;
 rm -rf ../home

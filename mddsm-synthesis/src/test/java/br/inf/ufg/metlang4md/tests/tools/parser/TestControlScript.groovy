@@ -154,6 +154,7 @@ class TestControlScript extends GroovyTestCase {
     static private ModelHandler modelHandler = new EmfModelHandler()
 
     void testAddElementToAnotherReferenceBased() {
+		
         def oldModel = "model/metamodel/testing/SandboxEmpty.xmi"
         def newModel = "model/metamodel/testing/SandboxOneElement.xmi"
 
@@ -231,7 +232,8 @@ class TestControlScript extends GroovyTestCase {
         def diff = diffs[0]
         def command = new Command(diff)
 
-        assert command.sourceMetadata() != [:]
-        assert command.valueMetadata() != [:]
+        assert command.sourceMetadata() == ["priority": 100]
+        assert command.valueMetadata().isEmpty()
+		
     }
 }

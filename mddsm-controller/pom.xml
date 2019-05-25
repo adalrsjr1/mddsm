@@ -1,23 +1,14 @@
-<?xml version="1.0"?>
 <project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<modelVersion>4.0.0</modelVersion>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>br.inf.ufg.mddsm</groupId>
-		<artifactId>mddsm</artifactId>
-		<version>1.0-SNAPSHOT</version>
-	</parent>
-	<groupId>br.inf.ufg.br.mddsm</groupId>
-	<artifactId>mddsm-controller</artifactId>
-	<name>mddsm-controller</name>
-	<url>http://maven.apache.org</url>
-	<dependencies>
-		<dependency>
-			<groupId>br.inf.ufg.br.mddsm</groupId>
-			<artifactId>mddsm-controller-model</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
+        <groupId>br.inf.ufg.mddsm</groupId>
+        <artifactId>mddsm</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>mddsm-controller</artifactId>
+    <name>mddsm-controller</name>
+
 </project>

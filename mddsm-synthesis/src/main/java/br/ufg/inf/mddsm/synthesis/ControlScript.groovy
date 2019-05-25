@@ -1,17 +1,14 @@
 package br.ufg.inf.mddsm.synthesis
 
-import br.ufg.inf.metalang4md.*
-import groovy.util.logging.Log4j2
-import org.eclipse.emf.compare.*
-import org.eclipse.emf.compare.internal.spec.AttributeChangeSpec
-import org.eclipse.emf.compare.internal.spec.ReferenceChangeSpec
+import org.eclipse.emf.compare.AttributeChange
+import org.eclipse.emf.compare.Diff
+import org.eclipse.emf.compare.DifferenceKind
+import org.eclipse.emf.compare.ReferenceChange
+import org.eclipse.emf.compare.ResourceAttachmentChange
 import org.eclipse.emf.ecore.EObject
-import org.eclipse.emf.ecore.resource.ResourceSet
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
-import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 
-import javax.naming.OperationNotSupportedException
+import br.ufg.inf.metalang4md.EDomainSpecificElement
+import groovy.util.logging.Log4j2
 
 class ControlScript {
     private final List<Diff> commands

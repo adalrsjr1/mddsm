@@ -1,32 +1,58 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>br.inf.ufg.mddsm</groupId>
-    <artifactId>mddsm</artifactId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
-  <groupId>br.inf.ufg.br.mddsm</groupId>
-  <artifactId>mddsm-synthesis-model</artifactId>
-  <name>mddsm-synthesis-model</name>
-  <url>http://maven.apache.org</url>
-  
-  <dependencies>
-		<dependency>
-			<groupId>org.eclipse.emf</groupId>
-			<artifactId>org.eclipse.emf.ecore</artifactId>
-			<version>2.15.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.emf</groupId>
-			<artifactId>org.eclipse.emf.common</artifactId>
-			<version>2.15.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.emf</groupId>
-			<artifactId>org.eclipse.emf.ecore.xmi</artifactId>
-			<version>2.15.0</version>
-		</dependency>
-	</dependencies>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>br.inf.ufg.mddsm</groupId>
+		<artifactId>mddsm</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<groupId>br.inf.ufg.br.mddsm</groupId>
+	<artifactId>mddsm-synthesis-model</artifactId>
+	<name>mddsm-synthesis-model</name>
+	<url>http://maven.apache.org</url>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>Generating EMF model</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<exec dir="${project.basedir}"
+									executable="${project.basedir}/src/main/resources/ant/genmodel.sh"
+									failonerror="true">
+									<arg line="${eclipse.path}" /> <!-- Eclipse Modeling Folder -->
+								</exec>
+							</tasks>
+						</configuration>
+					</execution>
+					<execution>
+						<id>Cleaning up EMF model</id>
+						<phase>clean</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<exec dir="${project.basedir}"
+									executable="${project.basedir}/src/main/resources/ant/delete-model.sh"
+									failonerror="true">
+									<arg line="${project.basedir}" />
+								</exec>
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

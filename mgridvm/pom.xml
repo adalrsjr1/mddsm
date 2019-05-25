@@ -9,46 +9,18 @@
 		<artifactId>mddsm</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<groupId>br.inf.ufg.br.mddsm</groupId>
 	<artifactId>mgridvm</artifactId>
 	<name>mgridvm</name>
 	<dependencies>
 		<dependency>
-			<groupId>br.inf.ufg.br.mddsm</groupId>
+			<groupId>br.inf.ufg.mddsm</groupId>
 			<artifactId>mddsm-broker-model</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>br.inf.ufg.br.mddsm</groupId>
+			<groupId>br.inf.ufg.mddsm</groupId>
 			<artifactId>mddsm-broker</artifactId>
 			<version>1.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.groovy</groupId>
-			<artifactId>groovy-all</artifactId>
-			<version>3.0.0-beta-1</version>
-			<type>pom</type>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<version>5.4.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-			<version>2.7</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>2.7</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-slf4j-impl</artifactId>
-			<version>2.7</version>
 		</dependency>
 		<dependency>
             <groupId>com.googlecode.clichemaven</groupId>
@@ -63,62 +35,4 @@
             <url>https://jcenter.bintray.com/</url>
         </repository>
     </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>bintray</id>
-            <name>Groovy Bintray</name>
-            <url>https://dl.bintray.com/groovy/maven</url>
-            <releases>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version><!-- 3.1 is the minimum -->
-                <configuration>
-                    <compilerId>groovy-eclipse-compiler</compilerId>
-                    <compilerArguments>
-                        <indy /><!-- optional; supported by batch 2.4.12-04+ -->
-                    </compilerArguments>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.codehaus.groovy</groupId>
-                        <artifactId>groovy-eclipse-compiler</artifactId>
-                        <version>3.3.0-01</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.codehaus.groovy</groupId>
-                        <artifactId>groovy-eclipse-batch</artifactId>
-                        <version>2.5.6-01</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.1</version>
-            </plugin>
-
-            <!-- download source code in Eclipse, best practice -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-eclipse-plugin</artifactId>
-                <version>2.9</version>
-                <configuration>
-                    <downloadSources>true</downloadSources>
-                    <downloadJavadocs>true</downloadJavadocs>
-                </configuration>
-            </plugin>
-
-            <!-- Maven Shade Plugin -->
-        </plugins>
-    </build>
 </project>
