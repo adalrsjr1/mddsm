@@ -1,6 +1,11 @@
 package br.inf.ufg.metlang4md.tests.tools.parser
 
-import br.ufg.inf.metalang4md.EDomainSpecificElement
+import org.eclipse.emf.common.util.EList
+import org.eclipse.emf.compare.Diff
+import org.eclipse.emf.compare.DifferenceKind
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EReference
+import org.eclipse.emf.ecore.impl.EAttributeImpl
 import br.ufg.inf.mddsm.synthesis.Command
 import br.ufg.inf.mddsm.synthesis.CommandAction
 import br.ufg.inf.mddsm.synthesis.ControlScript
@@ -8,16 +13,10 @@ import br.ufg.inf.mddsm.synthesis.api.EmfModelComparator
 import br.ufg.inf.mddsm.synthesis.api.EmfModelHandler
 import br.ufg.inf.mddsm.synthesis.api.ModelComparator
 import br.ufg.inf.mddsm.synthesis.api.ModelHandler
-import org.eclipse.emf.common.util.EList
-import org.eclipse.emf.compare.Diff
-import org.eclipse.emf.compare.DifferenceKind
-import org.eclipse.emf.compare.ReferenceChange
-import org.eclipse.emf.ecore.EObject
-import org.eclipse.emf.ecore.EReference
-import org.eclipse.emf.ecore.impl.EAttributeImpl
-import testing.BaseClass
-import testing.Sandbox
-import testing.TestingPackage
+import br.ufg.inf.metalang4md.EDomainSpecificElement
+import br.ufg.inf.metalang4md.testing.BaseClass
+import br.ufg.inf.metalang4md.testing.Sandbox
+import br.ufg.inf.metalang4md.testing.TestingPackage
 
 class TestControlScript extends GroovyTestCase {
 
@@ -157,7 +156,6 @@ class TestControlScript extends GroovyTestCase {
 		
         def oldModel = "model/metamodel/testing/SandboxEmpty.xmi"
         def newModel = "model/metamodel/testing/SandboxOneElement.xmi"
-
         def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
         ModelComparator modelComparator = new EmfModelComparator(resOldModel)
         def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
