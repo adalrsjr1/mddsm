@@ -11,7 +11,7 @@ import br.ufg.inf.metalang4md.EDomainSpecificElement
 import groovy.util.logging.Log4j2
 
 class ControlScript {
-    private final List<Diff> commands
+    private final List<Command> commands
 
     ControlScript() {
         commands = []

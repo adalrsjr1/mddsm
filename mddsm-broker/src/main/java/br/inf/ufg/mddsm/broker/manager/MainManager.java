@@ -122,10 +122,11 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
     	if(handlingResult.isHandled()) {
         	return handlingResult;
         } else if(checkSignal.apply(signal)) {
-        	log.info(String.format("signal %s not handled, but it is an EnqueueCall so it will applied on all resources", signal));
+        	log.info(String.format("signal %s not handled, but it is an EnqueueCall so it will be applied on all resources", signal));
         	
         	Map<String, Object> result = new HashMap<>();
         	resourceManager.getAllObjects().forEach(obj -> {
+        		// TODO: check the correctness of next statement
         		result.put(obj.getName(), obj.execute(signal));
             });
         	
