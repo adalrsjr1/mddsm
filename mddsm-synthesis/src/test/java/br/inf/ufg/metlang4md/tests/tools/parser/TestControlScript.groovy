@@ -25,218 +25,249 @@ class TestControlScript extends GroovyTestCase {
 	// System.getProperty("user.dir") == $PROJECT-PATH
 	static final String MODELS_PATH = System.getProperty("user.dir") + "-model/src/main/resources/model"
 
-    void testDiffComparatorNotEObject() {
-        // both has same priority
-        def comp = new ControlScript.DiffComparator()
+	void testDiffComparatorNotEObject() {
+		// both has same priority
+		def comp = new ControlScript.DiffComparator()
 
-        assert -1 == comp.innerComparision(0, 1)
-    }
+		assert -1 == comp.innerComparision(0, 1)
+	}
 
-    void testDiffComparatorNotEObjectIntStr() {
-        // both has same priority
-        def comp = new ControlScript.DiffComparator()
+	void testDiffComparatorNotEObjectIntStr() {
+		// both has same priority
+		def comp = new ControlScript.DiffComparator()
 
-        assert -1 == comp.innerComparision(1, "20")
-    }
+		assert -1 == comp.innerComparision(1, "20")
+	}
 
-    void testDiffComparatorOneEObject() {
-        def comp = new ControlScript.DiffComparator()
+	void testDiffComparatorOneEObject() {
+		def comp = new ControlScript.DiffComparator()
 
-        def o = new Expando([
-                eContents: { []  as EList }
-        ]) as EObject
+		def o = new Expando([
+			eContents: { []  as EList }
+		]) as EObject
 
-        assert 1 == comp.innerComparision(o, 1)
-    }
+		assert 1 == comp.innerComparision(o, 1)
+	}
 
-    void testDiffComparatorEObjects() {
-        def comp = new ControlScript.DiffComparator()
+	void testDiffComparatorEObjects() {
+		def comp = new ControlScript.DiffComparator()
 
-        // comparision by number of children
+		// comparision by number of children
 
-        def o1 = new Expando([
-                eContents: { []  as EList }
-        ]) as EObject
+		def o1 = new Expando([
+			eContents: { []  as EList }
+		]) as EObject
 
-        def o2 = new Expando([
-                eContents: { [1]  as EList }
-        ]) as EObject
+		def o2 = new Expando([
+			eContents: { [1]  as EList }
+		]) as EObject
 
-        assert -1 == comp.innerComparision(o1, o2)
-    }
+		assert -1 == comp.innerComparision(o1, o2)
+	}
 
-    void testDiffComparatorEObjectsNullEcontents() {
-        def comp = new ControlScript.DiffComparator()
+	void testDiffComparatorEObjectsNullEcontents() {
+		def comp = new ControlScript.DiffComparator()
 
-        // comparision by number of children
+		// comparision by number of children
 
-        def o1 = new Expando([
-                eContents: { [1]  as EList }
-        ]) as EObject
+		def o1 = new Expando([
+			eContents: { [1]  as EList }
+		]) as EObject
 
-        def o2 = new Expando([
-                eContents: { null }
-        ]) as EObject
+		def o2 = new Expando([
+			eContents: { null }
+		]) as EObject
 
-        assert 1 == comp.innerComparision(o1, o2)
-    }
+		assert 1 == comp.innerComparision(o1, o2)
+	}
 
-    void testDiffComparatorEDSE() {
-        def comp = new ControlScript.DiffComparator()
+	void testDiffComparatorEDSE() {
+		def comp = new ControlScript.DiffComparator()
 
-        //  comparision by priority
+		//  comparision by priority
 
-        def o1 = new Expando([
-                getCommandPriority: { 10 }
-        ]) as EDomainSpecificElement
+		def o1 = new Expando([
+			getCommandPriority: { 10 }
+		]) as EDomainSpecificElement
 
-        def o2 = new Expando([
-                getCommandPriority: { 0 }
-        ]) as EDomainSpecificElement
+		def o2 = new Expando([
+			getCommandPriority: { 0 }
+		]) as EDomainSpecificElement
 
-        assert 1 == comp.innerComparision(o1, o2)
-    }
+		assert 1 == comp.innerComparision(o1, o2)
+	}
 
-    void testDiffComparatorEObjectEDSE() {
-        def comp = new ControlScript.DiffComparator()
+	void testDiffComparatorEObjectEDSE() {
+		def comp = new ControlScript.DiffComparator()
 
-        //  DomainSpecificElement has bigger priority
+		//  DomainSpecificElement has bigger priority
 
-        def o1 = new Expando([
-                eContents: { []  as EList }
-        ]) as EObject
+		def o1 = new Expando([
+			eContents: { []  as EList }
+		]) as EObject
 
-        def o2 = new Expando([
-                getCommandPriority: { 0 }
-        ]) as EDomainSpecificElement
+		def o2 = new Expando([
+			getCommandPriority: { 0 }
+		]) as EDomainSpecificElement
 
-        assert -1 == comp.innerComparision(o1, o2)
-    }
+		assert -1 == comp.innerComparision(o1, o2)
+	}
 
-    void testDiffComparatorEDSEAndPrimitive() {
-        def comp = new ControlScript.DiffComparator()
+	void testDiffComparatorEDSEAndPrimitive() {
+		def comp = new ControlScript.DiffComparator()
 
-        //  DomainSpecificElement has bigger priority
+		//  DomainSpecificElement has bigger priority
 
-        def o1 = new Expando([
-                getCommandPriority: { 0 }
-        ]) as EDomainSpecificElement
+		def o1 = new Expando([
+			getCommandPriority: { 0 }
+		]) as EDomainSpecificElement
 
-        assert 1 == comp.innerComparision(o1, "str")
-    }
+		assert 1 == comp.innerComparision(o1, "str")
+	}
 
-    void testDiffComparatorByKind() {
-        def comp = new ControlScript.DiffComparator()
-        def o1 = new Expando([
-                getKind: { DifferenceKind.ADD }
-        ]) as Diff
+	void testDiffComparatorByKind() {
+		def comp = new ControlScript.DiffComparator()
+		def o1 = new Expando([
+			getKind: { DifferenceKind.ADD }
+		]) as Diff
 
-        def o2 = new Expando([
-                getKind: { DifferenceKind.DELETE }
-        ]) as Diff
+		def o2 = new Expando([
+			getKind: { DifferenceKind.DELETE }
+		]) as Diff
 
-        assert 1 == comp.compare(o1, o2)
+		assert 1 == comp.compare(o1, o2)
 
-    }
+	}
 
-    void testAddCommandToScript() {
-        def script = new ControlScript()
-        def diff = new Expando() as Diff
-        script << diff
+	void testAddCommandToScript() {
+		def script = new ControlScript()
+		def command = new Command()
+		script << command
 
-        assert 1 == script.size()
-    }
+		assert 1 == script.size()
+	}
 
-    void testAddMultipleCommandsToScript() {
-        def script = new ControlScript()
-        def diff = new Expando() as Diff
+	void testAddMultipleCommandsToScript() {
+		def script = new ControlScript()
+		def command = new Command()
 
-        script << diff << diff << diff
-        assert 3 == script.size()
-    }
+		script << command << command << command
+		assert 3 == script.size()
+	}
 
-    static private ModelHandler modelHandler = new EmfModelHandler()
+	static private ModelHandler modelHandler = new EmfModelHandler()
 
-    void testAddElementToAnotherReferenceBased() {
+	void testAddElementToAnotherReferenceBased() {
+
+		def oldModel = "$MODELS_PATH/metamodel/testing/SandboxEmpty.xmi"
+		def newModel = "$MODELS_PATH/metamodel/testing/SandboxOneElement.xmi"
+		def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+		ModelComparator modelComparator = new EmfModelComparator(resOldModel)
+		def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+
+		def diffs = modelComparator.compares(resNewModel)
+
+		def diff = diffs[0]
+		def command = new Command(diff)
+
+		assert CommandAction.ADD == command.action()
+
+		assert command.source() instanceof Sandbox
+		assert command.target() instanceof EReference
+		assert command.updatedElement() instanceof Sandbox
+		assert command.value() instanceof BaseClass
+
+	}
+
+	void testDeleteElementToAnotherReferenceBased() {
+		def newModel = "$MODELS_PATH/metamodel/testing/SandboxEmpty.xmi"
+		def oldModel = "$MODELS_PATH/metamodel/testing/SandboxOneElement.xmi"
+
+		def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+		ModelComparator modelComparator = new EmfModelComparator(resOldModel)
+		def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+
+		def diffs = modelComparator.compares(resNewModel)
+
+		def diff = diffs[0]
+		def command = new Command(diff)
+
+		assert CommandAction.DELETE == command.action()
+
+		assert command.source() instanceof Sandbox
+		assert command.target() instanceof EReference
+		assert command.updatedElement() instanceof Sandbox
+		assert command.value() instanceof BaseClass
+
+	}
+
+	void testChangeAttributeIntoElement() {
+		def oldModel = "$MODELS_PATH/metamodel/testing/SandboxOneElement.xmi"
+		def newModel = "$MODELS_PATH/metamodel/testing/SandboxOneElementNewAttribute.xmi"
+
+		def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+		ModelComparator modelComparator = new EmfModelComparator(resOldModel)
+		def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+
+		def diffs = modelComparator.compares(resNewModel)
+
+		def diff = diffs[0]
+		def command = new Command(diff)
+
+		assert CommandAction.CHANGE == command.action()
+
+		assert command.source() instanceof BaseClass
+		assert command.target() instanceof EAttributeImpl
+		assert command.updatedElement() instanceof BaseClass
+		assert command.value() instanceof Integer
+	}
+
+	void testExtractMetadata() {
+		def oldModel = "$MODELS_PATH/metamodel/testing/SandboxOneElement.xmi"
+		def newModel = "$MODELS_PATH/metamodel/testing/SandboxOneElementNewAttribute.xmi"
+
+		def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+		ModelComparator modelComparator = new EmfModelComparator(resOldModel)
+		def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+
+		def diffs = modelComparator.compares(resNewModel)
+
+		def diff = diffs[0]
+		def command = new Command(diff)
+
+		assert command.sourceMetadata() == ["priority": 100]
+		assert command.valueMetadata().isEmpty()
+
+	}
+	
+	void testGenerateValidScript() {
+		def oldModel = "$MODELS_PATH/metamodel/testing/SandboxOneElement.xmi"
+		def newModel = "$MODELS_PATH/metamodel/testing/SandboxOneElementNewAttribute.xmi"
 		
-        def oldModel = "$MODELS_PATH/metamodel/testing/SandboxEmpty.xmi"
-        def newModel = "$MODELS_PATH/metamodel/testing/SandboxOneElement.xmi"
-        def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
-        ModelComparator modelComparator = new EmfModelComparator(resOldModel)
-        def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+		def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+		ModelComparator modelComparator = new EmfModelComparator(resOldModel)
+		def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
 
-        def diffs = modelComparator.compares(resNewModel)
+		def diffs = modelComparator.compares(resNewModel)
+		ControlScript script = new ControlScript(diffs)
+				
+	}
 
-        def diff = diffs[0]
-        def command = new Command(diff)
-
-        assert CommandAction.ADD == command.action()
-
-        assert command.source() instanceof Sandbox
-        assert command.target() instanceof EReference
-        assert command.updatedElement() instanceof Sandbox
-        assert command.value() instanceof BaseClass
-
-    }
-
-    void testDeleteElementToAnotherReferenceBased() {
-        def newModel = "$MODELS_PATH/metamodel/testing/SandboxEmpty.xmi"
-        def oldModel = "$MODELS_PATH/metamodel/testing/SandboxOneElement.xmi"
-
-        def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
-        ModelComparator modelComparator = new EmfModelComparator(resOldModel)
-        def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
-
-        def diffs = modelComparator.compares(resNewModel)
-
-        def diff = diffs[0]
-        def command = new Command(diff)
-
-        assert CommandAction.DELETE == command.action()
-
-        assert command.source() instanceof Sandbox
-        assert command.target() instanceof EReference
-        assert command.updatedElement() instanceof Sandbox
-        assert command.value() instanceof BaseClass
-
-    }
-
-    void testChangeAttributeIntoElement() {
-        def oldModel = "$MODELS_PATH/metamodel/testing/SandboxOneElement.xmi"
-        def newModel = "$MODELS_PATH/metamodel/testing/SandboxOneElementNewAttribute.xmi"
-
-        def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
-        ModelComparator modelComparator = new EmfModelComparator(resOldModel)
-        def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
-
-        def diffs = modelComparator.compares(resNewModel)
-
-        def diff = diffs[0]
-        def command = new Command(diff)
-
-        assert CommandAction.CHANGE == command.action()
-
-        assert command.source() instanceof BaseClass
-        assert command.target() instanceof EAttributeImpl
-        assert command.updatedElement() instanceof BaseClass
-        assert command.value() instanceof Integer
-    }
-
-    void testExtractMetadata() {
-        def oldModel = "$MODELS_PATH/metamodel/testing/SandboxOneElement.xmi"
-        def newModel = "$MODELS_PATH/metamodel/testing/SandboxOneElementNewAttribute.xmi"
-
-        def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
-        ModelComparator modelComparator = new EmfModelComparator(resOldModel)
-        def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
-
-        def diffs = modelComparator.compares(resNewModel)
-
-        def diff = diffs[0]
-        def command = new Command(diff)
-
-        assert command.sourceMetadata() == ["priority": 100]
-        assert command.valueMetadata().isEmpty()
-		
-    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

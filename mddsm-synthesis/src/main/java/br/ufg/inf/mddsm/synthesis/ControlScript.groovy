@@ -8,6 +8,9 @@ import org.eclipse.emf.compare.ResourceAttachmentChange
 import org.eclipse.emf.ecore.EObject
 
 import br.ufg.inf.metalang4md.EDomainSpecificElement
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+import groovy.transform.MapConstructor
 import groovy.util.logging.Log4j2
 
 class ControlScript {
@@ -16,19 +19,29 @@ class ControlScript {
     ControlScript() {
         commands = []
     }
-
-    ControlScript leftShift(Diff diff) {
-        commands << new Command(diff)
-        this
-    }
-
+	
+	ControlScript(List commands) {
+		this.commands = []
+		commands.each { command ->
+			if(command instanceof Command || command instanceof Diff) {
+				this << command
+			} else {
+				throw new RuntimeException("unable to create a script with a statement $command of type ${command.class}")
+			}
+		}
+	}
+	
+	ControlScript leftShift(Diff diff) {
+		commands << new Command(diff)
+	}
+	
+	ControlScript leftShift(EventObject event) {
+		commands << new Command(event)
+	}
+	
     ControlScript leftShift(Command command) {
         commands << command
         this
-    }
-
-    ControlScript leftShift(EventObject event) {
-        commands << new Command(event)
     }
 
     int size() {
@@ -125,33 +138,47 @@ class ControlScript {
 
 @Log4j2
 class Command {
-    final private Diff diff
+	final private EObject source
+	final private EObject target
+	final private EObject updatedElement
+	final private def value
+	final private DifferenceKind kind
 
+	Command() { }
+	
     Command(EventObject event) {
         throw new UnsupportedOperationException("Not handling EventObject yet")
     }
 
     Command(Diff diff) {
-        this.diff = diff
+		this.source = diff.match.left
+		this.target = extractTarget(diff)
+		this.updatedElement = diff.match.right
+		this.value = diff.value
+		this.kind = diff.kind
     }
+	
+	private extractTarget(Diff diff) {
+		if(diff instanceof AttributeChange) {
+			return diff.attribute
+		}
+		return diff.reference
+	}
 
     EObject source() {
-        diff.match.left
+        source
     }
 
     EObject target() {
-        if(diff instanceof AttributeChange) {
-            return diff.attribute
-        }
-        return diff.reference
+        target
     }
 
     EObject updatedElement() {
-        diff.match.right
+        updatedElement
     }
 
     def value() {
-        diff.value  
+        value  
     }
 
     Map valueMetadata() {
@@ -181,7 +208,7 @@ class Command {
     }
 
     CommandAction action() {
-        switch (diff.kind) {
+        switch (this.kind) {
             case DifferenceKind.ADD: return CommandAction.ADD
             case DifferenceKind.DELETE: return CommandAction.DELETE
             case DifferenceKind.CHANGE: return CommandAction.CHANGE
