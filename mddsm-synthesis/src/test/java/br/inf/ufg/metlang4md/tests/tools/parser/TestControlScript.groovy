@@ -1,5 +1,8 @@
 package br.inf.ufg.metlang4md.tests.tools.parser
 
+import java.nio.file.Files
+import java.nio.file.Paths
+
 import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.compare.Diff
 import org.eclipse.emf.compare.DifferenceKind
@@ -19,6 +22,8 @@ import br.ufg.inf.metalang4md.testing.Sandbox
 import br.ufg.inf.metalang4md.testing.TestingPackage
 
 class TestControlScript extends GroovyTestCase {
+	// System.getProperty("user.dir") == $PROJECT-PATH
+	static final String MODELS_PATH = System.getProperty("user.dir") + "-model/src/main/resources/model"
 
     void testDiffComparatorNotEObject() {
         // both has same priority
@@ -154,8 +159,8 @@ class TestControlScript extends GroovyTestCase {
 
     void testAddElementToAnotherReferenceBased() {
 		
-        def oldModel = "model/metamodel/testing/SandboxEmpty.xmi"
-        def newModel = "model/metamodel/testing/SandboxOneElement.xmi"
+        def oldModel = "$MODELS_PATH/metamodel/testing/SandboxEmpty.xmi"
+        def newModel = "$MODELS_PATH/metamodel/testing/SandboxOneElement.xmi"
         def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
         ModelComparator modelComparator = new EmfModelComparator(resOldModel)
         def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
@@ -175,8 +180,8 @@ class TestControlScript extends GroovyTestCase {
     }
 
     void testDeleteElementToAnotherReferenceBased() {
-        def newModel = "model/metamodel/testing/SandboxEmpty.xmi"
-        def oldModel = "model/metamodel/testing/SandboxOneElement.xmi"
+        def newModel = "$MODELS_PATH/metamodel/testing/SandboxEmpty.xmi"
+        def oldModel = "$MODELS_PATH/metamodel/testing/SandboxOneElement.xmi"
 
         def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
         ModelComparator modelComparator = new EmfModelComparator(resOldModel)
@@ -197,8 +202,8 @@ class TestControlScript extends GroovyTestCase {
     }
 
     void testChangeAttributeIntoElement() {
-        def oldModel = "model/metamodel/testing/SandboxOneElement.xmi"
-        def newModel = "model/metamodel/testing/SandboxOneElementNewAttribute.xmi"
+        def oldModel = "$MODELS_PATH/metamodel/testing/SandboxOneElement.xmi"
+        def newModel = "$MODELS_PATH/metamodel/testing/SandboxOneElementNewAttribute.xmi"
 
         def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
         ModelComparator modelComparator = new EmfModelComparator(resOldModel)
@@ -218,8 +223,8 @@ class TestControlScript extends GroovyTestCase {
     }
 
     void testExtractMetadata() {
-        def oldModel = "model/metamodel/testing/SandboxOneElement.xmi"
-        def newModel = "model/metamodel/testing/SandboxOneElementNewAttribute.xmi"
+        def oldModel = "$MODELS_PATH/metamodel/testing/SandboxOneElement.xmi"
+        def newModel = "$MODELS_PATH/metamodel/testing/SandboxOneElementNewAttribute.xmi"
 
         def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
         ModelComparator modelComparator = new EmfModelComparator(resOldModel)
