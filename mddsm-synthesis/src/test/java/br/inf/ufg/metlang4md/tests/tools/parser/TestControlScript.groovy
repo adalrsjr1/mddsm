@@ -9,6 +9,8 @@ import org.eclipse.emf.compare.DifferenceKind
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.emf.ecore.impl.EAttributeImpl
+import org.eclipse.emf.ecore.util.EcoreUtil
+
 import br.ufg.inf.mddsm.synthesis.Command
 import br.ufg.inf.mddsm.synthesis.CommandAction
 import br.ufg.inf.mddsm.synthesis.ControlScript
@@ -239,18 +241,20 @@ class TestControlScript extends GroovyTestCase {
 		assert command.valueMetadata().isEmpty()
 
 	}
-	
+
 	void testGenerateValidScript() {
-		def oldModel = "$MODELS_PATH/metamodel/testing/SandboxOneElement.xmi"
-		def newModel = "$MODELS_PATH/metamodel/testing/SandboxOneElementNewAttribute.xmi"
-		
+		def oldModel = "$MODELS_PATH/metamodel/testing/SandboxToCreateScript2.xmi"
+		def newModel = "$MODELS_PATH/metamodel/testing/SandboxToCreateScript.xmi"
+
 		def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
-		ModelComparator modelComparator = new EmfModelComparator(resOldModel)
 		def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
+		ModelComparator modelComparator = new EmfModelComparator(resOldModel)
 
 		def diffs = modelComparator.compares(resNewModel)
 		ControlScript script = new ControlScript(diffs)
-				
+
+		println script
+
 	}
 
 }

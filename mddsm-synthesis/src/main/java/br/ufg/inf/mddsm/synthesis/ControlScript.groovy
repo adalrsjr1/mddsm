@@ -16,6 +16,17 @@ import groovy.util.logging.Log4j2
 class ControlScript {
     private final List<Command> commands
 
+	String toString() {
+		StringBuilder sb = new StringBuilder("(")
+		commands.inject(sb) { acc, item -> 
+			acc.append(item.toString())
+			acc.append("\n")
+		}
+		sb.append(")")
+		
+		return sb.toString()
+	}
+	
     ControlScript() {
         commands = []
     }
@@ -144,6 +155,21 @@ class Command {
 	final private def value
 	final private DifferenceKind kind
 
+	String toString() {
+		StringBuilder sb = new StringBuilder("Command[")
+		sb.append("action:")
+		sb.append(kind)
+		sb.append(", source:")
+		sb.append(source())
+		sb.append(", target:")
+		sb.append(target())
+		sb.append(", value:")
+		sb.append(value())
+		sb.append("]")
+		
+		sb.toString()
+	}
+	
 	Command() { }
 	
     Command(EventObject event) {
@@ -166,19 +192,19 @@ class Command {
 	}
 
     EObject source() {
-        source
+        this.source
     }
 
     EObject target() {
-        target
+        this.target
     }
 
     EObject updatedElement() {
-        updatedElement
+        this.updatedElement
     }
 
     def value() {
-        value  
+        this.value  
     }
 
     Map valueMetadata() {

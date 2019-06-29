@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testing:Sandbox
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:testing="http://www.inf.ufg.br/metalang4md/testing"
+    xsi:schemaLocation="http://www.inf.ufg.br/metalang4md/testing testing.ecore">
+  <elements
+      xsi:type="testing:ClassActor"
+      attrString="actor1"/>
+  <elements
+      xsi:type="testing:ClassItem"
+      arisingBehavior="DYNAMIC"
+      attrString="item1"/>
+  <elements
+      xsi:type="testing:ClassType"
+      cardinality="MANY"
+      interactionBehavior="ASYNC"
+      kindInteraction="DISTRIBUTED"
+      attrString="type1"/>
+  <elements
+      attrString="base1"/>
+  <elements
+      xsi:type="testing:ClassItem"
+      attrString="item2"
+      byReferences="//@elements.3"/>
+  <elements
+      xsi:type="testing:ClassActor"
+      attrString="actor2"
+      byReferences="//@elements.2"/>
+  <elements
+      xsi:type="testing:ClassType"
+      attrString="type2"
+      byReferences="//@elements.1"/>
+  <elements
+      attrInt="10"
+      attrString="base2"/>
+</testing:Sandbox>
