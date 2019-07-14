@@ -11,5 +11,47 @@
         <artifactId>mddsm</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>Generating EMF model</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                            <exec dir="${project.basedir}"
+                                    executable="${project.basedir}/src/main/resources/ant/genmodel.sh"
+                                    failonerror="true">
+                                    <arg line="${eclipse.path}" /> <!-- Eclipse Modeling Folder -->
+                                </exec>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>Cleaning up EMF model</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <exec dir="${project.basedir}"
+                                    executable="${project.basedir}/src/main/resources/ant/delete-model.sh"
+                                    failonerror="true">
+                                    <arg line="${project.basedir}" />
+                                </exec>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

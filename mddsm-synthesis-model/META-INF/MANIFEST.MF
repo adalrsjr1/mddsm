@@ -8,6 +8,24 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: br.ufg.inf.metalang4md,
+ br.ufg.inf.metalang4md.impl,
+ br.ufg.inf.metalang4md.util,
+ br.ufg.inf.metalang4md.policies,
+ br.ufg.inf.metalang4md.policies.impl,
+ br.ufg.inf.metalang4md.policies.util,
+ br.ufg.inf.metalang4md.rbcml,
+ br.ufg.inf.metalang4md.rbcml.impl,
+ br.ufg.inf.metalang4md.rbcml.util,
+ br.ufg.inf.metalang4md.mgridml,
+ br.ufg.inf.metalang4md.mgridml.impl,
+ br.ufg.inf.metalang4md.mgridml.util,
+ br.ufg.inf.metalang4md.cml,
+ br.ufg.inf.metalang4md.cml.impl,
+ br.ufg.inf.metalang4md.cml.util,
+ br.ufg.inf.metalang4md.testing,
+ br.ufg.inf.metalang4md.testing.impl,
+ br.ufg.inf.metalang4md.testing.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  metalang4md;visibility:=reexport

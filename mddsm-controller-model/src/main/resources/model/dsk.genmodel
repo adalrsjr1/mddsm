@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/mddsm-controller-model/src/main/java" modelPluginID="mddsm-controller-old"
+    modelName="Dsk" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>dsk.ecore</foreignModel>
+  <genPackages prefix="Dsk" disposableProviderFactory="true" ecorePackage="dsk.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dsk.ecore#//EKind">
+      <genEnumLiterals ecoreEnumLiteral="dsk.ecore#//EKind/ATTR"/>
+      <genEnumLiterals ecoreEnumLiteral="dsk.ecore#//EKind/OPER"/>
+    </genEnums>
+    <genClasses ecoreClass="dsk.ecore#//Dsk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsk.ecore#//Dsk/domain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsk.ecore#//Dsk/dscs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsk.ecore#//Dsk/procedures"/>
+    </genClasses>
+    <genClasses ecoreClass="dsk.ecore#//EProcedure">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsk.ecore#//EProcedure/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsk.ecore#//EProcedure/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsk.ecore#//EProcedure/classifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsk.ecore#//EProcedure/impl"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsk.ecore#//EProcedure/dependencies"/>
+    </genClasses>
+    <genClasses ecoreClass="dsk.ecore#//EDSC">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsk.ecore#//EDSC/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsk.ecore#//EDSC/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsk.ecore#//EDSC/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="dsk.ecore#//EExecutionUnit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsk.ecore#//EExecutionUnit/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsk.ecore#//EExecutionUnit/body"/>
+    </genClasses>
+    <nestedGenPackages prefix="Common" disposableProviderFactory="true" ecorePackage="dsk.ecore#//common">
+      <genClasses ecoreClass="dsk.ecore#//common/Parameter">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsk.ecore#//common/Parameter/name"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference dsk.ecore#//common/Parameter/dsc"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

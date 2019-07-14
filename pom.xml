@@ -51,7 +51,7 @@
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
-			<version>3.0.0-beta-1</version>
+			<version>3.0.0-beta-2</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
@@ -99,7 +99,7 @@
 					<compilerId>groovy-eclipse-compiler</compilerId>
 					<compilerArguments>
 						<indy /> <!-- optional; supported by batch 2.4.12-04+ -->
-						<configScript>config.groovy</configScript>
+						<!-- <configScript>config.groovy</configScript> -->
 					</compilerArguments>
 				</configuration>
 				<dependencies>
