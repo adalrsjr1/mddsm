@@ -1,10 +1,13 @@
+/**
+ */
 package base;
-
 
 import base.policy.Policy;
 import base.policy.PolicyEvaluationHandler;
 import base.policy.PolicyEvaluationPoint;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

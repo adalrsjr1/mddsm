@@ -7,6 +7,7 @@ import base.common.CommonPackage;
 import base.common.SequenceAction;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -65,7 +66,6 @@ public class SequenceActionImpl extends ActionImpl implements SequenceAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<ActionExecution> getChildren() {
 		if (children == null) {
 			children = new EObjectContainmentEList<ActionExecution>(ActionExecution.class, this, CommonPackage.SEQUENCE_ACTION__CHILDREN);

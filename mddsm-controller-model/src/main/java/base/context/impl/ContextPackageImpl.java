@@ -1,26 +1,41 @@
+/**
+ */
 package base.context.impl;
 
-
 import base.BasePackage;
+
 import base.common.CommonPackage;
+
 import base.common.impl.CommonPackageImpl;
+
 import base.context.ContextFactory;
 import base.context.ContextPackage;
 import base.context.Property;
 import base.context.State;
+
 import base.img.ImgPackage;
+
 import base.img.impl.ImgPackageImpl;
+
 import base.impl.BasePackageImpl;
+
 import base.metadata.MetadataPackage;
+
 import base.metadata.impl.MetadataPackageImpl;
+
 import base.policy.PolicyPackage;
+
 import base.policy.impl.PolicyPackageImpl;
+
 import base.script.ScriptPackage;
+
 import base.script.impl.ScriptPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**

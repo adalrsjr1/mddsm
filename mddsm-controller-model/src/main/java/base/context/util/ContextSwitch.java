@@ -1,10 +1,14 @@
+/**
+ */
 package base.context.util;
 
-
 import base.common.Bindable;
+
 import base.context.*;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
 
 /**

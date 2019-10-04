@@ -1,5 +1,6 @@
+/**
+ */
 package base;
-
 
 import org.eclipse.emf.ecore.EFactory;
 

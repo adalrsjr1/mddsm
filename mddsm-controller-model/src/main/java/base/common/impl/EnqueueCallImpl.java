@@ -8,6 +8,7 @@ import base.common.EnqueueCall;
 import base.common.ParameterBinding;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -80,7 +81,6 @@ public class EnqueueCallImpl extends ActionImpl implements EnqueueCall {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Call getCall() {
 		if (call != null && call.eIsProxy()) {
 			InternalEObject oldCall = (InternalEObject)call;
@@ -107,7 +107,6 @@ public class EnqueueCallImpl extends ActionImpl implements EnqueueCall {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setCall(Call newCall) {
 		Call oldCall = call;
 		call = newCall;
@@ -120,7 +119,6 @@ public class EnqueueCallImpl extends ActionImpl implements EnqueueCall {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<ParameterBinding> getBindings() {
 		if (bindings == null) {
 			bindings = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this, CommonPackage.ENQUEUE_CALL__BINDINGS);

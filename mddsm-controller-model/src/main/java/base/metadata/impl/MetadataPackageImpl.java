@@ -1,27 +1,42 @@
+/**
+ */
 package base.metadata.impl;
 
-
 import base.BasePackage;
+
 import base.common.CommonPackage;
+
 import base.common.impl.CommonPackageImpl;
+
 import base.context.ContextPackage;
+
 import base.context.impl.ContextPackageImpl;
+
 import base.img.ImgPackage;
+
 import base.img.impl.ImgPackageImpl;
+
 import base.impl.BasePackageImpl;
+
 import base.metadata.Annotable;
 import base.metadata.Attribute;
 import base.metadata.Feature;
 import base.metadata.MetadataFactory;
 import base.metadata.MetadataPackage;
+
 import base.policy.PolicyPackage;
+
 import base.policy.impl.PolicyPackageImpl;
+
 import base.script.ScriptPackage;
+
 import base.script.impl.ScriptPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**

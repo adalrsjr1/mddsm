@@ -1,8 +1,10 @@
+/**
+ */
 package base;
-
 
 import base.common.ActionExecution;
 import base.common.Signal;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

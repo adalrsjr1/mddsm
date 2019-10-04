@@ -1,5 +1,6 @@
+/**
+ */
 package base.metadata;
-
 
 import org.eclipse.emf.ecore.EObject;
 

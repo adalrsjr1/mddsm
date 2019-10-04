@@ -1,16 +1,27 @@
+/**
+ */
 package base.policy.impl;
 
-
 import base.BasePackage;
+
 import base.common.CommonPackage;
+
 import base.common.impl.CommonPackageImpl;
+
 import base.context.ContextPackage;
+
 import base.context.impl.ContextPackageImpl;
+
 import base.img.ImgPackage;
+
 import base.img.impl.ImgPackageImpl;
+
 import base.impl.BasePackageImpl;
+
 import base.metadata.MetadataPackage;
+
 import base.metadata.impl.MetadataPackageImpl;
+
 import base.policy.Policy;
 import base.policy.PolicyDecision;
 import base.policy.PolicyEvaluation;
@@ -20,12 +31,16 @@ import base.policy.PolicyEvaluationPoint;
 import base.policy.PolicyEvaluationRequest;
 import base.policy.PolicyFactory;
 import base.policy.PolicyPackage;
+
 import base.script.ScriptPackage;
+
 import base.script.impl.ScriptPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**

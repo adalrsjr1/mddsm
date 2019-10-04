@@ -8,6 +8,7 @@ import base.common.CommonPackage;
 import base.common.ParameterBinding;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -80,7 +81,6 @@ public class ActionExecutionImpl extends ValueImpl implements ActionExecution {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Action getAction() {
 		if (action != null && action.eIsProxy()) {
 			InternalEObject oldAction = (InternalEObject)action;
@@ -107,7 +107,6 @@ public class ActionExecutionImpl extends ValueImpl implements ActionExecution {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setAction(Action newAction) {
 		Action oldAction = action;
 		action = newAction;
@@ -120,7 +119,6 @@ public class ActionExecutionImpl extends ValueImpl implements ActionExecution {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<ParameterBinding> getBindings() {
 		if (bindings == null) {
 			bindings = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this, CommonPackage.ACTION_EXECUTION__BINDINGS);

@@ -69,7 +69,6 @@ public class MacroActionImpl extends ActionImpl implements MacroAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getImpl() {
 		return impl;
 	}
@@ -79,7 +78,6 @@ public class MacroActionImpl extends ActionImpl implements MacroAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setImpl(String newImpl) {
 		String oldImpl = impl;
 		impl = newImpl;

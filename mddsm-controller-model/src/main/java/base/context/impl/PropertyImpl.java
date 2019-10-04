@@ -1,10 +1,14 @@
+/**
+ */
 package base.context.impl;
-
 
 import base.context.ContextPackage;
 import base.context.Property;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 

@@ -1,8 +1,11 @@
+/**
+ */
 package base;
 
-
 import base.context.State;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

@@ -2,6 +2,7 @@
  */
 package base.common;
 
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Macro Action</b></em>'.

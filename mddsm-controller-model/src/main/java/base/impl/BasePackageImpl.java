@@ -1,5 +1,6 @@
+/**
+ */
 package base.impl;
-
 
 import base.BaseFactory;
 import base.BasePackage;
@@ -11,22 +12,36 @@ import base.PolicyManager;
 import base.RepositoryManager;
 import base.ScriptManager;
 import base.StateManager;
+
 import base.common.CommonPackage;
+
 import base.common.impl.CommonPackageImpl;
+
 import base.context.ContextPackage;
+
 import base.context.impl.ContextPackageImpl;
+
 import base.img.ImgPackage;
+
 import base.img.impl.ImgPackageImpl;
+
 import base.metadata.MetadataPackage;
+
 import base.metadata.impl.MetadataPackageImpl;
+
 import base.policy.PolicyPackage;
+
 import base.policy.impl.PolicyPackageImpl;
+
 import base.script.ScriptPackage;
+
 import base.script.impl.ScriptPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**

@@ -4,8 +4,8 @@ package base.common.impl;
 
 import base.common.Bindable;
 import base.common.Binding;
-
 import base.common.CommonPackage;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -83,7 +83,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Bindable getBindable() {
 		if (bindable != null && bindable.eIsProxy()) {
 			InternalEObject oldBindable = (InternalEObject)bindable;
@@ -110,7 +109,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setBindable(Bindable newBindable) {
 		Bindable oldBindable = bindable;
 		bindable = newBindable;
@@ -123,7 +121,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getName() {
 		return name;
 	}
@@ -133,7 +130,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;

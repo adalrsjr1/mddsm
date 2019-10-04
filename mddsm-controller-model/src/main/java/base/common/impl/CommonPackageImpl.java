@@ -1,7 +1,9 @@
+/**
+ */
 package base.common.impl;
 
-
 import base.BasePackage;
+
 import base.common.Action;
 import base.common.ActionExecution;
 import base.common.Bindable;
@@ -22,21 +24,34 @@ import base.common.SequenceAction;
 import base.common.Signal;
 import base.common.SignalSource;
 import base.common.Value;
+
 import base.context.ContextPackage;
+
 import base.context.impl.ContextPackageImpl;
+
 import base.img.ImgPackage;
+
 import base.img.impl.ImgPackageImpl;
+
 import base.impl.BasePackageImpl;
+
 import base.metadata.MetadataPackage;
+
 import base.metadata.impl.MetadataPackageImpl;
+
 import base.policy.PolicyPackage;
+
 import base.policy.impl.PolicyPackageImpl;
+
 import base.script.ScriptPackage;
+
 import base.script.impl.ScriptPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**

@@ -1,9 +1,12 @@
+/**
+ */
 package base.policy;
-
 
 import base.common.ParameterBinding;
 import base.common.Value;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

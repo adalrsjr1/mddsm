@@ -1,7 +1,9 @@
+/**
+ */
 package base.policy;
 
-
 import base.common.Signal;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

@@ -1,9 +1,12 @@
+/**
+ */
 package base;
-
 
 import base.common.Action;
 import base.common.Interface;
+
 import base.metadata.Annotable;
+
 import org.eclipse.emf.common.util.EList;
 
 /**

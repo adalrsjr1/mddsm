@@ -1,7 +1,9 @@
+/**
+ */
 package base.context;
 
-
 import base.common.Bindable;
+
 import org.eclipse.emf.common.util.EList;
 
 /**

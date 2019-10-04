@@ -1,5 +1,6 @@
+/**
+ */
 package base.policy;
-
 
 import org.eclipse.emf.ecore.EFactory;
 
