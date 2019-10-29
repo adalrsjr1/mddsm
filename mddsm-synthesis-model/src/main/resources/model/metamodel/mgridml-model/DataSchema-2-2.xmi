@@ -39,10 +39,6 @@
         capacity="12.0"
         chargeT="NEUTRAL"/>
     <plantElem
-        xsi:type="mgridml:SmartMeter"
-        plantE_ID="SM001"
-        mTypeID="SMT001"
-        tariff="0.15"
-        usage="44.5"/>
+        xsi:type="mgridml:SmartMeter"/>
   </mdGrid>
 </mgridml:MGridDataSchema>

@@ -1,15 +1,15 @@
 package br.inf.ufg.metlang4md.tests.tools.parser
 
-import java.nio.file.Files
-import java.nio.file.Paths
-
 import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.compare.Diff
 import org.eclipse.emf.compare.DifferenceKind
+import org.eclipse.emf.ecore.EAttribute
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
+import org.eclipse.emf.ecore.EcoreFactory
+import org.eclipse.emf.ecore.EcorePackage
 import org.eclipse.emf.ecore.impl.EAttributeImpl
-import org.eclipse.emf.ecore.util.EcoreUtil
+import org.eclipse.emf.ecore.impl.EcorePackageImpl
 
 import br.ufg.inf.mddsm.synthesis.Command
 import br.ufg.inf.mddsm.synthesis.CommandAction
@@ -249,7 +249,7 @@ class TestControlScript extends GroovyTestCase {
 		def resOldModel = modelHandler.load(oldModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
 		def resNewModel = modelHandler.load(newModel.toURI(), TestingPackage.eNS_URI, TestingPackage.eINSTANCE)
 		ModelComparator modelComparator = new EmfModelComparator(resOldModel)
-
+		
 		def diffs = modelComparator.compares(resNewModel)
 		ControlScript script = new ControlScript(diffs)
 

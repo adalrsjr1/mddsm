@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.inf.ufg.mddsm</groupId>
 	<artifactId>mddsm</artifactId>
@@ -9,14 +7,14 @@
 	<version>1.0-SNAPSHOT</version>
 	<name>mddsm</name>
 	<url>github.com/adalrsjr1/mddsm</url>
-
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
-		<eclipse.path>/opt/eclipse</eclipse.path>
+		<eclipse.path>/opt/eclipse-modeling</eclipse.path>
 	</properties>
-
+	
 	<modules>
 		<module>mddsm-broker-model</module>
 		<module>mddsm-controller-model</module>
@@ -26,14 +24,14 @@
 		<module>mddsm-synthesis</module>
 		<module>mgridvm</module>
 	</modules>
-
+	
 	<repositories>
 		<repository>
 			<id>jcenter</id>
 			<url>https://jcenter.bintray.com/</url>
 		</repository>
 	</repositories>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.eclipse.emf</groupId>
@@ -53,7 +51,7 @@
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
-			<version>3.0.0-beta-1</version>
+			<version>3.0.0-beta-2</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
@@ -78,7 +76,7 @@
 			<version>2.7</version>
 		</dependency>
 	</dependencies>
-
+	
 	<pluginRepositories>
 		<pluginRepository>
 			<id>bintray</id>
@@ -96,11 +94,12 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.0</version><!-- 3.1 is the minimum -->
+				<version>3.8.0</version> <!-- 3.1 is the minimum -->
 				<configuration>
 					<compilerId>groovy-eclipse-compiler</compilerId>
 					<compilerArguments>
-						<indy /><!-- optional; supported by batch 2.4.12-04+ -->
+						<indy /> <!-- optional; supported by batch 2.4.12-04+ -->
+						<!-- <configScript>config.groovy</configScript> -->
 					</compilerArguments>
 				</configuration>
 				<dependencies>
@@ -116,12 +115,12 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-
+			
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.22.1</version>
 			</plugin>
-
+			
 			<!-- download source code in Eclipse, best practice -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -132,9 +131,9 @@
 					<downloadJavadocs>true</downloadJavadocs>
 				</configuration>
 			</plugin>
-
+			
 			<!-- Maven Shade Plugin -->
 		</plugins>
 	</build>
-
+	
 </project>

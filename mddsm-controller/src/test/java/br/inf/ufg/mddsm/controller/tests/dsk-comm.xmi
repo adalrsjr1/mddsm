@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsk:dsk xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:dsk="http://www.inf.ufg.br/controller/dsK"
+    domain="comm">
+  <procedures
+      id="0001"
+      name="SendBasic">
+    <dsc name="Send">
+      <impl
+          id="sendMedia"
+          body="br.inf.ufg.mddsm.controller.eu.SendMedia"/>
+    </dsc>
+  </procedures>
+  <procedures
+      id="002"
+      name="SendSecure">
+    <dsc name="Send">
+      <impl
+          id="sendMedia"
+          body="br.inf.ufg.mddsm.controller.eu.SendMedia"/>
+      <reference
+          name="Encrypt">
+        <impl
+            id="simpleEncrypt"
+            body="br.inf.ufg.mddsm.controller.eu.Encrypt"/>
+      </reference>
+    </dsc>
+  </procedures>
+  <procedures
+      id="003"
+      name="SendCompress">
+    <dsc name="Send">
+      <impl
+          id="sendMedia"
+          body="br.inf.ufg.mddsm.controller.eu.SendMedia"/>
+      <reference
+          name="Compress">
+        <impl
+            id="simpleCompress"
+            body="br.inf.ufg.mddsm.controller.eu.Compress"/>
+      </reference>
+    </dsc>
+  </procedures>
+  <procedures
+      id="004"
+      name="SendSecComp">
+    <dsc name="Send">
+      <impl
+          id="sendMedia"
+          body="br.inf.ufg.mddsm.controller.eu.SendMedia"/>
+      <reference
+          name="Encrypt">
+        <impl
+            id="simpleEncrypt"
+            body="br.inf.ufg.mddsm.controller.eu.Encrypt"/>
+      </reference>
+      <reference
+          name="Compress">
+        <impl
+            id="simpleCompress"
+            body="br.inf.ufg.mddsm.controller.eu.Compress"/>
+      </reference>
+    </dsc>
+  </procedures>
+  <procedures
+      id="005"
+      name="PKIEncrypt">
+    <dsc name="Encrypt">
+      <impl
+          id="pkiEncrypt"
+          body="br.inf.ufg.mddsm.controller.eu.PKIEncrypt"/>
+    </dsc>
+  </procedures>
+  <procedures
+      id="006"
+      name="GZipCOmpress">
+    <dsc name="Compress">
+      <impl
+          id="gzipCompress"
+          body="br.inf.ufg.mddsm.controller.eu.GZIPCompress"/>
+    </dsc>
+  </procedures>
+</dsk:dsk>

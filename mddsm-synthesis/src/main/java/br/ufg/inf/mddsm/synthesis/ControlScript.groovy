@@ -6,11 +6,9 @@ import org.eclipse.emf.compare.DifferenceKind
 import org.eclipse.emf.compare.ReferenceChange
 import org.eclipse.emf.compare.ResourceAttachmentChange
 import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EStructuralFeature
 
 import br.ufg.inf.metalang4md.EDomainSpecificElement
-import groovy.json.JsonOutput
-import groovy.json.JsonSlurper
-import groovy.transform.MapConstructor
 import groovy.util.logging.Log4j2
 
 class ControlScript {
@@ -43,17 +41,29 @@ class ControlScript {
 	}
 	
 	ControlScript leftShift(Diff diff) {
-		commands << new Command(diff)
+		add(diff)
 	}
 	
 	ControlScript leftShift(EventObject event) {
-		commands << new Command(event)
+		add(event)
 	}
 	
     ControlScript leftShift(Command command) {
-        commands << command
+        add(command)
         this
     }
+	
+	void add(Diff diff) {
+		commands << diff
+	}
+	
+	void add(EventObject event) {
+		commands << event
+	}
+	
+	void add(Command command) {
+		commands << command
+	}
 
     int size() {
         commands.size()
@@ -198,7 +208,7 @@ class Command {
     EObject target() {
         this.target
     }
-
+	
     EObject updatedElement() {
         this.updatedElement
     }
