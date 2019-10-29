@@ -19,14 +19,14 @@ import br.ufg.inf.mddsm.synthesis.api.EmfModelHandler
 import br.ufg.inf.mddsm.synthesis.api.ModelComparator
 import br.ufg.inf.mddsm.synthesis.api.ModelHandler
 import br.ufg.inf.metalang4md.EDomainSpecificElement
-import br.ufg.inf.metalang4md.testing.BaseClass
-import br.ufg.inf.metalang4md.testing.Sandbox
-import br.ufg.inf.metalang4md.testing.TestingPackage
+import testing.BaseClass
+import testing.Sandbox
+import testing.TestingPackage
 
 class TestControlScript extends GroovyTestCase {
 	// System.getProperty("user.dir") == $PROJECT-PATH
 	static final String MODELS_PATH = System.getProperty("user.dir") + "-model/src/main/resources/model"
-
+	
 	void testDiffComparatorNotEObject() {
 		// both has same priority
 		def comp = new ControlScript.DiffComparator()

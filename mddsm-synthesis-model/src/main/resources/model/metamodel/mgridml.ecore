@@ -21,10 +21,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="plantElem" upperBound="-1"
         eType="#//PlantElem" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mdgridID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mdgrid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mcgridID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PlantElem" eSuperTypes="../metalang4md.ecore#//EItem">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="platE_ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="plantE_ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="#//PlantElem">
     <eStructuralFeatures xsi:type="ecore:EReference" name="deviceProperty" upperBound="-1"

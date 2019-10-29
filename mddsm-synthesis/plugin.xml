@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated metalang4md -->
+      <package
+            uri="http://www.inf.ufg.br/metalang4md"
+            class="metalang4md.Metalang4mdPackage"
+            genModel="model/metalang4md.genmodel"/>
+   </extension>
+
+</plugin>

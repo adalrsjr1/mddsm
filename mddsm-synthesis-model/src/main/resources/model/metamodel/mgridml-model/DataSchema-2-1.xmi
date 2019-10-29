@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mgridml:MGridDataSchema
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mgridml="http://www.inf.ufg.br/metalang4md/mgridml"
+    mgridModelID="DataSchema-Winter">
+  <mdGrid mdgridID="MDC001"
+      mcgridID="MCG001">
+    <plantElem
+        xsi:type="mgridml:LoadDevice"
+        plantE_ID="LD001"
+        deviceTypeID="LDT001"
+        deviceName="Heater"
+        wattage="120.0">
+      <deviceProperty
+          attribute="temp"
+          value="75"/>
+    </plantElem>
+    <plantElem
+        xsi:type="mgridml:StorageDevice"
+        plantE_ID="SD004"
+        deviceTypeID="SDT001"
+        deviceName="Deep Cycle"
+        capacity="12.0"
+        chargeT="NEUTRAL"/>
+    <plantElem
+        xsi:type="mgridml:SmartMeter"
+        plantE_ID="SM001"
+        mTypeID="SMT001"/>
+  </mdGrid>
+</mgridml:MGridDataSchema>

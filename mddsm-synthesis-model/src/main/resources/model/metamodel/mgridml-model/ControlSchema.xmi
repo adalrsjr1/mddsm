@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mgridml:MGridControlSchema
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mgridml="http://www.inf.ufg.br/metalang4md/mgridml"
+    mgridModelID="ControlSchema">
+  <mcgrid mcgridID="MCG001">
+    <mgcontroller
+        xsi:type="mgridml:LoadController"
+        ctypeID=""
+        controllerID="LC001"
+        name="ControllerSeasonal">
+      <loadDeviceType
+          soTypeID="LDT001"
+          typeName="Seasonal-Device"/>
+    </mgcontroller>
+  </mcgrid>
+</mgridml:MGridControlSchema>

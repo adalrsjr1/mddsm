@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsk:dsk xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:dsk="http://www.inf.ufg.br/controller/dsk">
+  <dscs name="FileURI"/>
+  <dscs name="Send"
+      kind="OPER">
+    <parameters
+        name="FileURI"
+        dsc="//@dscs.0"/>
+  </dscs>
+  <dscs name="Receive"
+      kind="OPER">
+    <parameters
+        name="FileURI"
+        dsc="//@dscs.0"/>
+  </dscs>
+  <dscs name="plainTextFileURI"/>
+  <dscs name="encryptedFileURI"/>
+  <dscs name="Encrypt"
+      kind="OPER">
+    <parameters
+        name="plainTextFileURI"
+        dsc="//@dscs.3"/>
+    <parameters
+        name="encryptedFileURI"
+        dsc="//@dscs.4"/>
+  </dscs>
+  <dscs name="Decrypt"
+      kind="OPER">
+    <parameters
+        name="encryptedFileURI"
+        dsc="//@dscs.4"/>
+    <parameters
+        name="plainTextFileURI"
+        dsc="//@dscs.3"/>
+  </dscs>
+  <dscs name="localNetwork"/>
+  <dscs name="Compress"/>
+  <procedures
+      id="001"
+      name="SendBasic"
+      classifier="//@dscs.1">
+    <impl id="SendBasic"
+        body="br.com.ufg.inf.SendBasic"/>
+  </procedures>
+  <procedures
+      id="003"
+      name="PKIEncrypt"
+      classifier="//@dscs.5">
+    <impl id="PKIEncrypt"
+        body="br.com.ufg.inf.PKIEncrypt"/>
+  </procedures>
+  <procedures
+      id="003"
+      name="GZipCompress"
+      classifier="//@dscs.8">
+    <impl id="GZipCompress"
+        body="br.com.ufg.inf.GZipCompress"/>
+  </procedures>
+  <procedures
+      id="004"
+      name="SendSecure"
+      classifier="//@dscs.1"
+      dependencies="//@dscs.5"/>
+  <procedures
+      id="005"
+      name="SendCompress"
+      classifier="//@dscs.1"
+      dependencies="//@dscs.8"/>
+  <procedures
+      id="006"
+      name="SendSecComp"
+      classifier="//@dscs.1"
+      dependencies="//@dscs.5 //@dscs.8"/>
+</dsk:dsk>

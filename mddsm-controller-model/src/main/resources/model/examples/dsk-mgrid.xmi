@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsc:dsk xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:dsc="http://www.inf.ufg.br/controller/dsc">
+  <procedures
+      id="001"
+      name="EnableLoad">
+    <dsc name="AddLoad"/>
+  </procedures>
+  <procedures
+      id="002"
+      name="DisableLoad">
+    <dsc name="RemoveLoad"/>
+  </procedures>
+  <procedures
+      id="003"
+      name="PrepareAndEnableLoad">
+    <dsc name="AddLoad">
+      <reference
+          name="ShedLoad"/>
+    </dsc>
+  </procedures>
+  <procedures
+      id="004"
+      name="ReversePower">
+    <dsc name="ShedLoad"/>
+  </procedures>
+</dsc:dsk>

@@ -18,8 +18,7 @@
       <!-- @generated testing -->
       <package
             uri="http://www.inf.ufg.br/metalang4md/testing"
-            class="br.ufg.inf.metalang4md.testing.TestingPackage"
-            genModel="src/main/resources/model/metamodel/testing/testing.genmodel"/>
+            class="testing.TestingPackage"/>
    </extension>
 
 </plugin>

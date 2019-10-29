@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="csml" nsURI="http://www.inf.ufg.br/metalang4md/csml" nsPrefix="csml">
+  <eClassifiers xsi:type="ecore:EClass" name="ControlSchema">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="env" eType="#//EnvControlSchema"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="query" eType="#//QueryControlSchema"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataSchema">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="request" eType="#//Request"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QueryControlSchema">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subscription" eType="#//Subscription"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnvControlSchema">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="registration" eType="#//Registration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SensorTypeRequest" eSuperTypes="../metalang4md.ecore#//EItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="request" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Registration" eSuperTypes="../metalang4md.ecore#//EActor">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="device" eType="#//Device"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="owner" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="../metalang4md.ecore#//EActor ../metalang4md.ecore#//EItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DeviceType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensor" upperBound="-1"
+        eType="#//SensorType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Subscription" eSuperTypes="../metalang4md.ecore#//EActor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="agregation" eType="#//CombinationType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensor" eType="#//SensorTypeRequest"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Request">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="queryControlSchemaID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="period" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deviceRequest" lowerBound="1"
+        upperBound="-1" eType="#//Device"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Notification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requestID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="../metalang4md.ecore#//EItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensor" eType="#//SensorInformation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SensorInformation" eSuperTypes="../metalang4md.ecore#//EItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeStamp"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accuracy"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sensorType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataTYpe"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SensorTypeList">
+    <eLiterals name="temperature"/>
+    <eLiterals name="humidity" value="1"/>
+    <eLiterals name="proximity" value="2"/>
+    <eLiterals name="gyroscope" value="3"/>
+    <eLiterals name="pressure" value="4"/>
+    <eLiterals name="gravity" value="5"/>
+    <eLiterals name="linearAceleration" value="6"/>
+    <eLiterals name="digitalCompass" value="7"/>
+    <eLiterals name="location" value="8"/>
+    <eLiterals name="audio" value="9"/>
+    <eLiterals name="magneticField" value="10"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RequestTYpe">
+    <eLiterals name="unicast"/>
+    <eLiterals name="multicast" value="1"/>
+    <eLiterals name="broadcast" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="NotifyType">
+    <eLiterals name="onDemand"/>
+    <eLiterals name="basedOnEvent" value="1"/>
+    <eLiterals name="periodic" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OperationType">
+    <eLiterals name="avg"/>
+    <eLiterals name="addition" value="1"/>
+    <eLiterals name="multiplication" value="2"/>
+    <eLiterals name="division" value="3"/>
+    <eLiterals name="subtraction" value="4"/>
+    <eLiterals name="maximum" value="5"/>
+    <eLiterals name="minimum" value="6"/>
+    <eLiterals name="standardDeviation" value="7"/>
+    <eLiterals name="variance" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CombinationType">
+    <eLiterals name="aggregation"/>
+    <eLiterals name="composition" value="1"/>
+    <eLiterals name="hybrid" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceType" eSuperTypes="../metalang4md.ecore#//EDomainSpecificType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceType" eSuperTypes="#//ResourceType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="brand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="os" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensorsTypes" upperBound="-1"
+        eType="#//SensorType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SensorType" eSuperTypes="#//ResourceType"/>
+</ecore:EPackage>
